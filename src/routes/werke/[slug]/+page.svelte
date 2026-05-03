@@ -10,6 +10,9 @@ const user = $derived(page.data.user);
 
 <svelte:head>
 	<title>{data.work.title} – werk.review</title>
+	<meta property="og:title" content="{data.work.title} – werk.review" />
+	<meta property="og:description" content="{data.author?.name ?? 'Unbekannt'} · {data.genre?.name ?? ''} · {data.work.year_display}" />
+	<meta property="og:type" content="book" />
 </svelte:head>
 
 <article>

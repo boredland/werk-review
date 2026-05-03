@@ -7,6 +7,12 @@ const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
 
 <svelte:head>
 	<title>{data.author.name} – werk.review</title>
+	<meta property="og:title" content="{data.author.name} – werk.review" />
+	<meta property="og:description" content="{data.author.born ?? '?'}–{data.author.died ?? '?'} · {data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'}" />
+	<meta property="og:type" content="profile" />
+	{#if photoKey}
+		<meta property="og:image" content="/images/{photoKey}" />
+	{/if}
 </svelte:head>
 
 <article>

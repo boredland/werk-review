@@ -7,6 +7,13 @@ let { children } = $props();
 
 <svelte:head>
 	<meta name="description" content="Datenbank klassischer Literatur – Autoren, Werke und Bewertungen" />
+	<meta property="og:site_name" content="werk.review" />
+	<meta property="og:locale" content="de_DE" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="/icon-512.png" />
+	<meta property="og:image:width" content="512" />
+	<meta property="og:image:height" content="512" />
+	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <Header />

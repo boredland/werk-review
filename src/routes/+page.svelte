@@ -4,6 +4,8 @@ let { data } = $props();
 
 <svelte:head>
 	<title>werk.review – Datenbank klassischer Literatur</title>
+	<meta property="og:title" content="werk.review – Datenbank klassischer Literatur" />
+	<meta property="og:description" content="{data.authors.length} Autoren, {data.totalWorks} Werke, {data.genres.length} Genres – Entdecke die Meisterwerke der deutschen Literatur" />
 </svelte:head>
 
 <section class="hero">

@@ -4,6 +4,8 @@ let { data } = $props();
 
 <svelte:head>
 	<title>{data.genre.name} – werk.review</title>
+	<meta property="og:title" content="{data.genre.name} – werk.review" />
+	<meta property="og:description" content="{data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'} im Genre {data.genre.name}" />
 </svelte:head>
 
 <div class="page-header">
