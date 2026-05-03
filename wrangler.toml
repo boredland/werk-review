@@ -22,3 +22,7 @@ id = "b9cb973809404f2db56accd0b785319f"
 [[r2_buckets]]
 binding = "IMAGES"
 bucket_name = "werk-review-images"
+
+[[send_email]]
+name = "EMAIL"
+remote = true

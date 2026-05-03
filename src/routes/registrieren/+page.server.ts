@@ -3,6 +3,7 @@ import { eq } from 'drizzle-orm';
 import { users } from '$lib/db/schema';
 import { createSession, hashPassword, SESSION_COOKIE } from '$lib/server/auth';
 import { getDb } from '$lib/server/db';
+import { sendVerificationEmail } from '$lib/server/email';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ locals }) => {
@@ -10,7 +11,7 @@ export const load: PageServerLoad = ({ locals }) => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, platform, cookies }) => {
+	default: async ({ request, platform, cookies, url }) => {
 		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
 			return fail(500, { error: 'Datenbank nicht verfügbar.', username: '', email: '' });
 		}
@@ -85,6 +86,13 @@ export const actions: Actions = {
 			sameSite: 'lax',
 			maxAge: 60 * 60 * 24 * 30,
 		});
+
+		if (platform.env.EMAIL) {
+			const siteUrl = platform.env.PUBLIC_SITE_URL || url.origin;
+			platform.context.waitUntil(
+				sendVerificationEmail(platform.env.EMAIL, email, username, verifyToken, siteUrl),
+			);
+		}
 
 		redirect(303, `/verifizieren?neu=1`);
 	},
