@@ -1,0 +1,24 @@
+name = "werk-review"
+compatibility_date = "2025-05-01"
+main = ".svelte-kit/cloudflare/_worker.js"
+
+[assets]
+directory = ".svelte-kit/cloudflare"
+binding = "ASSETS"
+
+[vars]
+PUBLIC_SITE_URL = "https://werk.review"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "werk-review-db"
+database_id = "814464f9-966d-4b7f-baf3-4ad239335bcd"
+migrations_dir = "drizzle"
+
+[[kv_namespaces]]
+binding = "SESSION_KV"
+id = "b9cb973809404f2db56accd0b785319f"
+
+[[r2_buckets]]
+binding = "IMAGES"
+bucket_name = "werk-review-images"

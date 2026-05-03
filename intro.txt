@@ -1,0 +1,19 @@
+
+
+### Technisches Lastenheft der Website
+
+-   Datenbank welche Autoren und deren Werke anzeigt
+-   Der gesamte Inhalt der Seite soll für alle Besucher ersichtlich sein, jedoch sollen Sonderfunktionen (Bewertungen anlegen, Admin auf fehlende Werke / Autoren hinweisen) nur registrierte Konto-Inhabern möglich sein
+-   Autoren haben eine Seite, wie ein Steckbrief, auf der alle Werke in der Reihenfolge der Entstehung aufgelistet sind
+-   Alle Werke können von Konto-Inhabern bewertet werden
+-   Es gibt einen Abschnitt wo alle Autoren aufgelistet werden
+    -   über Filter und Suchfunktion können dann einzelne Autoren gefunden werden
+-   Es gibt einen Abschnitt wo alle Werke aufgelistet werden
+    -   über Filter und Suchfunktion können dann einzelne Werke gefunden werden
+-   Es gibt einen Abschnitt wo alle Genres (Historischer Roman, Drama, Abenteuerroman, Novellen, etc.) aufgelistet werden
+    -   über Filter und Suchfunktion können dann einzelne Werke gefunden werden
+-   Über die Suchfunktion auf der Startseite, sollen alle Abschnitte durchsucht werden: Ergebnisse sollen nach Abschnitten geordnet angezeigt werden
+    -   (wenn es Treffer in mehreren Abschnitten gibt; 
+    -   z.B. Suchbegriff "London" -> Ergebnis bei Autoren: Jack London / Ergebnis bei Werken: Die Pest zu London [von Daniel Defoe])
+-   Als Admin möchte ich Zugang zur Datenbank, sodass ich permanent neue Autoren und Werke einpflegen kann. Der Abschnitt der Datenbank, welcher die Konten der Registrierten Nutzer und die abgegebenen Bewertungen verwaltet, soll automatisiert funktionieren.
+

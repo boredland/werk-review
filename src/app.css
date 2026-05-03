@@ -1,0 +1,85 @@
+:root {
+	--color-bg: #fafaf8;
+	--color-text: #1a1a1a;
+	--color-text-muted: #666;
+	--color-border: #ddd;
+	--color-accent: #2c5f8a;
+	--color-accent-hover: #1d4060;
+	--color-surface: #fff;
+	--color-masterpiece: #2c5f8a;
+	--color-recommendation: #2d8a4e;
+	--color-readable: #c4a32a;
+	--color-waste: #b83232;
+	--max-width: 960px;
+	--font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-serif: 'Georgia', 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font-sans);
+	color: var(--color-text);
+	background: var(--color-bg);
+	line-height: 1.6;
+}
+
+body {
+	margin: 0;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	margin-top: 0;
+}
+
+h1 {
+	font-family: var(--font-serif);
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.4rem;
+}
+
+main {
+	flex: 1;
+	width: 100%;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}

@@ -1,0 +1,11 @@
+node_modules/
+.svelte-kit/
+build/
+.wrangler/
+.env
+.env.*
+scripts/example-sheets/
+*.pdf
+*.xlsx
+*.mrcx
+AGENTS.md

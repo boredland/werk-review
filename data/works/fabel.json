@@ -1,0 +1,16 @@
+{
+	"id": "fabel",
+	"author_id": "gottfried-keller",
+	"genre_id": "erzaehlung",
+	"title": "Fabel",
+	"slug": "fabel",
+	"aliases": [],
+	"year_from": null,
+	"year_to": null,
+	"year_display": "postum veröffentlicht",
+	"collection_title": null,
+	"collection_aliases": [],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}
