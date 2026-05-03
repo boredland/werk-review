@@ -41,6 +41,7 @@ export const actions: Actions = {
 			id: user.id,
 			username: user.username,
 			email: user.email,
+			emailVerified: user.emailVerified,
 		});
 
 		cookies.set(SESSION_COOKIE, token, {

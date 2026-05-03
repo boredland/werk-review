@@ -2,17 +2,20 @@
 import { enhance } from '$app/forms';
 import { page } from '$app/state';
 
-const navItems = [
+const user = $derived(page.data.user);
+const admin = $derived(page.data.isAdmin);
+
+const navItems = $derived([
 	{ href: '/autoren', label: 'Autoren' },
 	{ href: '/werke', label: 'Werke' },
 	{ href: '/genre', label: 'Genre' },
 	{ href: '/ueber-uns', label: 'Über uns' },
-];
+	...(user ? [{ href: '/vorschlaege', label: 'Vorschlagen' }] : []),
+	...(admin ? [{ href: '/admin/vorschlaege', label: 'Admin' }] : []),
+]);
 
 let searchQuery = $state('');
 let mobileOpen = $state(false);
-
-const user = $derived(page.data.user);
 
 function handleSearch(e: SubmitEvent) {
 	e.preventDefault();

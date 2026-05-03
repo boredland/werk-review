@@ -68,10 +68,16 @@ export const actions: Actions = {
 
 		const id = crypto.randomUUID();
 		const passwordHash = await hashPassword(password);
+		const verifyToken = crypto.randomUUID();
 
-		await db.insert(users).values({ id, username, email, passwordHash });
+		await db.insert(users).values({ id, username, email, passwordHash, verifyToken });
 
-		const token = await createSession(platform.env.SESSION_KV, { id, username, email });
+		const token = await createSession(platform.env.SESSION_KV, {
+			id,
+			username,
+			email,
+			emailVerified: false,
+		});
 		cookies.set(SESSION_COOKIE, token, {
 			path: '/',
 			httpOnly: true,
@@ -80,6 +86,6 @@ export const actions: Actions = {
 			maxAge: 60 * 60 * 24 * 30,
 		});
 
-		redirect(303, '/');
+		redirect(303, `/verifizieren?neu=1`);
 	},
 };

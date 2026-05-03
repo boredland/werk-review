@@ -55,6 +55,11 @@ export interface SessionUser {
 	id: string;
 	username: string;
 	email: string;
+	emailVerified: boolean;
+}
+
+export function isAdmin(user: { email: string } | null): boolean {
+	return user?.email.endsWith('@werk.review') ?? false;
 }
 
 export async function createSession(kv: KVNamespace, user: SessionUser): Promise<string> {

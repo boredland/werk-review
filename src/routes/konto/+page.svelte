@@ -19,7 +19,14 @@ const user = $derived(page.data.user);
 			<dt>Benutzername</dt>
 			<dd>{user.username}</dd>
 			<dt>E-Mail</dt>
-			<dd>{user.email}</dd>
+			<dd>
+				{user.email}
+				{#if user.emailVerified}
+					<span class="badge badge--ok">Bestätigt</span>
+				{:else}
+					<span class="badge badge--warn">Nicht bestätigt</span>
+				{/if}
+			</dd>
 		</dl>
 	</section>
 
@@ -85,6 +92,30 @@ const user = $derived(page.data.user);
 	.profile-info dd {
 		margin: 0;
 		font-size: 0.95rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.badge {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		padding: 0.15rem 0.5rem;
+	}
+
+	.badge--ok {
+		color: #2d6a4f;
+		background: rgba(45, 106, 79, 0.1);
+		border: 1px solid rgba(45, 106, 79, 0.2);
+	}
+
+	.badge--warn {
+		color: var(--color-gold);
+		background: var(--color-gold-light);
+		border: 1px solid rgba(184, 150, 62, 0.3);
 	}
 
 	.reviews-section {

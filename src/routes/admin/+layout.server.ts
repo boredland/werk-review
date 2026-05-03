@@ -1,6 +1,8 @@
 import { error } from '@sveltejs/kit';
+import { isAdmin } from '$lib/server/auth';
 import type { LayoutServerLoad } from './$types';
 
 export const load: LayoutServerLoad = ({ locals }) => {
 	if (!locals.user) error(401, 'Nicht angemeldet');
+	if (!isAdmin(locals.user)) error(403, 'Kein Zugriff');
 };

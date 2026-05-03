@@ -8,7 +8,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (token && event.platform?.env.SESSION_KV) {
 		const user = await getSession(event.platform.env.SESSION_KV, token);
 		if (user) {
-			event.locals.user = user;
+			event.locals.user = {
+				id: user.id,
+				username: user.username,
+				email: user.email,
+				emailVerified: user.emailVerified ?? false,
+			};
 		}
 	}
 
