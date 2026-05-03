@@ -11,7 +11,7 @@ const navItems = $derived([
 	{ href: '/genre', label: 'Genre' },
 	{ href: '/ueber-uns', label: 'Über uns' },
 	...(user ? [{ href: '/vorschlaege', label: 'Vorschlagen' }] : []),
-	...(admin ? [{ href: '/admin/vorschlaege', label: 'Admin' }] : []),
+	...(admin ? [{ href: '/admin', label: 'Admin' }] : []),
 ]);
 
 let searchQuery = $state('');

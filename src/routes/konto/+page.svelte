@@ -1,8 +1,9 @@
 <script lang="ts">
+import { enhance } from '$app/forms';
 import { page } from '$app/state';
 import { getRatingConfig } from '$lib/ratings';
 
-let { data } = $props();
+let { data, form } = $props();
 
 const user = $derived(page.data.user);
 </script>
@@ -14,6 +15,13 @@ const user = $derived(page.data.user);
 <h1>Mein Konto</h1>
 
 {#if user}
+	{#if form?.resent}
+		<div class="banner banner--success" role="status">Bestätigungsmail wurde erneut gesendet.</div>
+	{/if}
+	{#if form?.error}
+		<div class="banner banner--error" role="alert">{form.error}</div>
+	{/if}
+
 	<section class="profile">
 		<dl class="profile-info">
 			<dt>Benutzername</dt>
@@ -25,6 +33,9 @@ const user = $derived(page.data.user);
 					<span class="badge badge--ok">Bestätigt</span>
 				{:else}
 					<span class="badge badge--warn">Nicht bestätigt</span>
+					<form method="POST" action="?/resendVerification" use:enhance class="resend-form">
+						<button type="submit" class="resend-btn">Erneut senden</button>
+					</form>
 				{/if}
 			</dd>
 		</dl>
@@ -116,6 +127,47 @@ const user = $derived(page.data.user);
 		color: var(--color-gold);
 		background: var(--color-gold-light);
 		border: 1px solid rgba(184, 150, 62, 0.3);
+	}
+
+	.banner {
+		padding: 0.75rem 1rem;
+		margin-bottom: 1.5rem;
+		font-family: var(--font-ui);
+		font-size: 0.88rem;
+	}
+
+	.banner--success {
+		background: rgba(45, 106, 79, 0.08);
+		border: 1px solid rgba(45, 106, 79, 0.2);
+		color: #2d6a4f;
+	}
+
+	.banner--error {
+		background: rgba(158, 58, 58, 0.08);
+		border: 1px solid rgba(158, 58, 58, 0.2);
+		color: var(--color-waste);
+	}
+
+	.resend-form {
+		display: inline;
+	}
+
+	.resend-btn {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.03em;
+		padding: 0.15rem 0.5rem;
+		background: transparent;
+		border: 1px solid var(--color-accent);
+		color: var(--color-accent);
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+
+	.resend-btn:hover {
+		background: var(--color-accent);
+		color: #fff;
 	}
 
 	.reviews-section {

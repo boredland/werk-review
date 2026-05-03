@@ -41,3 +41,46 @@ Falls du dich nicht bei werk.review registriert hast, kannst du diese E-Mail ign
 </html>`,
 	});
 }
+
+export async function sendPasswordResetEmail(
+	email: SendEmail,
+	to: string,
+	username: string,
+	resetToken: string,
+	siteUrl: string,
+) {
+	const resetUrl = `${siteUrl}/passwort-vergessen/${resetToken}`;
+
+	await email.send({
+		from: FROM,
+		to,
+		subject: 'Passwort zurücksetzen – werk.review',
+		text: `Hallo ${username},
+
+du hast ein neues Passwort angefordert. Öffne folgenden Link, um dein Passwort zurückzusetzen:
+
+${resetUrl}
+
+Der Link ist 1 Stunde gültig. Falls du kein neues Passwort angefordert hast, ignoriere diese E-Mail.
+
+– werk.review`,
+		html: `<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="utf-8"></head>
+<body style="font-family: Georgia, 'Times New Roman', serif; max-width: 520px; margin: 0 auto; padding: 2rem 1rem; color: #2c2420;">
+	<p style="font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #b8963e;">werk.review</p>
+	<h1 style="font-size: 1.5rem; margin: 0.5rem 0 1.5rem;">Passwort zurücksetzen</h1>
+	<p>Hallo ${username},</p>
+	<p>du hast ein neues Passwort angefordert. Klicke auf den folgenden Link:</p>
+	<p style="margin: 1.5rem 0;">
+		<a href="${resetUrl}" style="display: inline-block; padding: 0.7rem 2rem; background: #7b2d3b; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Passwort zurücksetzen</a>
+	</p>
+	<p style="font-size: 0.85rem; color: #8a7f76;">Der Link ist 1 Stunde gültig.</p>
+	<p style="font-size: 0.85rem; color: #8a7f76;">Falls der Button nicht funktioniert, kopiere diesen Link in deinen Browser:</p>
+	<p style="font-size: 0.82rem; word-break: break-all; color: #7b2d3b;">${resetUrl}</p>
+	<hr style="border: none; border-top: 1px solid #e8e2d9; margin: 2rem 0;">
+	<p style="font-size: 0.78rem; color: #8a7f76;">Falls du kein neues Passwort angefordert hast, kannst du diese E-Mail ignorieren.</p>
+</body>
+</html>`,
+	});
+}

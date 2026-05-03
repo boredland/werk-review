@@ -5,12 +5,12 @@ let { form } = $props();
 </script>
 
 <svelte:head>
-	<title>Anmelden – werk.review</title>
+	<title>Neues Passwort setzen – werk.review</title>
 </svelte:head>
 
 <div class="auth-page">
 	<div class="auth-card">
-		<h1>Anmelden</h1>
+		<h1>Neues Passwort</h1>
 
 		{#if form?.error}
 			<div class="error-banner" role="alert">{form.error}</div>
@@ -18,37 +18,31 @@ let { form } = $props();
 
 		<form method="POST" use:enhance>
 			<div class="field">
-				<label for="email">E-Mail</label>
-				<input
-					id="email"
-					name="email"
-					type="email"
-					required
-					value={form?.email ?? ''}
-					autocomplete="email"
-				/>
-			</div>
-
-			<div class="field">
-				<label for="password">Passwort</label>
+				<label for="password">Neues Passwort</label>
 				<input
 					id="password"
 					name="password"
 					type="password"
 					required
-					autocomplete="current-password"
+					minlength="8"
+					autocomplete="new-password"
 				/>
 			</div>
 
-			<button type="submit" class="btn-primary">Einloggen</button>
-		</form>
+			<div class="field">
+				<label for="password_confirm">Passwort bestätigen</label>
+				<input
+					id="password_confirm"
+					name="password_confirm"
+					type="password"
+					required
+					minlength="8"
+					autocomplete="new-password"
+				/>
+			</div>
 
-		<p class="alt-link">
-			<a href="/passwort-vergessen">Passwort vergessen?</a>
-		</p>
-		<p class="alt-link">
-			Noch kein Konto? <a href="/registrieren">Jetzt registrieren</a>
-		</p>
+			<button type="submit" class="btn-primary">Passwort speichern</button>
+		</form>
 	</div>
 </div>
 
@@ -129,13 +123,5 @@ let { form } = $props();
 
 	.btn-primary:hover {
 		background: var(--color-accent-hover);
-	}
-
-	.alt-link {
-		text-align: center;
-		margin-top: 1.5rem;
-		font-family: var(--font-ui);
-		font-size: 0.85rem;
-		color: var(--color-text-muted);
 	}
 </style>

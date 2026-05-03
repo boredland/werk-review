@@ -5,49 +5,45 @@ let { form } = $props();
 </script>
 
 <svelte:head>
-	<title>Anmelden – werk.review</title>
+	<title>Passwort vergessen – werk.review</title>
 </svelte:head>
 
 <div class="auth-page">
 	<div class="auth-card">
-		<h1>Anmelden</h1>
+		<h1>Passwort vergessen</h1>
+
+		{#if form?.sent}
+			<div class="success-banner" role="status">
+				Falls ein Konto mit dieser Adresse existiert, haben wir dir einen Link zum Zurücksetzen geschickt. Prüfe auch den Spam-Ordner.
+			</div>
+		{/if}
 
 		{#if form?.error}
 			<div class="error-banner" role="alert">{form.error}</div>
 		{/if}
 
-		<form method="POST" use:enhance>
-			<div class="field">
-				<label for="email">E-Mail</label>
-				<input
-					id="email"
-					name="email"
-					type="email"
-					required
-					value={form?.email ?? ''}
-					autocomplete="email"
-				/>
-			</div>
+		{#if !form?.sent}
+			<p class="intro">Gib deine E-Mail-Adresse ein. Wir schicken dir einen Link zum Zurücksetzen deines Passworts.</p>
 
-			<div class="field">
-				<label for="password">Passwort</label>
-				<input
-					id="password"
-					name="password"
-					type="password"
-					required
-					autocomplete="current-password"
-				/>
-			</div>
+			<form method="POST" use:enhance>
+				<div class="field">
+					<label for="email">E-Mail</label>
+					<input
+						id="email"
+						name="email"
+						type="email"
+						required
+						value={form?.email ?? ''}
+						autocomplete="email"
+					/>
+				</div>
 
-			<button type="submit" class="btn-primary">Einloggen</button>
-		</form>
+				<button type="submit" class="btn-primary">Link senden</button>
+			</form>
+		{/if}
 
 		<p class="alt-link">
-			<a href="/passwort-vergessen">Passwort vergessen?</a>
-		</p>
-		<p class="alt-link">
-			Noch kein Konto? <a href="/registrieren">Jetzt registrieren</a>
+			<a href="/login">Zurück zum Login</a>
 		</p>
 	</div>
 </div>
@@ -70,6 +66,25 @@ let { form } = $props();
 	.auth-card h1 {
 		text-align: center;
 		margin-bottom: 1.75rem;
+	}
+
+	.intro {
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+		color: var(--color-text-muted);
+		margin-bottom: 1.5rem;
+		line-height: 1.5;
+	}
+
+	.success-banner {
+		background: rgba(45, 106, 79, 0.08);
+		border: 1px solid rgba(45, 106, 79, 0.2);
+		color: #2d6a4f;
+		padding: 0.75rem 1rem;
+		margin-bottom: 1.5rem;
+		font-family: var(--font-ui);
+		font-size: 0.88rem;
+		line-height: 1.5;
 	}
 
 	.error-banner {
