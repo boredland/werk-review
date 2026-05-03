@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { getRatingConfig } from '$lib/ratings';
+import { getRatingConfig } from '$lib/ratings';
 
-	type Review = {
-		id: string;
-		rating: number;
-		ratingLabel: string;
-		title: string | null;
-		body: string | null;
-		version: string | null;
-		createdAt: string;
-		username: string;
-	};
+type Review = {
+	id: string;
+	rating: number;
+	ratingLabel: string;
+	title: string | null;
+	body: string | null;
+	version: string | null;
+	createdAt: string;
+	username: string;
+};
 
-	let { reviews, score }: { reviews: Review[]; score: number } = $props();
+let { reviews, score }: { reviews: Review[]; score: number } = $props();
 </script>
 
 {#if reviews.length > 0}
 	<section class="reviews-section">
 		<div class="reviews-header">
-			<h2>Bewertungen ({reviews.length})</h2>
+			<h2>Bewertungen <span class="reviews-count">({reviews.length})</span></h2>
 			<span class="score" class:positive={score > 0} class:negative={score < 0}>
 				{score > 0 ? '+' : ''}{score} Punkte
 			</span>
@@ -33,7 +33,7 @@
 							{config.emoji} {config.label}
 						</span>
 						<span class="review-meta">
-							{review.username} &middot; {new Date(review.createdAt).toLocaleDateString('de-DE')}
+							{review.username} · {new Date(review.createdAt).toLocaleDateString('de-DE')}
 						</span>
 					</div>
 					{#if review.title}
@@ -58,7 +58,7 @@
 
 <style>
 	.reviews-section {
-		margin-top: 2.5rem;
+		margin-top: 3rem;
 	}
 
 	.reviews-header {
@@ -66,17 +66,25 @@
 		justify-content: space-between;
 		align-items: baseline;
 		border-bottom: 1px solid var(--color-border);
-		padding-bottom: 0.5rem;
-		margin-bottom: 1rem;
+		padding-bottom: 0.6rem;
+		margin-bottom: 1.25rem;
 	}
 
 	.reviews-header h2 {
 		margin: 0;
 	}
 
+	.reviews-count {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		font-weight: 400;
+		color: var(--color-text-muted);
+	}
+
 	.score {
+		font-family: var(--font-display);
 		font-weight: 700;
-		font-size: 1.1rem;
+		font-size: 1.15rem;
 	}
 
 	.score.positive {
@@ -90,13 +98,18 @@
 	.reviews-list {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 0.75rem;
 	}
 
 	.review-card {
-		padding: 1rem;
-		border: 1px solid var(--color-border);
-		border-radius: 6px;
+		padding: 1.25rem;
+		background: var(--color-surface);
+		border: 1px solid var(--color-border-light);
+		transition: border-color 0.2s;
+	}
+
+	.review-card:hover {
+		border-color: var(--color-border);
 	}
 
 	.review-header {
@@ -112,15 +125,16 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
-		padding: 0.2rem 0.6rem;
+		padding: 0.2rem 0.65rem;
 		border: 1.5px solid;
-		border-radius: 4px;
-		font-size: 0.85rem;
+		font-family: var(--font-ui);
+		font-size: 0.8rem;
 		font-weight: 600;
 	}
 
 	.review-meta {
-		font-size: 0.8rem;
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
 		color: var(--color-text-muted);
 	}
 
@@ -130,12 +144,13 @@
 	}
 
 	.review-body {
-		line-height: 1.6;
-		margin: 0.25rem 0;
+		line-height: 1.65;
+		margin: 0.35rem 0;
 	}
 
 	.review-version {
-		font-size: 0.8rem;
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
 		color: var(--color-text-muted);
 		font-style: italic;
 		margin: 0.5rem 0 0;
@@ -143,5 +158,6 @@
 
 	.empty {
 		color: var(--color-text-muted);
+		font-style: italic;
 	}
 </style>

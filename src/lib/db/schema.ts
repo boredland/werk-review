@@ -1,5 +1,5 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
+import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const users = sqliteTable('users', {
 	id: text('id').primaryKey(),
@@ -8,9 +8,7 @@ export const users = sqliteTable('users', {
 	passwordHash: text('password_hash'),
 	emailVerified: integer('email_verified', { mode: 'boolean' }).notNull().default(false),
 	verifyToken: text('verify_token'),
-	createdAt: text('created_at')
-		.notNull()
-		.default(sql`(current_timestamp)`)
+	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });
 
 export const reviews = sqliteTable('reviews', {
@@ -24,9 +22,7 @@ export const reviews = sqliteTable('reviews', {
 	title: text('title'),
 	body: text('body'),
 	version: text('version'),
-	createdAt: text('created_at')
-		.notNull()
-		.default(sql`(current_timestamp)`)
+	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });
 
 export const authorSuggestions = sqliteTable('author_suggestions', {
@@ -37,7 +33,5 @@ export const authorSuggestions = sqliteTable('author_suggestions', {
 	suggestedName: text('suggested_name').notNull(),
 	note: text('note'),
 	status: text('status').notNull().default('pending'),
-	createdAt: text('created_at')
-		.notNull()
-		.default(sql`(current_timestamp)`)
+	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });

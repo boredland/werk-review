@@ -10,5 +10,5 @@ export const actions: Actions = {
 		}
 		cookies.delete(SESSION_COOKIE, { path: '/' });
 		redirect(303, '/');
-	}
+	},
 };

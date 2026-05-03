@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      glob: "*.{ts,svelte}"
+      run: npx svelte-check --tsconfig ./tsconfig.json --threshold error
+    biome:
+      glob: "*.{ts,js,svelte,json,css}"
+      run: npx biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+    knip:
+      run: npx knip

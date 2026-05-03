@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DATA_DIR = join(import.meta.dirname, '..', 'data');
@@ -8,7 +8,7 @@ function escapeCsv(val) {
 	if (val === null || val === undefined) return '';
 	const str = String(val);
 	if (str.includes(',') || str.includes('"') || str.includes('\n')) {
-		return '"' + str.replace(/"/g, '""') + '"';
+		return `"${str.replace(/"/g, '""')}"`;
 	}
 	return str;
 }
@@ -18,7 +18,7 @@ function toCsv(headers, rows) {
 	for (const row of rows) {
 		lines.push(headers.map((h) => escapeCsv(row[h])).join(','));
 	}
-	return lines.join('\n') + '\n';
+	return `${lines.join('\n')}\n`;
 }
 
 function sourcesToString(sources) {
@@ -28,7 +28,9 @@ function sourcesToString(sources) {
 
 // Authors
 const authorFiles = readdirSync(join(DATA_DIR, 'authors')).filter((f) => f.endsWith('.json'));
-const authors = authorFiles.map((f) => JSON.parse(readFileSync(join(DATA_DIR, 'authors', f), 'utf-8')));
+const authors = authorFiles.map((f) =>
+	JSON.parse(readFileSync(join(DATA_DIR, 'authors', f), 'utf-8')),
+);
 
 const authorRows = authors.map((a) => ({
 	id: a.id,
@@ -40,12 +42,15 @@ const authorRows = authors.map((a) => ({
 	gnd_id: a.gnd_id,
 	bio: a.bio,
 	photo_r2_key: a.photo_r2_key,
-	sources: sourcesToString(a.sources)
+	sources: sourcesToString(a.sources),
 }));
 
 writeFileSync(
 	join(OUT_DIR, 'Autoren.csv'),
-	toCsv(['id', 'name', 'slug', 'aliases', 'born', 'died', 'gnd_id', 'bio', 'photo_r2_key', 'sources'], authorRows)
+	toCsv(
+		['id', 'name', 'slug', 'aliases', 'born', 'died', 'gnd_id', 'bio', 'photo_r2_key', 'sources'],
+		authorRows,
+	),
 );
 
 // Works
@@ -68,12 +73,30 @@ const workRows = works
 		collection_aliases: (w.collection_aliases || []).join('|'),
 		gnd_id: w.gnd_id,
 		plot: w.plot,
-		sources: sourcesToString(w.sources)
+		sources: sourcesToString(w.sources),
 	}));
 
 writeFileSync(
 	join(OUT_DIR, 'Werke.csv'),
-	toCsv(['id', 'author_id', 'genre_id', 'title', 'slug', 'aliases', 'year_from', 'year_to', 'year_display', 'collection_title', 'collection_aliases', 'gnd_id', 'plot', 'sources'], workRows)
+	toCsv(
+		[
+			'id',
+			'author_id',
+			'genre_id',
+			'title',
+			'slug',
+			'aliases',
+			'year_from',
+			'year_to',
+			'year_display',
+			'collection_title',
+			'collection_aliases',
+			'gnd_id',
+			'plot',
+			'sources',
+		],
+		workRows,
+	),
 );
 
 // Genres
@@ -84,12 +107,33 @@ writeFileSync(join(OUT_DIR, 'Genres.csv'), toCsv(['id', 'name', 'slug'], genreRo
 
 // Links (example data since none exist yet)
 const linkRows = [
-	{ work_id: 'der-gruene-heinrich-erste-fassung', source: 'Project Gutenberg', format: 'HTML', url: 'https://www.gutenberg.org/ebooks/12285', label: 'Der grüne Heinrich (Gutenberg)' },
-	{ work_id: 'kleider-machen-leute', source: 'Zeno.org', format: 'HTML', url: 'http://www.zeno.org/Literatur/M/Keller,+Gottfried/Erz%C3%A4hlung/Kleider+machen+Leute', label: 'Kleider machen Leute (Zeno)' },
-	{ work_id: 'romeo-und-julia-auf-dem-dorfe', source: 'Project Gutenberg', format: 'HTML', url: 'https://www.gutenberg.org/ebooks/24042', label: 'Romeo und Julia auf dem Dorfe (Gutenberg)' }
+	{
+		work_id: 'der-gruene-heinrich-erste-fassung',
+		source: 'Project Gutenberg',
+		format: 'HTML',
+		url: 'https://www.gutenberg.org/ebooks/12285',
+		label: 'Der grüne Heinrich (Gutenberg)',
+	},
+	{
+		work_id: 'kleider-machen-leute',
+		source: 'Zeno.org',
+		format: 'HTML',
+		url: 'http://www.zeno.org/Literatur/M/Keller,+Gottfried/Erz%C3%A4hlung/Kleider+machen+Leute',
+		label: 'Kleider machen Leute (Zeno)',
+	},
+	{
+		work_id: 'romeo-und-julia-auf-dem-dorfe',
+		source: 'Project Gutenberg',
+		format: 'HTML',
+		url: 'https://www.gutenberg.org/ebooks/24042',
+		label: 'Romeo und Julia auf dem Dorfe (Gutenberg)',
+	},
 ];
 
-writeFileSync(join(OUT_DIR, 'Links.csv'), toCsv(['work_id', 'source', 'format', 'url', 'label'], linkRows));
+writeFileSync(
+	join(OUT_DIR, 'Links.csv'),
+	toCsv(['work_id', 'source', 'format', 'url', 'label'], linkRows),
+);
 
 console.log('Exported CSVs to scripts/example-sheets/');
 console.log(`  Autoren.csv: ${authorRows.length} rows`);

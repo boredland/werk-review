@@ -1,0 +1,6 @@
+{
+	"$schema": "https://unpkg.com/knip@6/schema.json",
+	"entry": ["src/**/*.{ts,js,svelte}", "scripts/**/*.mjs"],
+	"project": ["src/**/*.{ts,js,svelte}", "scripts/**/*.{ts,js,mjs}"],
+	"ignoreDependencies": ["@cloudflare/workers-types"]
+}

@@ -1,8 +1,8 @@
 import { redirect } from '@sveltejs/kit';
-import { eq, desc } from 'drizzle-orm';
-import { getDb } from '$lib/server/db';
+import { desc, eq } from 'drizzle-orm';
 import { reviews } from '$lib/db/schema';
 import { getWork } from '$lib/server/data';
+import { getDb } from '$lib/server/db';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals, platform }) => {
@@ -42,7 +42,7 @@ export const load: PageServerLoad = async ({ locals, platform }) => {
 						version: r.version,
 						createdAt: r.createdAt,
 						workTitle: work.title,
-						workSlug: work.slug
+						workSlug: work.slug,
 					};
 				})
 				.filter((r): r is NonNullable<typeof r> => r !== null);

@@ -1,18 +1,24 @@
 :root {
-	--color-bg: #fafaf8;
-	--color-text: #1a1a1a;
-	--color-text-muted: #666;
-	--color-border: #ddd;
-	--color-accent: #2c5f8a;
-	--color-accent-hover: #1d4060;
-	--color-surface: #fff;
-	--color-masterpiece: #2c5f8a;
-	--color-recommendation: #2d8a4e;
-	--color-readable: #c4a32a;
-	--color-waste: #b83232;
-	--max-width: 960px;
-	--font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
-	--font-serif: 'Georgia', 'Times New Roman', serif;
+	--color-bg: #f5f0e8;
+	--color-text: #2c2418;
+	--color-text-muted: #8b7e6a;
+	--color-border: #d4c9b6;
+	--color-border-light: #e8e0d2;
+	--color-accent: #7b2d3b;
+	--color-accent-hover: #5e1f2c;
+	--color-accent-light: #f5e8eb;
+	--color-gold: #b8963e;
+	--color-gold-light: #f5edd8;
+	--color-surface: #fdfbf7;
+	--color-surface-warm: #f8f3eb;
+	--color-masterpiece: #7b2d3b;
+	--color-recommendation: #3d6b4f;
+	--color-readable: #a68b2b;
+	--color-waste: #9e3a3a;
+	--max-width: 920px;
+	--font-display: "Cormorant", "Georgia", serif;
+	--font-body: "Literata", "Georgia", serif;
+	--font-ui: "Alegreya Sans", "Segoe UI", sans-serif;
 }
 
 *,
@@ -22,10 +28,13 @@
 }
 
 html {
-	font-family: var(--font-sans);
+	font-family: var(--font-body);
+	font-optical-sizing: auto;
 	color: var(--color-text);
 	background: var(--color-bg);
-	line-height: 1.6;
+	line-height: 1.65;
+	font-size: 17px;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -33,31 +42,47 @@ body {
 	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
+	background-image:
+		radial-gradient(ellipse at 20% 0%, rgba(184, 150, 62, 0.06) 0%, transparent 50%),
+		radial-gradient(ellipse at 80% 100%, rgba(123, 45, 59, 0.04) 0%, transparent 50%);
 }
 
 a {
 	color: var(--color-accent);
 	text-decoration: none;
+	transition: color 0.2s;
 }
 
 a:hover {
+	color: var(--color-accent-hover);
 	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
 }
 
 h1,
 h2,
 h3 {
-	line-height: 1.2;
+	font-family: var(--font-display);
+	font-weight: 600;
+	line-height: 1.15;
 	margin-top: 0;
+	color: var(--color-text);
 }
 
 h1 {
-	font-family: var(--font-serif);
-	font-size: 2rem;
+	font-size: 2.6rem;
+	font-weight: 500;
+	letter-spacing: -0.01em;
 }
 
 h2 {
-	font-size: 1.4rem;
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 1.2rem;
 }
 
 main {
@@ -65,12 +90,17 @@ main {
 	width: 100%;
 	max-width: var(--max-width);
 	margin: 0 auto;
-	padding: 2rem 1rem;
+	padding: 2.5rem 1.5rem;
 }
 
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+::selection {
+	background: var(--color-accent-light);
+	color: var(--color-accent);
 }
 
 .sr-only {
@@ -82,4 +112,29 @@ img {
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	border: 0;
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 640px) {
+	html {
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	main {
+		padding: 1.5rem 1rem;
+	}
 }

@@ -1,33 +1,33 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	import { RATINGS } from '$lib/ratings';
+import { enhance } from '$app/forms';
+import { RATINGS } from '$lib/ratings';
 
-	type UserReview = {
-		id: string;
-		rating: number;
-		ratingLabel: string;
-		title: string | null;
-		body: string | null;
-		version: string | null;
-		createdAt: string;
-		username: string;
-	} | null;
+type UserReview = {
+	id: string;
+	rating: number;
+	ratingLabel: string;
+	title: string | null;
+	body: string | null;
+	version: string | null;
+	createdAt: string;
+	username: string;
+} | null;
 
-	let { userReview, form }: { userReview: UserReview; form: Record<string, unknown> | null } =
-		$props();
+let { userReview, form }: { userReview: UserReview; form: Record<string, unknown> | null } =
+	$props();
 
-	let selectedRating = $state(userReview?.ratingLabel ?? '');
+let selectedRating = $state(userReview?.ratingLabel ?? '');
 </script>
 
 <section class="review-form-section">
 	<h2>{userReview ? 'Deine Bewertung bearbeiten' : 'Bewertung abgeben'}</h2>
 
 	{#if form?.reviewError}
-		<div class="error-banner" role="alert">{form.reviewError}</div>
+		<div class="banner banner--error" role="alert">{form.reviewError}</div>
 	{/if}
 
 	{#if form?.reviewSuccess}
-		<div class="success-banner" role="status">Bewertung gespeichert!</div>
+		<div class="banner banner--success" role="status">Bewertung gespeichert!</div>
 	{/if}
 
 	<form method="POST" action="?/review" use:enhance>
@@ -35,7 +35,7 @@
 			<legend>Bewertung</legend>
 			<div class="rating-options">
 				{#each RATINGS as r}
-					<label class="rating-option" class:selected={selectedRating === r.label}>
+					<label class="rating-option" class:selected={selectedRating === r.label} style="--rating-color: {r.color}">
 						<input
 							type="radio"
 							name="rating_label"
@@ -96,46 +96,48 @@
 
 <style>
 	.review-form-section {
-		margin-top: 2.5rem;
-		padding-top: 1.5rem;
-		border-top: 2px solid var(--color-border);
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--color-border);
 	}
 
-	.error-banner {
-		background: #fef2f2;
-		border: 1px solid #fecaca;
-		color: #b91c1c;
+	.banner {
 		padding: 0.75rem 1rem;
-		border-radius: 6px;
-		margin-bottom: 1rem;
-		font-size: 0.9rem;
+		margin-bottom: 1.25rem;
+		font-family: var(--font-ui);
+		font-size: 0.88rem;
 	}
 
-	.success-banner {
-		background: #f0fdf4;
-		border: 1px solid #bbf7d0;
-		color: #166534;
-		padding: 0.75rem 1rem;
-		border-radius: 6px;
-		margin-bottom: 1rem;
-		font-size: 0.9rem;
+	.banner--error {
+		background: rgba(158, 58, 58, 0.08);
+		border: 1px solid rgba(158, 58, 58, 0.2);
+		color: var(--color-waste);
+	}
+
+	.banner--success {
+		background: rgba(61, 107, 79, 0.08);
+		border: 1px solid rgba(61, 107, 79, 0.2);
+		color: var(--color-recommendation);
 	}
 
 	.rating-fieldset {
 		border: none;
 		padding: 0;
-		margin: 0 0 1.25rem;
+		margin: 0 0 1.5rem;
 	}
 
 	.rating-fieldset legend {
-		font-weight: 600;
-		margin-bottom: 0.5rem;
-		font-size: 0.9rem;
+		font-family: var(--font-ui);
+		font-weight: 500;
+		font-size: 0.85rem;
+		letter-spacing: 0.02em;
+		margin-bottom: 0.6rem;
+		color: var(--color-text);
 	}
 
 	.rating-options {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
 		gap: 0.5rem;
 	}
 
@@ -143,20 +145,20 @@
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		padding: 0.6rem 0.75rem;
-		border: 2px solid var(--color-border);
-		border-radius: 6px;
+		padding: 0.65rem 0.85rem;
+		border: 1.5px solid var(--color-border-light);
+		background: var(--color-surface);
 		cursor: pointer;
-		transition: border-color 0.15s;
+		transition: border-color 0.2s, background 0.2s;
 	}
 
 	.rating-option:hover {
-		border-color: var(--color-accent);
+		border-color: var(--rating-color, var(--color-accent));
 	}
 
 	.rating-option.selected {
-		border-color: var(--color-accent);
-		background: #f0f7ff;
+		border-color: var(--rating-color, var(--color-accent));
+		background: var(--color-surface-warm);
 	}
 
 	.rating-option input {
@@ -168,49 +170,65 @@
 	}
 
 	.rating-label {
-		font-size: 0.9rem;
+		font-family: var(--font-ui);
+		font-size: 0.88rem;
+		font-weight: 500;
 	}
 
 	.field {
-		margin-bottom: 1rem;
+		margin-bottom: 1.1rem;
 	}
 
 	.field label {
 		display: block;
-		margin-bottom: 0.35rem;
-		font-weight: 600;
-		font-size: 0.9rem;
+		margin-bottom: 0.4rem;
+		font-family: var(--font-ui);
+		font-weight: 500;
+		font-size: 0.85rem;
+		letter-spacing: 0.02em;
+		color: var(--color-text);
 	}
 
 	.field input,
 	.field textarea {
 		width: 100%;
-		padding: 0.5rem 0.75rem;
+		font-family: var(--font-ui);
+		padding: 0.55rem 0.85rem;
 		border: 1px solid var(--color-border);
-		border-radius: 4px;
-		font-size: 0.95rem;
-		font-family: inherit;
+		background: var(--color-surface);
+		font-size: 0.92rem;
+		color: var(--color-text);
+		transition: border-color 0.2s, box-shadow 0.2s;
+	}
+
+	.field textarea {
+		font-family: var(--font-body);
+		line-height: 1.6;
+		resize: vertical;
 	}
 
 	.field input:focus,
 	.field textarea:focus {
-		outline: 2px solid var(--color-accent);
-		outline-offset: 1px;
+		outline: none;
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 2px var(--color-accent-light);
 	}
 
 	.form-actions {
-		margin-top: 1rem;
+		margin-top: 1.25rem;
 	}
 
 	.btn-primary {
-		padding: 0.6rem 1.5rem;
+		font-family: var(--font-ui);
+		padding: 0.65rem 1.75rem;
 		background: var(--color-accent);
 		color: #fff;
 		border: none;
-		border-radius: 4px;
-		font-size: 0.95rem;
+		font-size: 0.9rem;
 		font-weight: 600;
+		letter-spacing: 0.03em;
 		cursor: pointer;
+		transition: background 0.2s;
 	}
 
 	.btn-primary:hover {
@@ -222,16 +240,18 @@
 	}
 
 	.btn-danger {
-		padding: 0.4rem 1rem;
+		font-family: var(--font-ui);
+		padding: 0.45rem 1rem;
 		background: none;
 		color: var(--color-waste);
 		border: 1px solid var(--color-waste);
-		border-radius: 4px;
-		font-size: 0.85rem;
+		font-size: 0.82rem;
+		font-weight: 500;
 		cursor: pointer;
+		transition: background 0.2s;
 	}
 
 	.btn-danger:hover {
-		background: #fef2f2;
+		background: rgba(158, 58, 58, 0.06);
 	}
 </style>

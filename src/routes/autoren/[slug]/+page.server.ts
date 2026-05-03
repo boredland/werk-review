@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { getAuthor, getWorksByAuthor, getGenre } from '$lib/server/data';
+import { getAuthor, getGenre, getWorksByAuthor } from '$lib/server/data';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ params }) => {
@@ -8,7 +8,7 @@ export const load: PageServerLoad = ({ params }) => {
 
 	const works = getWorksByAuthor(author.id).map((w) => ({
 		...w,
-		genre_name: getGenre(w.genre_id)?.name ?? w.genre_id
+		genre_name: getGenre(w.genre_id)?.name ?? w.genre_id,
 	}));
 
 	return { author, works };

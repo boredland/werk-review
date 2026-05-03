@@ -1,4 +1,4 @@
-import { getWorks, getAuthors, getGenres, getGenre } from '$lib/server/data';
+import { getAuthors, getGenre, getGenres, getWorks } from '$lib/server/data';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {
@@ -10,7 +10,7 @@ export const load: PageServerLoad = () => {
 		...w,
 		author_name: authorMap.get(w.author_id)?.name ?? 'Unbekannt',
 		author_slug: authorMap.get(w.author_id)?.slug ?? '',
-		genre_name: getGenre(w.genre_id)?.name ?? w.genre_id
+		genre_name: getGenre(w.genre_id)?.name ?? w.genre_id,
 	}));
 
 	return { works, genres };

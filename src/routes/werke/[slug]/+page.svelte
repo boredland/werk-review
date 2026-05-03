@@ -1,35 +1,34 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import ReviewList from '$lib/components/reviews/ReviewList.svelte';
-	import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
+import { page } from '$app/state';
+import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
+import ReviewList from '$lib/components/reviews/ReviewList.svelte';
 
-	let { data, form } = $props();
+let { data, form } = $props();
 
-	const user = $derived(page.data.user);
+const user = $derived(page.data.user);
 </script>
 
 <svelte:head>
-	<title>{data.work.title} – Datenbank klassischer Literatur</title>
+	<title>{data.work.title} – werk.review</title>
 </svelte:head>
 
 <article>
 	<header class="work-header">
+		<p class="work-kicker">{data.work.year_display}</p>
 		<h1>{data.work.title}</h1>
 		<div class="meta">
 			{#if data.author}
-				<a href="/autoren/{data.author.slug}">{data.author.name}</a>
+				<a href="/autoren/{data.author.slug}" class="meta-link">{data.author.name}</a>
 			{/if}
 			{#if data.genre}
-				<span class="sep">&middot;</span>
-				<a href="/genre/{data.genre.slug}">{data.genre.name}</a>
+				<span class="meta-sep">·</span>
+				<a href="/genre/{data.genre.slug}" class="meta-link meta-link--genre">{data.genre.name}</a>
 			{/if}
-			<span class="sep">&middot;</span>
-			<span>{data.work.year_display}</span>
 		</div>
 	</header>
 
 	{#if data.work.collection_title}
-		<p class="collection">Sammlung: {data.work.collection_title}</p>
+		<p class="collection">Aus der Sammlung: <em>{data.work.collection_title}</em></p>
 	{/if}
 
 	{#if data.work.plot}
@@ -55,9 +54,9 @@
 	{#if user}
 		<ReviewForm userReview={data.userReview} {form} />
 	{:else}
-		<p class="login-hint">
-			<a href="/login">Einloggen</a> oder <a href="/registrieren">registrieren</a>, um dieses Werk zu bewerten.
-		</p>
+		<div class="login-hint">
+			<p><a href="/login">Anmelden</a> oder <a href="/registrieren">registrieren</a>, um dieses Werk zu bewerten.</p>
+		</div>
 	{/if}
 
 	{#if data.similar.length > 0}
@@ -77,35 +76,85 @@
 
 <style>
 	.work-header {
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.work-kicker {
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--color-gold);
+		margin-bottom: 0.35rem;
+	}
+
+	.work-header h1 {
+		margin-bottom: 0.5rem;
 	}
 
 	.meta {
 		display: flex;
 		align-items: baseline;
 		gap: 0.5rem;
-		font-size: 1rem;
-		color: var(--color-text-muted);
 		flex-wrap: wrap;
 	}
 
-	.sep {
+	.meta-link {
+		font-family: var(--font-display);
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.meta-link:hover {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.meta-link--genre {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		font-weight: 500;
+		color: var(--color-text-muted);
+	}
+
+	.meta-link--genre:hover {
+		color: var(--color-accent);
+	}
+
+	.meta-sep {
 		color: var(--color-border);
 	}
 
 	.collection {
+		font-family: var(--font-ui);
 		color: var(--color-text-muted);
-		font-style: italic;
-		margin-bottom: 1.5rem;
+		font-size: 0.9rem;
+		margin-bottom: 2rem;
+		padding: 0.75rem 1rem;
+		background: var(--color-gold-light);
+		border-left: 3px solid var(--color-gold);
 	}
 
 	.plot {
 		margin-bottom: 2rem;
-		line-height: 1.7;
+		line-height: 1.75;
+		max-width: 720px;
 	}
 
 	.sources {
 		margin-bottom: 2rem;
+	}
+
+	.sources h3 {
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--color-text-muted);
 	}
 
 	.sources ul {
@@ -114,21 +163,29 @@
 	}
 
 	.sources li {
-		padding: 0.25rem 0;
+		padding: 0.3rem 0;
+		font-size: 0.9rem;
 	}
 
 	.login-hint {
-		margin-top: 2rem;
-		padding: 1rem;
-		background: var(--color-surface);
-		border: 1px solid var(--color-border);
-		border-radius: 6px;
+		margin-top: 2.5rem;
+		padding: 1.25rem 1.5rem;
+		background: var(--color-surface-warm);
+		border: 1px solid var(--color-border-light);
 		text-align: center;
+	}
+
+	.login-hint p {
+		margin: 0;
+		font-family: var(--font-ui);
 		color: var(--color-text-muted);
+		font-size: 0.9rem;
 	}
 
 	.similar {
-		margin-top: 2.5rem;
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--color-border);
 	}
 
 	.similar-list {
@@ -140,22 +197,38 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
-		padding: 0.5rem 0;
-		border-bottom: 1px solid var(--color-border);
+		padding: 0.65rem 0;
+		border-bottom: 1px solid var(--color-border-light);
 		color: var(--color-text);
+		text-decoration: none;
+		transition: background 0.15s;
 	}
 
 	.similar-item:hover {
 		text-decoration: none;
-		color: var(--color-accent);
+		background: var(--color-surface-warm);
+		margin: 0 -0.75rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
 	}
 
 	.similar-title {
+		font-family: var(--font-display);
 		font-weight: 600;
 	}
 
 	.similar-year {
-		font-size: 0.85rem;
-		color: var(--color-text-muted);
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		color: var(--color-gold);
+		font-weight: 500;
+	}
+
+	@media (max-width: 640px) {
+		.similar-item:hover {
+			margin: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 </style>

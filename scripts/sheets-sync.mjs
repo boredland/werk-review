@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs';
+import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 
@@ -24,7 +24,10 @@ function slugify(text) {
 
 function parsePipeSeparated(val) {
 	if (!val || val.trim() === '') return [];
-	return val.split('|').map((s) => s.trim()).filter(Boolean);
+	return val
+		.split('|')
+		.map((s) => s.trim())
+		.filter(Boolean);
 }
 
 function parseNumber(val) {
@@ -35,11 +38,14 @@ function parseNumber(val) {
 
 function parseSources(val) {
 	if (!val || val.trim() === '') return [];
-	return val.split('|').map((entry) => {
-		const match = entry.trim().match(/^(.+?)\s*<(.+)>$/);
-		if (!match) return null;
-		return { label: match[1].trim(), url: match[2].trim() };
-	}).filter(Boolean);
+	return val
+		.split('|')
+		.map((entry) => {
+			const match = entry.trim().match(/^(.+?)\s*<(.+)>$/);
+			if (!match) return null;
+			return { label: match[1].trim(), url: match[2].trim() };
+		})
+		.filter(Boolean);
 }
 
 // --- Zod schemas ---
@@ -54,7 +60,7 @@ const AuthorSchema = z.object({
 	gnd_id: z.string().nullable(),
 	bio: z.string(),
 	photo_r2_key: z.string().nullable(),
-	sources: z.array(z.object({ label: z.string(), url: z.string().url() }))
+	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
 });
 
 const WorkSchema = z.object({
@@ -71,20 +77,20 @@ const WorkSchema = z.object({
 	collection_aliases: z.array(z.string()),
 	gnd_id: z.string().nullable(),
 	plot: z.string().nullable(),
-	sources: z.array(z.object({ label: z.string(), url: z.string().url() }))
+	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
 });
 
 const GenreSchema = z.object({
 	id: z.string().min(1),
 	name: z.string().min(1),
-	slug: z.string().min(1)
+	slug: z.string().min(1),
 });
 
 const LinkSchema = z.object({
 	source: z.string().min(1),
 	format: z.string().min(1),
 	url: z.string().url(),
-	label: z.string().min(1)
+	label: z.string().min(1),
 });
 
 // --- Fetch public Google Sheet as CSV ---
@@ -168,7 +174,7 @@ function transformAuthor(row) {
 		gnd_id: row.gnd_id || null,
 		bio: row.bio || '',
 		photo_r2_key: row.photo_r2_key || null,
-		sources: parseSources(row.sources)
+		sources: parseSources(row.sources),
 	};
 }
 
@@ -195,7 +201,7 @@ function transformWork(row) {
 		collection_aliases: parsePipeSeparated(row.collection_aliases),
 		gnd_id: row.gnd_id || null,
 		plot: row.plot || null,
-		sources: parseSources(row.sources)
+		sources: parseSources(row.sources),
 	};
 }
 
@@ -204,7 +210,7 @@ function transformGenre(row) {
 	return {
 		id: row.id || slug,
 		name: row.name,
-		slug
+		slug,
 	};
 }
 
@@ -213,7 +219,7 @@ function transformLink(row) {
 		source: row.source,
 		format: row.format,
 		url: row.url,
-		label: row.label
+		label: row.label,
 	};
 }
 
@@ -227,7 +233,7 @@ function clearDir(dir) {
 }
 
 function writeJson(path, data) {
-	writeFileSync(path, JSON.stringify(data, null, '\t') + '\n');
+	writeFileSync(path, `${JSON.stringify(data, null, '\t')}\n`);
 }
 
 // --- Main ---
@@ -242,7 +248,7 @@ async function main() {
 		fetchSheet('Links').catch(() => {
 			console.log('No "Links" sheet found, skipping.');
 			return [];
-		})
+		}),
 	]);
 
 	console.log(`  Autoren: ${authorRows.length} rows`);

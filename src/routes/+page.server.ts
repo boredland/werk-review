@@ -1,4 +1,4 @@
-import { getAuthors, getWorks, getGenres } from '$lib/server/data';
+import { getAuthors, getGenres, getWorks } from '$lib/server/data';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {

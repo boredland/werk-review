@@ -1,8 +1,8 @@
 <script lang="ts">
-	import '../app.css';
-	import Header from '$lib/components/layout/Header.svelte';
+import '../app.css';
+import Header from '$lib/components/layout/Header.svelte';
 
-	let { children } = $props();
+let { children } = $props();
 </script>
 
 <svelte:head>
@@ -17,25 +17,98 @@
 
 <footer class="footer">
 	<div class="footer-inner">
-		<p>&copy; {new Date().getFullYear()} Datenbank klassischer Literatur</p>
+		<div class="footer-brand">
+			<span class="footer-title">werk<span class="footer-dot">.</span>review</span>
+			<span class="footer-tagline">Datenbank klassischer Literatur</span>
+		</div>
+		<div class="footer-links">
+			<a href="/ueber-uns">Über uns</a>
+			<a href="/autoren">Autoren</a>
+			<a href="/werke">Werke</a>
+			<a href="/genre">Genre</a>
+		</div>
+		<p class="footer-copy">&copy; {new Date().getFullYear()} werk.review</p>
 	</div>
 </footer>
 
 <style>
 	.footer {
+		margin-top: auto;
 		border-top: 1px solid var(--color-border);
-		padding: 1.5rem 1rem;
-		text-align: center;
-		color: var(--color-text-muted);
-		font-size: 0.85rem;
+		background: var(--color-surface);
+		padding: 2.5rem 1.5rem 1.5rem;
 	}
 
 	.footer-inner {
 		max-width: var(--max-width);
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.25rem;
 	}
 
-	.footer p {
+	.footer-brand {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.2rem;
+	}
+
+	.footer-title {
+		font-family: var(--font-display);
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: var(--color-text);
+		letter-spacing: -0.02em;
+	}
+
+	.footer-dot {
+		color: var(--color-accent);
+	}
+
+	.footer-tagline {
+		font-family: var(--font-ui);
+		font-size: 0.8rem;
+		color: var(--color-text-muted);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.footer-links a {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.footer-links a:hover {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.footer-copy {
 		margin: 0;
+		font-family: var(--font-ui);
+		font-size: 0.75rem;
+		color: var(--color-text-muted);
+	}
+
+	@media (max-width: 640px) {
+		.footer {
+			padding: 2rem 1rem 1.25rem;
+		}
+
+		.footer-links {
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 1rem;
+		}
 	}
 </style>

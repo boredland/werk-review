@@ -1,8 +1,8 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
-import { getDb } from '$lib/server/db';
 import { users } from '$lib/db/schema';
-import { verifyPassword, createSession, SESSION_COOKIE } from '$lib/server/auth';
+import { createSession, SESSION_COOKIE, verifyPassword } from '$lib/server/auth';
+import { getDb } from '$lib/server/db';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ locals }) => {
@@ -11,8 +11,7 @@ export const load: PageServerLoad = ({ locals }) => {
 
 export const actions: Actions = {
 	default: async ({ request, platform, cookies }) => {
-		const formError = (msg: string, emailVal = '') =>
-			fail(400, { error: msg, email: emailVal });
+		const formError = (msg: string, emailVal = '') => fail(400, { error: msg, email: emailVal });
 
 		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
 			return formError('Datenbank nicht verfügbar.');
@@ -29,7 +28,7 @@ export const actions: Actions = {
 		const db = getDb(platform.env.DB);
 		const user = await db.select().from(users).where(eq(users.email, email)).get();
 
-		if (!user || !user.passwordHash) {
+		if (!user?.passwordHash) {
 			return formError('E-Mail oder Passwort ist falsch.', email);
 		}
 
@@ -41,7 +40,7 @@ export const actions: Actions = {
 		const token = await createSession(platform.env.SESSION_KV, {
 			id: user.id,
 			username: user.username,
-			email: user.email
+			email: user.email,
 		});
 
 		cookies.set(SESSION_COOKIE, token, {
@@ -49,9 +48,9 @@ export const actions: Actions = {
 			httpOnly: true,
 			secure: true,
 			sameSite: 'lax',
-			maxAge: 60 * 60 * 24 * 30
+			maxAge: 60 * 60 * 24 * 30,
 		});
 
 		redirect(303, '/');
-	}
+	},
 };

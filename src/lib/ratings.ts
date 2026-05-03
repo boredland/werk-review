@@ -2,7 +2,7 @@ export const RATINGS = [
 	{ value: 2, label: 'Meisterwerk', emoji: '🏆', color: 'var(--color-masterpiece)' },
 	{ value: 1, label: 'Empfehlung', emoji: '👍', color: 'var(--color-recommendation)' },
 	{ value: 0, label: 'Kann man lesen', emoji: '📖', color: 'var(--color-readable)' },
-	{ value: -1, label: 'Zeitverschwendung', emoji: '👎', color: 'var(--color-waste)' }
+	{ value: -1, label: 'Zeitverschwendung', emoji: '👎', color: 'var(--color-waste)' },
 ] as const;
 
 export type RatingValue = (typeof RATINGS)[number]['value'];

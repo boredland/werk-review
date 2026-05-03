@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@600');
+    </style>
+  </defs>
+  <text x="0" y="92" font-family="'Cormorant', Georgia, serif" font-size="96" font-weight="600" fill="#2C2418" letter-spacing="-2">werk</text>
+  <circle cx="267" cy="88" r="8" fill="#7B2D3B"/>
+  <text x="284" y="92" font-family="'Cormorant', Georgia, serif" font-size="96" font-weight="400" fill="#8B7E6A" letter-spacing="-2">review</text>
+</svg>

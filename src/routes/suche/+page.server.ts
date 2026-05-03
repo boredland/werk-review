@@ -1,4 +1,4 @@
-import { getAuthors, getWorks, getGenres, getGenre } from '$lib/server/data';
+import { getAuthors, getGenre, getGenres, getWorks } from '$lib/server/data';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ url }) => {
@@ -11,7 +11,7 @@ export const load: PageServerLoad = ({ url }) => {
 		.filter(
 			(a) =>
 				a.name.toLowerCase().includes(lower) ||
-				a.aliases.some((al) => al.toLowerCase().includes(lower))
+				a.aliases.some((al) => al.toLowerCase().includes(lower)),
 		)
 		.map((a) => ({ name: a.name, slug: a.slug }));
 
@@ -23,14 +23,14 @@ export const load: PageServerLoad = ({ url }) => {
 			(w) =>
 				w.title.toLowerCase().includes(lower) ||
 				w.aliases.some((al) => al.toLowerCase().includes(lower)) ||
-				(w.collection_title?.toLowerCase().includes(lower) ?? false)
+				(w.collection_title?.toLowerCase().includes(lower) ?? false),
 		)
 		.map((w) => ({
 			title: w.title,
 			slug: w.slug,
 			year_display: w.year_display,
 			author_name: authorMap.get(w.author_id)?.name ?? 'Unbekannt',
-			genre_name: getGenre(w.genre_id)?.name ?? w.genre_id
+			genre_name: getGenre(w.genre_id)?.name ?? w.genre_id,
 		}));
 
 	const genres = getGenres()

@@ -1,94 +1,110 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
+import { enhance } from '$app/forms';
 
-	let { form } = $props();
+let { form } = $props();
 </script>
 
 <svelte:head>
-	<title>Registrieren – Datenbank klassischer Literatur</title>
+	<title>Registrieren – werk.review</title>
 </svelte:head>
 
 <div class="auth-page">
-	<h1>Registrieren</h1>
+	<div class="auth-card">
+		<h1>Registrieren</h1>
 
-	{#if form?.error}
-		<div class="error-banner" role="alert">{form.error}</div>
-	{/if}
+		{#if form?.error}
+			<div class="error-banner" role="alert">{form.error}</div>
+		{/if}
 
-	<form method="POST" use:enhance>
-		<div class="field">
-			<label for="username">Benutzername</label>
-			<input
-				id="username"
-				name="username"
-				type="text"
-				required
-				minlength="3"
-				maxlength="30"
-				pattern="[a-zA-Z0-9_-]+"
-				value={form?.username ?? ''}
-				autocomplete="username"
-			/>
-		</div>
+		<form method="POST" use:enhance>
+			<div class="field">
+				<label for="username">Benutzername</label>
+				<input
+					id="username"
+					name="username"
+					type="text"
+					required
+					minlength="3"
+					maxlength="30"
+					pattern="[a-zA-Z0-9_-]+"
+					value={form?.username ?? ''}
+					autocomplete="username"
+				/>
+			</div>
 
-		<div class="field">
-			<label for="email">E-Mail</label>
-			<input
-				id="email"
-				name="email"
-				type="email"
-				required
-				value={form?.email ?? ''}
-				autocomplete="email"
-			/>
-		</div>
+			<div class="field">
+				<label for="email">E-Mail</label>
+				<input
+					id="email"
+					name="email"
+					type="email"
+					required
+					value={form?.email ?? ''}
+					autocomplete="email"
+				/>
+			</div>
 
-		<div class="field">
-			<label for="password">Passwort</label>
-			<input
-				id="password"
-				name="password"
-				type="password"
-				required
-				minlength="8"
-				autocomplete="new-password"
-			/>
-		</div>
+			<div class="field">
+				<label for="password">Passwort</label>
+				<input
+					id="password"
+					name="password"
+					type="password"
+					required
+					minlength="8"
+					autocomplete="new-password"
+				/>
+			</div>
 
-		<div class="field">
-			<label for="password_confirm">Passwort bestätigen</label>
-			<input
-				id="password_confirm"
-				name="password_confirm"
-				type="password"
-				required
-				minlength="8"
-				autocomplete="new-password"
-			/>
-		</div>
+			<div class="field">
+				<label for="password_confirm">Passwort bestätigen</label>
+				<input
+					id="password_confirm"
+					name="password_confirm"
+					type="password"
+					required
+					minlength="8"
+					autocomplete="new-password"
+				/>
+			</div>
 
-		<button type="submit" class="btn-primary">Registrieren</button>
-	</form>
+			<button type="submit" class="btn-primary">Registrieren</button>
+		</form>
 
-	<p class="alt-link">
-		Bereits registriert? <a href="/login">Zum Login</a>
-	</p>
+		<p class="alt-link">
+			Bereits registriert? <a href="/login">Zum Login</a>
+		</p>
+	</div>
 </div>
 
 <style>
 	.auth-page {
-		max-width: 400px;
-		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		padding: 1rem 0;
+	}
+
+	.auth-card {
+		width: 100%;
+		max-width: 420px;
+		background: var(--color-surface);
+		border: 1px solid var(--color-border-light);
+		padding: 2.5rem;
+	}
+
+	.auth-card h1 {
+		text-align: center;
+		margin-bottom: 1.75rem;
 	}
 
 	.error-banner {
-		background: #fef2f2;
-		border: 1px solid #fecaca;
-		color: #b91c1c;
+		background: rgba(158, 58, 58, 0.08);
+		border: 1px solid rgba(158, 58, 58, 0.2);
+		color: var(--color-waste);
 		padding: 0.75rem 1rem;
-		border-radius: 6px;
 		margin-bottom: 1.5rem;
-		font-size: 0.9rem;
+		font-family: var(--font-ui);
+		font-size: 0.88rem;
 	}
 
 	.field {
@@ -97,34 +113,43 @@
 
 	.field label {
 		display: block;
-		margin-bottom: 0.35rem;
-		font-weight: 600;
-		font-size: 0.9rem;
+		margin-bottom: 0.4rem;
+		font-family: var(--font-ui);
+		font-weight: 500;
+		font-size: 0.85rem;
+		letter-spacing: 0.02em;
+		color: var(--color-text);
 	}
 
 	.field input {
 		width: 100%;
-		padding: 0.5rem 0.75rem;
+		font-family: var(--font-ui);
+		padding: 0.6rem 0.85rem;
 		border: 1px solid var(--color-border);
-		border-radius: 4px;
-		font-size: 0.95rem;
+		background: var(--color-bg);
+		font-size: 0.92rem;
+		color: var(--color-text);
+		transition: border-color 0.2s, box-shadow 0.2s;
 	}
 
 	.field input:focus {
-		outline: 2px solid var(--color-accent);
-		outline-offset: 1px;
+		outline: none;
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 2px var(--color-accent-light);
 	}
 
 	.btn-primary {
 		width: 100%;
-		padding: 0.6rem;
+		font-family: var(--font-ui);
+		padding: 0.7rem;
 		background: var(--color-accent);
 		color: #fff;
 		border: none;
-		border-radius: 4px;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		font-weight: 600;
+		letter-spacing: 0.03em;
 		cursor: pointer;
+		transition: background 0.2s;
 	}
 
 	.btn-primary:hover {
@@ -134,7 +159,8 @@
 	.alt-link {
 		text-align: center;
 		margin-top: 1.5rem;
-		font-size: 0.9rem;
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
 		color: var(--color-text-muted);
 	}
 </style>

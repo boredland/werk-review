@@ -4,7 +4,7 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = () => {
 	const genres = getGenres().map((g) => ({
 		...g,
-		workCount: getWorksByGenre(g.id).length
+		workCount: getWorksByGenre(g.id).length,
 	}));
 
 	return { genres };

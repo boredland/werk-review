@@ -1,10 +1,10 @@
 import { error, fail } from '@sveltejs/kit';
-import { eq, and, desc } from 'drizzle-orm';
-import { getWork, getAuthor, getGenre, getSimilarWorks, getWorks } from '$lib/server/data';
-import { getDb } from '$lib/server/db';
+import { and, desc, eq } from 'drizzle-orm';
 import { reviews, users } from '$lib/db/schema';
-import { getRatingByLabel, RATINGS } from '$lib/ratings';
-import type { PageServerLoad, Actions } from './$types';
+import { getRatingByLabel } from '$lib/ratings';
+import { getAuthor, getGenre, getSimilarWorks, getWork, getWorks } from '$lib/server/data';
+import { getDb } from '$lib/server/db';
+import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	const work = getWork(params.slug);
@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		.map((w) => ({
 			slug: w.slug,
 			title: w.title,
-			year_display: w.year_display
+			year_display: w.year_display,
 		}));
 
 	let workReviews: {
@@ -35,7 +35,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		createdAt: string;
 		username: string;
 	}[] = [];
-	let userReview: typeof workReviews[number] | null = null;
+	let userReview: (typeof workReviews)[number] | null = null;
 	let score = 0;
 
 	if (platform?.env.DB) {
@@ -51,7 +51,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 					version: reviews.version,
 					createdAt: reviews.createdAt,
 					username: users.username,
-					userId: reviews.userId
+					userId: reviews.userId,
 				})
 				.from(reviews)
 				.innerJoin(users, eq(reviews.userId, users.id))
@@ -66,11 +66,11 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 				body: r.body,
 				version: r.version,
 				createdAt: r.createdAt,
-				username: r.username
+				username: r.username,
 			}));
 
 			if (locals.user) {
-				const mine = rows.find((r) => r.userId === locals.user!.id);
+				const mine = rows.find((r) => r.userId === locals.user?.id);
 				if (mine) {
 					userReview = {
 						id: mine.id,
@@ -80,7 +80,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 						body: mine.body,
 						version: mine.version,
 						createdAt: mine.createdAt,
-						username: mine.username
+						username: mine.username,
 					};
 				}
 			}
@@ -98,7 +98,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		similar,
 		reviews: workReviews,
 		userReview,
-		score
+		score,
 	};
 };
 
@@ -142,7 +142,7 @@ export const actions: Actions = {
 					ratingLabel: ratingConfig.label,
 					title,
 					body,
-					version
+					version,
 				})
 				.where(eq(reviews.id, existing.id));
 		} else {
@@ -154,7 +154,7 @@ export const actions: Actions = {
 				ratingLabel: ratingConfig.label,
 				title,
 				body,
-				version
+				version,
 			});
 		}
 
@@ -175,5 +175,5 @@ export const actions: Actions = {
 			.where(and(eq(reviews.userId, locals.user.id), eq(reviews.workId, work.id)));
 
 		return { reviewDeleted: true };
-	}
+	},
 };

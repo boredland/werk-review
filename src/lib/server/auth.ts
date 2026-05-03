@@ -28,14 +28,14 @@ async function deriveKey(password: string, salt: Uint8Array): Promise<CryptoKey>
 		new TextEncoder().encode(password),
 		'PBKDF2',
 		false,
-		['deriveBits', 'deriveKey']
+		['deriveBits', 'deriveKey'],
 	);
 	return crypto.subtle.deriveKey(
 		{ name: 'PBKDF2', salt: salt as BufferSource, iterations: PBKDF2_ITERATIONS, hash: 'SHA-256' },
 		keyMaterial,
 		{ name: 'AES-GCM', length: KEY_LENGTH * 8 },
 		true,
-		['encrypt']
+		['encrypt'],
 	);
 }
 
@@ -57,19 +57,13 @@ export interface SessionUser {
 	email: string;
 }
 
-export async function createSession(
-	kv: KVNamespace,
-	user: SessionUser
-): Promise<string> {
+export async function createSession(kv: KVNamespace, user: SessionUser): Promise<string> {
 	const token = crypto.randomUUID();
 	await kv.put(`session:${token}`, JSON.stringify(user), { expirationTtl: SESSION_TTL });
 	return token;
 }
 
-export async function getSession(
-	kv: KVNamespace,
-	token: string
-): Promise<SessionUser | null> {
+export async function getSession(kv: KVNamespace, token: string): Promise<SessionUser | null> {
 	const data = await kv.get(`session:${token}`);
 	if (!data) return null;
 	return JSON.parse(data) as SessionUser;

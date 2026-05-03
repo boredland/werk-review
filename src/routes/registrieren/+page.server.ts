@@ -1,8 +1,8 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
-import { getDb } from '$lib/server/db';
 import { users } from '$lib/db/schema';
-import { hashPassword, createSession, SESSION_COOKIE } from '$lib/server/auth';
+import { createSession, hashPassword, SESSION_COOKIE } from '$lib/server/auth';
+import { getDb } from '$lib/server/db';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ locals }) => {
@@ -33,7 +33,9 @@ export const actions: Actions = {
 		}
 
 		if (!/^[a-zA-Z0-9_-]+$/.test(username)) {
-			return formError('Benutzername darf nur Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten.');
+			return formError(
+				'Benutzername darf nur Buchstaben, Zahlen, Bindestriche und Unterstriche enthalten.',
+			);
 		}
 
 		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -50,7 +52,11 @@ export const actions: Actions = {
 
 		const db = getDb(platform.env.DB);
 
-		const existingUsername = await db.select().from(users).where(eq(users.username, username)).get();
+		const existingUsername = await db
+			.select()
+			.from(users)
+			.where(eq(users.username, username))
+			.get();
 		if (existingUsername) {
 			return formError('Dieser Benutzername ist bereits vergeben.');
 		}
@@ -71,9 +77,9 @@ export const actions: Actions = {
 			httpOnly: true,
 			secure: true,
 			sameSite: 'lax',
-			maxAge: 60 * 60 * 24 * 30
+			maxAge: 60 * 60 * 24 * 30,
 		});
 
 		redirect(303, '/');
-	}
+	},
 };

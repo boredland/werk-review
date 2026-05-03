@@ -1,8 +1,17 @@
-import type { Author, Work, Genre, SimilarWork } from '$lib/types';
+import type { Author, Genre, SimilarWork, Work } from '$lib/types';
 
-const authorModules = import.meta.glob<Author>('/data/authors/*.json', { eager: true, import: 'default' });
-const workModules = import.meta.glob<Work>('/data/works/*.json', { eager: true, import: 'default' });
-const genresModule = import.meta.glob<Genre[]>('/data/genres.json', { eager: true, import: 'default' });
+const authorModules = import.meta.glob<Author>('/data/authors/*.json', {
+	eager: true,
+	import: 'default',
+});
+const workModules = import.meta.glob<Work>('/data/works/*.json', {
+	eager: true,
+	import: 'default',
+});
+const genresModule = import.meta.glob<Genre[]>('/data/genres.json', {
+	eager: true,
+	import: 'default',
+});
 
 function loadAll<T>(modules: Record<string, T>): T[] {
 	return Object.values(modules);

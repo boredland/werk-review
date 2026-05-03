@@ -1,13 +1,15 @@
 <script lang="ts">
-	let { data } = $props();
+let { data } = $props();
 </script>
 
 <svelte:head>
-	<title>{data.genre.name} – Datenbank klassischer Literatur</title>
+	<title>{data.genre.name} – werk.review</title>
 </svelte:head>
 
-<h1>{data.genre.name}</h1>
-<p class="subtitle">{data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'}</p>
+<div class="page-header">
+	<h1>{data.genre.name}</h1>
+	<p class="page-subtitle">{data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'}</p>
+</div>
 
 <div class="work-list">
 	{#each data.works as work}
@@ -22,10 +24,15 @@
 </div>
 
 <style>
-	.subtitle {
-		color: var(--color-text-muted);
-		margin-top: -0.5rem;
+	.page-header {
 		margin-bottom: 1.5rem;
+	}
+
+	.page-subtitle {
+		font-family: var(--font-ui);
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+		margin-top: -0.5rem;
 	}
 
 	.work-list {
@@ -36,15 +43,20 @@
 	.work-row {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
-		padding: 0.75rem 0;
-		border-bottom: 1px solid var(--color-border);
+		align-items: center;
+		padding: 0.85rem 0;
+		border-bottom: 1px solid var(--color-border-light);
 		color: var(--color-text);
+		text-decoration: none;
+		transition: background 0.15s;
 	}
 
 	.work-row:hover {
 		text-decoration: none;
-		color: var(--color-accent);
+		background: var(--color-surface-warm);
+		margin: 0 -0.75rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
 	}
 
 	.work-info {
@@ -54,17 +66,30 @@
 	}
 
 	.work-title {
+		font-family: var(--font-display);
 		font-weight: 600;
+		font-size: 1.05rem;
 	}
 
 	.work-author {
-		font-size: 0.85rem;
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
 		color: var(--color-text-muted);
 	}
 
 	.work-year {
-		font-size: 0.85rem;
-		color: var(--color-text-muted);
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		color: var(--color-gold);
 		white-space: nowrap;
+		font-weight: 500;
+	}
+
+	@media (max-width: 640px) {
+		.work-row:hover {
+			margin: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 </style>

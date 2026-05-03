@@ -1,17 +1,20 @@
 <script lang="ts">
-	let { data } = $props();
+let { data } = $props();
 </script>
 
 <svelte:head>
-	<title>{data.author.name} – Datenbank klassischer Literatur</title>
+	<title>{data.author.name} – werk.review</title>
 </svelte:head>
 
 <article>
 	<header class="author-header">
-		<h1>{data.author.name}</h1>
-		{#if data.author.born || data.author.died}
-			<p class="years">{data.author.born ?? '?'}–{data.author.died ?? '?'}</p>
-		{/if}
+		<div class="author-initial-large">{data.author.name.charAt(0)}</div>
+		<div>
+			<h1>{data.author.name}</h1>
+			{#if data.author.born || data.author.died}
+				<p class="years">{data.author.born ?? '?'}–{data.author.died ?? '?'}</p>
+			{/if}
+		</div>
 	</header>
 
 	{#if data.author.bio}
@@ -32,11 +35,11 @@
 	{/if}
 
 	<section class="works-section">
-		<h2>Werke ({data.works.length})</h2>
+		<h2>Werke <span class="works-count">({data.works.length})</span></h2>
 		<div class="works-list">
 			{#each data.works as work}
 				<a href="/werke/{work.slug}" class="work-row">
-					<div>
+					<div class="work-main">
 						<span class="work-title">{work.title}</span>
 						<span class="work-genre">{work.genre_name}</span>
 					</div>
@@ -49,22 +52,61 @@
 
 <style>
 	.author-header {
-		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		margin-bottom: 2rem;
+	}
+
+	.author-initial-large {
+		font-family: var(--font-display);
+		font-size: 2.5rem;
+		font-weight: 600;
+		color: var(--color-accent);
+		width: 4.5rem;
+		height: 4.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-accent-light);
+		flex-shrink: 0;
+	}
+
+	.author-header h1 {
+		margin-bottom: 0;
 	}
 
 	.years {
+		font-family: var(--font-ui);
 		color: var(--color-text-muted);
-		font-size: 1.1rem;
-		margin-top: 0.25rem;
+		font-size: 1rem;
+		margin-top: 0.15rem;
 	}
 
 	.bio {
 		margin-bottom: 2rem;
-		line-height: 1.7;
+		line-height: 1.75;
+		max-width: 720px;
+		padding: 1.5rem;
+		background: var(--color-surface);
+		border-left: 3px solid var(--color-gold);
+	}
+
+	.bio p {
+		margin: 0;
 	}
 
 	.sources {
 		margin-bottom: 2rem;
+	}
+
+	.sources h3 {
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--color-text-muted);
 	}
 
 	.sources ul {
@@ -73,11 +115,19 @@
 	}
 
 	.sources li {
-		padding: 0.25rem 0;
+		padding: 0.3rem 0;
+		font-size: 0.9rem;
 	}
 
 	.works-section {
-		margin-top: 2rem;
+		margin-top: 2.5rem;
+	}
+
+	.works-count {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		font-weight: 400;
+		color: var(--color-text-muted);
 	}
 
 	.works-list {
@@ -88,30 +138,69 @@
 	.work-row {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
-		padding: 0.75rem 0;
-		border-bottom: 1px solid var(--color-border);
+		align-items: center;
+		padding: 0.85rem 0;
+		border-bottom: 1px solid var(--color-border-light);
 		color: var(--color-text);
+		text-decoration: none;
+		transition: background 0.15s;
 	}
 
 	.work-row:hover {
 		text-decoration: none;
-		color: var(--color-accent);
+		background: var(--color-surface-warm);
+		margin: 0 -0.75rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+
+	.work-main {
+		display: flex;
+		align-items: baseline;
+		gap: 0.75rem;
 	}
 
 	.work-title {
+		font-family: var(--font-display);
 		font-weight: 600;
+		font-size: 1.05rem;
 	}
 
 	.work-genre {
-		margin-left: 0.75rem;
-		font-size: 0.85rem;
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
 		color: var(--color-text-muted);
+		letter-spacing: 0.02em;
 	}
 
 	.work-year {
-		font-size: 0.85rem;
-		color: var(--color-text-muted);
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		color: var(--color-gold);
 		white-space: nowrap;
+		font-weight: 500;
+	}
+
+	@media (max-width: 640px) {
+		.author-header {
+			gap: 1rem;
+		}
+
+		.author-initial-large {
+			font-size: 1.8rem;
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+
+		.work-main {
+			flex-direction: column;
+			gap: 0.1rem;
+		}
+
+		.work-row:hover {
+			margin: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 </style>
