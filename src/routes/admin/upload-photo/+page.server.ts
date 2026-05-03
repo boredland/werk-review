@@ -1,5 +1,7 @@
 import { fail } from '@sveltejs/kit';
+import { authorPhotos } from '$lib/db/schema';
 import { getAuthor, getAuthors } from '$lib/server/data';
+import { getDb } from '$lib/server/db';
 import type { Actions, PageServerLoad } from './$types';
 
 const MAX_SIZE = 2 * 1024 * 1024;
@@ -10,13 +12,17 @@ export const load: PageServerLoad = () => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, platform }) => {
+	default: async ({ request, platform, locals }) => {
 		const bucket = platform?.env.IMAGES;
-		if (!bucket) return fail(503, { error: 'Bildspeicher nicht verfügbar' });
+		const d1 = platform?.env.DB;
+		if (!bucket || !d1) return fail(503, { error: 'Speicher nicht verfügbar' });
 
 		const formData = await request.formData();
 		const authorId = formData.get('author_id') as string;
 		const file = formData.get('photo') as File;
+		const description = (formData.get('description') as string)?.trim() || null;
+		const sourceLabel = (formData.get('source_label') as string)?.trim() || null;
+		const sourceUrl = (formData.get('source_url') as string)?.trim() || null;
 
 		if (!authorId || !file || file.size === 0) {
 			return fail(400, { error: 'Autor und Bild sind erforderlich' });
@@ -39,6 +45,28 @@ export const actions: Actions = {
 		await bucket.put(key, await file.arrayBuffer(), {
 			httpMetadata: { contentType: file.type },
 		});
+
+		const db = getDb(d1);
+		await db
+			.insert(authorPhotos)
+			.values({
+				authorId: author.id,
+				r2Key: key,
+				description,
+				sourceLabel,
+				sourceUrl,
+				uploadedBy: locals.user?.id ?? null,
+			})
+			.onConflictDoUpdate({
+				target: authorPhotos.authorId,
+				set: {
+					r2Key: key,
+					description,
+					sourceLabel,
+					sourceUrl,
+					uploadedBy: locals.user?.id ?? null,
+				},
+			});
 
 		return { success: true, key, authorName: author.name };
 	},

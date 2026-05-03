@@ -25,6 +25,16 @@ export const reviews = sqliteTable('reviews', {
 	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });
 
+export const authorPhotos = sqliteTable('author_photos', {
+	authorId: text('author_id').primaryKey(),
+	r2Key: text('r2_key').notNull(),
+	description: text('description'),
+	sourceLabel: text('source_label'),
+	sourceUrl: text('source_url'),
+	uploadedBy: text('uploaded_by').references(() => users.id),
+	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
+});
+
 export const authorSuggestions = sqliteTable('author_suggestions', {
 	id: text('id').primaryKey(),
 	userId: text('user_id')

@@ -38,6 +38,21 @@ let { data, form } = $props();
 			<input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required />
 		</div>
 
+		<div class="field">
+			<label for="description">Bildbeschreibung (optional)</label>
+			<input id="description" name="description" type="text" maxlength="300" placeholder="z.B. Porträt um 1870" />
+		</div>
+
+		<div class="field">
+			<label for="source_label">Bildquelle (optional)</label>
+			<input id="source_label" name="source_label" type="text" maxlength="200" placeholder="z.B. Wikimedia Commons" />
+		</div>
+
+		<div class="field">
+			<label for="source_url">Quell-URL (optional)</label>
+			<input id="source_url" name="source_url" type="url" maxlength="500" placeholder="https://…" />
+		</div>
+
 		<button type="submit" class="btn-primary">Hochladen</button>
 	</form>
 </div>
@@ -86,7 +101,9 @@ let { data, form } = $props();
 	}
 
 	.field select,
-	.field input[type='file'] {
+	.field input[type='file'],
+	.field input[type='text'],
+	.field input[type='url'] {
 		width: 100%;
 		font-family: var(--font-ui);
 		padding: 0.6rem 0.85rem;

@@ -1,5 +1,8 @@
 <script lang="ts">
 let { data } = $props();
+
+const photoKey = $derived(data.photoMeta?.r2Key ?? data.author.photo_r2_key);
+const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
 </script>
 
 <svelte:head>
@@ -8,12 +11,28 @@ let { data } = $props();
 
 <article>
 	<header class="author-header">
-		{#if data.author.photo_r2_key}
-			<img
-				class="author-photo"
-				src="/images/{data.author.photo_r2_key}"
-				alt={data.author.name}
-			/>
+		{#if photoKey}
+			<figure class="author-photo-figure">
+				<img
+					class="author-photo"
+					src="/images/{photoKey}"
+					alt={photoAlt}
+				/>
+				{#if data.photoMeta?.description || data.photoMeta?.sourceLabel}
+					<figcaption class="photo-caption">
+						{#if data.photoMeta.description}
+							<span class="photo-desc">{data.photoMeta.description}</span>
+						{/if}
+						{#if data.photoMeta.sourceLabel}
+							{#if data.photoMeta.sourceUrl}
+								<a href={data.photoMeta.sourceUrl} target="_blank" rel="noopener" class="photo-source">{data.photoMeta.sourceLabel}</a>
+							{:else}
+								<span class="photo-source">{data.photoMeta.sourceLabel}</span>
+							{/if}
+						{/if}
+					</figcaption>
+				{/if}
+			</figure>
 		{:else}
 			<div class="author-initial-large">{data.author.name.charAt(0)}</div>
 		{/if}
@@ -66,12 +85,44 @@ let { data } = $props();
 		margin-bottom: 2rem;
 	}
 
+	.author-photo-figure {
+		margin: 0;
+		flex-shrink: 0;
+	}
+
 	.author-photo {
 		width: 5.5rem;
 		height: 5.5rem;
 		object-fit: cover;
-		flex-shrink: 0;
+		display: block;
 		filter: grayscale(0.3) contrast(1.05);
+	}
+
+	.photo-caption {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+		margin-top: 0.3rem;
+		max-width: 5.5rem;
+	}
+
+	.photo-desc {
+		font-family: var(--font-ui);
+		font-size: 0.68rem;
+		color: var(--color-text-muted);
+		line-height: 1.3;
+	}
+
+	.photo-source {
+		font-family: var(--font-ui);
+		font-size: 0.62rem;
+		color: var(--color-text-muted);
+		opacity: 0.7;
+	}
+
+	a.photo-source:hover {
+		color: var(--color-accent);
+		opacity: 1;
 	}
 
 	.author-initial-large {
