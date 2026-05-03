@@ -8,7 +8,15 @@ let { data } = $props();
 
 <article>
 	<header class="author-header">
-		<div class="author-initial-large">{data.author.name.charAt(0)}</div>
+		{#if data.author.photo_r2_key}
+			<img
+				class="author-photo"
+				src="/images/{data.author.photo_r2_key}"
+				alt={data.author.name}
+			/>
+		{:else}
+			<div class="author-initial-large">{data.author.name.charAt(0)}</div>
+		{/if}
 		<div>
 			<h1>{data.author.name}</h1>
 			{#if data.author.born || data.author.died}
@@ -56,6 +64,14 @@ let { data } = $props();
 		align-items: center;
 		gap: 1.25rem;
 		margin-bottom: 2rem;
+	}
+
+	.author-photo {
+		width: 5.5rem;
+		height: 5.5rem;
+		object-fit: cover;
+		flex-shrink: 0;
+		filter: grayscale(0.3) contrast(1.05);
 	}
 
 	.author-initial-large {

@@ -36,7 +36,11 @@ const filtered = $derived(
 <div class="author-list">
 	{#each filtered as author}
 		<a href="/autoren/{author.slug}" class="author-row">
-			<span class="author-initial">{author.name.charAt(0)}</span>
+			{#if author.photo_r2_key}
+				<img class="author-thumb" src="/images/{author.photo_r2_key}" alt="" />
+			{:else}
+				<span class="author-initial">{author.name.charAt(0)}</span>
+			{/if}
 			<div class="author-main">
 				<span class="author-name">{author.name}</span>
 				{#if author.born || author.died}
@@ -122,6 +126,14 @@ const filtered = $derived(
 		margin: 0 -0.75rem;
 		padding-left: 0.75rem;
 		padding-right: 0.75rem;
+	}
+
+	.author-thumb {
+		width: 2rem;
+		height: 2rem;
+		object-fit: cover;
+		flex-shrink: 0;
+		filter: grayscale(0.3);
 	}
 
 	.author-initial {

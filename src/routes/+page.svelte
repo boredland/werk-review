@@ -35,7 +35,11 @@ let { data } = $props();
 	<div class="author-grid">
 		{#each data.authors.slice(0, 6) as author, i}
 			<a href="/autoren/{author.slug}" class="author-card" style="animation: fadeUp 0.4s ease both; animation-delay: {0.15 + i * 0.06}s">
-				<span class="author-initial">{author.name.charAt(0)}</span>
+				{#if author.photo_r2_key}
+					<img class="author-thumb" src="/images/{author.photo_r2_key}" alt="" />
+				{:else}
+					<span class="author-initial">{author.name.charAt(0)}</span>
+				{/if}
 				<div class="author-info">
 					<span class="author-name">{author.name}</span>
 					{#if author.born || author.died}
@@ -191,6 +195,14 @@ let { data } = $props();
 		border-color: var(--color-accent);
 		box-shadow: 0 2px 12px rgba(123, 45, 59, 0.08);
 		text-decoration: none;
+	}
+
+	.author-thumb {
+		width: 2.5rem;
+		height: 2.5rem;
+		object-fit: cover;
+		flex-shrink: 0;
+		filter: grayscale(0.3);
 	}
 
 	.author-initial {
