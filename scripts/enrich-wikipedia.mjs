@@ -24,6 +24,23 @@ for (const file of readdirSync(AUTHORS_DIR)) {
 	authors.set(author.id, author);
 }
 
+function buildSearchTerms(title, authorName) {
+	const terms = [
+		`${title} (${authorName})`,
+		`${title} (Novelle)`,
+		`${title} (Roman)`,
+		`${title} (Erzählung)`,
+		title,
+	];
+
+	const baseTitle = title.replace(/\.\s*(Erste|Zweite|Dritte)\s*Fassung.*$/i, '').trim();
+	if (baseTitle !== title) {
+		terms.push(`${baseTitle} (${authorName})`, `${baseTitle} (Roman)`, baseTitle);
+	}
+
+	return terms;
+}
+
 async function fetchWikipediaSummary(title) {
 	const encoded = encodeURIComponent(title.replace(/ /g, '_'));
 	const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encoded}`;
@@ -45,6 +62,7 @@ async function fetchWikipediaSummary(title) {
 async function main() {
 	let updatedPlots = 0;
 	let updatedSources = 0;
+	const now = new Date().toISOString().split('T')[0];
 
 	const workFiles = readdirSync(WORKS_DIR).filter((f) => f.endsWith('.json'));
 
@@ -55,14 +73,7 @@ async function main() {
 
 		const author = authors.get(work.author_id);
 		const authorName = author?.name || '';
-
-		const searchTerms = [
-			`${work.title} (${authorName})`,
-			`${work.title} (Novelle)`,
-			`${work.title} (Roman)`,
-			`${work.title} (Erzählung)`,
-			work.title,
-		];
+		const searchTerms = buildSearchTerms(work.title, authorName);
 
 		if (!work.plot) {
 			let result = null;
@@ -74,42 +85,40 @@ async function main() {
 
 			if (result?.extract && result.extract.length > 50) {
 				work.plot = result.extract;
+				work.plot_source = {
+					label: 'Wikipedia',
+					url: result.url,
+				};
+				work.plot_fetched_at = now;
 				changed = true;
+				updatedPlots++;
 				console.log(`  + plot: "${work.title}"`);
-
-				if (result.url) {
-					const hasWiki = work.sources.some((s) => s.url.includes('wikipedia'));
-					if (!hasWiki) {
-						work.sources.push({ label: 'Wikipedia', url: result.url });
-						updatedSources++;
-					}
-				}
 			}
-		} else {
-			const hasWiki = work.sources.some((s) => s.url.includes('wikipedia'));
-			if (!hasWiki) {
-				for (const term of searchTerms) {
-					const result = await fetchWikipediaSummary(term);
-					if (result?.url) {
-						work.sources.push({ label: 'Wikipedia', url: result.url });
-						changed = true;
-						updatedSources++;
-						break;
-					}
-					await sleep(200);
+		}
+
+		const hasWiki = work.sources?.some((s) => s.url?.includes('wikipedia'));
+		if (!hasWiki) {
+			for (const term of searchTerms) {
+				const result = await fetchWikipediaSummary(term);
+				if (result?.url) {
+					work.sources = work.sources || [];
+					work.sources.push({ label: 'Wikipedia', url: result.url });
+					changed = true;
+					updatedSources++;
+					break;
 				}
+				await sleep(200);
 			}
 		}
 
 		if (changed) {
 			writeJson(path, work);
-			updatedPlots++;
 		}
 
 		await sleep(300);
 	}
 
-	console.log(`\nDone: ${updatedPlots} works updated, ${updatedSources} Wikipedia sources added`);
+	console.log(`\nDone: ${updatedPlots} plots added, ${updatedSources} Wikipedia sources added`);
 }
 
 main().catch((err) => {

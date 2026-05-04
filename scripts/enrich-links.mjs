@@ -65,37 +65,37 @@ async function searchLibriVox(title, authorName) {
 	}
 }
 
-async function searchGutenberg(title, authorName) {
-	const lastName = authorName.split(' ').pop();
-	const params = new URLSearchParams({
-		search: `${title} ${lastName}`,
-		languages: 'de',
-	});
-	const url = `https://gutendex.com/books/?${params}`;
+async function searchProjektGutenberg(title, authorName) {
+	const params = new URLSearchParams({ s: `${title} ${authorName}` });
+	const url = `https://projekt-gutenberg.org/?${params}`;
 
 	try {
 		const res = await fetch(url);
 		if (!res.ok) return [];
-		const data = await res.json();
-		if (!data.results) return [];
+		const html = await res.text();
 
-		return data.results
-			.filter((b) => {
-				const matchesAuthor = b.authors.some((a) =>
-					a.name.toLowerCase().includes(lastName.toLowerCase()),
-				);
-				const t = title.toLowerCase();
-				const bt = b.title.toLowerCase();
-				const matchesTitle = bt.includes(t) || t.includes(bt);
-				return matchesAuthor && matchesTitle;
-			})
-			.slice(0, 1)
-			.map((b) => ({
-				source: 'Project Gutenberg',
+		const linkPattern = /href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
+		const matches = [...html.matchAll(linkPattern)].map((m) => m[1]);
+		if (matches.length === 0) return [];
+
+		const t = title.toLowerCase();
+		const lastName = authorName.split(' ').pop().toLowerCase();
+		const match = matches.find(
+			(m) =>
+				m.toLowerCase().includes(lastName) &&
+				m.toLowerCase().includes(t.split(' ')[0].toLowerCase()),
+		);
+
+		if (!match) return [];
+
+		return [
+			{
+				source: 'Projekt Gutenberg-DE',
 				format: 'Volltext',
-				url: `https://www.gutenberg.org/ebooks/${b.id}`,
-				label: b.title,
-			}));
+				url: match,
+				label: title,
+			},
+		];
 	} catch {
 		return [];
 	}
@@ -116,7 +116,9 @@ async function main() {
 			continue;
 		}
 
-		const newLinks = [...existing];
+		const newLinks = existing.filter(
+			(l) => l.source !== 'Project Gutenberg' && l.source !== 'Gutenberg',
+		);
 
 		if (!existingSources.has('LibriVox')) {
 			const lv = await searchLibriVox(work.title, author.name);
@@ -127,16 +129,16 @@ async function main() {
 			await sleep(500);
 		}
 
-		if (!existingSources.has('Project Gutenberg')) {
-			const pg = await searchGutenberg(work.title, author.name);
+		if (!existingSources.has('Projekt Gutenberg-DE')) {
+			const pg = await searchProjektGutenberg(work.title, author.name);
 			if (pg.length > 0) {
 				newLinks.push(pg[0]);
-				console.log(`  + Gutenberg: "${work.title}"`);
+				console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
 			}
-			await sleep(300);
+			await sleep(500);
 		}
 
-		if (newLinks.length > existing.length) {
+		if (newLinks.length !== existing.length || newLinks.length > existing.length) {
 			writeJson(linksPath, newLinks);
 			updated++;
 		} else {

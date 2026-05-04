@@ -61,6 +61,14 @@ $effect(() => {
 		<section class="plot">
 			<h2>Inhalt</h2>
 			<p>{data.work.plot}</p>
+			{#if data.work.plot_source}
+				<p class="plot-attribution">
+					Quelle: <a href={data.work.plot_source.url} target="_blank" rel="noopener">{data.work.plot_source.label}</a>
+					{#if data.work.plot_fetched_at}
+						<span class="plot-date">· abgerufen am {new Date(data.work.plot_fetched_at).toLocaleDateString('de-DE')}</span>
+					{/if}
+				</p>
+			{/if}
 		</section>
 	{/if}
 
@@ -218,6 +226,27 @@ $effect(() => {
 		margin-bottom: 2rem;
 		line-height: 1.75;
 		max-width: 720px;
+	}
+
+	.plot-attribution {
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
+		color: var(--color-text-muted);
+		margin-top: 0.75rem;
+	}
+
+	.plot-attribution a {
+		color: var(--color-text-muted);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.plot-attribution a:hover {
+		color: var(--color-accent);
+	}
+
+	.plot-date {
+		color: var(--color-text-muted);
 	}
 
 	.external-links {

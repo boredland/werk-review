@@ -24,6 +24,8 @@ export interface Work {
 	collection_aliases: string[];
 	gnd_id: string | null;
 	plot: string | null;
+	plot_source: { label: string; url: string } | null;
+	plot_fetched_at: string | null;
 	sources: Source[];
 }
 

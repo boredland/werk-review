@@ -11,6 +11,16 @@
 	"collection_title": "Die Leute von Seldwyla. Teil II",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Kleider machen Leute ist eine Novelle des Schweizer Dichters Gottfried Keller. Erstmals 1874 im dritten Band der zweiten Auflage der Novellensammlung Die Leute von Seldwyla erschienen, gehört sie zu den bekanntesten Erzählungen der deutschsprachigen Literatur, diente als Vorlage für Filme und Opern und gilt als Musterbeispiel für die Stilrichtung des poetischen Realismus.",
+	"plot_source": {
+		"label": "Wikipedia",
+		"url": "https://de.wikipedia.org/wiki/Kleider_machen_Leute"
+	},
+	"plot_fetched_at": "2026-05-04",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Kleider_machen_Leute"
+		}
+	]
 }

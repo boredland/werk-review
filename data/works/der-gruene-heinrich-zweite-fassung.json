@@ -12,5 +12,10 @@
 	"collection_aliases": [],
 	"gnd_id": null,
 	"plot": null,
-	"sources": []
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Der_gr%C3%BCne_Heinrich"
+		}
+	]
 }
