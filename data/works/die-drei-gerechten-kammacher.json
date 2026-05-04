@@ -13,16 +13,6 @@
 	"collection_title": "Die Leute von Seldwyla. Teil I",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Die drei gerechten Kammmacher ist eine Novelle des Schweizer Dichters Gottfried Keller. 1855 in Berlin geschrieben und erstmals 1856 in der Sammlung Die Leute von Seldwyla veröffentlicht gehört sie heute zu den bekannteren Erzählungen Kellers und gilt als Beispiel einer realistischen Groteske. Die Geschichte handelt von drei deutschen Handwerksgesellen, die bei einem Seldwyler Meister arbeiten, alle drei fleißig, sparsam, genügsam, berechnend und konfliktscheu. Trotzdem – oder gerade deshalb – werden sie zu erbitterten Rivalen: jeder möchte die Kammmacherei kaufen, und jeder möchte dazu dieselbe vermögende Jungfer ehelichen. Es kommt zu einem entscheidenden Wettlauf, der für zwei der Gesellen schlimm ausgeht. Doch auch der Sieger endet unrühmlich als Pantoffelheld.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Die_drei_gerechten_Kammmacher"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Die_drei_gerechten_Kammmacher"
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

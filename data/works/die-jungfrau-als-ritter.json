@@ -11,11 +11,6 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Eine junge Adlige verkleidet sich als Ritter, um einer Zwangsheirat zu entgehen und ein selbstbestimmtes Leben zu führen. Sie dient an verschiedenen Höfen, beweist Mut und Geschick in Turnieren und Schlachten und verliebt sich. Nach der Enthüllung ihrer wahren Identität kann sie ihren Geliebten heiraten und so Glück und Freiheit finden.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

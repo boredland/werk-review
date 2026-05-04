@@ -11,11 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Der Knecht Wenzel missversteht die Gespräche seines Bauern über \"Freiheitskämpfer\" und glaubt, er sei nun frei von Arbeit und Pflichten. Er beginnt, sich auf dem Hof ungebührlich zu verhalten und die Vorräte des Bauern zu verzehren. Als eine Gruppe tatsächlicher, aber räuberischer \"Freiheitskämpfer\" auftaucht, wird Wenzel von diesen verprügelt und kehrt desillusioniert zu seiner alten Rolle zurück.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

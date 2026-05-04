@@ -11,16 +11,6 @@
 	"collection_title": "Züricher Novellen",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Der Narr auf Manegg ist eine zwischen November 1876 und April 1877 als Zeitschriftenvorabdruck in fünf Folgen in der Deutschen Rundschau veröffentlichte Erzählung von Gottfried Keller über den Verfall der Burg Manegg und das Schicksal der Manesse-Liederhandschrift. Zusammen mit den Novellen Hadlaub und Der Landvogt von Greifensee wurde sie 1877 im ersten Band der Züricher Novellen publiziert.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Der_Narr_auf_Manegg"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Der_Narr_auf_Manegg"
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

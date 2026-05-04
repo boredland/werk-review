@@ -11,11 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Ein Fichtenbaum wächst heran und beobachtet den Teich sowie die Wolken, wobei er von einer bedeutungsvollen Zukunft als Schiffsmast oder Hausbalken träumt. Er wird gefällt und zu einem Schweinetrog verarbeitet. Dieser Trog wird am Teich platziert, wodurch der Baum in seiner neuen, bescheidenen Form weiterhin mit seinen ursprünglichen Beobachtungsobjekten verbunden bleibt und einen nützlichen Zweck erfüllt.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

@@ -13,11 +13,6 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Vitalis, ein frommer, aber stolzer junger Mann, verliebt sich unglücklich in die schöne Aglaja, die bereits verlobt ist. Dieser Konflikt zwischen seiner religiösen Askese und seiner weltlichen Liebe stürzt ihn in eine tiefe Krise. Er scheitert daran, Aglaja zu gewinnen und seine Ideale zu bewahren, und endet desillusioniert und allein.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

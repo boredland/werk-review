@@ -13,11 +13,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Der alte Stadtschreiber Herr Bünzli ist desillusioniert von der Heuchelei seiner Mitbürger und der Oberflächlichkeit der jährlichen Bettagsmandate. Er beschließt, ein ungewöhnlich ehrliches und kritisches Mandat zu verfassen, das die Sünden und Schwächen der Stadtbewohner direkt anspricht. Obwohl dies zunächst einen Skandal auslöst, bewirkt es letztlich eine tiefere Besinnung in der Gemeinde.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

@@ -11,11 +11,6 @@
 	"collection_title": "Das Sinngedicht",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Der junge Jenatsch gerät in die Fänge einer Geheimgesellschaft, die scheinbar Geister beschwört und ihn mit übernatürlichen Phänomenen beeindruckt. Er verliebt sich in eine junge Frau, die ebenfalls Teil der Gruppe ist, doch bald erkennt Jenatsch, dass die Geistererscheinungen nur raffinierte Betrügereien sind, inszeniert von einem manipulativen Anführer. Die Enthüllung führt zu tragischen Konsequenzen und Jenatsch entflieht der Sekte, desillusioniert von Aberglaube und Täuschung.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

@@ -11,16 +11,6 @@
 	"collection_title": "Die Leute von Seldwyla. Teil II",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Dietegen von Gottfried Keller ist eine Novelle aus dem 2. Band der Novellensammlung Die Leute von Seldwyla und wurde erstmals 1874 veröffentlicht.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Dietegen"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Dietegen"
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

@@ -14,11 +14,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "In Gottfried Kellers „Der Wahltag“ wird der pflichtbewusste Bürger Herr Biedermann am Wahltag von verschiedenen politischen Parteien bedrängt, ihre Kandidaten zu wählen. Jede Fraktion versucht, ihn durch Schmeicheleien, Drohungen oder Appelle an seine Moral zu manipulieren, was ihn zutiefst verwirrt und desillusioniert. Überfordert von dem Druck und der Unehrlichkeit der Politik, verlässt Biedermann schließlich das Wahllokal, ohne seine Stimme abzugeben, und zieht sich in seinen Garten zurück.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

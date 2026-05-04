@@ -11,11 +11,6 @@
 	"collection_title": "Die Leute von Seldwyla. Teil II",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "John Kabys, überzeugt, sein Glück selbst schmieden zu können, verlässt sein Elternhaus, um in der Welt sein Glück zu versuchen. Er scheitert jedoch wiederholt in verschiedenen Berufen wie Schuster, Schneider und Kaufmann, da er sich stets für überlegen hält, aber keine wahre Begabung oder Lernbereitschaft zeigt und seine Misserfolge anderen zuschreibt. Enttäuscht kehrt er schließlich zurück und wird ein unzufriedener Schuster, der weiterhin von einer großen Zukunft träumt, die er nie erreicht.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

@@ -11,11 +11,6 @@
 	"collection_title": "Der grüne Heinrich",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Gretchen lebt mit ihrer Mutter und einer schelmischen Meerkatze. Als ein wertvoller Goldfingerhut verschwindet, wird Gretchen zu Unrecht beschuldigt und bestraft, da ihre Mutter das Tier nicht verdächtigt. Später wird der Fingerhut gefunden, und die Meerkatze als Dieb entlarvt, woraufhin die Mutter ihren Fehler einsieht und Gretchen Gerechtigkeit widerfährt.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

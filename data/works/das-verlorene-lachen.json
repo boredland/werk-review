@@ -13,11 +13,11 @@
 	"collection_title": "Die Leute von Seldwyla. Teil II",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Jukundus, ein reicher und angesehener Mann, verliert nach einer Reihe von Enttäuschungen und einer allgemeinen Lebensmüdigkeit seine Fähigkeit zu lachen. Auf der Suche nach seinem verlorenen Lachen reist er um die Welt und trifft schließlich die junge, lebensfrohe Ursula. Durch ihre aufrichtige Freude und ihr bescheidenes Leben findet Jukundus sein Lachen wieder und heiratet Ursula.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Das_verlorene_Lachen"
+		}
+	]
 }

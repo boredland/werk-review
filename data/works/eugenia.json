@@ -11,11 +11,6 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Eugenia, eine junge Frau, ist besessen von dem Wunsch, eine Heilige zu werden und versucht dies durch extreme Askese und naive Wohltätigkeit zu erreichen, was zu Verwirrung in ihrem Umfeld führt. Nach einer Krankheit und einer Vision erkennt sie, dass wahre Frömmigkeit im erfüllten irdischen Leben liegt. Sie gibt ihre extremen Bestrebungen auf, findet ihren Platz in der Welt und heiratet.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

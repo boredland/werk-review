@@ -11,11 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Herr Balthasar versucht mehrfach, seine Frau mit Gift zu töten, um seine Geliebte heiraten zu können. Jedes Mal scheitert sein Plan jedoch durch Zufall, etwa weil ein Hund das vergiftete Essen frisst oder die Frau die Gläser vertauscht. Schließlich stirbt die Frau eines natürlichen Todes, doch Balthasar wird von seinen Mordabsichten geplagt und findet auch in seiner neuen Ehe kein Glück.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

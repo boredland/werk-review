@@ -11,11 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "„Die Leute von Seldwyla. Teil II“ versammelt mehrere Novellen, die sich mit den Irrungen und Wirrungen der Liebe und des Ehelebens befassen. Figuren wie der intellektuelle Lucian suchen nach der idealen Partnerin, während andere wie Viggi Störteler durch Täuschung in Liebesdingen scheitern oder Regine an gesellschaftlichen Konventionen zerbricht. Die Geschichten zeigen die oft tragischen oder ernüchternden Konsequenzen menschlicher Leidenschaften und gesellschaftlicher Erwartungen.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

@@ -13,16 +13,6 @@
 	"collection_title": "Die Leute von Seldwyla. Teil II",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Viggi Störteler, ein ungebildeter junger Mann, beauftragt den Dichter Wilhelm, Liebesbriefe an die wohlhabende Judith zu schreiben, um sie zu heiraten. Wilhelm verliebt sich jedoch selbst in Judith und drückt seine eigenen Gefühle in den Briefen aus, woraufhin Judith sich in den wahren Verfasser verliebt. Als der Betrug auffliegt, heiraten Judith und Wilhelm, während Viggi leer ausgeht.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Die_mi%C3%9Fbrauchten_Liebesbriefe"
-		}
-	],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

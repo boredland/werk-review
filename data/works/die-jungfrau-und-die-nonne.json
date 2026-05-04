@@ -11,11 +11,6 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Die junge Genoveva wird nach dem vermeintlichen Tod ihres Geliebten gegen ihren Willen in ein Kloster gesteckt, wo sie unter der Äbtissin Beatrix leidet. Beatrix, die eine ähnliche tragische Vergangenheit verbirgt, erkennt Genovevas Verzweiflung, hilft ihr bei der Flucht zu ihrem lebenden Geliebten und findet danach selbst durch Beichte inneren Frieden.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

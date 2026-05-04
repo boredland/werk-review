@@ -11,11 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Johannes, ein junger Mann aus Seldwyla, begibt sich auf eine Reise, um die Welt zu erkunden und sein Glück zu suchen. Während seiner Wanderung erlebt er zahlreiche Begegnungen und Herausforderungen, die ihn prägen, bevor er schließlich mit neuen Erfahrungen in seine Heimatstadt zurückkehrt.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

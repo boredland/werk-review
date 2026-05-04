@@ -11,11 +11,6 @@
 	"collection_title": "Das Sinngedicht",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "Don Correa, ein wohlhabender Schweizer, beauftragt den jungen Anwalt Dr. Schwan, seine spanische Adelsabstammung zu beweisen. Schwan entdeckt jedoch, dass Correas Vorfahren einfache Schweizer Bauern waren, was Correa vehement ablehnt und in seiner aristokratischen Wahnvorstellung verharrt. Er stirbt schließlich, ohne die Wahrheit zu akzeptieren, und hinterlässt sein Vermögen einer Stiftung zur Erforschung des spanischen Adels.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

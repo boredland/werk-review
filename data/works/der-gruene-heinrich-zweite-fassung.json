@@ -11,16 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "„Der grüne Heinrich“ von Gottfried Keller ist ein teilweise autobiografischer Roman. Dieser gilt neben Goethes Wilhelm Meister und Stifters Nachsommer als einer der bedeutendsten Bildungsromane der deutschen Literatur des 19. Jahrhunderts. 1993 ist er in der Schweiz verfilmt worden.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Der_gr%C3%BCne_Heinrich"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Der_gr%C3%BCne_Heinrich"
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }

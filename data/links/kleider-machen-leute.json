@@ -1,5 +1,11 @@
 [
 	{
+		"source": "Zeno.org",
+		"format": "HTML",
+		"url": "http://www.zeno.org/Literatur/M/Keller,+Gottfried/Erzählung/Kleider+machen+Leute",
+		"label": "Kleider machen Leute (Zeno)"
+	},
+	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/kleider-machen-leute-by-gottfried-keller/",

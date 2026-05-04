@@ -11,11 +11,6 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": "„Die Leute von Seldwyla. Teil I“ versammelt mehrere Novellen über die Bewohner der fiktiven Stadt Seldwyla. Die Geschichten zeigen unterschiedliche Schicksale: Pankraz überwindet seine Mürrischkeit, Sali und Vrenchen scheitern tragisch an Familienfehden, Frau Amrain erzieht ihren Sohn zu einem rechtschaffenen Mann, und die drei Kammacher gehen an ihrer Engstirnigkeit und Konkurrenz zugrunde.",
-	"sources": [],
-	"plot_source": {
-		"label": "KI-generiert (Gemini)",
-		"url": null
-	},
-	"plot_fetched_at": "2026-05-04"
+	"plot": null,
+	"sources": []
 }
