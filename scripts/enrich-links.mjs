@@ -108,7 +108,7 @@ async function getLibriVoxBooks(authorName) {
 async function searchProjektGutenberg(work, authorName) {
 	const titles = [work.title, ...(work.aliases || [])];
 	const lastName = authorName.split(' ').pop().toLowerCase();
-	
+
 	for (const title of titles) {
 		const params = new URLSearchParams({ s: `${title} ${authorName}` });
 		const url = `https://projekt-gutenberg.org/?${params}`;
@@ -118,18 +118,23 @@ async function searchProjektGutenberg(work, authorName) {
 			if (!res.ok) continue;
 			const html = await res.text();
 
-			const linkPattern = /href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
+			const linkPattern =
+				/href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
 			const matches = [...html.matchAll(linkPattern)].map((m) => m[1]);
 			if (matches.length === 0) continue;
 
 			const match = matches.find((m) => {
 				const urlLower = m.toLowerCase();
 				if (!urlLower.includes(lastName)) return false;
-				
+
 				const nWork = normalize(title);
-				const slug = urlLower.split('/').pop().replace(/^g-[^-]+-/, '').replace(/-/g, ' ');
+				const slug = urlLower
+					.split('/')
+					.pop()
+					.replace(/^g-[^-]+-/, '')
+					.replace(/-/g, ' ');
 				const nSlug = normalize(slug);
-				
+
 				return nSlug.includes(nWork) || nWork.includes(nSlug) || isMatch({ title: title }, slug);
 			});
 
@@ -207,6 +212,7 @@ async function main() {
 						format: 'Hörbuch',
 						url: book.url_librivox,
 						label: book.title,
+						librivox_id: book.id,
 					});
 					existingUrls.add(book.url_librivox);
 					workUpdated = true;

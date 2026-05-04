@@ -3,12 +3,14 @@
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/auswahl-aus-die-leute-von-seldwyla-by-gottfried-keller/",
-		"label": "Auswahl aus Die Leute von Seldwyla"
+		"label": "Auswahl aus Die Leute von Seldwyla",
+		"librivox_id": "2820"
 	},
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
-		"label": "Erzählungen aus 'Die Leute von Seldwyla'"
+		"label": "Erzählungen aus 'Die Leute von Seldwyla'",
+		"librivox_id": "4079"
 	}
 ]

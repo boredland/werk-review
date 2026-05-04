@@ -2,6 +2,7 @@
 import { enhance } from '$app/forms';
 import { page } from '$app/state';
 import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+import LibriVoxPlayer from '$lib/components/LibriVoxPlayer.svelte';
 import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
 import ReviewList from '$lib/components/reviews/ReviewList.svelte';
 
@@ -9,6 +10,9 @@ let { data, form } = $props();
 
 const user = $derived(page.data.user);
 let bookmarked = $state(data.isBookmarked);
+
+const librivoxLinks = $derived(data.externalLinks.filter((l) => l.librivox_id));
+const otherLinks = $derived(data.externalLinks.filter((l) => !l.librivox_id));
 
 $effect(() => {
 	bookmarked = data.isBookmarked;
@@ -75,15 +79,27 @@ $effect(() => {
 	{#if data.externalLinks.length > 0}
 		<section class="external-links">
 			<h2>Lesen & Hören</h2>
-			<div class="links-grid">
-				{#each data.externalLinks as link}
-					<a href={link.url} target="_blank" rel="noopener" class="link-card">
-						<span class="link-format">{link.format}</span>
-						<span class="link-label">{link.label}</span>
-						<span class="link-source">{link.source}</span>
-					</a>
+			
+			{#if librivoxLinks.length > 0}
+				{#each librivoxLinks as lv}
+					<LibriVoxPlayer 
+						librivoxId={lv.librivox_id!} 
+						workTitles={[data.work.title, ...data.work.aliases]} 
+					/>
 				{/each}
-			</div>
+			{/if}
+
+			{#if otherLinks.length > 0}
+				<div class="links-grid">
+					{#each otherLinks as link}
+						<a href={link.url} target="_blank" rel="noopener" class="link-card">
+							<span class="link-format">{link.format}</span>
+							<span class="link-label">{link.label}</span>
+							<span class="link-source">{link.source}</span>
+						</a>
+					{/each}
+				</div>
+			{/if}
 		</section>
 	{/if}
 
