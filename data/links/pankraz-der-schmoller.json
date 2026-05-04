@@ -10,5 +10,11 @@
 		"format": "Hörbuch",
 		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
 		"label": "Erzählungen aus 'Die Leute von Seldwyla'"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-pankraz-der-schmoller",
+		"label": "Pankraz, der Schmoller"
 	}
 ]

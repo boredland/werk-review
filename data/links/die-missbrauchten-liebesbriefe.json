@@ -4,5 +4,11 @@
 		"format": "Volltext",
 		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-die-missbrauchten-liebesbriefe",
 		"label": "Die mißbrauchten Liebesbriefe"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/die-misbrauchten-liebesbriefe-by-gottfried-keller/",
+		"label": "mißbrauchten Liebesbriefe"
 	}
 ]

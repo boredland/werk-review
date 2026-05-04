@@ -20,6 +20,44 @@ function sleep(ms) {
 	return new Promise((r) => setTimeout(r, ms));
 }
 
+function normalize(str) {
+	if (!str) return '';
+	return str
+		.toLowerCase()
+		.replace(/ß/g, 'ss')
+		.replace(/mmm/g, 'mm')
+		.replace(/nnn/g, 'nn')
+		.replace(/[^a-z0-9]/g, ' ')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+function isMatch(work, lvTitle) {
+	const nLv = normalize(lvTitle);
+	const titles = [work.title, ...(work.aliases || [])];
+
+	for (const t of titles) {
+		const nWork = normalize(t);
+		if (nWork === nLv) return true;
+		if (nWork.length > 5 && (nLv.includes(nWork) || nWork.includes(nLv))) return true;
+
+		// Simple fuzzy: remove common prefixes/suffixes
+		const simplify = (s) =>
+			s
+				.replace(/^(die|der|das|ein|eine|auswahl aus|erzaehlungen aus|novellen) /g, '')
+				.replace(/ teil i+$/g, '')
+				.replace(/ \d+$/g, '')
+				.trim();
+
+		const sWork = simplify(nWork);
+		const sLv = simplify(nLv);
+
+		if (sWork.length > 3 && (sWork === sLv || sLv.includes(sWork) || sWork.includes(sLv)))
+			return true;
+	}
+	return false;
+}
+
 const authors = new Map();
 for (const file of readdirSync(AUTHORS_DIR)) {
 	if (!file.endsWith('.json')) continue;
@@ -33,11 +71,16 @@ for (const file of readdirSync(WORKS_DIR)) {
 	works.push(readJson(join(WORKS_DIR, file)));
 }
 
-async function searchLibriVox(title, authorName) {
+const librivoxCache = new Map();
+
+async function getLibriVoxBooks(authorName) {
+	if (librivoxCache.has(authorName)) return librivoxCache.get(authorName);
+
+	const lastName = authorName.split(' ').pop();
 	const params = new URLSearchParams({
-		title: title,
+		author: lastName,
 		format: 'json',
-		limit: '5',
+		extended: '1',
 	});
 	const url = `https://librivox.org/api/feed/audiobooks/?${params}`;
 
@@ -47,102 +90,147 @@ async function searchLibriVox(title, authorName) {
 		const data = await res.json();
 		if (!data.books) return [];
 
-		return data.books
-			.filter((b) => {
-				const bookAuthors = (b.authors || []).map((a) =>
-					`${a.first_name} ${a.last_name}`.trim().toLowerCase(),
-				);
-				return bookAuthors.some((a) => a.includes(authorName.toLowerCase().split(' ').pop()));
-			})
-			.map((b) => ({
-				source: 'LibriVox',
-				format: 'Hörbuch',
-				url: b.url_librivox,
-				label: b.title,
-			}));
+		const firstName = authorName.split(' ')[0].toLowerCase();
+		const filtered = data.books.filter((b) => {
+			const bookAuthors = (b.authors || []).map((a) =>
+				`${a.first_name} ${a.last_name}`.trim().toLowerCase(),
+			);
+			return bookAuthors.some((a) => a.includes(firstName) && a.includes(lastName.toLowerCase()));
+		});
+
+		librivoxCache.set(authorName, filtered);
+		return filtered;
 	} catch {
 		return [];
 	}
 }
 
-async function searchProjektGutenberg(title, authorName) {
-	const params = new URLSearchParams({ s: `${title} ${authorName}` });
-	const url = `https://projekt-gutenberg.org/?${params}`;
+async function searchProjektGutenberg(work, authorName) {
+	const titles = [work.title, ...(work.aliases || [])];
+	const lastName = authorName.split(' ').pop().toLowerCase();
+	
+	for (const title of titles) {
+		const params = new URLSearchParams({ s: `${title} ${authorName}` });
+		const url = `https://projekt-gutenberg.org/?${params}`;
 
-	try {
-		const res = await fetch(url);
-		if (!res.ok) return [];
-		const html = await res.text();
+		try {
+			const res = await fetch(url);
+			if (!res.ok) continue;
+			const html = await res.text();
 
-		const linkPattern = /href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
-		const matches = [...html.matchAll(linkPattern)].map((m) => m[1]);
-		if (matches.length === 0) return [];
+			const linkPattern = /href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
+			const matches = [...html.matchAll(linkPattern)].map((m) => m[1]);
+			if (matches.length === 0) continue;
 
-		const t = title.toLowerCase();
-		const lastName = authorName.split(' ').pop().toLowerCase();
-		const match = matches.find(
-			(m) =>
-				m.toLowerCase().includes(lastName) &&
-				m.toLowerCase().includes(t.split(' ')[0].toLowerCase()),
-		);
+			const match = matches.find((m) => {
+				const urlLower = m.toLowerCase();
+				if (!urlLower.includes(lastName)) return false;
+				
+				const nWork = normalize(title);
+				const slug = urlLower.split('/').pop().replace(/^g-[^-]+-/, '').replace(/-/g, ' ');
+				const nSlug = normalize(slug);
+				
+				return nSlug.includes(nWork) || nWork.includes(nSlug) || isMatch({ title: title }, slug);
+			});
 
-		if (!match) return [];
-
-		return [
-			{
-				source: 'Projekt Gutenberg-DE',
-				format: 'Volltext',
-				url: match,
-				label: title,
-			},
-		];
-	} catch {
-		return [];
+			if (match) {
+				return [
+					{
+						source: 'Projekt Gutenberg-DE',
+						format: 'Volltext',
+						url: match,
+						label: work.title,
+					},
+				];
+			}
+		} catch {
+			// ignore
+		}
+		await sleep(200);
 	}
+	return [];
 }
 
 async function main() {
 	let updated = 0;
 	let skipped = 0;
 
+	// Group works by author for efficiency
+	const worksByAuthor = new Map();
 	for (const work of works) {
-		const linksPath = join(LINKS_DIR, `${work.slug}.json`);
-		const existing = existsSync(linksPath) ? readJson(linksPath) : [];
-		const existingSources = new Set(existing.map((l) => l.source));
+		if (!worksByAuthor.has(work.author_id)) {
+			worksByAuthor.set(work.author_id, []);
+		}
+		worksByAuthor.get(work.author_id).push(work);
+	}
 
-		const author = authors.get(work.author_id);
+	for (const [authorId, authorWorks] of worksByAuthor) {
+		const author = authors.get(authorId);
 		if (!author) {
-			console.log(`  Skipping "${work.title}" — unknown author ${work.author_id}`);
+			console.log(`  Skipping works for unknown author ${authorId}`);
 			continue;
 		}
 
-		const newLinks = existing.filter(
-			(l) => l.source !== 'Project Gutenberg' && l.source !== 'Gutenberg',
-		);
+		console.log(`Processing author: ${author.name}`);
+		const lvBooks = await getLibriVoxBooks(author.name);
 
-		if (!existingSources.has('LibriVox')) {
-			const lv = await searchLibriVox(work.title, author.name);
-			if (lv.length > 0) {
-				newLinks.push(lv[0]);
-				console.log(`  + LibriVox: "${work.title}"`);
+		for (const work of authorWorks) {
+			const linksPath = join(LINKS_DIR, `${work.slug}.json`);
+			const existing = existsSync(linksPath) ? readJson(linksPath) : [];
+			const existingUrls = new Set(existing.map((l) => l.url));
+			const existingSources = new Set(existing.map((l) => l.source));
+
+			let workUpdated = false;
+			const newLinks = [...existing];
+
+			// LibriVox matching
+			for (const book of lvBooks) {
+				if (existingUrls.has(book.url_librivox)) continue;
+
+				let matched = false;
+				// Match by book title
+				if (isMatch(work, book.title)) {
+					matched = true;
+				} else {
+					// Match by section titles
+					for (const section of book.sections || []) {
+						if (isMatch(work, section.title)) {
+							matched = true;
+							break;
+						}
+					}
+				}
+
+				if (matched) {
+					newLinks.push({
+						source: 'LibriVox',
+						format: 'Hörbuch',
+						url: book.url_librivox,
+						label: book.title,
+					});
+					existingUrls.add(book.url_librivox);
+					workUpdated = true;
+					console.log(`  + LibriVox: "${work.title}" -> "${book.title}"`);
+				}
 			}
-			await sleep(500);
-		}
 
-		if (!existingSources.has('Projekt Gutenberg-DE')) {
-			const pg = await searchProjektGutenberg(work.title, author.name);
-			if (pg.length > 0) {
-				newLinks.push(pg[0]);
-				console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
+			// Projekt Gutenberg-DE matching (as before, but simplified check)
+			if (!existingSources.has('Projekt Gutenberg-DE')) {
+				const pg = await searchProjektGutenberg(work, author.name);
+				if (pg.length > 0 && !existingUrls.has(pg[0].url)) {
+					newLinks.push(pg[0]);
+					workUpdated = true;
+					console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
+				}
+				await sleep(200);
 			}
-			await sleep(500);
-		}
 
-		if (newLinks.length !== existing.length || newLinks.length > existing.length) {
-			writeJson(linksPath, newLinks);
-			updated++;
-		} else {
-			skipped++;
+			if (workUpdated) {
+				writeJson(linksPath, newLinks);
+				updated++;
+			} else {
+				skipped++;
+			}
 		}
 	}
 

@@ -4,5 +4,17 @@
 		"format": "Volltext",
 		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-die-drei-gerechten-kammacher",
 		"label": "Die drei gerechten Kammacher"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
+		"label": "Erzählungen aus 'Die Leute von Seldwyla'"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/die-drei-gerechten-kammmacher-by-gottfried-keller/",
+		"label": "drei gerechten Kammmacher"
 	}
 ]

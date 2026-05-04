@@ -10,5 +10,11 @@
 		"format": "Hörbuch",
 		"url": "https://librivox.org/kleider-machen-leute-by-gottfried-keller/",
 		"label": "Kleider machen Leute"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
+		"label": "Erzählungen aus 'Die Leute von Seldwyla'"
 	}
 ]

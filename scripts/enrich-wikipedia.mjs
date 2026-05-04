@@ -27,21 +27,26 @@ for (const file of readdirSync(AUTHORS_DIR)) {
 	authors.set(author.id, author);
 }
 
-function buildSearchTerms(title, authorName) {
-	const terms = [
-		`${title} (${authorName})`,
-		`${title} (Novelle)`,
-		`${title} (Roman)`,
-		`${title} (Erzählung)`,
-		title,
-	];
+function buildSearchTerms(work, authorName) {
+	const titles = [work.title, ...(work.aliases || [])];
+	const terms = new Set();
 
-	const baseTitle = title.replace(/\.\s*(Erste|Zweite|Dritte)\s*Fassung.*$/i, '').trim();
-	if (baseTitle !== title) {
-		terms.push(`${baseTitle} (${authorName})`, `${baseTitle} (Roman)`, baseTitle);
+	for (const title of titles) {
+		terms.add(`${title} (${authorName})`);
+		terms.add(`${title} (Novelle)`);
+		terms.add(`${title} (Roman)`);
+		terms.add(`${title} (Erzählung)`);
+		terms.add(title);
+
+		const baseTitle = title.replace(/\.\s*(Erste|Zweite|Dritte)\s*Fassung.*$/i, '').trim();
+		if (baseTitle !== title) {
+			terms.add(`${baseTitle} (${authorName})`);
+			terms.add(`${baseTitle} (Roman)`);
+			terms.add(baseTitle);
+		}
 	}
 
-	return terms;
+	return Array.from(terms);
 }
 
 async function fetchWikipediaSummary(title) {
@@ -105,7 +110,7 @@ async function main() {
 
 		const author = authors.get(work.author_id);
 		const authorName = author?.name || '';
-		const searchTerms = buildSearchTerms(work.title, authorName);
+		const searchTerms = buildSearchTerms(work, authorName);
 
 		if (!work.plot) {
 			let result = null;
