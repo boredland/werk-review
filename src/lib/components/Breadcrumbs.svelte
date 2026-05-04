@@ -43,7 +43,7 @@ let { items }: Props = $props();
 	}
 
 	li:not(:last-child)::after {
-		content: '›';
+		content: '\203a';
 		margin: 0 0.5rem;
 		color: var(--color-border);
 	}
