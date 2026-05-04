@@ -168,6 +168,52 @@ async function searchProjektGutenberg(work, authorName) {
 	return [];
 }
 
+async function searchArchiveOrg(work, authorName) {
+	const titles = [work.title, ...(work.aliases || [])];
+	const results = [];
+
+	for (const title of titles) {
+		const query = `creator:("${authorName}") AND title:("${title}") AND mediatype:(texts)`;
+		const params = new URLSearchParams({
+			q: query,
+			fl: 'identifier,title,format',
+			output: 'json',
+			rows: '3',
+		});
+		const url = `https://archive.org/advancedsearch.php?${params}`;
+
+		try {
+			const res = await fetch(url);
+			if (!res.ok) continue;
+			const data = await res.json();
+			const docs = data.response?.docs || [];
+
+			for (const doc of docs) {
+				// Only if it has useful formats
+				const formats = doc.format || [];
+				const hasGoodFormat = formats.some((f) =>
+					['EPUB', 'Text PDF', 'Kindle', 'Daisy'].includes(f),
+				);
+				if (!hasGoodFormat) continue;
+
+				results.push({
+					source: 'Internet Archive',
+					format: 'Volltext / Download',
+					url: `https://archive.org/details/${doc.identifier}`,
+					label: doc.title || work.title,
+					formats: formats.filter((f) => ['EPUB', 'Text PDF', 'Kindle'].includes(f)),
+				});
+				// Just take the first good match per search term
+				break;
+			}
+			if (results.length > 0) break;
+		} catch {
+			// ignore
+		}
+	}
+	return results;
+}
+
 async function main() {
 	let updated = 0;
 	let skipped = 0;
@@ -241,6 +287,16 @@ async function main() {
 					newLinks.push(pg[0]);
 					workUpdated = true;
 					console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
+				}
+			}
+
+			// Archive.org matching
+			if (!existingSources.has('Internet Archive')) {
+				const archive = await searchArchiveOrg(work, author.name);
+				if (archive.length > 0 && !existingUrls.has(archive[0].url)) {
+					newLinks.push(archive[0]);
+					workUpdated = true;
+					console.log(`  + Internet Archive: "${work.title}"`);
 				}
 			}
 

@@ -18,5 +18,14 @@
 		"format": "Volltext",
 		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-die-drei-gerechten-kammacher",
 		"label": "Die drei gerechten Kammacher"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/diedreigerechte01kipgoog",
+		"label": "Die drei gerechten Kammacher",
+		"formats": [
+			"EPUB"
+		]
 	}
 ]

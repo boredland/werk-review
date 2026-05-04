@@ -46,6 +46,7 @@ export interface ExternalLink {
 	url: string;
 	label: string;
 	librivox_id?: string;
+	formats?: string[];
 }
 
 export interface SimilarWork {

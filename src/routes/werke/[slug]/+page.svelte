@@ -138,6 +138,11 @@ $effect(() => {
 								</a>
 								<div class="link-formats">
 									<span class="format-tag">Online lesen</span>
+									{#if link.formats}
+										{#each link.formats as f}
+											<span class="format-tag">{f.replace('Text PDF', 'PDF')}</span>
+										{/each}
+									{/if}
 								</div>
 							</div>
 							<div class="link-card-actions">

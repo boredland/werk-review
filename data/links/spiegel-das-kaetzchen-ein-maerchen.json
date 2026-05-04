@@ -5,5 +5,15 @@
 		"url": "https://librivox.org/spiegel-das-katzchen-by-gottfried-keller/",
 		"label": "Spiegel, das Kätzchen",
 		"librivox_id": "5060"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/isbn_9781499397284",
+		"label": "Spiegel, das Kätzchen: Ein Märchen",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
 	}
 ]

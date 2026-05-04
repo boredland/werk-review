@@ -18,5 +18,15 @@
 		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
 		"label": "Erzählungen aus 'Die Leute von Seldwyla'",
 		"librivox_id": "4079"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/romeoundjuliaauf0000unse_l7m4",
+		"label": "Romeo Und Julia Auf Dem Dorfe Erzahlung",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
 	}
 ]

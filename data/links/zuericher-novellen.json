@@ -1,0 +1,12 @@
+[
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/zurichernovellen0000unse_y0k2",
+		"label": "Zuricher Novellen",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]
