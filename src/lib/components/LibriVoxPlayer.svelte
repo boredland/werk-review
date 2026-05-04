@@ -124,16 +124,6 @@ function isRelevant(sectionTitle: string) {
 							<span class="section-time">{Math.floor(parseInt(section.playtime) / 60)}:{parseInt(section.playtime) % 60 < 10 ? '0' : ''}{parseInt(section.playtime) % 60} Min.</span>
 						{/if}
 					</div>
-					<a 
-						href={section.listen_url} 
-						download 
-						target="_blank"
-						rel="noopener"
-						class="download-btn"
-						title="MP3 herunterladen"
-					>
-						↓
-					</a>
 				</li>
 			{/each}
 		</ul>
@@ -294,26 +284,5 @@ function isRelevant(sectionTitle: string) {
 		font-family: var(--font-ui);
 		font-size: 0.75rem;
 		color: var(--color-text-muted);
-	}
-
-	.download-btn {
-		background: none;
-		border: 1px solid var(--color-border);
-		color: var(--color-text-muted);
-		border-radius: 4px;
-		width: 32px;
-		height: 32px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		transition: all 0.2s;
-		font-size: 1.1rem;
-		text-decoration: none;
-	}
-
-	.download-btn:hover {
-		border-color: var(--color-text);
-		color: var(--color-text);
 	}
 </style>
