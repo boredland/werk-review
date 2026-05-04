@@ -27,6 +27,14 @@ let { data } = $props();
 			<p>Nutzer anzeigen, sperren oder löschen</p>
 		</div>
 	</a>
+
+	<a href="/admin/bewertungen" class="admin-card">
+		<span class="admin-card-icon">&#9733;</span>
+		<div class="admin-card-body">
+			<h2>Bewertungen</h2>
+			<p>Bewertungen moderieren und entfernen</p>
+		</div>
+	</a>
 </div>
 
 <section class="admin-stats">
