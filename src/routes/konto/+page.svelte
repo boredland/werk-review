@@ -154,6 +154,23 @@ $effect(() => {
 		{/if}
 	</section>
 
+	<section class="bookmarks-section">
+		<h2>Leseliste <span class="reviews-count">({data.userBookmarks.length})</span></h2>
+
+		{#if data.userBookmarks.length > 0}
+			<div class="bookmarks-list">
+				{#each data.userBookmarks as bookmark}
+					<a href="/werke/{bookmark.workSlug}" class="bookmark-item">
+						<span class="bookmark-title">{bookmark.workTitle}</span>
+						<span class="bookmark-date">{new Date(bookmark.createdAt).toLocaleDateString('de-DE')}</span>
+					</a>
+				{/each}
+			</div>
+		{:else}
+			<p class="empty">Du hast noch keine Werke auf deiner Leseliste.</p>
+		{/if}
+	</section>
+
 	<section class="danger-zone">
 		<h2>Konto löschen</h2>
 		{#if form?.deleteError}
@@ -474,6 +491,46 @@ $effect(() => {
 	.empty {
 		color: var(--color-text-muted);
 		font-style: italic;
+	}
+
+	.bookmarks-section {
+		margin-top: 2.5rem;
+	}
+
+	.bookmarks-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.bookmark-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.75rem 0;
+		border-bottom: 1px solid var(--color-border-light);
+		color: var(--color-text);
+		text-decoration: none;
+		transition: background 0.15s;
+	}
+
+	.bookmark-item:hover {
+		text-decoration: none;
+		background: var(--color-surface-warm);
+		margin: 0 -0.75rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+	}
+
+	.bookmark-title {
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: 1.05rem;
+	}
+
+	.bookmark-date {
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
+		color: var(--color-text-muted);
 	}
 
 	.danger-zone {

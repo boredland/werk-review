@@ -1,4 +1,5 @@
 <script lang="ts">
+import { enhance } from '$app/forms';
 import { page } from '$app/state';
 import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
@@ -7,6 +8,11 @@ import ReviewList from '$lib/components/reviews/ReviewList.svelte';
 let { data, form } = $props();
 
 const user = $derived(page.data.user);
+let bookmarked = $state(data.isBookmarked);
+
+$effect(() => {
+	bookmarked = data.isBookmarked;
+});
 </script>
 
 <svelte:head>
@@ -24,7 +30,18 @@ const user = $derived(page.data.user);
 <article>
 	<header class="work-header">
 		<p class="work-kicker">{data.work.year_display}</p>
-		<h1>{data.work.title}</h1>
+		<div class="work-title-row">
+			<h1>{data.work.title}</h1>
+			{#if user}
+				<form method="POST" action="?/toggleBookmark" use:enhance={() => { bookmarked = !bookmarked; return async ({ update }) => { update({ reset: false }); }; }}>
+					<button type="submit" class="bookmark-btn" class:bookmarked aria-label={bookmarked ? 'Von Leseliste entfernen' : 'Zur Leseliste hinzufügen'}>
+						<svg width="20" height="20" viewBox="0 0 20 20" fill={bookmarked ? 'currentColor' : 'none'} aria-hidden="true">
+							<path d="M5 3a1 1 0 011-1h8a1 1 0 011 1v14l-5-3-5 3V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+						</svg>
+					</button>
+				</form>
+			{/if}
+		</div>
 		<div class="meta">
 			{#if data.author}
 				<a href="/autoren/{data.author.slug}" class="meta-link">{data.author.name}</a>
@@ -84,6 +101,41 @@ const user = $derived(page.data.user);
 </article>
 
 <style>
+	.work-title-row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.work-title-row h1 {
+		margin-bottom: 0.5rem;
+	}
+
+	.bookmark-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.4rem;
+		background: none;
+		border: 1px solid var(--color-border);
+		color: var(--color-text-muted);
+		cursor: pointer;
+		transition: all 0.2s;
+		flex-shrink: 0;
+		margin-top: 0.25rem;
+	}
+
+	.bookmark-btn:hover {
+		border-color: var(--color-gold);
+		color: var(--color-gold);
+	}
+
+	.bookmark-btn.bookmarked {
+		border-color: var(--color-gold);
+		color: var(--color-gold);
+	}
+
 	.work-header {
 		margin-bottom: 2rem;
 	}

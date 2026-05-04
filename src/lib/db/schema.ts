@@ -37,6 +37,14 @@ export const authorPhotos = sqliteTable('author_photos', {
 	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });
 
+export const bookmarks = sqliteTable('bookmarks', {
+	userId: text('user_id')
+		.notNull()
+		.references(() => users.id),
+	workId: text('work_id').notNull(),
+	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
+});
+
 export const authorSuggestions = sqliteTable('author_suggestions', {
 	id: text('id').primaryKey(),
 	userId: text('user_id')

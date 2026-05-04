@@ -1,6 +1,6 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { and, desc, eq } from 'drizzle-orm';
-import { authorSuggestions, reviews, users } from '$lib/db/schema';
+import { authorSuggestions, bookmarks, reviews, users } from '$lib/db/schema';
 import { destroySession, hashPassword, SESSION_COOKIE, verifyPassword } from '$lib/server/auth';
 import { getWork } from '$lib/server/data';
 import { getDb } from '$lib/server/db';
@@ -53,7 +53,28 @@ export const load: PageServerLoad = async ({ locals, platform }) => {
 		}
 	}
 
-	return { userReviews };
+	let userBookmarks: { workTitle: string; workSlug: string; createdAt: string }[] = [];
+
+	if (platform?.env.DB) {
+		try {
+			const db = getDb(platform.env.DB);
+			const rows = await db
+				.select()
+				.from(bookmarks)
+				.where(eq(bookmarks.userId, locals.user.id))
+				.orderBy(desc(bookmarks.createdAt));
+
+			userBookmarks = rows
+				.map((b) => {
+					const work = getWork(b.workId);
+					if (!work) return null;
+					return { workTitle: work.title, workSlug: work.slug, createdAt: b.createdAt };
+				})
+				.filter((b): b is NonNullable<typeof b> => b !== null);
+		} catch {}
+	}
+
+	return { userReviews, userBookmarks };
 };
 
 export const actions: Actions = {
@@ -248,6 +269,7 @@ export const actions: Actions = {
 		}
 
 		await db.delete(reviews).where(eq(reviews.userId, locals.user.id));
+		await db.delete(bookmarks).where(eq(bookmarks.userId, locals.user.id));
 		await db.delete(authorSuggestions).where(eq(authorSuggestions.userId, locals.user.id));
 		await db.delete(users).where(eq(users.id, locals.user.id));
 

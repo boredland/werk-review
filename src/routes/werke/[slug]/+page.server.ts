@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
 import { and, desc, eq } from 'drizzle-orm';
-import { reviews, users } from '$lib/db/schema';
+import { bookmarks, reviews, users } from '$lib/db/schema';
 import { getRatingByLabel } from '$lib/ratings';
 import { getAuthor, getGenre, getSimilarWorks, getWork, getWorks } from '$lib/server/data';
 import { getDb } from '$lib/server/db';
@@ -24,6 +24,19 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 			title: w.title,
 			year_display: w.year_display,
 		}));
+
+	let isBookmarked = false;
+	if (locals.user && platform?.env.DB) {
+		try {
+			const db = getDb(platform.env.DB);
+			const bm = await db
+				.select()
+				.from(bookmarks)
+				.where(and(eq(bookmarks.userId, locals.user.id), eq(bookmarks.workId, work.id)))
+				.get();
+			isBookmarked = !!bm;
+		} catch {}
+	}
 
 	let workReviews: {
 		id: string;
@@ -99,6 +112,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		reviews: workReviews,
 		userReview,
 		score,
+		isBookmarked,
 	};
 };
 
@@ -159,6 +173,35 @@ export const actions: Actions = {
 		}
 
 		return { reviewSuccess: true };
+	},
+
+	toggleBookmark: async ({ platform, locals, params }) => {
+		if (!locals.user || !platform?.env.DB) {
+			return fail(401, { error: 'Nicht autorisiert.' });
+		}
+
+		const work = getWork(params.slug);
+		if (!work) error(404, 'Werk nicht gefunden');
+
+		const db = getDb(platform.env.DB);
+		const existing = await db
+			.select()
+			.from(bookmarks)
+			.where(and(eq(bookmarks.userId, locals.user.id), eq(bookmarks.workId, work.id)))
+			.get();
+
+		if (existing) {
+			await db
+				.delete(bookmarks)
+				.where(and(eq(bookmarks.userId, locals.user.id), eq(bookmarks.workId, work.id)));
+		} else {
+			await db.insert(bookmarks).values({
+				userId: locals.user.id,
+				workId: work.id,
+			});
+		}
+
+		return { bookmarkToggled: true };
 	},
 
 	deleteReview: async ({ platform, locals, params }) => {
