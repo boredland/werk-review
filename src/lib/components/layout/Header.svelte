@@ -79,10 +79,11 @@ function handleSearch(e: SubmitEvent) {
 				{/each}
 			</ul>
 
-			<form onsubmit={handleSearch} role="search" class="nav-search">
+			<form action="/suche" onsubmit={handleSearch} role="search" class="nav-search">
 				<label for="nav-search-input" class="sr-only">Suche</label>
 				<input
 					id="nav-search-input"
+					name="q"
 					type="search"
 					placeholder="Suchen…"
 					bind:value={searchQuery}
