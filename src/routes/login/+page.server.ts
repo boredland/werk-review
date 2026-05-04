@@ -41,6 +41,10 @@ export const actions: Actions = {
 			return formError('E-Mail oder Passwort ist falsch.', email);
 		}
 
+		if (user.banned) {
+			return formError('Dieses Konto wurde gesperrt.', email);
+		}
+
 		const valid = await verifyPassword(password, user.passwordHash);
 		if (!valid) {
 			return formError('E-Mail oder Passwort ist falsch.', email);

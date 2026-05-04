@@ -10,6 +10,7 @@ export const users = sqliteTable('users', {
 	verifyToken: text('verify_token'),
 	resetToken: text('reset_token'),
 	resetTokenExpiry: text('reset_token_expiry'),
+	banned: integer('banned', { mode: 'boolean' }).notNull().default(false),
 	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });
 

@@ -15,7 +15,7 @@
 - [x] Pagination on listing pages (autoren, werke, genre works)
 - [x] Sort options on listing pages (alphabetical, year, rating)
 - [x] Average rating display on work cards and listing pages
-- [ ] Reading lists / bookmarks (users can save works)
+- [x] Reading lists / bookmarks (users can save works)
 - [x] RSS feed for new reviews or newly added works
 - [x] Sitemap.xml generation for SEO
 

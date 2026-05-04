@@ -10,12 +10,18 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (token && event.platform?.env.SESSION_KV) {
 		const user = await getSession(event.platform.env.SESSION_KV, token);
 		if (user) {
-			event.locals.user = {
-				id: user.id,
-				username: user.username,
-				email: user.email,
-				emailVerified: user.emailVerified ?? false,
-			};
+			const banned = await event.platform.env.SESSION_KV.get(`banned:${user.id}`);
+			if (banned) {
+				await event.platform.env.SESSION_KV.delete(`session:${token}`);
+				event.cookies.delete(SESSION_COOKIE, { path: '/' });
+			} else {
+				event.locals.user = {
+					id: user.id,
+					username: user.username,
+					email: user.email,
+					emailVerified: user.emailVerified ?? false,
+				};
+			}
 		}
 	}
 

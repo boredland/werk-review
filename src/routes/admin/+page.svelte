@@ -20,6 +20,13 @@ let { data } = $props();
 		</div>
 	</a>
 
+	<a href="/admin/nutzer" class="admin-card">
+		<span class="admin-card-icon">&#128101;</span>
+		<div class="admin-card-body">
+			<h2>Nutzerverwaltung</h2>
+			<p>Nutzer anzeigen, sperren oder löschen</p>
+		</div>
+	</a>
 </div>
 
 <section class="admin-stats">
