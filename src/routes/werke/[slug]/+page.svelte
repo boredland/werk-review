@@ -138,9 +138,6 @@ $effect(() => {
 								</a>
 								<div class="link-formats">
 									<span class="format-tag">Online lesen</span>
-									{#if link.source === 'Projekt Gutenberg-DE'}
-										<span class="format-tag format-tag--soon">EPUB bald verfügbar</span>
-									{/if}
 								</div>
 							</div>
 							<div class="link-card-actions">
@@ -387,11 +384,6 @@ $effect(() => {
 		padding: 0.1rem 0.4rem;
 		border-radius: 2px;
 		border: 1px solid var(--color-border-light);
-	}
-
-	.format-tag--soon {
-		opacity: 0.6;
-		font-style: italic;
 	}
 
 	.link-card-actions {
