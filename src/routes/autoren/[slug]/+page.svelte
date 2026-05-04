@@ -22,6 +22,21 @@ const paginated = $derived(
 	{#if data.imageUrl}
 		<meta property="og:image" content={data.imageUrl} />
 	{/if}
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+		{JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Person',
+			name: data.author.name,
+			birthDate: data.author.born?.toString(),
+			deathDate: data.author.died?.toString(),
+			description: data.author.bio || undefined,
+			image: data.imageUrl || undefined,
+			url: `https://werk.review/autoren/${data.author.slug}`,
+			sameAs: [data.wikiUrl, ...data.author.sources.map((s) => s.url)].filter(Boolean),
+		})}
+	</script>
 </svelte:head>
 
 <Breadcrumbs items={[

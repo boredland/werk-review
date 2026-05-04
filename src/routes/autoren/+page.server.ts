@@ -24,7 +24,7 @@ export const load: PageServerLoad = async ({ platform }) => {
 			: new Map(),
 	]);
 
-	let authors = allAuthors.map((a) => {
+	const authors = allAuthors.map((a) => {
 		const s = stats.get(a.id);
 		return {
 			...a,

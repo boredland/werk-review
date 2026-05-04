@@ -196,6 +196,10 @@ export const actions: Actions = {
 			});
 		}
 
+		if (platform?.env.SESSION_KV) {
+			await platform.env.SESSION_KV.delete(`review-stats:${work.id}`);
+		}
+
 		return { reviewSuccess: true };
 	},
 
@@ -269,6 +273,10 @@ export const actions: Actions = {
 		await db
 			.delete(reviews)
 			.where(and(eq(reviews.userId, locals.user.id), eq(reviews.workId, work.id)));
+
+		if (platform?.env.SESSION_KV) {
+			await platform.env.SESSION_KV.delete(`review-stats:${work.id}`);
+		}
 
 		return { reviewDeleted: true };
 	},

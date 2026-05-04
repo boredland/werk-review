@@ -23,38 +23,60 @@ export async function getWorkReviewStats(
 	const result = new Map<string, WorkReviewStats>();
 	if (workIds.length === 0) return result;
 
-	const cacheKey = `review-stats:${workIds.sort().join(',')}`;
+	const uncachedWorkIds: string[] = [];
 
 	if (kv) {
-		const cached = await kv.get(cacheKey);
-		if (cached) {
-			const entries: [string, WorkReviewStats][] = JSON.parse(cached);
-			return new Map(entries);
+		const cachedValues = await Promise.all(workIds.map((id) => kv.get(`review-stats:${id}`)));
+		for (let i = 0; i < workIds.length; i++) {
+			const cached = cachedValues[i];
+			if (cached) {
+				result.set(workIds[i], JSON.parse(cached));
+			} else {
+				uncachedWorkIds.push(workIds[i]);
+			}
 		}
+	} else {
+		uncachedWorkIds.push(...workIds);
 	}
 
-	const db = getDb(d1);
-	const rows = await db
-		.select({
-			workId: reviews.workId,
-			reviewCount: count(reviews.id),
-			avgRating: avg(reviews.rating),
-			totalPoints: sum(reviews.rating),
-		})
-		.from(reviews)
-		.where(inArray(reviews.workId, workIds))
-		.groupBy(reviews.workId);
+	if (uncachedWorkIds.length > 0) {
+		const db = getDb(d1);
+		const rows = await db
+			.select({
+				workId: reviews.workId,
+				reviewCount: count(reviews.id),
+				avgRating: avg(reviews.rating),
+				totalPoints: sum(reviews.rating),
+			})
+			.from(reviews)
+			.where(inArray(reviews.workId, uncachedWorkIds))
+			.groupBy(reviews.workId);
 
-	for (const row of rows) {
-		result.set(row.workId, {
-			reviewCount: row.reviewCount,
-			avgRating: row.avgRating !== null ? Number(row.avgRating) : null,
-			totalPoints: row.totalPoints !== null ? Number(row.totalPoints) : 0,
-		});
-	}
+		const fetchedStats = new Map<string, WorkReviewStats>();
+		for (const id of uncachedWorkIds) {
+			fetchedStats.set(id, { reviewCount: 0, avgRating: null, totalPoints: 0 });
+		}
 
-	if (kv) {
-		kv.put(cacheKey, JSON.stringify([...result.entries()]), { expirationTtl: STATS_CACHE_TTL });
+		for (const row of rows) {
+			fetchedStats.set(row.workId, {
+				reviewCount: row.reviewCount,
+				avgRating: row.avgRating !== null ? Number(row.avgRating) : null,
+				totalPoints: row.totalPoints !== null ? Number(row.totalPoints) : 0,
+			});
+		}
+
+		for (const [id, stats] of fetchedStats.entries()) {
+			result.set(id, stats);
+		}
+
+		if (kv) {
+			// Don't await the cache set to avoid blocking the response
+			Promise.all(
+				Array.from(fetchedStats.entries()).map(([id, stats]) =>
+					kv.put(`review-stats:${id}`, JSON.stringify(stats), { expirationTtl: STATS_CACHE_TTL }),
+				),
+			).catch(() => {});
+		}
 	}
 
 	return result;

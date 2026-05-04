@@ -26,6 +26,33 @@ $effect(() => {
 	<meta property="og:title" content="{data.work.title} – werk.review" />
 	<meta property="og:description" content="{data.author?.name ?? 'Unbekannt'} · {data.genre?.name ?? ''} · {data.work.year_display}" />
 	<meta property="og:type" content="book" />
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+		{JSON.stringify({
+			'@context': 'https://schema.org',
+			'@type': 'Book',
+			name: data.work.title,
+			author: data.author
+				? {
+						'@type': 'Person',
+						name: data.author.name,
+					}
+				: undefined,
+			datePublished: data.work.year_from?.toString(),
+			genre: data.genre?.name,
+			description: data.work.plot || undefined,
+			aggregateRating: data.score
+				? {
+						'@type': 'AggregateRating',
+						ratingValue: data.reviews.reduce((acc, r) => acc + r.rating, 0) / data.reviews.length || undefined,
+						reviewCount: data.reviews.length,
+						bestRating: 3,
+						worstRating: -3,
+					}
+				: undefined,
+		})}
+	</script>
 </svelte:head>
 
 <Breadcrumbs items={[
