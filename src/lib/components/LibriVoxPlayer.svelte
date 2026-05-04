@@ -23,9 +23,7 @@ let audioStatus = $state<{ [id: string]: 'uncached' | 'downloading' | 'cached' }
 
 onMount(async () => {
 	try {
-		const res = await fetch(
-			`https://librivox.org/api/feed/audiobooks/?id=${librivoxId}&extended=1&format=json`,
-		);
+		const res = await fetch(`/api/librivox/${librivoxId}`);
 		if (!res.ok) throw new Error('API Fehler');
 		const data = (await res.json()) as { books?: { title: string; sections: Section[] }[] };
 		if (!data.books || data.books.length === 0) throw new Error('Nicht gefunden');
@@ -41,6 +39,7 @@ onMount(async () => {
 			}
 		}
 	} catch (e) {
+		console.error('LibriVox fetch error:', e);
 		error = 'Fehler beim Laden des Hörbuchs.';
 	} finally {
 		loading = false;
