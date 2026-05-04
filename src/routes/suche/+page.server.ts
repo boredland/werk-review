@@ -1,7 +1,8 @@
 import { getAuthors, getGenre, getGenres, getWorks } from '$lib/server/data';
+import { getWikipediaImageUrls } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = ({ url }) => {
+export const load: PageServerLoad = async ({ url, platform }) => {
 	const q = url.searchParams.get('q')?.trim() ?? '';
 	if (!q) return { query: '', authors: [], works: [], genres: [] };
 
@@ -37,5 +38,15 @@ export const load: PageServerLoad = ({ url }) => {
 		.filter((g) => g.name.toLowerCase().includes(lower))
 		.map((g) => ({ name: g.name, slug: g.slug }));
 
-	return { query: q, authors, works, genres };
+	const imageUrls = await getWikipediaImageUrls(
+		authors.map((a) => a.name),
+		platform?.env.SESSION_KV,
+	);
+
+	const authorsWithImages = authors.map((a) => ({
+		...a,
+		imageUrl: imageUrls.get(a.name) ?? null,
+	}));
+
+	return { query: q, authors: authorsWithImages, works, genres };
 };

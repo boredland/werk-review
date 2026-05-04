@@ -178,7 +178,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		border-bottom: 1px solid var(--color-border-light);
 		color: var(--color-text);
 		text-decoration: none;
-		transition: background 0.15s;
+		transition: all 0.2s;
 	}
 
 	.work-row:hover {
@@ -187,6 +187,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		margin: 0 -0.75rem;
 		padding-left: 0.75rem;
 		padding-right: 0.75rem;
+		transform: translateX(4px);
 	}
 
 	.work-info {

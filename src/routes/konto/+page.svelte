@@ -46,80 +46,83 @@ $effect(() => {
 		<div class="banner banner--error" role="alert">{form.error}</div>
 	{/if}
 
-	<section class="profile">
-		<div class="profile-row">
-			<div class="profile-label">Benutzername</div>
-			{#if editingUsername}
-				<form method="POST" action="?/updateUsername" use:enhance class="inline-form">
-					<input type="text" name="username" value={user.username} required minlength="3" maxlength="30" class="form-input" />
-					<div class="form-actions">
-						<button type="submit" class="btn btn--primary">Speichern</button>
-						<button type="button" class="btn btn--ghost" onclick={() => editingUsername = false}>Abbrechen</button>
+	<div class="account-grid">
+		<section class="profile" style="animation: fadeUp 0.5s ease both; animation-delay: 0.1s">
+			<div class="section-title">Profil-Informationen</div>
+			<div class="profile-row">
+				<div class="profile-label">Benutzername</div>
+				{#if editingUsername}
+					<form method="POST" action="?/updateUsername" use:enhance class="inline-form">
+						<input type="text" name="username" value={user.username} required minlength="3" maxlength="30" class="form-input" />
+						<div class="form-actions">
+							<button type="submit" class="btn btn--primary">Speichern</button>
+							<button type="button" class="btn btn--ghost" onclick={() => editingUsername = false}>Abbrechen</button>
+						</div>
+					</form>
+				{:else}
+					<div class="profile-value">
+						<span class="value-text">{user.username}</span>
+						<button class="edit-btn" onclick={() => editingUsername = true}>Ändern</button>
 					</div>
-				</form>
-			{:else}
-				<div class="profile-value">
-					<span>{user.username}</span>
-					<button class="edit-btn" onclick={() => editingUsername = true}>Ändern</button>
-				</div>
-			{/if}
-		</div>
+				{/if}
+			</div>
 
-		<div class="profile-row">
-			<div class="profile-label">E-Mail</div>
-			{#if editingEmail}
-				<form method="POST" action="?/updateEmail" use:enhance class="inline-form">
-					<input type="email" name="email" value={user.email} required class="form-input" />
-					<div class="form-actions">
-						<button type="submit" class="btn btn--primary">Speichern</button>
-						<button type="button" class="btn btn--ghost" onclick={() => editingEmail = false}>Abbrechen</button>
+			<div class="profile-row">
+				<div class="profile-label">E-Mail</div>
+				{#if editingEmail}
+					<form method="POST" action="?/updateEmail" use:enhance class="inline-form">
+						<input type="email" name="email" value={user.email} required class="form-input" />
+						<div class="form-actions">
+							<button type="submit" class="btn btn--primary">Speichern</button>
+							<button type="button" class="btn btn--ghost" onclick={() => editingEmail = false}>Abbrechen</button>
+						</div>
+					</form>
+				{:else}
+					<div class="profile-value">
+						<span class="value-text">{user.email}</span>
+						{#if user.emailVerified}
+							<span class="badge badge--ok">Bestätigt</span>
+						{:else}
+							<span class="badge badge--warn">Nicht bestätigt</span>
+							<form method="POST" action="?/resendVerification" use:enhance class="resend-form">
+								<button type="submit" class="resend-btn">Erneut senden</button>
+							</form>
+						{/if}
+						<button class="edit-btn" onclick={() => editingEmail = true}>Ändern</button>
 					</div>
-				</form>
-			{:else}
-				<div class="profile-value">
-					<span>{user.email}</span>
-					{#if user.emailVerified}
-						<span class="badge badge--ok">Bestätigt</span>
-					{:else}
-						<span class="badge badge--warn">Nicht bestätigt</span>
-						<form method="POST" action="?/resendVerification" use:enhance class="resend-form">
-							<button type="submit" class="resend-btn">Erneut senden</button>
-						</form>
-					{/if}
-					<button class="edit-btn" onclick={() => editingEmail = true}>Ändern</button>
-				</div>
-			{/if}
-		</div>
+				{/if}
+			</div>
 
-		<div class="profile-row">
-			<div class="profile-label">Passwort</div>
-			{#if editingPassword}
-				<form method="POST" action="?/updatePassword" use:enhance class="inline-form">
-					<input type="password" name="currentPassword" placeholder="Aktuelles Passwort" required class="form-input" />
-					<input type="password" name="newPassword" placeholder="Neues Passwort" required minlength="8" class="form-input" />
-					<input type="password" name="confirmPassword" placeholder="Neues Passwort bestätigen" required class="form-input" />
-					<div class="form-actions">
-						<button type="submit" class="btn btn--primary">Speichern</button>
-						<button type="button" class="btn btn--ghost" onclick={() => editingPassword = false}>Abbrechen</button>
+			<div class="profile-row">
+				<div class="profile-label">Passwort</div>
+				{#if editingPassword}
+					<form method="POST" action="?/updatePassword" use:enhance class="inline-form">
+						<input type="password" name="currentPassword" placeholder="Aktuelles Passwort" required class="form-input" />
+						<input type="password" name="newPassword" placeholder="Neues Passwort" required minlength="8" class="form-input" />
+						<input type="password" name="confirmPassword" placeholder="Neues Passwort bestätigen" required class="form-input" />
+						<div class="form-actions">
+							<button type="submit" class="btn btn--primary">Speichern</button>
+							<button type="button" class="btn btn--ghost" onclick={() => editingPassword = false}>Abbrechen</button>
+						</div>
+					</form>
+				{:else}
+					<div class="profile-value">
+						<span class="value-text">••••••••</span>
+						<button class="edit-btn" onclick={() => editingPassword = true}>Ändern</button>
 					</div>
-				</form>
-			{:else}
-				<div class="profile-value">
-					<span>••••••••</span>
-					<button class="edit-btn" onclick={() => editingPassword = true}>Ändern</button>
-				</div>
-			{/if}
-		</div>
-	</section>
+				{/if}
+			</div>
+		</section>
+	</div>
 
-	<section class="reviews-section">
+	<section class="reviews-section" style="animation: fadeUp 0.5s ease both; animation-delay: 0.2s">
 		<h2>Meine Bewertungen <span class="reviews-count">({data.userReviews.length})</span></h2>
 
 		{#if data.userReviews.length > 0}
 			<div class="reviews-list">
-				{#each data.userReviews as review}
+				{#each data.userReviews as review, i}
 					{@const config = getRatingConfig(review.rating)}
-					<div class="review-card">
+					<div class="review-card" style="animation: fadeUp 0.4s ease both; animation-delay: {0.25 + i * 0.04}s">
 						<div class="review-header">
 							<a href="/werke/{review.workSlug}" class="review-work">{review.workTitle}</a>
 							<span
@@ -224,10 +227,25 @@ $effect(() => {
 {/if}
 
 <style>
+	.account-grid {
+		display: grid;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+
+	.section-title {
+		font-family: var(--font-display);
+		font-size: 1.2rem;
+		font-weight: 600;
+		padding: 1.25rem 1.5rem;
+		border-bottom: 1px solid var(--color-border);
+		background: var(--color-surface-warm);
+	}
+
 	.profile {
-		margin-bottom: 2.5rem;
 		background: var(--color-surface);
-		border: 1px solid var(--color-border-light);
+		border: 1px solid var(--color-border);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 	}
 
 	.profile-row {
@@ -252,9 +270,13 @@ $effect(() => {
 	.profile-value {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.75rem;
 		flex-wrap: wrap;
-		font-size: 0.95rem;
+	}
+
+	.value-text {
+		font-size: 1rem;
+		font-weight: 500;
 	}
 
 	.edit-btn {

@@ -294,10 +294,19 @@ function handleSearch(e: SubmitEvent) {
 
 		.nav {
 			display: none;
+			border-bottom: none;
+			background: var(--color-surface);
+			overflow: hidden;
 		}
 
 		.nav.nav-open {
 			display: block;
+			animation: slideDown 0.3s ease-out;
+		}
+
+		@keyframes slideDown {
+			from { opacity: 0; transform: translateY(-10px); }
+			to { opacity: 1; transform: translateY(0); }
 		}
 
 		.nav-inner {

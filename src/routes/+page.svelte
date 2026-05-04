@@ -194,12 +194,13 @@ let { data } = $props();
 		border: 1px solid var(--color-border-light);
 		color: var(--color-text);
 		text-decoration: none;
-		transition: border-color 0.2s, box-shadow 0.2s;
+		transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 	}
 
 	.author-card:hover {
 		border-color: var(--color-accent);
-		box-shadow: 0 2px 12px rgba(123, 45, 59, 0.08);
+		box-shadow: 0 4px 18px rgba(123, 45, 59, 0.12);
+		transform: translateY(-2px);
 		text-decoration: none;
 	}
 
@@ -257,12 +258,13 @@ let { data } = $props();
 		border: 1px solid var(--color-border-light);
 		color: var(--color-text);
 		text-decoration: none;
-		transition: border-color 0.2s, box-shadow 0.2s;
+		transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 	}
 
 	.work-card:hover {
 		border-color: var(--color-gold);
-		box-shadow: 0 2px 12px rgba(184, 150, 62, 0.1);
+		box-shadow: 0 4px 18px rgba(184, 150, 62, 0.12);
+		transform: translateY(-2px);
 		text-decoration: none;
 	}
 
