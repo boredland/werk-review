@@ -2,7 +2,7 @@
 
 **werk.review** ist eine moderne, blitzschnelle Datenbank und Review-Plattform für klassische Literatur. Sie bietet einen kuratierten Überblick über die wichtigsten Autoren und Werke der Weltliteratur, ergänzt durch Community-Bewertungen, Volltexte und Hörbuch-Links.
 
-![werk.review Preview](https://werk.review/og-image.png)
+![werk.review Preview](static/preview.png)
 
 ## ✨ Features
 
