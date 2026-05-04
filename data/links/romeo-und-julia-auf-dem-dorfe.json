@@ -22,11 +22,10 @@
 	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
-		"url": "https://archive.org/details/romeoundjuliaauf0000unse_l7m4",
-		"label": "Romeo Und Julia Auf Dem Dorfe Erzahlung",
+		"url": "https://archive.org/details/romeoundjuliaau00kellgoog",
+		"label": "Romeo und Julia auf dem Dorfe: Erzählung",
 		"formats": [
-			"EPUB",
-			"Text PDF"
+			"EPUB"
 		]
 	}
 ]
