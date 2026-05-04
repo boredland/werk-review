@@ -12,6 +12,7 @@ interface Section {
 	title: string;
 	listen_url: string;
 	playtime: string;
+	readers?: { display_name: string }[];
 }
 
 let book: { title: string; url_librivox: string; sections: Section[] } | null = $state(null);
@@ -19,11 +20,26 @@ let loading = $state(true);
 let error = $state('');
 
 let currentSection: Section | null = $state(null);
+let audioLoading = $state(false);
+
+const readers = $derived.by(() => {
+	if (!book) return [];
+	const names = new Set<string>();
+	for (const section of book.sections) {
+		for (const reader of section.readers || []) {
+			if (reader.display_name) {
+				names.add(reader.display_name);
+			}
+		}
+	}
+	return Array.from(names);
+});
 
 function playNext() {
 	if (!book || !currentSection) return;
 	const currentIndex = book.sections.findIndex((s) => s.id === currentSection?.id);
 	if (currentIndex !== -1 && currentIndex < book.sections.length - 1) {
+		audioLoading = true;
 		currentSection = book.sections[currentIndex + 1];
 	}
 }
@@ -84,76 +100,183 @@ function isRelevant(sectionTitle: string) {
 }
 </script>
 
-<div class="player-container">
+<div class="librivox-wrapper">
 	{#if loading}
-		<p class="loading">Lade Hörbuch-Daten...</p>
-	{:else if error}
-		<p class="error">{error}</p>
-	{:else if book}
-		<div class="player-header">
-			<h4>LibriVox Player: {book.title}</h4>
-			{#if book.url_librivox}
-				<a href={book.url_librivox} target="_blank" rel="noopener" class="header-link" title="Zur LibriVox-Seite">
-					↗ LibriVox
-				</a>
-			{/if}
+		<div class="player-container loading-state">
+			<span class="spinner loading-spinner"></span>
+			<p class="loading">Lade Hörbuch-Daten...</p>
 		</div>
+	{:else if error}
+		<div class="player-container">
+			<p class="error">{error}</p>
+		</div>
+	{:else if book}
+		<details class="player-container">
+			<summary class="player-header">
+				<div class="header-main">
+					<h4>{book.title}</h4>
+					{#if readers.length > 0}
+						<span class="readers">Gelesen von {readers.join(', ')}</span>
+					{/if}
+				</div>
+				<div class="header-actions">
+					{#if book.url_librivox}
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
+						<a 
+							href={book.url_librivox} 
+							target="_blank" 
+							rel="noopener" 
+							class="header-link" 
+							title="Zur LibriVox-Seite"
+							onclick={(e) => e.stopPropagation()}
+						>
+							↗ LibriVox
+						</a>
+					{/if}
+					<span class="details-icon"></span>
+				</div>
+			</summary>
 
-		{#if currentSection}
-			<div class="active-player">
-				<p class="now-playing">
-					<span>Spielt jetzt:</span> {currentSection.title}
-				</p>
-				<!-- svelte-ignore a11y_media_has_caption -->
-				<audio controls src={currentSection.listen_url} autoplay onended={playNext}>
-					Dein Browser unterstützt kein Audio.
-				</audio>
-			</div>
-		{/if}
-
-		<ul class="section-list">
-			{#each book.sections as section}
-				{@const relevant = isRelevant(section.title)}
-				<li class="section-item" class:is-relevant={relevant} class:is-active={currentSection?.id === section.id}>
-					<button class="play-btn" onclick={() => currentSection = section}>
-						{currentSection?.id === section.id ? '⏸' : '▶'}
-					</button>
-					<div class="section-info">
-						<span class="section-title">{section.title}</span>
-						{#if section.playtime}
-							<span class="section-time">{Math.floor(parseInt(section.playtime) / 60)}:{parseInt(section.playtime) % 60 < 10 ? '0' : ''}{parseInt(section.playtime) % 60} Min.</span>
-						{/if}
+			<div class="player-content">
+				{#if currentSection}
+					<div class="active-player">
+						<p class="now-playing">
+							<span>Spielt jetzt:</span> {currentSection.title}
+						</p>
+						<!-- svelte-ignore a11y_media_has_caption -->
+						<audio 
+							controls 
+							src={currentSection.listen_url} 
+							autoplay 
+							onended={playNext}
+							onwaiting={() => audioLoading = true}
+							onplaying={() => audioLoading = false}
+							oncanplay={() => audioLoading = false}
+							onerror={() => audioLoading = false}
+						>
+							Dein Browser unterstützt kein Audio.
+						</audio>
 					</div>
-				</li>
-			{/each}
-		</ul>
+				{/if}
+
+				<ul class="section-list">
+					{#each book.sections as section}
+						{@const relevant = isRelevant(section.title)}
+						<li class="section-item" class:is-relevant={relevant} class:is-active={currentSection?.id === section.id}>
+							<button 
+								class="play-btn" 
+								onclick={() => {
+									if (currentSection?.id !== section.id) audioLoading = true;
+									currentSection = section;
+								}}
+							>
+								{#if currentSection?.id === section.id}
+									{#if audioLoading}
+										<span class="spinner"></span>
+									{:else}
+										⏸
+									{/if}
+								{:else}
+									▶
+								{/if}
+							</button>
+							<div class="section-info">
+								<span class="section-title">{section.title}</span>
+								{#if section.playtime}
+									<span class="section-time">{Math.floor(parseInt(section.playtime) / 60)}:{parseInt(section.playtime) % 60 < 10 ? '0' : ''}{parseInt(section.playtime) % 60} Min.</span>
+								{/if}
+							</div>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</details>
 	{/if}
 </div>
 
 <style>
+	.librivox-wrapper {
+		margin-bottom: 2rem;
+	}
+
 	.player-container {
 		background: var(--color-surface);
 		border: 1px solid var(--color-border);
-		margin-bottom: 2rem;
 		border-radius: 4px;
 		overflow: hidden;
+	}
+
+	.loading-state {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		gap: 1rem;
+	}
+
+	.loading-spinner {
+		border-color: var(--color-border);
+		border-top-color: var(--color-accent);
+		width: 24px;
+		height: 24px;
+	}
+
+	/* details/summary styling */
+	summary {
+		list-style: none;
+	}
+	summary::-webkit-details-marker {
+		display: none;
 	}
 
 	.player-header {
 		padding: 1rem;
 		background: var(--color-surface-warm);
-		border-bottom: 1px solid var(--color-border);
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
+		align-items: center;
 		gap: 1rem;
+		cursor: pointer;
+		user-select: none;
 	}
 
-	.player-header h4 {
+	details[open] .player-header {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.header-main {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		min-width: 0;
+	}
+
+	.header-main h4 {
 		margin: 0;
 		font-family: var(--font-display);
 		font-size: 1rem;
-		color: var(--color-accent);
+		color: var(--color-text);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.readers {
+		font-family: var(--font-ui);
+		font-size: 0.8rem;
+		color: var(--color-text-muted);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.header-actions {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-shrink: 0;
 	}
 
 	.header-link {
@@ -170,8 +293,23 @@ function isRelevant(sectionTitle: string) {
 		text-underline-offset: 3px;
 	}
 
+	.details-icon {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		border-right: 2px solid var(--color-text-muted);
+		border-bottom: 2px solid var(--color-text-muted);
+		transform: rotate(45deg);
+		transition: transform 0.2s;
+	}
+
+	details[open] .details-icon {
+		transform: rotate(225deg);
+		margin-top: 4px;
+	}
+
 	.loading, .error {
-		padding: 1.5rem;
+		margin: 0;
 		text-align: center;
 		font-family: var(--font-ui);
 		color: var(--color-text-muted);
@@ -179,6 +317,7 @@ function isRelevant(sectionTitle: string) {
 
 	.error {
 		color: red;
+		padding: 1.5rem;
 	}
 
 	.active-player {
@@ -261,6 +400,20 @@ function isRelevant(sectionTitle: string) {
 
 	.play-btn:hover {
 		opacity: 0.9;
+	}
+
+	.spinner {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		border: 2px solid rgba(255, 255, 255, 0.3);
+		border-top-color: white;
+		border-radius: 50%;
+		animation: spin 1s linear infinite;
+	}
+
+	@keyframes spin {
+		to { transform: rotate(360deg); }
 	}
 
 	.section-info {
