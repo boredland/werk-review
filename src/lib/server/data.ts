@@ -1,4 +1,4 @@
-import type { Author, Genre, SimilarWork, Work } from '$lib/types';
+import type { Author, ExternalLink, Genre, SimilarWork, Work } from '$lib/types';
 
 const authorModules = import.meta.glob<Author>('/data/authors/*.json', {
 	eager: true,
@@ -9,6 +9,10 @@ const workModules = import.meta.glob<Work>('/data/works/*.json', {
 	import: 'default',
 });
 const genresModule = import.meta.glob<Genre[]>('/data/genres.json', {
+	eager: true,
+	import: 'default',
+});
+const linkModules = import.meta.glob<ExternalLink[]>('/data/links/*.json', {
 	eager: true,
 	import: 'default',
 });
@@ -66,6 +70,19 @@ export function getGenres(): Genre[] {
 
 export function getGenre(idOrSlug: string): Genre | undefined {
 	return getGenres().find((g) => g.id === idOrSlug || g.slug === idOrSlug);
+}
+
+let _links: Map<string, ExternalLink[]> | null = null;
+
+export function getLinksForWork(slug: string): ExternalLink[] {
+	if (!_links) {
+		_links = new Map();
+		for (const [path, links] of Object.entries(linkModules)) {
+			const filename = path.split('/').pop()?.replace('.json', '') ?? '';
+			_links.set(filename, links);
+		}
+	}
+	return _links.get(slug) ?? [];
 }
 
 export function getSimilarWorks(workId: string): SimilarWork[] {

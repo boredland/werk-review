@@ -64,6 +64,21 @@ $effect(() => {
 		</section>
 	{/if}
 
+	{#if data.externalLinks.length > 0}
+		<section class="external-links">
+			<h2>Lesen & Hören</h2>
+			<div class="links-grid">
+				{#each data.externalLinks as link}
+					<a href={link.url} target="_blank" rel="noopener" class="link-card">
+						<span class="link-format">{link.format}</span>
+						<span class="link-label">{link.label}</span>
+						<span class="link-source">{link.source}</span>
+					</a>
+				{/each}
+			</div>
+		</section>
+	{/if}
+
 	{#if data.work.sources.length > 0}
 		<section class="sources">
 			<h3>Quellen</h3>
@@ -203,6 +218,54 @@ $effect(() => {
 		margin-bottom: 2rem;
 		line-height: 1.75;
 		max-width: 720px;
+	}
+
+	.external-links {
+		margin-bottom: 2rem;
+	}
+
+	.links-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: 0.5rem;
+	}
+
+	.link-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		padding: 0.85rem 1rem;
+		background: var(--color-surface);
+		border: 1px solid var(--color-border-light);
+		text-decoration: none;
+		color: var(--color-text);
+		transition: border-color 0.2s;
+	}
+
+	.link-card:hover {
+		border-color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.link-format {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--color-gold);
+	}
+
+	.link-label {
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: 0.95rem;
+	}
+
+	.link-source {
+		font-family: var(--font-ui);
+		font-size: 0.78rem;
+		color: var(--color-text-muted);
 	}
 
 	.sources {

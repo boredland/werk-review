@@ -26,6 +26,12 @@ jobs:
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
         run: node scripts/sheets-sync.mjs
 
+      - name: Enrich with external links
+        run: node scripts/enrich-links.mjs
+
+      - name: Enrich with Wikipedia data
+        run: node scripts/enrich-wikipedia.mjs
+
       - name: Check for changes
         id: changes
         run: |

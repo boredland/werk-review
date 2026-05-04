@@ -13,6 +13,11 @@
 	"collection_title": "Züricher Novellen",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Das Fähnlein der sieben Aufrechten ist eine Novelle des Schweizer Dichters Gottfried Keller.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Das_F%C3%A4hnlein_der_sieben_Aufrechten"
+		}
+	]
 }

@@ -2,7 +2,14 @@ import { error, fail } from '@sveltejs/kit';
 import { and, desc, eq } from 'drizzle-orm';
 import { bookmarks, reviews, users } from '$lib/db/schema';
 import { getRatingByLabel } from '$lib/ratings';
-import { getAuthor, getGenre, getSimilarWorks, getWork, getWorks } from '$lib/server/data';
+import {
+	getAuthor,
+	getGenre,
+	getLinksForWork,
+	getSimilarWorks,
+	getWork,
+	getWorks,
+} from '$lib/server/data';
 import { getDb } from '$lib/server/db';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -104,6 +111,8 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		}
 	}
 
+	const externalLinks = getLinksForWork(work.slug);
+
 	return {
 		work,
 		author: author ? { name: author.name, slug: author.slug } : null,
@@ -113,6 +122,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		userReview,
 		score,
 		isBookmarked,
+		externalLinks,
 	};
 };
 
