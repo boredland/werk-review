@@ -36,6 +36,8 @@ let { children } = $props();
 			<a href="/vorschlaege">Vorschlagen</a>
 			<a href="/konto">Konto</a>
 			<a href="/ueber-uns">Über uns</a>
+			<a href="/impressum">Impressum</a>
+			<a href="/datenschutz">Datenschutz</a>
 		</div>
 		<p class="footer-copy">&copy; {new Date().getFullYear()} werk.review</p>
 	</div>
