@@ -315,8 +315,8 @@ $effect(() => {
 
 	.links-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-		gap: 0.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+		gap: 0.75rem;
 	}
 
 	.link-card {
