@@ -11,6 +11,11 @@
 	"collection_title": "Züricher Novellen",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Hadlaub ist der Titel der ersten Züricher Novelle Gottfried Kellers über den spätmittelalterlichen Schweizer Minnesänger Johannes Hadlaub. 1877 wurde sie bei Göschen in Buchform publiziert, nachdem sie zum Teil bereits ein Jahr zuvor in Julius Rodenbergs Zeitschrift Deutscher Rundschau vorabgedruckt wurde.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Hadlaub_(Gottfried_Keller)"
+		}
+	]
 }

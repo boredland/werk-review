@@ -11,6 +11,11 @@
 	"collection_title": "Die Leute von Seldwyla. Teil I",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Frau Regel Amrain und ihr Jüngster ist eine Erzählung aus dem Novellenzyklus Die Leute von Seldwyla von Gottfried Keller, der 1856 in Braunschweig erschien. Ihr Thema ist die Erziehung eines Jungen zu einem aufrechten Mann und Bürger. Franz Duncker hatte den Text 1855 in der Berliner Volks-Zeitung vorabgedruckt.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Frau_Regel_Amrain_und_ihr_J%C3%BCngster"
+		}
+	]
 }

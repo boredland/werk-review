@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Die Fabel bezeichnet eine in Versen oder Prosa verfasste, kürzere Erzählung mit belehrender Absicht, in der vor allem Tiere, aber auch Pflanzen und Dingliches oder fabelhafte Mischwesen menschliche Eigenschaften besitzen (Personifikation) und auch menschlich handeln (Bildebene). Die Dramatik der Fabelhandlung zielt auf eine Schlusspointe hin, an die sich meist eine allgemeingültige Moral (Sachebene) anschließt. Durch die (leichte) Erkennbarkeit der Lehre unterscheidet sich die Fabel von anderen Formen didaktischer Dichtung wie dem Gleichnis oder der Parabel. Die Moral bietet oft einen Interpretationsspielraum.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Fabel"
+		}
+	]
 }
