@@ -130,11 +130,25 @@ $effect(() => {
 
 				{#if otherLinks.length > 0}
 					{#each otherLinks as link}
-						<a href={link.url} target="_blank" rel="noopener" class="link-card">
-							<span class="link-format">{link.format}</span>
-							<span class="link-label">{link.label}</span>
-							<span class="link-source">{link.source}</span>
-						</a>
+						<div class="link-card">
+							<div class="link-card-main">
+								<span class="link-format">{link.format}</span>
+								<a href={link.url} target="_blank" rel="noopener" class="link-title">
+									{link.label}
+								</a>
+								<div class="link-formats">
+									<span class="format-tag">Online lesen</span>
+									{#if link.source === 'Projekt Gutenberg-DE'}
+										<span class="format-tag format-tag--soon">EPUB bald verfügbar</span>
+									{/if}
+								</div>
+							</div>
+							<div class="link-card-actions">
+								<a href={link.url} target="_blank" rel="noopener" class="source-link">
+									↗ {link.source}
+								</a>
+							</div>
+						</div>
 					{/each}
 				{/if}
 			</div>
@@ -321,40 +335,80 @@ $effect(() => {
 
 	.link-card {
 		display: flex;
-		flex-direction: column;
-		gap: 0.15rem;
+		justify-content: space-between;
+		align-items: center;
 		padding: 0.85rem 1rem;
 		background: var(--color-surface);
 		border: 1px solid var(--color-border-light);
-		text-decoration: none;
+		border-radius: 4px;
 		color: var(--color-text);
 		transition: border-color 0.2s;
+		gap: 1rem;
 	}
-
+	
 	.link-card:hover {
 		border-color: var(--color-accent);
-		text-decoration: none;
 	}
 
-	.link-format {
-		font-family: var(--font-ui);
-		font-size: 0.72rem;
-		font-weight: 600;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: var(--color-gold);
+	.link-card-main {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		min-width: 0;
 	}
 
-	.link-label {
+	.link-title {
 		font-family: var(--font-display);
 		font-weight: 600;
 		font-size: 0.95rem;
+		color: var(--color-text);
+		text-decoration: none;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
-	.link-source {
+	.link-title:hover {
+		color: var(--color-accent);
+		text-decoration: underline;
+	}
+
+	.link-formats {
+		display: flex;
+		gap: 0.4rem;
+		margin-top: 0.2rem;
+	}
+
+	.format-tag {
 		font-family: var(--font-ui);
-		font-size: 0.78rem;
+		font-size: 0.7rem;
 		color: var(--color-text-muted);
+		background: var(--color-surface-warm);
+		padding: 0.1rem 0.4rem;
+		border-radius: 2px;
+		border: 1px solid var(--color-border-light);
+	}
+
+	.format-tag--soon {
+		opacity: 0.6;
+		font-style: italic;
+	}
+
+	.link-card-actions {
+		flex-shrink: 0;
+	}
+
+	.source-link {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.source-link:hover {
+		color: var(--color-accent);
+		text-decoration: underline;
 	}
 
 	.sources {
