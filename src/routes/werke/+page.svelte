@@ -1,7 +1,14 @@
 <script lang="ts">
+import Pagination from '$lib/components/Pagination.svelte';
+import RatingBadge from '$lib/components/RatingBadge.svelte';
+
+const PAGE_SIZE = 20;
+
 let { data } = $props();
 let filter = $state('');
 let genreFilter = $state('');
+let sortBy = $state<'year' | 'title' | 'rating'>('year');
+let currentPage = $state(1);
 
 const filtered = $derived(
 	data.works.filter((w) => {
@@ -15,6 +22,25 @@ const filtered = $derived(
 		);
 	}),
 );
+
+const sorted = $derived(
+	[...filtered].sort((a, b) => {
+		if (sortBy === 'title') return a.title.localeCompare(b.title, 'de');
+		if (sortBy === 'rating')
+			return (
+				(b.avgRating ?? -Infinity) - (a.avgRating ?? -Infinity) || b.reviewCount - a.reviewCount
+			);
+		return (a.year_from ?? 9999) - (b.year_from ?? 9999);
+	}),
+);
+
+$effect(() => {
+	sorted.length;
+	currentPage = 1;
+});
+
+const totalPages = $derived(Math.ceil(sorted.length / PAGE_SIZE));
+const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE));
 </script>
 
 <svelte:head>
@@ -40,11 +66,16 @@ const filtered = $derived(
 			<option value={genre.id}>{genre.name}</option>
 		{/each}
 	</select>
+	<select bind:value={sortBy} aria-label="Sortierung">
+		<option value="year">Jahr</option>
+		<option value="title">Titel A–Z</option>
+		<option value="rating">Bewertung</option>
+	</select>
 	<span class="count">{filtered.length} {filtered.length === 1 ? 'Werk' : 'Werke'}</span>
 </div>
 
 <div class="work-list">
-	{#each filtered as work}
+	{#each paginated as work}
 		<a href="/werke/{work.slug}" class="work-row">
 			<div class="work-info">
 				<span class="work-title">{work.title}</span>
@@ -52,12 +83,17 @@ const filtered = $derived(
 					{work.author_name} · {work.genre_name}
 				</span>
 			</div>
-			<span class="work-year">{work.year_display}</span>
+			<div class="work-end">
+				<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
+				<span class="work-year">{work.year_display}</span>
+			</div>
 		</a>
 	{:else}
 		<p class="empty">Keine Werke gefunden.</p>
 	{/each}
 </div>
+
+<Pagination {currentPage} {totalPages} onPageChange={(p) => currentPage = p} />
 
 <style>
 	.page-header {
@@ -168,6 +204,13 @@ const filtered = $derived(
 		font-family: var(--font-ui);
 		font-size: 0.82rem;
 		color: var(--color-text-muted);
+	}
+
+	.work-end {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-shrink: 0;
 	}
 
 	.work-year {

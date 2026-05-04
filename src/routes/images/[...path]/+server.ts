@@ -11,6 +11,17 @@ export const GET: RequestHandler = async ({ params, platform }) => {
 	const headers = new Headers();
 	object.writeHttpMetadata(headers);
 	headers.set('cache-control', 'public, max-age=31536000, immutable');
+	headers.set('vary', 'Accept');
+
+	if (!headers.has('content-type')) {
+		const ext = params.path.split('.').pop();
+		const types: Record<string, string> = {
+			webp: 'image/webp',
+			jpg: 'image/jpeg',
+			png: 'image/png',
+		};
+		if (ext && types[ext]) headers.set('content-type', types[ext]);
+	}
 
 	return new Response(object.body as ReadableStream, { headers });
 };

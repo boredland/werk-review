@@ -1,6 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { desc, eq } from 'drizzle-orm';
-import { reviews, users } from '$lib/db/schema';
+import { and, desc, eq } from 'drizzle-orm';
+import { authorSuggestions, reviews, users } from '$lib/db/schema';
+import { destroySession, hashPassword, SESSION_COOKIE, verifyPassword } from '$lib/server/auth';
 import { getWork } from '$lib/server/data';
 import { getDb } from '$lib/server/db';
 import { sendVerificationEmail } from '$lib/server/email';
@@ -79,5 +80,183 @@ export const actions: Actions = {
 		);
 
 		return { resent: true };
+	},
+
+	updateUsername: async ({ locals, platform, request, cookies }) => {
+		if (!locals.user) redirect(302, '/login');
+		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
+			return fail(500, { error: 'Dienst nicht verfügbar.' });
+		}
+
+		const formData = await request.formData();
+		const username = (formData.get('username') as string)?.trim();
+		if (!username || username.length < 3 || username.length > 30) {
+			return fail(400, { error: 'Benutzername muss zwischen 3 und 30 Zeichen lang sein.' });
+		}
+		if (!/^[a-zA-Z0-9_-]+$/.test(username)) {
+			return fail(400, { error: 'Benutzername darf nur Buchstaben, Zahlen, _ und - enthalten.' });
+		}
+		if (username === locals.user.username) {
+			return fail(400, { error: 'Das ist bereits dein Benutzername.' });
+		}
+
+		const db = getDb(platform.env.DB);
+		const existing = await db.select().from(users).where(eq(users.username, username)).get();
+		if (existing) {
+			return fail(400, { error: 'Dieser Benutzername ist bereits vergeben.' });
+		}
+
+		await db.update(users).set({ username }).where(eq(users.id, locals.user.id));
+
+		const token = cookies.get(SESSION_COOKIE);
+		if (token) {
+			const sessionUser = { ...locals.user, username };
+			await platform.env.SESSION_KV.put(`session:${token}`, JSON.stringify(sessionUser), {
+				expirationTtl: 60 * 60 * 24 * 30,
+			});
+		}
+
+		return { usernameUpdated: true };
+	},
+
+	updateEmail: async ({ locals, platform, request, cookies, url }) => {
+		if (!locals.user) redirect(302, '/login');
+		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
+			return fail(500, { error: 'Dienst nicht verfügbar.' });
+		}
+
+		const formData = await request.formData();
+		const email = (formData.get('email') as string)?.trim().toLowerCase();
+		if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+			return fail(400, { error: 'Bitte gib eine gültige E-Mail-Adresse ein.' });
+		}
+		if (email === locals.user.email) {
+			return fail(400, { error: 'Das ist bereits deine E-Mail-Adresse.' });
+		}
+
+		const db = getDb(platform.env.DB);
+		const existing = await db.select().from(users).where(eq(users.email, email)).get();
+		if (existing) {
+			return fail(400, { error: 'Diese E-Mail-Adresse wird bereits verwendet.' });
+		}
+
+		const verifyToken = crypto.randomUUID();
+		await db
+			.update(users)
+			.set({ email, emailVerified: false, verifyToken })
+			.where(eq(users.id, locals.user.id));
+
+		const token = cookies.get(SESSION_COOKIE);
+		if (token) {
+			const sessionUser = { ...locals.user, email, emailVerified: false };
+			await platform.env.SESSION_KV.put(`session:${token}`, JSON.stringify(sessionUser), {
+				expirationTtl: 60 * 60 * 24 * 30,
+			});
+		}
+
+		if (platform.env.EMAIL) {
+			const user = await db.select().from(users).where(eq(users.id, locals.user.id)).get();
+			if (user) {
+				const siteUrl = platform.env.PUBLIC_SITE_URL || url.origin;
+				platform.context.waitUntil(
+					sendVerificationEmail(platform.env.EMAIL, email, user.username, verifyToken, siteUrl),
+				);
+			}
+		}
+
+		return { emailUpdated: true };
+	},
+
+	updatePassword: async ({ locals, platform, request }) => {
+		if (!locals.user) redirect(302, '/login');
+		if (!platform?.env.DB) {
+			return fail(500, { error: 'Dienst nicht verfügbar.' });
+		}
+
+		const formData = await request.formData();
+		const currentPassword = formData.get('currentPassword') as string;
+		const newPassword = formData.get('newPassword') as string;
+		const confirmPassword = formData.get('confirmPassword') as string;
+
+		if (!currentPassword || !newPassword || !confirmPassword) {
+			return fail(400, { error: 'Bitte fülle alle Felder aus.' });
+		}
+		if (newPassword.length < 8) {
+			return fail(400, { error: 'Das neue Passwort muss mindestens 8 Zeichen lang sein.' });
+		}
+		if (newPassword !== confirmPassword) {
+			return fail(400, { error: 'Die Passwörter stimmen nicht überein.' });
+		}
+
+		const db = getDb(platform.env.DB);
+		const user = await db.select().from(users).where(eq(users.id, locals.user.id)).get();
+		if (!user?.passwordHash) {
+			return fail(400, { error: 'Passwort konnte nicht geändert werden.' });
+		}
+
+		const valid = await verifyPassword(currentPassword, user.passwordHash);
+		if (!valid) {
+			return fail(400, { error: 'Das aktuelle Passwort ist falsch.' });
+		}
+
+		const passwordHash = await hashPassword(newPassword);
+		await db.update(users).set({ passwordHash }).where(eq(users.id, locals.user.id));
+
+		return { passwordUpdated: true };
+	},
+
+	deleteReview: async ({ locals, platform, request }) => {
+		if (!locals.user) redirect(302, '/login');
+		if (!platform?.env.DB) {
+			return fail(500, { error: 'Dienst nicht verfügbar.' });
+		}
+
+		const formData = await request.formData();
+		const reviewId = formData.get('reviewId') as string;
+		if (!reviewId) return fail(400, { error: 'Bewertung nicht gefunden.' });
+
+		const db = getDb(platform.env.DB);
+		await db
+			.delete(reviews)
+			.where(and(eq(reviews.id, reviewId), eq(reviews.userId, locals.user.id)));
+
+		return { reviewDeleted: true };
+	},
+
+	deleteAccount: async ({ locals, platform, request, cookies }) => {
+		if (!locals.user) redirect(302, '/login');
+		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
+			return fail(500, { error: 'Dienst nicht verfügbar.' });
+		}
+
+		const formData = await request.formData();
+		const password = formData.get('password') as string;
+		const confirmation = formData.get('confirmation') as string;
+
+		if (confirmation !== locals.user.username) {
+			return fail(400, { deleteError: 'Bitte gib deinen Benutzernamen korrekt ein.' });
+		}
+
+		const db = getDb(platform.env.DB);
+		const user = await db.select().from(users).where(eq(users.id, locals.user.id)).get();
+		if (!user?.passwordHash) {
+			return fail(400, { deleteError: 'Konto konnte nicht gelöscht werden.' });
+		}
+
+		if (!password || !(await verifyPassword(password, user.passwordHash))) {
+			return fail(400, { deleteError: 'Das Passwort ist falsch.' });
+		}
+
+		await db.delete(reviews).where(eq(reviews.userId, locals.user.id));
+		await db.delete(authorSuggestions).where(eq(authorSuggestions.userId, locals.user.id));
+		await db.delete(users).where(eq(users.id, locals.user.id));
+
+		const token = cookies.get(SESSION_COOKIE);
+		if (token) {
+			await destroySession(platform.env.SESSION_KV, token);
+			cookies.delete(SESSION_COOKIE, { path: '/' });
+		}
+
+		redirect(302, '/');
 	},
 };

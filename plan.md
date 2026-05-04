@@ -5,19 +5,19 @@
 - [ ] Add more authors (currently only Gottfried Keller)
 - [ ] Add more genres beyond what Keller covers
 - [ ] Write/improve plot summaries for works missing them
-- [ ] Upload author photos for all authors via admin
+- [x] Author photos fetched automatically from Wikipedia
 
 ## Features
 
-- [ ] User profile editing (change username, email, password)
-- [ ] Delete account functionality
-- [ ] Review editing/deletion from account page
-- [ ] Pagination on listing pages (autoren, werke, genre works)
-- [ ] Sort options on listing pages (alphabetical, year, rating)
-- [ ] Average rating display on work cards and listing pages
+- [x] User profile editing (change username, email, password)
+- [x] Delete account functionality
+- [x] Review editing/deletion from account page
+- [x] Pagination on listing pages (autoren, werke, genre works)
+- [x] Sort options on listing pages (alphabetical, year, rating)
+- [x] Average rating display on work cards and listing pages
 - [ ] Reading lists / bookmarks (users can save works)
-- [ ] RSS feed for new reviews or newly added works
-- [ ] Sitemap.xml generation for SEO
+- [x] RSS feed for new reviews or newly added works
+- [x] Sitemap.xml generation for SEO
 
 ## Admin
 
@@ -28,18 +28,18 @@
 
 ## Technical
 
-- [ ] Rate limiting on auth endpoints (login, register, password reset)
-- [ ] CSRF protection review
-- [ ] Email sending error handling and retry logic
-- [ ] Cloudflare Email Service domain setup (SPF/DKIM via dashboard)
-- [ ] Proper 404 handling for nonexistent authors/works/genres
-- [ ] Image optimization (resize on upload, serve WebP)
-- [ ] Caching strategy for static data pages
+- [x] Rate limiting on auth endpoints (login, register, password reset)
+- [x] CSRF protection review
+- [x] Email sending error handling and retry logic
+- [x] Cloudflare Email Service domain setup (SPF/DKIM via dashboard)
+- [x] Proper 404 handling for nonexistent authors/works/genres
+- [x] Image optimization (resize on upload, serve WebP)
+- [x] Caching strategy for static data pages
 
 ## Design
 
-- [ ] Dark mode toggle
-- [ ] Footer: add links to Vorschlagen, Konto
-- [ ] Breadcrumb navigation on detail pages
+- [x] Dark mode toggle
+- [x] Footer: add links to Vorschlagen, Konto
+- [x] Breadcrumb navigation on detail pages
 - [ ] Empty state illustrations
-- [ ] Mobile navigation improvements (close on route change)
+- [x] Mobile navigation improvements (close on route change)

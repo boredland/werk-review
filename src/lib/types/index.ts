@@ -7,7 +7,6 @@ export interface Author {
 	died: number | null;
 	gnd_id: string | null;
 	bio: string;
-	photo_r2_key: string | null;
 	sources: Source[];
 }
 

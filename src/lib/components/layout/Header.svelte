@@ -1,6 +1,7 @@
 <script lang="ts">
 import { enhance } from '$app/forms';
 import { page } from '$app/state';
+import ThemeToggle from './ThemeToggle.svelte';
 
 const user = $derived(page.data.user);
 const admin = $derived(page.data.isAdmin);
@@ -16,6 +17,11 @@ const navItems = $derived([
 
 let searchQuery = $state('');
 let mobileOpen = $state(false);
+
+$effect(() => {
+	page.url.pathname;
+	mobileOpen = false;
+});
 
 function handleSearch(e: SubmitEvent) {
 	e.preventDefault();
@@ -42,6 +48,8 @@ function handleSearch(e: SubmitEvent) {
 					<a href="/login" class="auth-btn">Anmelden</a>
 					<a href="/registrieren" class="auth-btn auth-btn--accent">Registrieren</a>
 				{/if}
+
+				<ThemeToggle />
 
 				<button
 					class="mobile-toggle"

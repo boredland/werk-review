@@ -20,13 +20,6 @@ let { data } = $props();
 		</div>
 	</a>
 
-	<a href="/admin/upload-photo" class="admin-card">
-		<span class="admin-card-icon">&#128247;</span>
-		<div class="admin-card-body">
-			<h2>Autorenfoto</h2>
-			<p>Fotos für Autorenprofile hochladen</p>
-		</div>
-	</a>
 </div>
 
 <section class="admin-stats">

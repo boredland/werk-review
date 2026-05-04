@@ -3,6 +3,7 @@ import { eq } from 'drizzle-orm';
 import { users } from '$lib/db/schema';
 import { createSession, hashPassword, SESSION_COOKIE } from '$lib/server/auth';
 import { getDb } from '$lib/server/db';
+import { AUTH_LIMITS, checkRateLimit } from '$lib/server/rate-limit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, platform }) => {
@@ -11,7 +12,7 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 	const db = getDb(platform.env.DB);
 	const user = await db.select().from(users).where(eq(users.resetToken, params.token)).get();
 
-	if (!user || !user.resetTokenExpiry || new Date(user.resetTokenExpiry) < new Date()) {
+	if (!user?.resetTokenExpiry || new Date(user.resetTokenExpiry) < new Date()) {
 		error(404, 'Ungültiger oder abgelaufener Link');
 	}
 
@@ -19,9 +20,17 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, params, platform, cookies }) => {
+	default: async ({ request, params, platform, cookies, getClientAddress }) => {
 		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
 			return fail(500, { error: 'Datenbank nicht verfügbar.' });
+		}
+
+		const ip = getClientAddress();
+		const rl = await checkRateLimit(platform.env.SESSION_KV, ip, AUTH_LIMITS.resetToken);
+		if (!rl.allowed) {
+			return fail(429, {
+				error: `Zu viele Versuche. Bitte warte ${Math.ceil(rl.retryAfter / 60)} Minuten.`,
+			});
 		}
 
 		const data = await request.formData();
@@ -39,7 +48,7 @@ export const actions: Actions = {
 		const db = getDb(platform.env.DB);
 		const user = await db.select().from(users).where(eq(users.resetToken, params.token)).get();
 
-		if (!user || !user.resetTokenExpiry || new Date(user.resetTokenExpiry) < new Date()) {
+		if (!user?.resetTokenExpiry || new Date(user.resetTokenExpiry) < new Date()) {
 			return fail(400, { error: 'Link ist abgelaufen. Bitte fordere einen neuen an.' });
 		}
 

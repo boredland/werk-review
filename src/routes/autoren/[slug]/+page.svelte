@@ -1,8 +1,17 @@
 <script lang="ts">
-let { data } = $props();
+import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+import Pagination from '$lib/components/Pagination.svelte';
+import RatingBadge from '$lib/components/RatingBadge.svelte';
 
-const photoKey = $derived(data.photoMeta?.r2Key ?? data.author.photo_r2_key);
-const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
+const PAGE_SIZE = 20;
+
+let { data } = $props();
+let currentPage = $state(1);
+
+const totalPages = $derived(Math.ceil(data.works.length / PAGE_SIZE));
+const paginated = $derived(
+	data.works.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+);
 </script>
 
 <svelte:head>
@@ -10,35 +19,24 @@ const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
 	<meta property="og:title" content="{data.author.name} – werk.review" />
 	<meta property="og:description" content="{data.author.born ?? '?'}–{data.author.died ?? '?'} · {data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'}" />
 	<meta property="og:type" content="profile" />
-	{#if photoKey}
-		<meta property="og:image" content="/images/{photoKey}" />
+	{#if data.imageUrl}
+		<meta property="og:image" content={data.imageUrl} />
 	{/if}
 </svelte:head>
 
+<Breadcrumbs items={[
+	{ label: 'Autoren', href: '/autoren' },
+	{ label: data.author.name },
+]} />
+
 <article>
 	<header class="author-header">
-		{#if photoKey}
-			<figure class="author-photo-figure">
-				<img
-					class="author-photo"
-					src="/images/{photoKey}"
-					alt={photoAlt}
-				/>
-				{#if data.photoMeta?.description || data.photoMeta?.sourceLabel}
-					<figcaption class="photo-caption">
-						{#if data.photoMeta.description}
-							<span class="photo-desc">{data.photoMeta.description}</span>
-						{/if}
-						{#if data.photoMeta.sourceLabel}
-							{#if data.photoMeta.sourceUrl}
-								<a href={data.photoMeta.sourceUrl} target="_blank" rel="noopener" class="photo-source">{data.photoMeta.sourceLabel}</a>
-							{:else}
-								<span class="photo-source">{data.photoMeta.sourceLabel}</span>
-							{/if}
-						{/if}
-					</figcaption>
-				{/if}
-			</figure>
+		{#if data.imageUrl}
+			<img
+				class="author-photo"
+				src={data.imageUrl}
+				alt={data.author.name}
+			/>
 		{:else}
 			<div class="author-initial-large">{data.author.name.charAt(0)}</div>
 		{/if}
@@ -56,30 +54,33 @@ const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
 		</section>
 	{/if}
 
-	{#if data.author.sources.length > 0}
-		<section class="sources">
-			<h3>Quellen</h3>
-			<ul>
-				{#each data.author.sources as source}
-					<li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>
-				{/each}
-			</ul>
-		</section>
-	{/if}
+	<section class="sources">
+		<h3>Quellen</h3>
+		<ul>
+			{#each data.author.sources as source}
+				<li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>
+			{/each}
+			<li><a href={data.wikiUrl} target="_blank" rel="noopener">Wikipedia</a></li>
+		</ul>
+	</section>
 
 	<section class="works-section">
 		<h2>Werke <span class="works-count">({data.works.length})</span></h2>
 		<div class="works-list">
-			{#each data.works as work}
+			{#each paginated as work}
 				<a href="/werke/{work.slug}" class="work-row">
 					<div class="work-main">
 						<span class="work-title">{work.title}</span>
 						<span class="work-genre">{work.genre_name}</span>
 					</div>
-					<span class="work-year">{work.year_display}</span>
+					<div class="work-end">
+						<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
+						<span class="work-year">{work.year_display}</span>
+					</div>
 				</a>
 			{/each}
 		</div>
+		<Pagination {currentPage} {totalPages} onPageChange={(p) => currentPage = p} />
 	</section>
 </article>
 
@@ -91,44 +92,13 @@ const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
 		margin-bottom: 2rem;
 	}
 
-	.author-photo-figure {
-		margin: 0;
-		flex-shrink: 0;
-	}
-
 	.author-photo {
 		width: 5.5rem;
 		height: 5.5rem;
 		object-fit: cover;
 		display: block;
 		filter: grayscale(0.3) contrast(1.05);
-	}
-
-	.photo-caption {
-		display: flex;
-		flex-direction: column;
-		gap: 0.1rem;
-		margin-top: 0.3rem;
-		max-width: 5.5rem;
-	}
-
-	.photo-desc {
-		font-family: var(--font-ui);
-		font-size: 0.68rem;
-		color: var(--color-text-muted);
-		line-height: 1.3;
-	}
-
-	.photo-source {
-		font-family: var(--font-ui);
-		font-size: 0.62rem;
-		color: var(--color-text-muted);
-		opacity: 0.7;
-	}
-
-	a.photo-source:hover {
-		color: var(--color-accent);
-		opacity: 1;
+		flex-shrink: 0;
 	}
 
 	.author-initial-large {
@@ -244,6 +214,13 @@ const photoAlt = $derived(data.photoMeta?.description ?? data.author.name);
 		font-size: 0.78rem;
 		color: var(--color-text-muted);
 		letter-spacing: 0.02em;
+	}
+
+	.work-end {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-shrink: 0;
 	}
 
 	.work-year {

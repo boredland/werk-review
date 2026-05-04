@@ -4,6 +4,7 @@ import { users } from '$lib/db/schema';
 import { createSession, hashPassword, SESSION_COOKIE } from '$lib/server/auth';
 import { getDb } from '$lib/server/db';
 import { sendVerificationEmail } from '$lib/server/email';
+import { AUTH_LIMITS, checkRateLimit } from '$lib/server/rate-limit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ locals }) => {
@@ -11,9 +12,19 @@ export const load: PageServerLoad = ({ locals }) => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, platform, cookies, url }) => {
+	default: async ({ request, platform, cookies, url, getClientAddress }) => {
 		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
 			return fail(500, { error: 'Datenbank nicht verfügbar.', username: '', email: '' });
+		}
+
+		const ip = getClientAddress();
+		const rl = await checkRateLimit(platform.env.SESSION_KV, ip, AUTH_LIMITS.register);
+		if (!rl.allowed) {
+			return fail(429, {
+				error: `Zu viele Registrierungsversuche. Bitte warte ${Math.ceil(rl.retryAfter / 60)} Minuten.`,
+				username: '',
+				email: '',
+			});
 		}
 
 		const data = await request.formData();

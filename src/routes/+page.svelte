@@ -1,11 +1,13 @@
 <script lang="ts">
+import RatingBadge from '$lib/components/RatingBadge.svelte';
+
 let { data } = $props();
 </script>
 
 <svelte:head>
 	<title>werk.review – Datenbank klassischer Literatur</title>
 	<meta property="og:title" content="werk.review – Datenbank klassischer Literatur" />
-	<meta property="og:description" content="{data.authors.length} Autoren, {data.totalWorks} Werke, {data.genres.length} Genres – Entdecke die Meisterwerke der deutschen Literatur" />
+	<meta property="og:description" content="{data.totalAuthors} Autoren, {data.totalWorks} Werke, {data.genres.length} Genres – Entdecke die Meisterwerke der deutschen Literatur" />
 </svelte:head>
 
 <section class="hero">
@@ -13,7 +15,7 @@ let { data } = $props();
 	<h1>Entdecke die Meisterwerke<br />der deutschen Literatur</h1>
 	<div class="hero-stats">
 		<div class="stat">
-			<span class="stat-number">{data.authors.length}</span>
+			<span class="stat-number">{data.totalAuthors}</span>
 			<span class="stat-label">Autoren</span>
 		</div>
 		<span class="stat-divider"></span>
@@ -35,10 +37,10 @@ let { data } = $props();
 		<a href="/autoren" class="section-link">Alle anzeigen</a>
 	</div>
 	<div class="author-grid">
-		{#each data.authors.slice(0, 6) as author, i}
+		{#each data.authors as author, i}
 			<a href="/autoren/{author.slug}" class="author-card" style="animation: fadeUp 0.4s ease both; animation-delay: {0.15 + i * 0.06}s">
-				{#if author.photo_r2_key}
-					<img class="author-thumb" src="/images/{author.photo_r2_key}" alt="" />
+				{#if author.imageUrl}
+					<img class="author-thumb" src={author.imageUrl} alt="" />
 				{:else}
 					<span class="author-initial">{author.name.charAt(0)}</span>
 				{/if}
@@ -65,6 +67,7 @@ let { data } = $props();
 			<a href="/werke/{work.slug}" class="work-card" style="animation: fadeUp 0.4s ease both; animation-delay: {0.3 + i * 0.06}s">
 				<span class="work-year-badge">{work.year_display}</span>
 				<span class="work-title">{work.title}</span>
+				<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
 			</a>
 		{/each}
 	</div>

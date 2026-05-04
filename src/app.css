@@ -21,6 +21,26 @@
 	--font-ui: "Alegreya Sans", "Segoe UI", sans-serif;
 }
 
+[data-theme="dark"] {
+	--color-bg: #1a1714;
+	--color-text: #e0d8cc;
+	--color-text-muted: #9b8e7a;
+	--color-border: #3d362c;
+	--color-border-light: #2e2820;
+	--color-accent: #c4667a;
+	--color-accent-hover: #d88a9a;
+	--color-accent-light: rgba(196, 102, 122, 0.15);
+	--color-gold: #d4a94e;
+	--color-gold-light: rgba(212, 169, 78, 0.1);
+	--color-surface: #221e19;
+	--color-surface-warm: #1e1b16;
+	--color-masterpiece: #c4667a;
+	--color-recommendation: #5a9b72;
+	--color-readable: #c4a83e;
+	--color-waste: #c45454;
+	color-scheme: dark;
+}
+
 *,
 *::before,
 *::after {

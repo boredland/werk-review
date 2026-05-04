@@ -14,6 +14,7 @@ let { children } = $props();
 	<meta property="og:image:width" content="512" />
 	<meta property="og:image:height" content="512" />
 	<meta name="twitter:card" content="summary" />
+	<link rel="alternate" type="application/rss+xml" title="werk.review – Neue Bewertungen" href="/feed.xml" />
 </svelte:head>
 
 <Header />
@@ -29,10 +30,12 @@ let { children } = $props();
 			<span class="footer-tagline">Datenbank klassischer Literatur</span>
 		</div>
 		<div class="footer-links">
-			<a href="/ueber-uns">Über uns</a>
 			<a href="/autoren">Autoren</a>
 			<a href="/werke">Werke</a>
 			<a href="/genre">Genre</a>
+			<a href="/vorschlaege">Vorschlagen</a>
+			<a href="/konto">Konto</a>
+			<a href="/ueber-uns">Über uns</a>
 		</div>
 		<p class="footer-copy">&copy; {new Date().getFullYear()} werk.review</p>
 	</div>

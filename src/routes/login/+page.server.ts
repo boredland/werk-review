@@ -3,6 +3,7 @@ import { eq } from 'drizzle-orm';
 import { users } from '$lib/db/schema';
 import { createSession, SESSION_COOKIE, verifyPassword } from '$lib/server/auth';
 import { getDb } from '$lib/server/db';
+import { AUTH_LIMITS, checkRateLimit } from '$lib/server/rate-limit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = ({ locals }) => {
@@ -10,11 +11,19 @@ export const load: PageServerLoad = ({ locals }) => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, platform, cookies }) => {
+	default: async ({ request, platform, cookies, getClientAddress }) => {
 		const formError = (msg: string, emailVal = '') => fail(400, { error: msg, email: emailVal });
 
 		if (!platform?.env.DB || !platform?.env.SESSION_KV) {
 			return formError('Datenbank nicht verfügbar.');
+		}
+
+		const ip = getClientAddress();
+		const rl = await checkRateLimit(platform.env.SESSION_KV, ip, AUTH_LIMITS.login);
+		if (!rl.allowed) {
+			return formError(
+				`Zu viele Anmeldeversuche. Bitte warte ${Math.ceil(rl.retryAfter / 60)} Minuten.`,
+			);
 		}
 
 		const data = await request.formData();

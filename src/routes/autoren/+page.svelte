@@ -1,6 +1,12 @@
 <script lang="ts">
+import Pagination from '$lib/components/Pagination.svelte';
+
+const PAGE_SIZE = 20;
+
 let { data } = $props();
 let filter = $state('');
+let sortBy = $state<'name' | 'born' | 'works'>('name');
+let currentPage = $state(1);
 
 const filtered = $derived(
 	filter
@@ -11,6 +17,22 @@ const filtered = $derived(
 			)
 		: data.authors,
 );
+
+const sorted = $derived(
+	[...filtered].sort((a, b) => {
+		if (sortBy === 'born') return (a.born ?? 9999) - (b.born ?? 9999);
+		if (sortBy === 'works') return b.workCount - a.workCount;
+		return a.name.localeCompare(b.name, 'de');
+	}),
+);
+
+$effect(() => {
+	sorted.length;
+	currentPage = 1;
+});
+
+const totalPages = $derived(Math.ceil(sorted.length / PAGE_SIZE));
+const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE));
 </script>
 
 <svelte:head>
@@ -30,14 +52,19 @@ const filtered = $derived(
 		placeholder="Autor suchen…"
 		bind:value={filter}
 	/>
+	<select bind:value={sortBy} aria-label="Sortierung">
+		<option value="name">Name A–Z</option>
+		<option value="born">Geburtsjahr</option>
+		<option value="works">Anzahl Werke</option>
+	</select>
 	<span class="count">{filtered.length} {filtered.length === 1 ? 'Autor' : 'Autoren'}</span>
 </div>
 
 <div class="author-list">
-	{#each filtered as author}
+	{#each paginated as author}
 		<a href="/autoren/{author.slug}" class="author-row">
-			{#if author.photo_r2_key}
-				<img class="author-thumb" src="/images/{author.photo_r2_key}" alt="" />
+			{#if author.imageUrl}
+				<img class="author-thumb" src={author.imageUrl} alt="" />
 			{:else}
 				<span class="author-initial">{author.name.charAt(0)}</span>
 			{/if}
@@ -54,6 +81,8 @@ const filtered = $derived(
 	{/each}
 </div>
 
+<Pagination {currentPage} {totalPages} onPageChange={(p) => currentPage = p} />
+
 <style>
 	.page-header {
 		margin-bottom: 1.5rem;
@@ -69,10 +98,28 @@ const filtered = $derived(
 	.filter-bar {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
+		gap: 0.75rem;
 		margin-bottom: 1.5rem;
 		padding-bottom: 1rem;
 		border-bottom: 1px solid var(--color-border-light);
+		flex-wrap: wrap;
+	}
+
+	.filter-bar select {
+		font-family: var(--font-ui);
+		padding: 0.55rem 0.85rem;
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+		font-size: 0.9rem;
+		color: var(--color-text);
+		cursor: pointer;
+		transition: border-color 0.2s;
+	}
+
+	.filter-bar select:focus {
+		outline: none;
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 2px var(--color-accent-light);
 	}
 
 	.filter-bar input {

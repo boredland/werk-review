@@ -1,4 +1,21 @@
 const FROM = 'werk.review <noreply@werk.review>';
+const MAX_RETRIES = 2;
+const RETRY_DELAY_MS = 1000;
+
+async function sendWithRetry(email: SendEmail, message: Parameters<SendEmail['send']>[0]) {
+	for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+		try {
+			await email.send(message);
+			return;
+		} catch (err) {
+			if (attempt === MAX_RETRIES) {
+				console.error(`Email send failed after ${MAX_RETRIES + 1} attempts:`, err);
+				return;
+			}
+			await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));
+		}
+	}
+}
 
 export async function sendVerificationEmail(
 	email: SendEmail,
@@ -9,7 +26,7 @@ export async function sendVerificationEmail(
 ) {
 	const verifyUrl = `${siteUrl}/verifizieren/${verifyToken}`;
 
-	await email.send({
+	await sendWithRetry(email, {
 		from: FROM,
 		to,
 		subject: 'Bestätige deine E-Mail-Adresse – werk.review',
@@ -51,7 +68,7 @@ export async function sendPasswordResetEmail(
 ) {
 	const resetUrl = `${siteUrl}/passwort-vergessen/${resetToken}`;
 
-	await email.send({
+	await sendWithRetry(email, {
 		from: FROM,
 		to,
 		subject: 'Passwort zurücksetzen – werk.review',

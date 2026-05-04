@@ -1,5 +1,6 @@
 <script lang="ts">
 import { page } from '$app/state';
+import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
 import ReviewList from '$lib/components/reviews/ReviewList.svelte';
 
@@ -14,6 +15,11 @@ const user = $derived(page.data.user);
 	<meta property="og:description" content="{data.author?.name ?? 'Unbekannt'} · {data.genre?.name ?? ''} · {data.work.year_display}" />
 	<meta property="og:type" content="book" />
 </svelte:head>
+
+<Breadcrumbs items={[
+	{ label: 'Werke', href: '/werke' },
+	{ label: data.work.title },
+]} />
 
 <article>
 	<header class="work-header">
