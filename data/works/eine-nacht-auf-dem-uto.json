@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Ein junger Mann namens Wenzel plant auf dem Uetliberg Suizid zu begehen, da er unter unerwiderter Liebe leidet. Er trifft dort den älteren Herrn Biedermann, der ihm von seiner eigenen Jugend erzählt, in der er eine ähnliche Krise überwand und schließlich ein erfülltes Leben fand. Durch dieses Gespräch schöpft Wenzel neue Hoffnung und gibt seinen Selbstmordplan auf.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

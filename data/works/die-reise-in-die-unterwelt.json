@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Ein junger Mann, geplagt von tiefer Melancholie, unternimmt eine symbolische Reise in eine „Unterwelt“, die als Abstieg in sein eigenes Inneres und seine Vergangenheit dargestellt wird. Dort konfrontiert er seine Ängste, Erinnerungen und Verzweiflung. Durch diese intensive Selbstreflexion findet er schließlich einen Weg zur Selbstakzeptanz und zu neuem Lebensmut, wodurch er aus seiner inneren Dunkelheit verwandelt hervorgeht.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Der Schneidergeselle Wenzel zieht in Abwesenheit seines Meisters den eleganten Anzug eines Kunden an und gibt sich als wohlhabender Herr aus. Er genießt die Annehmlichkeiten des Lebens eines Gentlemans, indem er in Gasthäusern speist und flirtet. Schließlich wird er jedoch entlarvt und muss in seine bescheidene Realität zurückkehren.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

@@ -11,6 +11,16 @@
 	"collection_title": "Züricher Novellen",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Ursula ist der Titel der fünften Erzählung des 1877 in Buchform publizierten Züricher-Novellen-Zyklus von Gottfried Keller. Erzählt wird vor dem Hintergrund der Religionskriege in der Mitte des 16. Jhs. die Liebesgeschichte Hansli Gyrs, reformierter Rottmeister des Züricher Heeres, und Ursula Schnurrenbergers, einer Schwärmerin der Täuferbewegung.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Ursula_(Erz%C3%A4hlung)"
+		}
+	],
+	"plot_source": {
+		"label": "Wikipedia",
+		"url": "https://de.wikipedia.org/wiki/Ursula_(Erz%C3%A4hlung)"
+	},
+	"plot_fetched_at": "2026-05-04"
 }

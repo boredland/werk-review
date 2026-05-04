@@ -11,6 +11,11 @@
 	"collection_title": "Die Leute von Seldwyla. Teil I",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Spiegel, ein Kater, schließt einen Pakt mit einer Hexe, um ein Mensch zu werden, unter der Bedingung, sieben Jahre lang zu schweigen. Er verwandelt sich in einen Mann und lebt bei der jungen Elsbeth, in die er sich verliebt. Kurz vor Ablauf der Frist bricht er sein Schweigen, um Elsbeth vor einer Gefahr zu retten, verwandelt sich sofort zurück in einen Kater, wird aber von ihr trotzdem liebevoll aufgenommen und behalten.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

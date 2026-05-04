@@ -11,6 +11,11 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Helen, ein schönes Mädchen, das nur dem Tanz und weltlichen Vergnügen frönt, verlässt während eines Gottesdienstes die Kirche, um mit jungen Männern zu tanzen. Sie tanzt unermüdlich, bis sie bemerkt, dass ihre Tanzpartner Skelette sind und ihr eigener Körper verfällt. Schließlich bricht sie als Skelett zusammen und wird tot aufgefunden, ein Opfer ihrer Eitelkeit.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

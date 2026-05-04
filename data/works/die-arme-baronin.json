@@ -11,6 +11,11 @@
 	"collection_title": "Das Sinngedicht",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Die arme Baronin von Seldwyl versucht trotz ihrer Armut ihren adligen Schein zu wahren und lehnt aus Stolz die Heiratsanträge des jungen Anwalts Kläri ab. Als ihr Vermögen schwindet und sie in tiefe Not gerät, erkennt sie die Wertlosigkeit ihres Hochmuts. Schließlich heiratet sie Kläri und findet in einem bescheidenen Leben Glück und Zufriedenheit.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

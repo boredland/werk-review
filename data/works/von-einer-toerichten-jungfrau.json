@@ -11,6 +11,11 @@
 	"collection_title": "Das Sinngedicht",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Dorothea, eine junge Frau, ist besessen von der Vorstellung, als Jungfrau zu sterben und direkt in den Himmel zu kommen. Sie lehnt alle Heiratsanträge und weltlichen Freuden ab, vernachlässigt sich selbst und wird zunehmend exzentrisch. Am Ende stirbt sie krank und unbeachtet, weit entfernt von dem glorreichen Tod, den sie sich erträumt hatte.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

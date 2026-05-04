@@ -5,6 +5,9 @@ const DATA_DIR = join(import.meta.dirname, '..', 'data');
 const WORKS_DIR = join(DATA_DIR, 'works');
 const AUTHORS_DIR = join(DATA_DIR, 'authors');
 
+const GEMINI_PROXY_URL = process.env.GEMINI_PROXY_URL;
+const GEMINI_PROXY_SECRET = process.env.GEMINI_PROXY_SECRET;
+
 function readJson(path) {
 	return JSON.parse(readFileSync(path, 'utf-8'));
 }
@@ -59,8 +62,37 @@ async function fetchWikipediaSummary(title) {
 	}
 }
 
+async function fetchGeminiSummary(title, authorName) {
+	if (!GEMINI_PROXY_URL || !GEMINI_PROXY_SECRET) return null;
+
+	const prompt = `Schreibe eine kurze, sachliche Zusammenfassung (2-3 Sätze) der Handlung von „${title}" von ${authorName}. Konzentriere dich auf das, was in der Geschichte passiert, nicht auf literarische Analyse. Antworte nur mit der Zusammenfassung, ohne Einleitung.`;
+
+	try {
+		const res = await fetch(
+			`${GEMINI_PROXY_URL}/${GEMINI_PROXY_SECRET}/v1beta/openai/chat/completions`,
+			{
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					model: 'gemini-2.5-flash',
+					messages: [{ role: 'user', content: prompt }],
+					temperature: 0.3,
+				}),
+			},
+		);
+		if (!res.ok) return null;
+		const data = await res.json();
+		const text = data.choices?.[0]?.message?.content?.trim();
+		if (!text || text.length < 30) return null;
+		return text;
+	} catch {
+		return null;
+	}
+}
+
 async function main() {
 	let updatedPlots = 0;
+	let geminiPlots = 0;
 	let updatedSources = 0;
 	const now = new Date().toISOString().split('T')[0];
 
@@ -85,14 +117,22 @@ async function main() {
 
 			if (result?.extract && result.extract.length > 50) {
 				work.plot = result.extract;
-				work.plot_source = {
-					label: 'Wikipedia',
-					url: result.url,
-				};
+				work.plot_source = { label: 'Wikipedia', url: result.url };
 				work.plot_fetched_at = now;
 				changed = true;
 				updatedPlots++;
-				console.log(`  + plot: "${work.title}"`);
+				console.log(`  + plot (Wikipedia): "${work.title}"`);
+			} else {
+				const geminiText = await fetchGeminiSummary(work.title, authorName);
+				if (geminiText) {
+					work.plot = geminiText;
+					work.plot_source = { label: 'KI-generiert (Gemini)', url: null };
+					work.plot_fetched_at = now;
+					changed = true;
+					geminiPlots++;
+					console.log(`  + plot (Gemini): "${work.title}"`);
+				}
+				await sleep(500);
 			}
 		}
 
@@ -118,7 +158,9 @@ async function main() {
 		await sleep(300);
 	}
 
-	console.log(`\nDone: ${updatedPlots} plots added, ${updatedSources} Wikipedia sources added`);
+	console.log(
+		`\nDone: ${updatedPlots} Wikipedia plots, ${geminiPlots} Gemini plots, ${updatedSources} Wikipedia sources added`,
+	);
 }
 
 main().catch((err) => {

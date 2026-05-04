@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Ein junger Mann ist tief verliebt und verzweifelt, als er seine Geliebte mit einem älteren, wohlhabenden Mann sieht und annimmt, sie habe ihn verlassen. Bei der Konfrontation stellt sich jedoch heraus, dass der Mann ihr Vater ist, woraufhin der Liebende seinen eigenen voreiligen Irrtum erkennt.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

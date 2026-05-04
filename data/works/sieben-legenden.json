@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Gottfried Kellers „Sieben Legenden“ erzählt sieben traditionelle christliche Heiligenlegenden neu. Dabei werden die ursprünglichen Wunder und asketischen Lebensweisen der Heiligen oft humanisiert und in einen weltlicheren Kontext gestellt, wobei irdische Liebe, Schönheit und menschliche Güte als zentrale Tugenden in den Vordergrund treten.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

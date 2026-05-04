@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Ein junger Mann namens Jörg sucht während eines Gewitters Schutz in einem abgelegenen Haus und trifft dort auf die schöne Salome, mit der er eine intensive, fast magische Verbindung erlebt. Nach dem Sturm verlässt er sie mit dem Versprechen, zurückzukehren. Als Jörg später wiederkommt, ist Salome jedoch verändert und verlobt, woraufhin er erkennt, dass ihre anfängliche Liebe nur eine flüchtige Illusion war.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Martin Salander, ein ehrlicher, aber naiver Mann, verliert sein Vermögen durch schlechte Investitionen und die Betrügereien seines skrupellosen Vetters Louis. Er muss mit seiner Familie, bestehend aus Frau und sechs Töchtern, ein neues Leben aufbauen und erlebt dabei viele Rückschläge sowie die Entwicklung seiner anfangs verwöhnten Töchter zu selbstständigen Frauen. Am Ende findet Martin durch die Erfolge seiner Töchter und Louis' Untergang einen gewissen Frieden.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

@@ -11,6 +11,11 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Der Gelehrte Jukundus sucht eine Frau, die dem Ideal eines von ihm verfassten „Sinngedichts“ entspricht, und unterzieht mehrere Kandidatinnen, die unterschiedliche Facetten der Weiblichkeit verkörpern, einer Prüfung. Keine der Frauen erfüllt zunächst seine hohen Ansprüche vollständig. Schließlich findet er seine ideale Partnerin in Lydia, die alle gewünschten Eigenschaften vereint und ihn ihrerseits ebenfalls geprüft hat, woraufhin sie heiraten.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

@@ -11,6 +11,11 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Dorothea, ein armes, fleißiges Mädchen, fertigt ein wunderschönes Blumenkörbchen für eine Lotterie an, in der Hoffnung, eine Puppe zu gewinnen. Eine reiche, verwöhnte Mitschülerin namens Hedwig begehrt das Körbchen und versucht es zu kaufen, doch Dorothea lehnt ab. Dorothea gewinnt die Puppe, während Hedwigs Mutter das Körbchen ersteigert; Hedwig versucht vergeblich, die Puppe für sich zu beanspruchen, wird zurechtgewiesen und Dorothea erhält ihren verdienten Gewinn.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

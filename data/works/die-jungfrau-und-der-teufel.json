@@ -11,6 +11,11 @@
 	"collection_title": "Sieben Legenden",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Als eine Pest ein Dorf heimsucht, schließt eine fromme Jungfrau einen Pakt mit dem Teufel: ihre Seele gegen die Rettung der Gemeinde. Der Teufel erfüllt seinen Teil, doch als er ihre Seele fordern will, überlistet sie ihn, indem sie ihm eine unmögliche Aufgabe stellt. Er scheitert daran, und die Jungfrau ist vom Pakt befreit.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

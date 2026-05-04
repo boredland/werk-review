@@ -11,6 +11,16 @@
 	"collection_title": "Die Leute von Seldwyla. Teil I",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Pankraz, der Schmoller ist die erste Erzählung aus dem Novellenzyklus Die Leute von Seldwyla von Gottfried Keller, der 1856 in Braunschweig erschien.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Pankraz%2C_der_Schmoller"
+		}
+	],
+	"plot_source": {
+		"label": "Wikipedia",
+		"url": "https://de.wikipedia.org/wiki/Pankraz%2C_der_Schmoller"
+	},
+	"plot_fetched_at": "2026-05-04"
 }

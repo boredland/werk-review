@@ -11,6 +11,11 @@
 	"collection_title": "Das Sinngedicht",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Herr Biedermann, ein wohlhabender Mann, ist mit Fräulein Agnes verlobt und trägt an seiner Uhrkette Berlocken, die jeweils eine vergangene Liebschaft symbolisieren. Als Agnes neugierig nach der Bedeutung der Anhänger fragt, erzählt Biedermann ihr offen die Geschichten hinter jeder Berlocke. Entsetzt über seine romantische Vergangenheit und die Vielzahl seiner früheren Beziehungen löst Agnes daraufhin die Verlobung auf.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

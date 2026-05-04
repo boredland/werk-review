@@ -11,6 +11,16 @@
 	"collection_title": null,
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Das Sinngedicht ist ein Novellenzyklus des Schweizer Dichters Gottfried Keller. Erste Ideen zu dem Werk notierte Keller sich 1851 in Berlin, wo er 1855 auch die Anfangskapitel zu Papier brachte. Der größte Teil des Textes entstand jedoch erst 1881 in Zürich, während bereits der Vorabdruck in der Deutschen Rundschau stattfand. Eine erweiterte Buchfassung folgte Ende des Jahres.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Das_Sinngedicht"
+		}
+	],
+	"plot_source": {
+		"label": "Wikipedia",
+		"url": "https://de.wikipedia.org/wiki/Das_Sinngedicht"
+	},
+	"plot_fetched_at": "2026-05-04"
 }

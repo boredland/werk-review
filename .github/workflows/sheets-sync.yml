@@ -30,6 +30,9 @@ jobs:
         run: node scripts/enrich-links.mjs
 
       - name: Enrich with Wikipedia data
+        env:
+          GEMINI_PROXY_URL: ${{ secrets.GEMINI_PROXY_URL }}
+          GEMINI_PROXY_SECRET: ${{ secrets.GEMINI_PROXY_SECRET }}
         run: node scripts/enrich-wikipedia.mjs
 
       - name: Check for changes

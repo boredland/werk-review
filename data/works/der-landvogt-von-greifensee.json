@@ -11,6 +11,16 @@
 	"collection_title": "Züricher Novellen",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Hans Waldmann wird Landvogt von Greifensee und übt sein Amt mit strenger Gerechtigkeit, aber auch großer Lebenslust aus. Eine Affäre mit der tugendhaften Anna Schönbrunner, aus der ein Kind hervorgeht, führt zu seinem gesellschaftlichen Fall und der Entlassung aus dem Amt, woraufhin er Anna heiratet und ein bürgerliches Leben führt.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Der_Landvogt_von_Greifensee"
+		}
+	],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }

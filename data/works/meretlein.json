@@ -11,6 +11,11 @@
 	"collection_title": "Der grüne Heinrich",
 	"collection_aliases": [],
 	"gnd_id": null,
-	"plot": null,
-	"sources": []
+	"plot": "Meretlein, ein armes Mädchen, wird von ihrer Grossmutter zu den reichen, kinderlosen von Seldwyls geschickt, um dort zu dienen. Trotz guter Behandlung fühlt sie sich in der fremden Umgebung unwohl und läuft schliesslich weg. Nach der Entdeckung, dass ihre Grossmutter verstorben ist, findet Meretlein schliesslich einen passenderen Platz, wo sie sich wohler fühlt.",
+	"sources": [],
+	"plot_source": {
+		"label": "KI-generiert (Gemini)",
+		"url": null
+	},
+	"plot_fetched_at": "2026-05-04"
 }
