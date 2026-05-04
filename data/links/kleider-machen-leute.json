@@ -1,7 +1,7 @@
 [
 	{
 		"source": "Zeno.org",
-		"format": "HTML",
+		"format": "Volltext",
 		"url": "http://www.zeno.org/Literatur/M/Keller,+Gottfried/Erzählung/Kleider+machen+Leute",
 		"label": "Kleider machen Leute (Zeno)"
 	},
@@ -13,7 +13,7 @@
 	},
 	{
 		"source": "Project Gutenberg",
-		"format": "E-Book",
+		"format": "Volltext",
 		"url": "https://www.gutenberg.org/ebooks/21141",
 		"label": "Kleider machen Leute"
 	}

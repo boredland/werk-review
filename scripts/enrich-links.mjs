@@ -84,13 +84,15 @@ async function searchGutenberg(title, authorName) {
 				const matchesAuthor = b.authors.some((a) =>
 					a.name.toLowerCase().includes(lastName.toLowerCase()),
 				);
-				const matchesTitle = b.title.toLowerCase().includes(title.toLowerCase().slice(0, 10));
+				const t = title.toLowerCase();
+				const bt = b.title.toLowerCase();
+				const matchesTitle = bt.includes(t) || t.includes(bt);
 				return matchesAuthor && matchesTitle;
 			})
 			.slice(0, 1)
 			.map((b) => ({
 				source: 'Project Gutenberg',
-				format: 'E-Book',
+				format: 'Volltext',
 				url: `https://www.gutenberg.org/ebooks/${b.id}`,
 				label: b.title,
 			}));
