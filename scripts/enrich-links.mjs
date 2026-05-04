@@ -173,43 +173,70 @@ async function searchArchiveOrg(work, authorName) {
 	const results = [];
 
 	for (const title of titles) {
-		const query = `creator:("${authorName}") AND title:("${title}") AND mediatype:(texts)`;
-		const params = new URLSearchParams({
-			q: query,
+		// 1. Search for Texts/Downloads
+		const textQuery = `creator:("${authorName}") AND title:("${title}") AND mediatype:(texts)`;
+		const textParams = new URLSearchParams({
+			q: textQuery,
 			fl: 'identifier,title,format',
 			output: 'json',
 			rows: '3',
 		});
-		const url = `https://archive.org/advancedsearch.php?${params}`;
 
 		try {
-			const res = await fetch(url);
-			if (!res.ok) continue;
-			const data = await res.json();
-			const docs = data.response?.docs || [];
+			const res = await fetch(`https://archive.org/advancedsearch.php?${textParams}`);
+			if (res.ok) {
+				const data = await res.json();
+				const docs = data.response?.docs || [];
+				for (const doc of docs) {
+					const formats = doc.format || [];
+					const hasGoodFormat = formats.some((f) =>
+						['EPUB', 'Text PDF', 'Kindle', 'Daisy'].includes(f),
+					);
+					if (!hasGoodFormat) continue;
 
-			for (const doc of docs) {
-				// Only if it has useful formats
-				const formats = doc.format || [];
-				const hasGoodFormat = formats.some((f) =>
-					['EPUB', 'Text PDF', 'Kindle', 'Daisy'].includes(f),
-				);
-				if (!hasGoodFormat) continue;
-
-				results.push({
-					source: 'Internet Archive',
-					format: 'Volltext / Download',
-					url: `https://archive.org/details/${doc.identifier}`,
-					label: doc.title || work.title,
-					formats: formats.filter((f) => ['EPUB', 'Text PDF', 'Kindle'].includes(f)),
-				});
-				// Just take the first good match per search term
-				break;
+					results.push({
+						source: 'Internet Archive',
+						format: 'Volltext / Download',
+						url: `https://archive.org/details/${doc.identifier}`,
+						label: doc.title || work.title,
+						formats: formats.filter((f) => ['EPUB', 'Text PDF', 'Kindle'].includes(f)),
+					});
+					break;
+				}
 			}
-			if (results.length > 0) break;
-		} catch {
-			// ignore
-		}
+		} catch { /* ignore */ }
+
+		// 2. Search for Videos (Verfilmungen)
+		const videoQuery = `(("${authorName}") AND ("${title}")) AND mediatype:(movies OR video)`;
+		const videoParams = new URLSearchParams({
+			q: videoQuery,
+			fl: 'identifier,title,mediatype',
+			output: 'json',
+			rows: '3',
+		});
+
+		try {
+			const res = await fetch(`https://archive.org/advancedsearch.php?${videoParams}`);
+			if (res.ok) {
+				const data = await res.json();
+				const docs = data.response?.docs || [];
+				for (const doc of docs) {
+					// Minimal validation: check if title contains the work title or author
+					const tLower = doc.title.toLowerCase();
+					if (tLower.includes(normalize(title)) || tLower.includes(normalize(authorName))) {
+						results.push({
+							source: 'Internet Archive',
+							format: 'Verfilmung',
+							url: `https://archive.org/details/${doc.identifier}`,
+							label: doc.title,
+						});
+						break;
+					}
+				}
+			}
+		} catch { /* ignore */ }
+
+		if (results.length > 0) break;
 	}
 	return results;
 }
