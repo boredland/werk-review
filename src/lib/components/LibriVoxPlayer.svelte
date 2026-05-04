@@ -20,6 +20,14 @@ let error = $state('');
 
 let currentSection: Section | null = $state(null);
 
+function playNext() {
+	if (!book || !currentSection) return;
+	const currentIndex = book.sections.findIndex((s) => s.id === currentSection?.id);
+	if (currentIndex !== -1 && currentIndex < book.sections.length - 1) {
+		currentSection = book.sections[currentIndex + 1];
+	}
+}
+
 onMount(async () => {
 	try {
 		const res = await fetch(`/api/librivox/${librivoxId}`);
@@ -97,7 +105,7 @@ function isRelevant(sectionTitle: string) {
 					<span>Spielt jetzt:</span> {currentSection.title}
 				</p>
 				<!-- svelte-ignore a11y_media_has_caption -->
-				<audio controls src={currentSection.listen_url} autoplay>
+				<audio controls src={currentSection.listen_url} autoplay onended={playNext}>
 					Dein Browser unterstützt kein Audio.
 				</audio>
 			</div>
