@@ -1,5 +1,6 @@
 <script lang="ts">
 import { enhance } from '$app/forms';
+import EmptyState from '$lib/components/EmptyState.svelte';
 
 let { data } = $props();
 </script>
@@ -11,7 +12,7 @@ let { data } = $props();
 <h1>Autorenvorschläge</h1>
 
 {#if data.suggestions.length === 0}
-	<p class="empty">Keine Vorschläge vorhanden.</p>
+	<EmptyState icon="💡" message="Keine Vorschläge vorhanden." />
 {:else}
 	<div class="suggestions-list">
 		{#each data.suggestions as s}
@@ -55,10 +56,6 @@ let { data } = $props();
 {/if}
 
 <style>
-	.empty {
-		color: var(--color-text-muted);
-		font-style: italic;
-	}
 
 	.suggestions-list {
 		display: flex;

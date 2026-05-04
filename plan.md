@@ -40,5 +40,5 @@
 - [x] Dark mode toggle
 - [x] Footer: add links to Vorschlagen, Konto
 - [x] Breadcrumb navigation on detail pages
-- [ ] Empty state illustrations
+- [x] Empty state illustrations
 - [x] Mobile navigation improvements (close on route change)

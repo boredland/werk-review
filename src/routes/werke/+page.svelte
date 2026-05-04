@@ -1,4 +1,5 @@
 <script lang="ts">
+import EmptyState from '$lib/components/EmptyState.svelte';
 import Pagination from '$lib/components/Pagination.svelte';
 import RatingBadge from '$lib/components/RatingBadge.svelte';
 
@@ -89,7 +90,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 			</div>
 		</a>
 	{:else}
-		<p class="empty">Keine Werke gefunden.</p>
+		<EmptyState icon="📚" message="Keine Werke gefunden." />
 	{/each}
 </div>
 
@@ -219,13 +220,6 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		color: var(--color-gold);
 		white-space: nowrap;
 		font-weight: 500;
-	}
-
-	.empty {
-		color: var(--color-text-muted);
-		padding: 2rem 0;
-		text-align: center;
-		font-style: italic;
 	}
 
 	@media (max-width: 640px) {

@@ -1,6 +1,7 @@
 <script lang="ts">
 import { enhance } from '$app/forms';
 import { page } from '$app/state';
+import EmptyState from '$lib/components/EmptyState.svelte';
 import { getRatingConfig } from '$lib/ratings';
 
 let { data, form } = $props();
@@ -150,7 +151,7 @@ $effect(() => {
 				{/each}
 			</div>
 		{:else}
-			<p class="empty">Du hast noch keine Bewertungen abgegeben.</p>
+			<EmptyState icon="✍️" message="Du hast noch keine Bewertungen abgegeben." />
 		{/if}
 	</section>
 
@@ -167,7 +168,7 @@ $effect(() => {
 				{/each}
 			</div>
 		{:else}
-			<p class="empty">Du hast noch keine Werke auf deiner Leseliste.</p>
+			<EmptyState icon="🔖" message="Du hast noch keine Werke auf deiner Leseliste." />
 		{/if}
 	</section>
 
@@ -486,11 +487,6 @@ $effect(() => {
 
 	.review-action-delete:hover {
 		color: var(--color-waste);
-	}
-
-	.empty {
-		color: var(--color-text-muted);
-		font-style: italic;
 	}
 
 	.bookmarks-section {

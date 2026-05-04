@@ -1,4 +1,6 @@
 <script lang="ts">
+import EmptyState from '$lib/components/EmptyState.svelte';
+
 let { data } = $props();
 
 const totalResults = $derived(data.authors.length + data.works.length + data.genres.length);
@@ -52,13 +54,12 @@ const totalResults = $derived(data.authors.length + data.works.length + data.gen
 	{/if}
 
 	{#if totalResults === 0}
-		<p class="empty">Keine Ergebnisse gefunden.</p>
+		<EmptyState icon="🔍" message="Keine Ergebnisse gefunden." />
 	{/if}
 {/if}
 
 <style>
-	.hint,
-	.empty {
+	.hint {
 		color: var(--color-text-muted);
 		padding: 2rem 0;
 		text-align: center;

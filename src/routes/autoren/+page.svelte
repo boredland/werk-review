@@ -1,4 +1,5 @@
 <script lang="ts">
+import EmptyState from '$lib/components/EmptyState.svelte';
 import Pagination from '$lib/components/Pagination.svelte';
 
 const PAGE_SIZE = 20;
@@ -77,7 +78,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 			<span class="work-count">{author.workCount} {author.workCount === 1 ? 'Werk' : 'Werke'}</span>
 		</a>
 	{:else}
-		<p class="empty">Keine Autoren gefunden.</p>
+		<EmptyState icon="🖋️" message="Keine Autoren gefunden." />
 	{/each}
 </div>
 
@@ -221,13 +222,6 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		font-weight: 500;
 		color: var(--color-gold);
 		white-space: nowrap;
-	}
-
-	.empty {
-		color: var(--color-text-muted);
-		padding: 2rem 0;
-		text-align: center;
-		font-style: italic;
 	}
 
 	@media (max-width: 640px) {
