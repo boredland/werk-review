@@ -318,12 +318,19 @@ async function main() {
 			}
 
 			// Archive.org matching
-			if (!existingSources.has('Internet Archive')) {
+			const hasIAText = existing.some((l) => l.source === 'Internet Archive' && l.format === 'Volltext / Download');
+			const hasIAVideo = existing.some((l) => l.source === 'Internet Archive' && l.format === 'Verfilmung');
+
+			if (!hasIAText || !hasIAVideo) {
 				const archive = await searchArchiveOrg(work, author.name);
-				if (archive.length > 0 && !existingUrls.has(archive[0].url)) {
-					newLinks.push(archive[0]);
+				for (const link of archive) {
+					if (existingUrls.has(link.url)) continue;
+					if (link.format === 'Volltext / Download' && hasIAText) continue;
+					if (link.format === 'Verfilmung' && hasIAVideo) continue;
+
+					newLinks.push(link);
 					workUpdated = true;
-					console.log(`  + Internet Archive: "${work.title}"`);
+					console.log(`  + Internet Archive (${link.format}): "${work.title}"`);
 				}
 			}
 
