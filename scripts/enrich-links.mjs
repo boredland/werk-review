@@ -5,6 +5,7 @@ const DATA_DIR = join(import.meta.dirname, '..', 'data');
 const LINKS_DIR = join(DATA_DIR, 'links');
 const WORKS_DIR = join(DATA_DIR, 'works');
 const AUTHORS_DIR = join(DATA_DIR, 'authors');
+const CONCURRENCY = Number(process.env.CONCURRENCY) || 5;
 
 mkdirSync(LINKS_DIR, { recursive: true });
 
@@ -249,7 +250,7 @@ async function main() {
 			} else {
 				skipped++;
 			}
-		}, 5);
+		}, CONCURRENCY);
 	}, 3);
 
 	console.log(`\nDone: ${updated} updated, ${skipped} unchanged`);

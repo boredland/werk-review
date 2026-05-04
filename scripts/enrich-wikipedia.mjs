@@ -7,6 +7,7 @@ const AUTHORS_DIR = join(DATA_DIR, 'authors');
 
 const GEMINI_PROXY_URL = process.env.GEMINI_PROXY_URL;
 const GEMINI_PROXY_SECRET = process.env.GEMINI_PROXY_SECRET;
+const CONCURRENCY = Number(process.env.CONCURRENCY) || 10;
 
 function readJson(path) {
 	return JSON.parse(readFileSync(path, 'utf-8'));
@@ -168,7 +169,7 @@ async function main() {
 		if (changed) {
 			writeJson(path, work);
 		}
-	}, 10);
+	}, CONCURRENCY);
 
 	console.log(
 		`\nDone: ${updatedPlots} Wikipedia plots, ${geminiPlots} Gemini plots, ${updatedSources} Wikipedia sources added`,

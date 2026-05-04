@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+  
+concurrency:
+  group: sheets-sync
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -11,6 +15,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      CONCURRENCY: 10
     steps:
       - uses: actions/checkout@v4
 
