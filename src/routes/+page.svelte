@@ -11,8 +11,10 @@ let { data } = $props();
 </svelte:head>
 
 <section class="hero">
-	<p class="hero-kicker">Datenbank klassischer Literatur</p>
-	<h1>Entdecke die Meisterwerke<br />der deutschen Literatur</h1>
+	<h1>Willkommen werter Suchender,</h1>
+	<p class="hero-welcome">
+		diese Website ist eine Datenbank der klassischen Literatur. Bibliothekarisch sind hier die wichtigsten klassischen Autoren mit all ihren Werken eingepflegt, welche in deutscher Sprache erhältlich sind.
+	</p>
 	<div class="hero-stats">
 		<div class="stat">
 			<span class="stat-number">{data.totalAuthors}</span>
@@ -91,14 +93,13 @@ let { data } = $props();
 		padding: 3rem 0 2.5rem;
 	}
 
-	.hero-kicker {
+	.hero-welcome {
 		font-family: var(--font-ui);
-		font-size: 0.78rem;
-		font-weight: 500;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--color-gold);
-		margin-bottom: 0.75rem;
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: var(--color-text-muted);
+		max-width: 600px;
+		margin: 0 auto 2rem;
 	}
 
 	.hero h1 {
