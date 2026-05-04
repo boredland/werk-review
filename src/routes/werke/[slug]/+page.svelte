@@ -354,6 +354,16 @@ $effect(() => {
 		min-width: 0;
 	}
 
+	.link-format {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--color-gold);
+		margin-bottom: 0.1rem;
+	}
+
 	.link-title {
 		font-family: var(--font-display);
 		font-weight: 600;
