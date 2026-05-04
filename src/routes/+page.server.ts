@@ -37,6 +37,7 @@ export const load: PageServerLoad = async ({ platform }) => {
 			...w,
 			reviewCount: s?.reviewCount ?? 0,
 			avgRating: s?.avgRating ?? null,
+			totalPoints: s?.totalPoints ?? 0,
 		};
 	});
 

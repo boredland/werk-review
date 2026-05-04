@@ -29,6 +29,7 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 			genre_name: getGenre(w.genre_id)?.name ?? w.genre_id,
 			reviewCount: s?.reviewCount ?? 0,
 			avgRating: s?.avgRating ?? null,
+			totalPoints: s?.totalPoints ?? 0,
 		};
 	});
 

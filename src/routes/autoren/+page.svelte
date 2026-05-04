@@ -6,7 +6,7 @@ const PAGE_SIZE = 20;
 
 let { data } = $props();
 let filter = $state('');
-let sortBy = $state<'name' | 'born' | 'works'>('name');
+let sortBy = $state<'rank' | 'name' | 'born' | 'works'>('rank');
 let currentPage = $state(1);
 
 const filtered = $derived(
@@ -21,6 +21,7 @@ const filtered = $derived(
 
 const sorted = $derived(
 	[...filtered].sort((a, b) => {
+		if (sortBy === 'rank') return a.rank - b.rank || a.name.localeCompare(b.name, 'de');
 		if (sortBy === 'born') return (a.born ?? 9999) - (b.born ?? 9999);
 		if (sortBy === 'works') return b.workCount - a.workCount;
 		return a.name.localeCompare(b.name, 'de');
@@ -54,6 +55,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		bind:value={filter}
 	/>
 	<select bind:value={sortBy} aria-label="Sortierung">
+		<option value="rank">Nach Rang</option>
 		<option value="name">Name A–Z</option>
 		<option value="born">Geburtsjahr</option>
 		<option value="works">Anzahl Werke</option>
@@ -64,6 +66,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 <div class="author-list">
 	{#each paginated as author}
 		<a href="/autoren/{author.slug}" class="author-row">
+			<span class="author-rank">{author.rank}.</span>
 			{#if author.imageUrl}
 				<img class="author-thumb" src={author.imageUrl} alt="" />
 			{:else}
@@ -75,7 +78,10 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 					<span class="author-years">{author.born ?? '?'}–{author.died ?? '?'}</span>
 				{/if}
 			</div>
-			<span class="work-count">{author.workCount} {author.workCount === 1 ? 'Werk' : 'Werke'}</span>
+			<div class="author-stats">
+				<span class="stat-badge">{author.recommendations} {author.recommendations === 1 ? 'Empfehlung' : 'Empfehlungen'}</span>
+				<span class="work-count">{author.workCount} {author.workCount === 1 ? 'Werk' : 'Werke'}</span>
+			</div>
 		</a>
 	{:else}
 		<EmptyState icon="🖋️" message="Keine Autoren gefunden." />
@@ -216,11 +222,39 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		color: var(--color-text-muted);
 	}
 
+	.author-rank {
+		font-family: var(--font-display);
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: var(--color-gold);
+		min-width: 2rem;
+		text-align: right;
+		margin-right: 0.5rem;
+	}
+
+	.author-stats {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.25rem;
+	}
+
+	.stat-badge {
+		font-family: var(--font-ui);
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--color-accent);
+		background: var(--color-accent-light);
+		padding: 0.15rem 0.5rem;
+		border-radius: 12px;
+		white-space: nowrap;
+	}
+
 	.work-count {
 		font-family: var(--font-ui);
 		font-size: 0.8rem;
 		font-weight: 500;
-		color: var(--color-gold);
+		color: var(--color-text-muted);
 		white-space: nowrap;
 	}
 

@@ -27,6 +27,7 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 			author_slug: authorMap.get(w.author_id)?.slug ?? '',
 			reviewCount: s?.reviewCount ?? 0,
 			avgRating: s?.avgRating ?? null,
+			totalPoints: s?.totalPoints ?? 0,
 		};
 	});
 

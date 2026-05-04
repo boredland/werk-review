@@ -29,7 +29,7 @@ const sorted = $derived(
 		if (sortBy === 'title') return a.title.localeCompare(b.title, 'de');
 		if (sortBy === 'rating')
 			return (
-				(b.avgRating ?? -Infinity) - (a.avgRating ?? -Infinity) || b.reviewCount - a.reviewCount
+				(b.totalPoints ?? -Infinity) - (a.totalPoints ?? -Infinity) || b.reviewCount - a.reviewCount
 			);
 		return (a.year_from ?? 9999) - (b.year_from ?? 9999);
 	}),
@@ -85,7 +85,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 				</span>
 			</div>
 			<div class="work-end">
-				<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
+				<RatingBadge avgRating={work.avgRating} totalPoints={work.totalPoints} reviewCount={work.reviewCount} />
 				<span class="work-year">{work.year_display}</span>
 			</div>
 		</a>

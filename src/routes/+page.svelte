@@ -69,7 +69,7 @@ let { data } = $props();
 			<a href="/werke/{work.slug}" class="work-card" style="animation: fadeUp 0.4s ease both; animation-delay: {0.3 + i * 0.06}s">
 				<span class="work-year-badge">{work.year_display}</span>
 				<span class="work-title">{work.title}</span>
-				<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
+				<RatingBadge avgRating={work.avgRating} totalPoints={work.totalPoints} reviewCount={work.reviewCount} />
 			</a>
 		{/each}
 	</div>

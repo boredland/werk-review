@@ -7,14 +7,27 @@ const PAGE_SIZE = 20;
 
 let { data } = $props();
 let sortBy = $state<'year' | 'title' | 'rating'>('year');
+let filter = $state('');
 let currentPage = $state(1);
 
+const filtered = $derived(
+	data.works.filter((w) => {
+		if (!filter) return true;
+		const q = filter.toLowerCase();
+		return (
+			w.title.toLowerCase().includes(q) ||
+			w.author_name.toLowerCase().includes(q) ||
+			w.aliases.some((a) => a.toLowerCase().includes(q))
+		);
+	}),
+);
+
 const sorted = $derived(
-	[...data.works].sort((a, b) => {
+	[...filtered].sort((a, b) => {
 		if (sortBy === 'title') return a.title.localeCompare(b.title, 'de');
 		if (sortBy === 'rating')
 			return (
-				(b.avgRating ?? -Infinity) - (a.avgRating ?? -Infinity) || b.reviewCount - a.reviewCount
+				(b.totalPoints ?? -Infinity) - (a.totalPoints ?? -Infinity) || b.reviewCount - a.reviewCount
 			);
 		return (a.year_from ?? 9999) - (b.year_from ?? 9999);
 	}),
@@ -45,12 +58,20 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 	<p class="page-subtitle">{data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'}</p>
 </div>
 
-<div class="sort-bar">
+<div class="filter-bar">
+	<label for="genre-filter" class="sr-only">Werke filtern</label>
+	<input
+		id="genre-filter"
+		type="search"
+		placeholder="Werk oder Autor suchen…"
+		bind:value={filter}
+	/>
 	<select bind:value={sortBy} aria-label="Sortierung">
 		<option value="year">Jahr</option>
 		<option value="title">Titel A–Z</option>
 		<option value="rating">Bewertung</option>
 	</select>
+	<span class="count">{filtered.length} {filtered.length === 1 ? 'Werk' : 'Werke'}</span>
 </div>
 
 <div class="work-list">
@@ -61,7 +82,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 				<span class="work-author">{work.author_name}</span>
 			</div>
 			<div class="work-end">
-				<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
+				<RatingBadge avgRating={work.avgRating} totalPoints={work.totalPoints} reviewCount={work.reviewCount} />
 				<span class="work-year">{work.year_display}</span>
 			</div>
 		</a>
@@ -82,15 +103,39 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		margin-top: -0.5rem;
 	}
 
-	.sort-bar {
+	.filter-bar {
 		display: flex;
 		align-items: center;
+		gap: 0.75rem;
 		margin-bottom: 1.5rem;
 		padding-bottom: 1rem;
 		border-bottom: 1px solid var(--color-border-light);
+		flex-wrap: wrap;
 	}
 
-	.sort-bar select {
+	.filter-bar input {
+		flex: 1;
+		min-width: 200px;
+		font-family: var(--font-ui);
+		padding: 0.55rem 0.85rem;
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+		font-size: 0.9rem;
+		color: var(--color-text);
+		transition: border-color 0.2s, box-shadow 0.2s;
+	}
+
+	.filter-bar input::placeholder {
+		color: var(--color-text-muted);
+	}
+
+	.filter-bar input:focus {
+		outline: none;
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 2px var(--color-accent-light);
+	}
+
+	.filter-bar select {
 		font-family: var(--font-ui);
 		padding: 0.55rem 0.85rem;
 		border: 1px solid var(--color-border);
@@ -101,10 +146,18 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 		transition: border-color 0.2s;
 	}
 
-	.sort-bar select:focus {
+	.filter-bar select:focus {
 		outline: none;
 		border-color: var(--color-accent);
 		box-shadow: 0 0 0 2px var(--color-accent-light);
+	}
+
+	.count {
+		font-family: var(--font-ui);
+		color: var(--color-text-muted);
+		font-size: 0.82rem;
+		white-space: nowrap;
+		letter-spacing: 0.02em;
 	}
 
 	.work-list {

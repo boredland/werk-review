@@ -74,7 +74,7 @@ const paginated = $derived(
 						<span class="work-genre">{work.genre_name}</span>
 					</div>
 					<div class="work-end">
-						<RatingBadge avgRating={work.avgRating} reviewCount={work.reviewCount} />
+						<RatingBadge avgRating={work.avgRating} totalPoints={work.totalPoints} reviewCount={work.reviewCount} />
 						<span class="work-year">{work.year_display}</span>
 					</div>
 				</a>
