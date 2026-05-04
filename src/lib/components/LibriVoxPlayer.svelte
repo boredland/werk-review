@@ -19,7 +19,6 @@ let loading = $state(true);
 let error = $state('');
 
 let currentSection: Section | null = $state(null);
-let audioStatus = $state<{ [id: string]: 'uncached' | 'downloading' | 'cached' }>({});
 
 onMount(async () => {
 	try {
@@ -29,15 +28,6 @@ onMount(async () => {
 		if (!data.books || data.books.length === 0) throw new Error('Nicht gefunden');
 
 		book = data.books[0];
-
-		// Check cache status for all sections
-		if ('caches' in window && book) {
-			const cache = await caches.open('librivox-audio');
-			for (const section of book.sections) {
-				const match = await cache.match(section.listen_url);
-				audioStatus[section.id] = match ? 'cached' : 'uncached';
-			}
-		}
 	} catch (e) {
 		console.error('LibriVox fetch error:', e);
 		error = 'Fehler beim Laden des Hörbuchs.';
@@ -45,31 +35,6 @@ onMount(async () => {
 		loading = false;
 	}
 });
-
-async function toggleOffline(section: Section) {
-	if (!('caches' in window)) return;
-
-	const cache = await caches.open('librivox-audio');
-	const isCached = audioStatus[section.id] === 'cached';
-
-	if (isCached) {
-		await cache.delete(section.listen_url);
-		audioStatus[section.id] = 'uncached';
-	} else {
-		audioStatus[section.id] = 'downloading';
-		try {
-			const res = await fetch(section.listen_url);
-			if (res.ok) {
-				await cache.put(section.listen_url, res);
-				audioStatus[section.id] = 'cached';
-			} else {
-				audioStatus[section.id] = 'uncached';
-			}
-		} catch {
-			audioStatus[section.id] = 'uncached';
-		}
-	}
-}
 
 function normalize(str: string) {
 	if (!str) return '';
@@ -144,23 +109,16 @@ function isRelevant(sectionTitle: string) {
 							<span class="section-time">{Math.floor(parseInt(section.playtime) / 60)}:{parseInt(section.playtime) % 60 < 10 ? '0' : ''}{parseInt(section.playtime) % 60} Min.</span>
 						{/if}
 					</div>
-					{#if 'caches' in window}
-						<button 
-							class="offline-btn" 
-							class:downloading={audioStatus[section.id] === 'downloading'}
-							class:cached={audioStatus[section.id] === 'cached'}
-							onclick={() => toggleOffline(section)}
-							title={audioStatus[section.id] === 'cached' ? 'Offline verfügbar (Klicken zum Entfernen)' : 'Für Offline-Modus herunterladen'}
-						>
-							{#if audioStatus[section.id] === 'downloading'}
-								⏳
-							{:else if audioStatus[section.id] === 'cached'}
-								✓
-							{:else}
-								↓
-							{/if}
-						</button>
-					{/if}
+					<a 
+						href={section.listen_url} 
+						download 
+						target="_blank"
+						rel="noopener"
+						class="download-btn"
+						title="MP3 herunterladen"
+					>
+						↓
+					</a>
 				</li>
 			{/each}
 		</ul>
@@ -305,7 +263,7 @@ function isRelevant(sectionTitle: string) {
 		color: var(--color-text-muted);
 	}
 
-	.offline-btn {
+	.download-btn {
 		background: none;
 		border: 1px solid var(--color-border);
 		color: var(--color-text-muted);
@@ -318,25 +276,11 @@ function isRelevant(sectionTitle: string) {
 		cursor: pointer;
 		transition: all 0.2s;
 		font-size: 1.1rem;
+		text-decoration: none;
 	}
 
-	.offline-btn:hover {
+	.download-btn:hover {
 		border-color: var(--color-text);
 		color: var(--color-text);
-	}
-
-	.offline-btn.cached {
-		color: var(--color-gold);
-		border-color: var(--color-gold);
-	}
-
-	.offline-btn.downloading {
-		animation: pulse 1.5s infinite;
-	}
-
-	@keyframes pulse {
-		0% { opacity: 1; }
-		50% { opacity: 0.5; }
-		100% { opacity: 1; }
 	}
 </style>
