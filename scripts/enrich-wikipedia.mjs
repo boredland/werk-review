@@ -20,6 +20,18 @@ function sleep(ms) {
 	return new Promise((r) => setTimeout(r, ms));
 }
 
+async function pMap(items, mapper, concurrency) {
+	const results = [];
+	const iterator = items.entries();
+	async function worker() {
+		for (const [index, item] of iterator) {
+			results[index] = await mapper(item);
+		}
+	}
+	await Promise.all(Array.from({ length: Math.min(items.length, concurrency) }, worker));
+	return results;
+}
+
 const authors = new Map();
 for (const file of readdirSync(AUTHORS_DIR)) {
 	if (!file.endsWith('.json')) continue;
@@ -103,7 +115,7 @@ async function main() {
 
 	const workFiles = readdirSync(WORKS_DIR).filter((f) => f.endsWith('.json'));
 
-	for (const file of workFiles) {
+	await pMap(workFiles, async (file) => {
 		const path = join(WORKS_DIR, file);
 		const work = readJson(path);
 		let changed = false;
@@ -117,7 +129,6 @@ async function main() {
 			for (const term of searchTerms) {
 				result = await fetchWikipediaSummary(term);
 				if (result?.extract) break;
-				await sleep(200);
 			}
 
 			if (result?.extract && result.extract.length > 50) {
@@ -137,7 +148,6 @@ async function main() {
 					geminiPlots++;
 					console.log(`  + plot (Gemini): "${work.title}"`);
 				}
-				await sleep(500);
 			}
 		}
 
@@ -152,16 +162,13 @@ async function main() {
 					updatedSources++;
 					break;
 				}
-				await sleep(200);
 			}
 		}
 
 		if (changed) {
 			writeJson(path, work);
 		}
-
-		await sleep(300);
-	}
+	}, 10);
 
 	console.log(
 		`\nDone: ${updatedPlots} Wikipedia plots, ${geminiPlots} Gemini plots, ${updatedSources} Wikipedia sources added`,

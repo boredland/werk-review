@@ -20,6 +20,18 @@ function sleep(ms) {
 	return new Promise((r) => setTimeout(r, ms));
 }
 
+async function pMap(items, mapper, concurrency) {
+	const results = [];
+	const iterator = items.entries();
+	async function worker() {
+		for (const [index, item] of iterator) {
+			results[index] = await mapper(item);
+		}
+	}
+	await Promise.all(Array.from({ length: Math.min(items.length, concurrency) }, worker));
+	return results;
+}
+
 function normalize(str) {
 	if (!str) return '';
 	return str
@@ -151,7 +163,6 @@ async function searchProjektGutenberg(work, authorName) {
 		} catch {
 			// ignore
 		}
-		await sleep(200);
 	}
 	return [];
 }
@@ -169,17 +180,19 @@ async function main() {
 		worksByAuthor.get(work.author_id).push(work);
 	}
 
-	for (const [authorId, authorWorks] of worksByAuthor) {
+	const worksByAuthorEntries = Array.from(worksByAuthor.entries());
+
+	await pMap(worksByAuthorEntries, async ([authorId, authorWorks]) => {
 		const author = authors.get(authorId);
 		if (!author) {
 			console.log(`  Skipping works for unknown author ${authorId}`);
-			continue;
+			return;
 		}
 
 		console.log(`Processing author: ${author.name}`);
 		const lvBooks = await getLibriVoxBooks(author.name);
 
-		for (const work of authorWorks) {
+		await pMap(authorWorks, async (work) => {
 			const linksPath = join(LINKS_DIR, `${work.slug}.json`);
 			const existing = existsSync(linksPath) ? readJson(linksPath) : [];
 			const existingUrls = new Set(existing.map((l) => l.url));
@@ -220,7 +233,7 @@ async function main() {
 				}
 			}
 
-			// Projekt Gutenberg-DE matching (as before, but simplified check)
+			// Projekt Gutenberg-DE matching
 			if (!existingSources.has('Projekt Gutenberg-DE')) {
 				const pg = await searchProjektGutenberg(work, author.name);
 				if (pg.length > 0 && !existingUrls.has(pg[0].url)) {
@@ -228,7 +241,6 @@ async function main() {
 					workUpdated = true;
 					console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
 				}
-				await sleep(200);
 			}
 
 			if (workUpdated) {
@@ -237,8 +249,8 @@ async function main() {
 			} else {
 				skipped++;
 			}
-		}
-	}
+		}, 5);
+	}, 3);
 
 	console.log(`\nDone: ${updated} updated, ${skipped} unchanged`);
 }
