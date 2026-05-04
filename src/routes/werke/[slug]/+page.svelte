@@ -80,17 +80,17 @@ $effect(() => {
 		<section class="external-links">
 			<h2>Lesen & Hören</h2>
 			
-			{#if librivoxLinks.length > 0}
-				{#each librivoxLinks as lv}
-					<LibriVoxPlayer 
-						librivoxId={lv.librivox_id!} 
-						workTitles={[data.work.title, ...data.work.aliases]} 
-					/>
-				{/each}
-			{/if}
+			<div class="links-grid">
+				{#if librivoxLinks.length > 0}
+					{#each librivoxLinks as lv}
+						<LibriVoxPlayer 
+							librivoxId={lv.librivox_id!} 
+							workTitles={[data.work.title, ...data.work.aliases]} 
+						/>
+					{/each}
+				{/if}
 
-			{#if otherLinks.length > 0}
-				<div class="links-grid">
+				{#if otherLinks.length > 0}
 					{#each otherLinks as link}
 						<a href={link.url} target="_blank" rel="noopener" class="link-card">
 							<span class="link-format">{link.format}</span>
@@ -98,8 +98,8 @@ $effect(() => {
 							<span class="link-source">{link.source}</span>
 						</a>
 					{/each}
-				</div>
-			{/if}
+				{/if}
+			</div>
 		</section>
 	{/if}
 

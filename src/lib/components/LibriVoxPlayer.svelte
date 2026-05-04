@@ -114,6 +114,7 @@ function isRelevant(sectionTitle: string) {
 		<details class="player-container">
 			<summary class="player-header">
 				<div class="header-main">
+					<span class="link-format">Hörbuch</span>
 					<h4>{book.title}</h4>
 					{#if readers.length > 0}
 						<span class="readers">Gelesen von {readers.join(', ')}</span>
@@ -202,9 +203,10 @@ function isRelevant(sectionTitle: string) {
 
 	.player-container {
 		background: var(--color-surface);
-		border: 1px solid var(--color-border);
+		border: 1px solid var(--color-border-light);
 		border-radius: 4px;
 		overflow: hidden;
+		transition: border-color 0.2s;
 	}
 
 	.loading-state {
@@ -232,40 +234,59 @@ function isRelevant(sectionTitle: string) {
 	}
 
 	.player-header {
-		padding: 1rem;
-		background: var(--color-surface-warm);
+		padding: 0.85rem 1rem;
+		background: var(--color-surface);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		gap: 1rem;
 		cursor: pointer;
 		user-select: none;
+		transition: border-color 0.2s;
+	}
+
+	.player-container:hover {
+		border-color: var(--color-accent);
 	}
 
 	details[open] .player-header {
-		border-bottom: 1px solid var(--color-border);
+		border-bottom: 1px solid var(--color-border-light);
 	}
 
 	.header-main {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
+		gap: 0.15rem;
 		min-width: 0;
+	}
+
+	.link-format {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--color-gold);
 	}
 
 	.header-main h4 {
 		margin: 0;
 		font-family: var(--font-display);
-		font-size: 1rem;
+		font-weight: 600;
+		font-size: 0.95rem;
 		color: var(--color-text);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 
+	.header-main h4::first-letter {
+		text-transform: uppercase;
+	}
+
 	.readers {
 		font-family: var(--font-ui);
-		font-size: 0.8rem;
+		font-size: 0.78rem;
 		color: var(--color-text-muted);
 		white-space: nowrap;
 		overflow: hidden;
