@@ -9,8 +9,6 @@ const admin = $derived(page.data.isAdmin);
 const navItems = $derived([
 	{ href: '/autoren', label: 'Autoren' },
 	{ href: '/werke', label: 'Werke' },
-	{ href: '/genre', label: 'Genre' },
-	{ href: '/ueber-uns', label: 'Über uns' },
 	...(user ? [{ href: '/vorschlaege', label: 'Vorschlagen' }] : []),
 	...(admin ? [{ href: '/admin', label: 'Admin' }] : []),
 ]);
