@@ -35,7 +35,7 @@ let { children } = $props();
 			<a href="/genre">Genre</a>
 			<a href="/vorschlaege">Vorschlagen</a>
 			<a href="/konto">Konto</a>
-			<a href="/ueber-uns">Über uns</a>
+			<a href="https://github.com/boredland/werk-review" target="_blank" rel="noopener noreferrer">GitHub</a>
 			<a href="/impressum">Impressum</a>
 			<a href="/datenschutz">Datenschutz</a>
 		</div>
