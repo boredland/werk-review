@@ -172,6 +172,23 @@ $effect(() => {
 		{/if}
 	</section>
 
+	<section class="bookmarks-section">
+		<h2>Gelesen <span class="reviews-count">({data.userReads.length})</span></h2>
+
+		{#if data.userReads.length > 0}
+			<div class="bookmarks-list">
+				{#each data.userReads as read}
+					<a href="/werke/{read.workSlug}" class="bookmark-item">
+						<span class="bookmark-title">{read.workTitle}</span>
+						<span class="bookmark-date">{new Date(read.createdAt).toLocaleDateString('de-DE')}</span>
+					</a>
+				{/each}
+			</div>
+		{:else}
+			<EmptyState icon="📖" message="Du hast noch keine Werke als gelesen markiert." />
+		{/if}
+	</section>
+
 	<section class="danger-zone">
 		<h2>Konto löschen</h2>
 		{#if form?.deleteError}

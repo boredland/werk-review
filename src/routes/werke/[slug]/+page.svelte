@@ -10,12 +10,14 @@ let { data, form } = $props();
 
 const user = $derived(page.data.user);
 let bookmarked = $state(data.isBookmarked);
+let isRead = $state(data.isRead);
 
 const librivoxLinks = $derived(data.externalLinks.filter((l) => l.librivox_id));
 const otherLinks = $derived(data.externalLinks.filter((l) => !l.librivox_id));
 
 $effect(() => {
 	bookmarked = data.isBookmarked;
+	isRead = data.isRead;
 });
 </script>
 
@@ -37,13 +39,22 @@ $effect(() => {
 		<div class="work-title-row">
 			<h1>{data.work.title}</h1>
 			{#if user}
-				<form method="POST" action="?/toggleBookmark" use:enhance={() => { bookmarked = !bookmarked; return async ({ update }) => { update({ reset: false }); }; }}>
-					<button type="submit" class="bookmark-btn" class:bookmarked aria-label={bookmarked ? 'Von Leseliste entfernen' : 'Zur Leseliste hinzufügen'}>
-						<svg width="20" height="20" viewBox="0 0 20 20" fill={bookmarked ? 'currentColor' : 'none'} aria-hidden="true">
-							<path d="M5 3a1 1 0 011-1h8a1 1 0 011 1v14l-5-3-5 3V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-						</svg>
-					</button>
-				</form>
+				<div class="action-buttons">
+					<form method="POST" action="?/toggleRead" use:enhance={() => { isRead = !isRead; return async ({ update }) => { update({ reset: false }); }; }}>
+						<button type="submit" class="action-btn" class:active={isRead} aria-label={isRead ? 'Als ungelesen markieren' : 'Als gelesen markieren'} title="Gelesen">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill={isRead ? 'currentColor' : 'none'} aria-hidden="true">
+								<path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</button>
+					</form>
+					<form method="POST" action="?/toggleBookmark" use:enhance={() => { bookmarked = !bookmarked; return async ({ update }) => { update({ reset: false }); }; }}>
+						<button type="submit" class="action-btn" class:active={bookmarked} aria-label={bookmarked ? 'Von Leseliste entfernen' : 'Zur Leseliste hinzufügen'} title="Lesezeichen">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill={bookmarked ? 'currentColor' : 'none'} aria-hidden="true">
+								<path d="M5 3a1 1 0 011-1h8a1 1 0 011 1v14l-5-3-5 3V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+							</svg>
+						</button>
+					</form>
+				</div>
 			{/if}
 		</div>
 		<div class="meta">
@@ -151,7 +162,14 @@ $effect(() => {
 		margin-bottom: 0.5rem;
 	}
 
-	.bookmark-btn {
+	.action-buttons {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 0.25rem;
+	}
+
+	.action-btn {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -162,15 +180,14 @@ $effect(() => {
 		cursor: pointer;
 		transition: all 0.2s;
 		flex-shrink: 0;
-		margin-top: 0.25rem;
 	}
 
-	.bookmark-btn:hover {
+	.action-btn:hover {
 		border-color: var(--color-gold);
 		color: var(--color-gold);
 	}
 
-	.bookmark-btn.bookmarked {
+	.action-btn.active {
 		border-color: var(--color-gold);
 		color: var(--color-gold);
 	}

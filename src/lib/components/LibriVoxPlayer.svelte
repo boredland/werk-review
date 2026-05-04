@@ -198,10 +198,11 @@ function isRelevant(sectionTitle: string) {
 
 <style>
 	.librivox-wrapper {
-		margin-bottom: 2rem;
+		height: 100%;
 	}
 
 	.player-container {
+		height: 100%;
 		background: var(--color-surface);
 		border: 1px solid var(--color-border-light);
 		border-radius: 4px;

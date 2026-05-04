@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
 import { and, desc, eq } from 'drizzle-orm';
-import { bookmarks, reviews, users } from '$lib/db/schema';
+import { bookmarks, reads, reviews, users } from '$lib/db/schema';
 import { getRatingByLabel } from '$lib/ratings';
 import {
 	getAuthor,
@@ -23,27 +23,40 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	const allWorks = getWorks();
 	const workMap = new Map(allWorks.map((w) => [w.id, w]));
 
+	let isBookmarked = false;
+	let isRead = false;
+	const userReadWorkIds = new Set<string>();
+
+	if (locals.user && platform?.env.DB) {
+		try {
+			const db = getDb(platform.env.DB);
+
+			const [readsList, bm] = await Promise.all([
+				db.select({ workId: reads.workId }).from(reads).where(eq(reads.userId, locals.user.id)),
+				db
+					.select()
+					.from(bookmarks)
+					.where(and(eq(bookmarks.userId, locals.user.id), eq(bookmarks.workId, work.id)))
+					.get(),
+			]);
+
+			for (const r of readsList) {
+				userReadWorkIds.add(r.workId);
+			}
+			isRead = userReadWorkIds.has(work.id);
+			isBookmarked = !!bm;
+		} catch {}
+	}
+
 	const similar = getSimilarWorks(work.id)
 		.map((s) => workMap.get(s.work_id))
 		.filter((w): w is NonNullable<typeof w> => !!w)
+		.filter((w) => !userReadWorkIds.has(w.id))
 		.map((w) => ({
 			slug: w.slug,
 			title: w.title,
 			year_display: w.year_display,
 		}));
-
-	let isBookmarked = false;
-	if (locals.user && platform?.env.DB) {
-		try {
-			const db = getDb(platform.env.DB);
-			const bm = await db
-				.select()
-				.from(bookmarks)
-				.where(and(eq(bookmarks.userId, locals.user.id), eq(bookmarks.workId, work.id)))
-				.get();
-			isBookmarked = !!bm;
-		} catch {}
-	}
 
 	let workReviews: {
 		id: string;
@@ -122,6 +135,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		userReview,
 		score,
 		isBookmarked,
+		isRead,
 		externalLinks,
 	};
 };
@@ -212,6 +226,35 @@ export const actions: Actions = {
 		}
 
 		return { bookmarkToggled: true };
+	},
+
+	toggleRead: async ({ platform, locals, params }) => {
+		if (!locals.user || !platform?.env.DB) {
+			return fail(401, { error: 'Nicht autorisiert.' });
+		}
+
+		const work = getWork(params.slug);
+		if (!work) error(404, 'Werk nicht gefunden');
+
+		const db = getDb(platform.env.DB);
+		const existing = await db
+			.select()
+			.from(reads)
+			.where(and(eq(reads.userId, locals.user.id), eq(reads.workId, work.id)))
+			.get();
+
+		if (existing) {
+			await db
+				.delete(reads)
+				.where(and(eq(reads.userId, locals.user.id), eq(reads.workId, work.id)));
+		} else {
+			await db.insert(reads).values({
+				userId: locals.user.id,
+				workId: work.id,
+			});
+		}
+
+		return { readToggled: true };
 	},
 
 	deleteReview: async ({ platform, locals, params }) => {

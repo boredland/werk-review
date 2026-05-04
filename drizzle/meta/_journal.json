@@ -36,6 +36,13 @@
       "when": 1777874515036,
       "tag": "0004_illegal_unus",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1777924439146,
+      "tag": "0005_open_lord_hawal",
+      "breakpoints": true
     }
   ]
 }

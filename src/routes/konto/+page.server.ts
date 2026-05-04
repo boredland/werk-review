@@ -1,6 +1,6 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { and, desc, eq } from 'drizzle-orm';
-import { authorSuggestions, bookmarks, reviews, users } from '$lib/db/schema';
+import { authorSuggestions, bookmarks, reads, reviews, users } from '$lib/db/schema';
 import { destroySession, hashPassword, SESSION_COOKIE, verifyPassword } from '$lib/server/auth';
 import { getWork } from '$lib/server/data';
 import { getDb } from '$lib/server/db';
@@ -55,26 +55,42 @@ export const load: PageServerLoad = async ({ locals, platform }) => {
 
 	let userBookmarks: { workTitle: string; workSlug: string; createdAt: string }[] = [];
 
+	let userReads: { workTitle: string; workSlug: string; createdAt: string }[] = [];
+
 	if (platform?.env.DB) {
 		try {
 			const db = getDb(platform.env.DB);
-			const rows = await db
+			const bmRows = await db
 				.select()
 				.from(bookmarks)
 				.where(eq(bookmarks.userId, locals.user.id))
 				.orderBy(desc(bookmarks.createdAt));
 
-			userBookmarks = rows
+			userBookmarks = bmRows
 				.map((b) => {
 					const work = getWork(b.workId);
 					if (!work) return null;
 					return { workTitle: work.title, workSlug: work.slug, createdAt: b.createdAt };
 				})
 				.filter((b): b is NonNullable<typeof b> => b !== null);
+
+			const readRows = await db
+				.select()
+				.from(reads)
+				.where(eq(reads.userId, locals.user.id))
+				.orderBy(desc(reads.createdAt));
+
+			userReads = readRows
+				.map((r) => {
+					const work = getWork(r.workId);
+					if (!work) return null;
+					return { workTitle: work.title, workSlug: work.slug, createdAt: r.createdAt };
+				})
+				.filter((r): r is NonNullable<typeof r> => r !== null);
 		} catch {}
 	}
 
-	return { userReviews, userBookmarks };
+	return { userReviews, userBookmarks, userReads };
 };
 
 export const actions: Actions = {
@@ -270,6 +286,7 @@ export const actions: Actions = {
 
 		await db.delete(reviews).where(eq(reviews.userId, locals.user.id));
 		await db.delete(bookmarks).where(eq(bookmarks.userId, locals.user.id));
+		await db.delete(reads).where(eq(reads.userId, locals.user.id));
 		await db.delete(authorSuggestions).where(eq(authorSuggestions.userId, locals.user.id));
 		await db.delete(users).where(eq(users.id, locals.user.id));
 
