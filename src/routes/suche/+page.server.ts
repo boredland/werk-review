@@ -24,7 +24,8 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 			(w) =>
 				w.title.toLowerCase().includes(lower) ||
 				w.aliases.some((al) => al.toLowerCase().includes(lower)) ||
-				(w.collection_title?.toLowerCase().includes(lower) ?? false),
+				(w.collection_title?.toLowerCase().includes(lower) ?? false) ||
+				(w.plot?.toLowerCase().includes(lower) ?? false),
 		)
 		.map((w) => ({
 			title: w.title,
