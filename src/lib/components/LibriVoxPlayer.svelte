@@ -14,7 +14,7 @@ interface Section {
 	playtime: string;
 }
 
-let book: { title: string; sections: Section[] } | null = $state(null);
+let book: { title: string; url_librivox: string; sections: Section[] } | null = $state(null);
 let loading = $state(true);
 let error = $state('');
 
@@ -24,7 +24,9 @@ onMount(async () => {
 	try {
 		const res = await fetch(`/api/librivox/${librivoxId}`);
 		if (!res.ok) throw new Error('API Fehler');
-		const data = (await res.json()) as { books?: { title: string; sections: Section[] }[] };
+		const data = (await res.json()) as {
+			books?: { title: string; url_librivox: string; sections: Section[] }[];
+		};
 		if (!data.books || data.books.length === 0) throw new Error('Nicht gefunden');
 
 		book = data.books[0];
@@ -82,6 +84,11 @@ function isRelevant(sectionTitle: string) {
 	{:else if book}
 		<div class="player-header">
 			<h4>LibriVox Player: {book.title}</h4>
+			{#if book.url_librivox}
+				<a href={book.url_librivox} target="_blank" rel="noopener" class="header-link" title="Zur LibriVox-Seite">
+					↗ LibriVox
+				</a>
+			{/if}
 		</div>
 
 		{#if currentSection}
@@ -138,6 +145,10 @@ function isRelevant(sectionTitle: string) {
 		padding: 1rem;
 		background: var(--color-surface-warm);
 		border-bottom: 1px solid var(--color-border);
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
 	}
 
 	.player-header h4 {
@@ -145,6 +156,20 @@ function isRelevant(sectionTitle: string) {
 		font-family: var(--font-display);
 		font-size: 1rem;
 		color: var(--color-accent);
+	}
+
+	.header-link {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		color: var(--color-text-muted);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.header-link:hover {
+		color: var(--color-accent);
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
 	.loading, .error {
