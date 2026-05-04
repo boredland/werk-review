@@ -43,6 +43,11 @@ let { data } = $props();
 							<button type="submit" class="btn btn--reject">Ablehnen</button>
 						</form>
 					</div>
+				{:else if s.status === 'accepted'}
+					<div class="add-hint">
+						<span class="add-hint-text">In Google Sheet eintragen:</span>
+						<code class="add-hint-name">{s.suggestedName}</code>
+					</div>
 				{/if}
 			</div>
 		{/each}
@@ -172,5 +177,30 @@ let { data } = $props();
 
 	.btn--reject:hover {
 		background: rgba(158, 58, 58, 0.08);
+	}
+
+	.add-hint {
+		margin-top: 0.75rem;
+		padding: 0.6rem 0.85rem;
+		background: rgba(45, 106, 79, 0.06);
+		border: 1px solid rgba(45, 106, 79, 0.15);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.add-hint-text {
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		color: var(--color-text-muted);
+	}
+
+	.add-hint-name {
+		font-size: 0.88rem;
+		font-weight: 600;
+		color: var(--color-text);
+		background: var(--color-surface-warm);
+		padding: 0.1rem 0.4rem;
 	}
 </style>

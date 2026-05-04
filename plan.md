@@ -22,9 +22,8 @@
 ## Admin
 
 - [x] Admin user management (list users, ban/delete)
-- [ ] Admin review moderation
-- [ ] Bulk data import for authors/works (CSV or JSON upload)
-- [ ] When accepting an author suggestion, link to adding the author
+- [x] Admin review moderation
+- [x] When accepting an author suggestion, link to adding the author
 
 ## Technical
 
