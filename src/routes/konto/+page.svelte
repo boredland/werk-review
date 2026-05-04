@@ -189,6 +189,12 @@ $effect(() => {
 		{/if}
 	</section>
 
+	<section class="export-zone">
+		<h2>Daten exportieren</h2>
+		<p class="export-text">Du kannst jederzeit eine Kopie all deiner gespeicherten Daten (Bewertungen, Leselisten, Profil) im maschinenlesbaren JSON-Format herunterladen (Art. 20 DSGVO).</p>
+		<a href="/api/export-data" target="_blank" rel="noopener noreferrer" class="btn btn--outline" download>Meine Daten herunterladen (.json)</a>
+	</section>
+
 	<section class="danger-zone">
 		<h2>Konto löschen</h2>
 		{#if form?.deleteError}
@@ -544,6 +550,45 @@ $effect(() => {
 		font-family: var(--font-ui);
 		font-size: 0.78rem;
 		color: var(--color-text-muted);
+	}
+
+	.export-zone {
+		margin-top: 3rem;
+		padding: 1.5rem;
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+
+	.export-zone h2 {
+		font-size: 1.1rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.export-text {
+		font-family: var(--font-ui);
+		font-size: 0.88rem;
+		color: var(--color-text-muted);
+		line-height: 1.5;
+		margin-bottom: 1rem;
+	}
+
+	.btn--outline {
+		display: inline-block;
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		font-weight: 600;
+		padding: 0.45rem 1rem;
+		cursor: pointer;
+		background: transparent;
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
+		text-decoration: none;
+		transition: all 0.2s;
+	}
+
+	.btn--outline:hover {
+		border-color: var(--color-accent);
+		color: var(--color-accent);
 	}
 
 	.danger-zone {

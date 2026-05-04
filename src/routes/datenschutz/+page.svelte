@@ -44,11 +44,13 @@ import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 		<h2>4. Hosting und Content Delivery Networks (CDN)</h2>
 		<h3>Cloudflare</h3>
 		<p>Wir hosten unsere Website bei Cloudflare. Anbieter ist die Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA. Wenn Sie unsere Website besuchen, werden Ihre Anfragen über die Server von Cloudflare geleitet (Content Delivery Network). Dabei erfasst Cloudflare standardmäßig Zugriffsdaten wie Ihre IP-Adresse, um die Sicherheit und Erreichbarkeit unserer Website zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).</p>
+		<p><strong>Datenstandort und Drittlandtransfer:</strong> Cloudflare betreibt ein weltweites Servernetzwerk. Grundsätzlich werden europäische Nutzer über Rechenzentren innerhalb der Europäischen Union bedient ("Edge Routing"). Dennoch kann ein Datentransfer in die USA nicht gänzlich ausgeschlossen werden. Für Datenübermittlungen in die USA berufen wir uns auf den Angemessenheitsbeschluss der EU-Kommission (Data Privacy Framework), unter dem Cloudflare Inc. zertifiziert ist. Zusätzlich haben wir mit Cloudflare Standardvertragsklauseln (SCCs) vereinbart.</p>
 	</section>
 
 	<section>
 		<h2>5. Ihre Rechte</h2>
 		<p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Da Sie über Ihr Konto alle Daten selbst verwalten oder das Konto vollständig löschen können, haben Sie direkte Kontrolle über Ihre Daten.</p>
+		<p><strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten (wie z. B. Ihre Bewertungen und Lesezeichen), an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sie können diesen Export jederzeit selbst über die Einstellungen auf Ihrer Kontoseite anfordern.</p>
 	</section>
 </article>
 
