@@ -6,7 +6,6 @@ export interface Author {
 	born: number | null;
 	died: number | null;
 	bio: string;
-	sources: Source[];
 }
 
 export interface Work {

@@ -53,7 +53,6 @@ const AuthorSchema = z.object({
 	born: z.number().nullable(),
 	died: z.number().nullable(),
 	bio: z.string(),
-	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
 });
 
 const WorkSchema = z.object({
@@ -186,7 +185,6 @@ function transformAuthor(row) {
 		born: parseNumber(row.born),
 		died: parseNumber(row.died),
 		bio: row.bio || '',
-		sources: parseSources(row.sources),
 	};
 }
 

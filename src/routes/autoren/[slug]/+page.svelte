@@ -66,18 +66,11 @@ const paginated = $derived(
 	{#if data.author.bio}
 		<section class="bio">
 			<p>{data.author.bio}</p>
+			<p class="wiki-link">
+				<a href={data.wikiUrl} target="_blank" rel="noopener">Mehr auf Wikipedia ↗</a>
+			</p>
 		</section>
 	{/if}
-
-	<section class="sources">
-		<h3>Quellen</h3>
-		<ul>
-			{#each data.author.sources as source}
-				<li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>
-			{/each}
-			<li><a href={data.wikiUrl} target="_blank" rel="noopener">Wikipedia</a></li>
-		</ul>
-	</section>
 
 	<section class="works-section">
 		<h2>Werke <span class="works-count">({data.works.length})</span></h2>
@@ -152,6 +145,22 @@ const paginated = $derived(
 
 	.bio p {
 		margin: 0;
+	}
+
+	.wiki-link {
+		margin-top: 1rem !important;
+		font-family: var(--font-ui);
+		font-size: 0.9rem;
+	}
+
+	.wiki-link a {
+		color: var(--color-gold);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.wiki-link a:hover {
+		text-decoration: underline;
 	}
 
 	.sources {
