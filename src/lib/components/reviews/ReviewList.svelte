@@ -83,6 +83,7 @@ let {
 								<svg width="16" height="16" viewBox="0 0 20 20" fill={review.hasUserReacted ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
 									<path d="M10 18l-1.45-1.32C3.4 12.11 0 9.03 0 5.25 0 2.19 2.42 0 5.5 0 7.24 0 8.91.81 10 2.09 11.09.81 12.76 0 14.5 0 17.58 0 20 2.19 20 5.25c0 3.78-3.4 6.86-8.55 11.43L10 18z" />
 								</svg>
+								<span class="reaction-label">Hilfreich</span>
 								{#if review.reactionCount > 0}
 									<span class="reaction-count">{review.reactionCount}</span>
 								{/if}
@@ -244,6 +245,12 @@ let {
 	}
 
 	.reaction-count {
-		font-weight: 600;
+		font-weight: 700;
+		color: var(--color-gold);
+		margin-left: 0.2rem;
+	}
+
+	.reaction-label {
+		font-weight: 500;
 	}
 </style>
