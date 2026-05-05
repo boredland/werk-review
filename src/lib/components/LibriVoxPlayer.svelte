@@ -1,25 +1,22 @@
 <script lang="ts">
 import { onMount } from 'svelte';
+import type { LibriVoxBook, LibriVoxData, LibriVoxSection } from '$lib/types';
 
-let { librivoxId, workTitles = [] } = $props<{
+let {
+	librivoxId,
+	workTitles = [],
+	initialData = null,
+} = $props<{
 	librivoxId: string;
 	workTitles?: string[];
+	initialData?: LibriVoxData | null;
 }>();
 
-interface Section {
-	id: string;
-	section_number: string;
-	title: string;
-	listen_url: string;
-	playtime: string;
-	readers?: { display_name: string }[];
-}
-
-let book: { title: string; url_librivox: string; sections: Section[] } | null = $state(null);
-let loading = $state(true);
+let book: LibriVoxBook | null = $state(initialData?.books?.[0] || null);
+let loading = $state(!book);
 let error = $state('');
 
-let currentSection: Section | null = $state(null);
+let currentSection: LibriVoxSection | null = $state(null);
 let audioLoading = $state(false);
 
 const readers = $derived.by(() => {
@@ -45,11 +42,12 @@ function playNext() {
 }
 
 onMount(async () => {
+	if (book) return;
 	try {
 		const res = await fetch(`/api/librivox/${librivoxId}`);
 		if (!res.ok) throw new Error('API Fehler');
 		const data = (await res.json()) as {
-			books?: { title: string; url_librivox: string; sections: Section[] }[];
+			books?: { title: string; url_librivox: string; sections: LibriVoxSection[] }[];
 		};
 		if (!data.books || data.books.length === 0) throw new Error('Nicht gefunden');
 

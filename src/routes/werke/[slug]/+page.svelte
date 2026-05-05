@@ -146,6 +146,7 @@ $effect(() => {
 						<LibriVoxPlayer 
 							librivoxId={lv.librivox_id!} 
 							workTitles={[data.work.title, ...data.work.aliases]} 
+							initialData={data.librivoxData[lv.librivox_id!]}
 						/>
 					{/each}
 				{/if}

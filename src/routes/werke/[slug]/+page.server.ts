@@ -11,9 +11,10 @@ import {
 	getWorks,
 } from '$lib/server/data';
 import { getDb } from '$lib/server/db';
+import type { LibriVoxData } from '$lib/types';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, platform, locals }) => {
+export const load: PageServerLoad = async ({ params, platform, locals, fetch }) => {
 	const work = getWork(params.slug);
 	if (!work) error(404, 'Werk nicht gefunden');
 
@@ -163,6 +164,26 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	}
 
 	const externalLinks = getLinksForWork(work.slug);
+	const librivoxData: Record<string, LibriVoxData> = {};
+
+	await Promise.all(
+		externalLinks
+			.filter((l) => l.librivox_id)
+			.map(async (l) => {
+				try {
+					const id = l.librivox_id;
+					if (id) {
+						const res = await fetch(`/api/librivox/${id}`);
+						if (res.ok) {
+							librivoxData[id] = await res.json();
+						}
+					}
+				} catch (e) {
+					console.error(`Error pre-fetching LibriVox ${l.librivox_id}:`, e);
+				}
+			}),
+	);
+
 	const parentWorks = work.parent_slugs
 		.map((slug) => workMap.get(slug))
 		.filter((w): w is NonNullable<typeof w> => !!w)
@@ -185,6 +206,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		isBookmarked,
 		isRead,
 		externalLinks,
+		librivoxData,
 	};
 };
 

@@ -1,10 +1,25 @@
 import { json } from '@sveltejs/kit';
+import type { LibriVoxData } from '$lib/types';
 import type { RequestHandler } from './$types';
 
-export const GET: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params, platform }) => {
 	const librivoxId = params.id;
 	if (!librivoxId) {
 		return json({ error: 'Missing LibriVox ID' }, { status: 400 });
+	}
+
+	const cacheKey = `librivox:${librivoxId}`;
+	const kv = platform?.env.SESSION_KV;
+
+	if (kv) {
+		try {
+			const cached = await kv.get(cacheKey);
+			if (cached) {
+				return json(JSON.parse(cached));
+			}
+		} catch (e) {
+			console.error('KV get error:', e);
+		}
 	}
 
 	try {
@@ -15,7 +30,13 @@ export const GET: RequestHandler = async ({ params }) => {
 			return json({ error: 'Failed to fetch from LibriVox API' }, { status: res.status });
 		}
 
-		const data = await res.json();
+		const data = (await res.json()) as LibriVoxData;
+
+		if (kv && data.books && data.books.length > 0) {
+			// Cache for 24 hours
+			await kv.put(cacheKey, JSON.stringify(data), { expirationTtl: 86400 });
+		}
+
 		return json(data);
 	} catch (e) {
 		return json({ error: 'Internal server error while fetching LibriVox data' }, { status: 500 });

@@ -52,3 +52,22 @@ export interface SimilarWork {
 	work_id: string;
 	score: number;
 }
+
+export interface LibriVoxSection {
+	id: string;
+	section_number: string;
+	title: string;
+	listen_url: string;
+	playtime: string;
+	readers?: { display_name: string }[];
+}
+
+export interface LibriVoxBook {
+	title: string;
+	url_librivox: string;
+	sections: LibriVoxSection[];
+}
+
+export interface LibriVoxData {
+	books?: LibriVoxBook[];
+}
