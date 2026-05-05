@@ -26,7 +26,10 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 		const s = stats.get(w.id);
 		return {
 			...w,
-			genre_name: getGenre(w.genre_id)?.name ?? w.genre_id,
+			genre_name: w.genre_ids
+				.map((id) => getGenre(id)?.name)
+				.filter(Boolean)
+				.join(', '),
 			reviewCount: s?.reviewCount ?? 0,
 			avgRating: s?.avgRating ?? null,
 			totalPoints: s?.totalPoints ?? 0,

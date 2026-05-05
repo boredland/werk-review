@@ -13,7 +13,7 @@ export interface Author {
 export interface Work {
 	id: string;
 	author_id: string;
-	genre_id: string;
+	genre_ids: string[];
 	title: string;
 	slug: string;
 	aliases: string[];

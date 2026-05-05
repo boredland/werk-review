@@ -24,7 +24,7 @@ $effect(() => {
 <svelte:head>
 	<title>{data.work.title} – werk.review</title>
 	<meta property="og:title" content="{data.work.title} – werk.review" />
-	<meta property="og:description" content="{data.author?.name ?? 'Unbekannt'} · {data.genre?.name ?? ''} · {data.work.year_display}" />
+	<meta property="og:description" content="{data.author?.name ?? 'Unbekannt'} · {data.genres.map(g => g.name).join(', ')} · {data.work.year_display}" />
 	<meta property="og:type" content="book" />
 
 	<!-- Structured Data (JSON-LD) -->
@@ -40,7 +40,7 @@ $effect(() => {
 					}
 				: undefined,
 			datePublished: data.work.year_from?.toString(),
-			genre: data.genre?.name,
+			genre: data.genres.map(g => g.name).join(', '),
 			description: data.work.plot || undefined,
 			aggregateRating: data.score
 				? {
@@ -88,9 +88,11 @@ $effect(() => {
 			{#if data.author}
 				<a href="/autoren/{data.author.slug}" class="meta-link">{data.author.name}</a>
 			{/if}
-			{#if data.genre}
+			{#if data.genres.length > 0}
 				<span class="meta-sep">·</span>
-				<a href="/genre/{data.genre.slug}" class="meta-link meta-link--genre">{data.genre.name}</a>
+				{#each data.genres as g, i}
+					<a href="/genre/{g.slug}" class="meta-link meta-link--genre">{g.name}</a>{#if i < data.genres.length - 1}<span class="meta-sep">, </span>{/if}
+				{/each}
 			{/if}
 		</div>
 	</header>

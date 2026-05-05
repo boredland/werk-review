@@ -65,7 +65,7 @@ const AuthorSchema = z.object({
 const WorkSchema = z.object({
 	id: z.string().min(1),
 	author_id: z.string().min(1),
-	genre_id: z.string().min(1),
+	genre_ids: z.array(z.string()).min(1),
 	title: z.string().min(1),
 	slug: z.string().min(1),
 	aliases: z.array(z.string()),
@@ -180,7 +180,7 @@ function transformWork(row) {
 	return {
 		id: row.id || slug,
 		author_id: row.author_id,
-		genre_id: row.genre_id,
+		genre_ids: parsePipeSeparated(row.genre_id || row.genre_ids),
 		title: row.title,
 		slug,
 		aliases: parsePipeSeparated(row.aliases),
@@ -261,9 +261,11 @@ async function main() {
 			console.error(`Work "${work.title}" references unknown author_id "${work.author_id}"`);
 			errors++;
 		}
-		if (!genreIds.has(work.genre_id)) {
-			console.error(`Work "${work.title}" references unknown genre_id "${work.genre_id}"`);
-			errors++;
+		for (const gId of work.genre_ids) {
+			if (!genreIds.has(gId)) {
+				console.error(`Work "${work.title}" references unknown genre_id "${gId}"`);
+				errors++;
+			}
 		}
 		for (const pSlug of work.parent_slugs) {
 			if (!workIds.has(pSlug)) {

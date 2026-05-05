@@ -215,7 +215,9 @@ async function searchArchiveOrg(work, authorName) {
 						format: 'Volltext / Download',
 						url: `https://archive.org/details/${bestDoc.identifier}`,
 						label: bestDoc.title || work.title,
-						formats: (bestDoc.format || []).filter((f) => ['EPUB', 'Text PDF', 'Kindle'].includes(f)),
+						formats: (bestDoc.format || []).filter((f) =>
+							['EPUB', 'Text PDF', 'Kindle'].includes(f),
+						),
 					});
 				}
 			}
@@ -275,92 +277,104 @@ async function main() {
 
 	const worksByAuthorEntries = Array.from(worksByAuthor.entries());
 
-	await pMap(worksByAuthorEntries, async ([authorId, authorWorks]) => {
-		const author = authors.get(authorId);
-		if (!author) {
-			console.log(`  Skipping works for unknown author ${authorId}`);
-			return;
-		}
+	await pMap(
+		worksByAuthorEntries,
+		async ([authorId, authorWorks]) => {
+			const author = authors.get(authorId);
+			if (!author) {
+				console.log(`  Skipping works for unknown author ${authorId}`);
+				return;
+			}
 
-		console.log(`Processing author: ${author.name}`);
-		const lvBooks = await getLibriVoxBooks(author.name);
+			console.log(`Processing author: ${author.name}`);
+			const lvBooks = await getLibriVoxBooks(author.name);
 
-		await pMap(authorWorks, async (work) => {
-			const linksPath = join(LINKS_DIR, `${work.slug}.json`);
-			const existing = existsSync(linksPath) ? readJson(linksPath) : [];
-			const existingUrls = new Set(existing.map((l) => l.url));
-			const existingSources = new Set(existing.map((l) => l.source));
+			await pMap(
+				authorWorks,
+				async (work) => {
+					const linksPath = join(LINKS_DIR, `${work.slug}.json`);
+					const existing = existsSync(linksPath) ? readJson(linksPath) : [];
+					const existingUrls = new Set(existing.map((l) => l.url));
+					const existingSources = new Set(existing.map((l) => l.source));
 
-			let workUpdated = false;
-			const newLinks = [...existing];
+					let workUpdated = false;
+					const newLinks = [...existing];
 
-			// LibriVox matching
-			for (const book of lvBooks) {
-				if (existingUrls.has(book.url_librivox)) continue;
+					// LibriVox matching
+					for (const book of lvBooks) {
+						if (existingUrls.has(book.url_librivox)) continue;
 
-				let matched = false;
-				// Match by book title
-				if (isMatch(work, book.title)) {
-					matched = true;
-				} else {
-					// Match by section titles
-					for (const section of book.sections || []) {
-						if (isMatch(work, section.title)) {
+						let matched = false;
+						// Match by book title
+						if (isMatch(work, book.title)) {
 							matched = true;
-							break;
+						} else {
+							// Match by section titles
+							for (const section of book.sections || []) {
+								if (isMatch(work, section.title)) {
+									matched = true;
+									break;
+								}
+							}
+						}
+
+						if (matched) {
+							newLinks.push({
+								source: 'LibriVox',
+								format: 'Hörbuch',
+								url: book.url_librivox,
+								label: book.title,
+								librivox_id: book.id,
+							});
+							existingUrls.add(book.url_librivox);
+							workUpdated = true;
+							console.log(`  + LibriVox: "${work.title}" -> "${book.title}"`);
 						}
 					}
-				}
 
-				if (matched) {
-					newLinks.push({
-						source: 'LibriVox',
-						format: 'Hörbuch',
-						url: book.url_librivox,
-						label: book.title,
-						librivox_id: book.id,
-					});
-					existingUrls.add(book.url_librivox);
-					workUpdated = true;
-					console.log(`  + LibriVox: "${work.title}" -> "${book.title}"`);
-				}
-			}
+					// Projekt Gutenberg-DE matching
+					if (!existingSources.has('Projekt Gutenberg-DE')) {
+						const pg = await searchProjektGutenberg(work, author.name);
+						if (pg.length > 0 && !existingUrls.has(pg[0].url)) {
+							newLinks.push(pg[0]);
+							workUpdated = true;
+							console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
+						}
+					}
 
-			// Projekt Gutenberg-DE matching
-			if (!existingSources.has('Projekt Gutenberg-DE')) {
-				const pg = await searchProjektGutenberg(work, author.name);
-				if (pg.length > 0 && !existingUrls.has(pg[0].url)) {
-					newLinks.push(pg[0]);
-					workUpdated = true;
-					console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
-				}
-			}
+					// Archive.org matching
+					const hasIAText = existing.some(
+						(l) => l.source === 'Internet Archive' && l.format === 'Volltext / Download',
+					);
+					const hasIAVideo = existing.some(
+						(l) => l.source === 'Internet Archive' && l.format === 'Verfilmung',
+					);
 
-			// Archive.org matching
-			const hasIAText = existing.some((l) => l.source === 'Internet Archive' && l.format === 'Volltext / Download');
-			const hasIAVideo = existing.some((l) => l.source === 'Internet Archive' && l.format === 'Verfilmung');
+					if (!hasIAText || !hasIAVideo) {
+						const archive = await searchArchiveOrg(work, author.name);
+						for (const link of archive) {
+							if (existingUrls.has(link.url)) continue;
+							if (link.format === 'Volltext / Download' && hasIAText) continue;
+							if (link.format === 'Verfilmung' && hasIAVideo) continue;
 
-			if (!hasIAText || !hasIAVideo) {
-				const archive = await searchArchiveOrg(work, author.name);
-				for (const link of archive) {
-					if (existingUrls.has(link.url)) continue;
-					if (link.format === 'Volltext / Download' && hasIAText) continue;
-					if (link.format === 'Verfilmung' && hasIAVideo) continue;
+							newLinks.push(link);
+							workUpdated = true;
+							console.log(`  + Internet Archive (${link.format}): "${work.title}"`);
+						}
+					}
 
-					newLinks.push(link);
-					workUpdated = true;
-					console.log(`  + Internet Archive (${link.format}): "${work.title}"`);
-				}
-			}
-
-			if (workUpdated) {
-				writeJson(linksPath, newLinks);
-				updated++;
-			} else {
-				skipped++;
-			}
-		}, CONCURRENCY);
-	}, 3);
+					if (workUpdated) {
+						writeJson(linksPath, newLinks);
+						updated++;
+					} else {
+						skipped++;
+					}
+				},
+				CONCURRENCY,
+			);
+		},
+		3,
+	);
 
 	console.log(`\nDone: ${updated} updated, ${skipped} unchanged`);
 }

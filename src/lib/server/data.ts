@@ -57,7 +57,7 @@ export function getWorksByAuthor(authorId: string): Work[] {
 }
 
 export function getWorksByGenre(genreId: string): Work[] {
-	return getWorks().filter((w) => w.genre_id === genreId);
+	return getWorks().filter((w) => w.genre_ids.includes(genreId));
 }
 
 export function getGenres(): Genre[] {
@@ -103,7 +103,7 @@ function computeSimilarities(): Map<string, SimilarWork[]> {
 			if (other.id === work.id) continue;
 
 			let score = 0;
-			if (other.genre_id === work.genre_id) score += 3;
+			if (other.genre_ids.some((g) => work.genre_ids.includes(g))) score += 3;
 			if (work.year_from && other.year_from && Math.abs(work.year_from - other.year_from) <= 25)
 				score += 2;
 			if (other.author_id === work.author_id) score += 1;

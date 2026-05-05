@@ -18,7 +18,10 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	if (!work) error(404, 'Werk nicht gefunden');
 
 	const author = getAuthor(work.author_id);
-	const genre = getGenre(work.genre_id);
+	const genres = work.genre_ids
+		.map((id) => getGenre(id))
+		.filter((g): g is NonNullable<typeof g> => !!g)
+		.map((g) => ({ name: g.name, slug: g.slug }));
 
 	const allWorks = getWorks();
 	const workMap = new Map(allWorks.map((w) => [w.id, w]));
@@ -133,7 +136,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	return {
 		work,
 		author: author ? { name: author.name, slug: author.slug } : null,
-		genre: genre ? { name: genre.name, slug: genre.slug } : null,
+		genres,
 		parentWorks,
 		similar,
 		reviews: workReviews,

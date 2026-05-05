@@ -22,7 +22,10 @@ export const load: PageServerLoad = async ({ platform }) => {
 			...w,
 			author_name: authorMap.get(w.author_id)?.name ?? 'Unbekannt',
 			author_slug: authorMap.get(w.author_id)?.slug ?? '',
-			genre_name: getGenre(w.genre_id)?.name ?? w.genre_id,
+			genre_name: w.genre_ids
+				.map((id) => getGenre(id)?.name)
+				.filter(Boolean)
+				.join(', '),
 			reviewCount: s?.reviewCount ?? 0,
 			avgRating: s?.avgRating ?? null,
 			totalPoints: s?.totalPoints ?? 0,

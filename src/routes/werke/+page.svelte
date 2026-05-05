@@ -13,7 +13,7 @@ let currentPage = $state(1);
 
 const filtered = $derived(
 	data.works.filter((w) => {
-		if (genreFilter && w.genre_id !== genreFilter) return false;
+		if (genreFilter && !w.genre_ids.includes(genreFilter)) return false;
 		if (!filter) return true;
 		const q = filter.toLowerCase();
 		return (

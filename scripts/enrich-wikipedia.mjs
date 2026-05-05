@@ -116,60 +116,64 @@ async function main() {
 
 	const workFiles = readdirSync(WORKS_DIR).filter((f) => f.endsWith('.json'));
 
-	await pMap(workFiles, async (file) => {
-		const path = join(WORKS_DIR, file);
-		const work = readJson(path);
-		let changed = false;
+	await pMap(
+		workFiles,
+		async (file) => {
+			const path = join(WORKS_DIR, file);
+			const work = readJson(path);
+			let changed = false;
 
-		const author = authors.get(work.author_id);
-		const authorName = author?.name || '';
-		const searchTerms = buildSearchTerms(work, authorName);
+			const author = authors.get(work.author_id);
+			const authorName = author?.name || '';
+			const searchTerms = buildSearchTerms(work, authorName);
 
-		if (!work.plot) {
-			let result = null;
-			for (const term of searchTerms) {
-				result = await fetchWikipediaSummary(term);
-				if (result?.extract) break;
-			}
+			if (!work.plot) {
+				let result = null;
+				for (const term of searchTerms) {
+					result = await fetchWikipediaSummary(term);
+					if (result?.extract) break;
+				}
 
-			if (result?.extract && result.extract.length > 50) {
-				work.plot = result.extract;
-				work.plot_source = { label: 'Wikipedia', url: result.url };
-				work.plot_fetched_at = now;
-				changed = true;
-				updatedPlots++;
-				console.log(`  + plot (Wikipedia): "${work.title}"`);
-			} else {
-				const geminiText = await fetchGeminiSummary(work.title, authorName);
-				if (geminiText) {
-					work.plot = geminiText;
-					work.plot_source = { label: 'KI-generiert (Gemini)', url: null };
+				if (result?.extract && result.extract.length > 50) {
+					work.plot = result.extract;
+					work.plot_source = { label: 'Wikipedia', url: result.url };
 					work.plot_fetched_at = now;
 					changed = true;
-					geminiPlots++;
-					console.log(`  + plot (Gemini): "${work.title}"`);
+					updatedPlots++;
+					console.log(`  + plot (Wikipedia): "${work.title}"`);
+				} else {
+					const geminiText = await fetchGeminiSummary(work.title, authorName);
+					if (geminiText) {
+						work.plot = geminiText;
+						work.plot_source = { label: 'KI-generiert (Gemini)', url: null };
+						work.plot_fetched_at = now;
+						changed = true;
+						geminiPlots++;
+						console.log(`  + plot (Gemini): "${work.title}"`);
+					}
 				}
 			}
-		}
 
-		const hasWiki = work.sources?.some((s) => s.url?.includes('wikipedia'));
-		if (!hasWiki) {
-			for (const term of searchTerms) {
-				const result = await fetchWikipediaSummary(term);
-				if (result?.url) {
-					work.sources = work.sources || [];
-					work.sources.push({ label: 'Wikipedia', url: result.url });
-					changed = true;
-					updatedSources++;
-					break;
+			const hasWiki = work.sources?.some((s) => s.url?.includes('wikipedia'));
+			if (!hasWiki) {
+				for (const term of searchTerms) {
+					const result = await fetchWikipediaSummary(term);
+					if (result?.url) {
+						work.sources = work.sources || [];
+						work.sources.push({ label: 'Wikipedia', url: result.url });
+						changed = true;
+						updatedSources++;
+						break;
+					}
 				}
 			}
-		}
 
-		if (changed) {
-			writeJson(path, work);
-		}
-	}, CONCURRENCY);
+			if (changed) {
+				writeJson(path, work);
+			}
+		},
+		CONCURRENCY,
+	);
 
 	console.log(
 		`\nDone: ${updatedPlots} Wikipedia plots, ${geminiPlots} Gemini plots, ${updatedSources} Wikipedia sources added`,
