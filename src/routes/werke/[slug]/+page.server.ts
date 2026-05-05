@@ -133,11 +133,16 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		.filter((w): w is NonNullable<typeof w> => !!w)
 		.map((w) => ({ title: w.title, slug: w.slug }));
 
+	const childWorks = allWorks
+		.filter((w) => w.parent_slugs?.includes(work.slug))
+		.map((w) => ({ title: w.title, slug: w.slug, year_display: w.year_display }));
+
 	return {
 		work,
 		author: author ? { name: author.name, slug: author.slug } : null,
 		genres,
 		parentWorks,
+		childWorks,
 		similar,
 		reviews: workReviews,
 		userReview,

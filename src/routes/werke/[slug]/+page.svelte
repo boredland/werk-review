@@ -106,6 +106,21 @@ $effect(() => {
 		</p>
 	{/if}
 
+	{#if data.childWorks.length > 0}
+		<section class="child-works">
+			<h2>In dieser Sammlung</h2>
+			<div class="similar-list">
+				{#each data.childWorks as cw}
+					<a href="/werke/{cw.slug}" class="similar-item">
+						<span class="similar-title">{cw.title}</span>
+						<span class="similar-year">{cw.year_display}</span>
+					</a>
+				{/each}
+			</div>
+		</section>
+	{/if}
+
+
 	{#if data.work.plot}
 		<section class="plot">
 			<h2>Inhalt</h2>
@@ -303,6 +318,10 @@ $effect(() => {
 		padding: 0.75rem 1rem;
 		background: var(--color-gold-light);
 		border-left: 3px solid var(--color-gold);
+	}
+
+	.child-works {
+		margin-bottom: 2rem;
 	}
 
 	.plot {
