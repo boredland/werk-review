@@ -22,8 +22,8 @@
 	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
-		"url": "https://archive.org/details/a-2-kleider-machen-leute-losungen",
-		"label": "Kleider machen Leute [Losungen]",
+		"url": "https://archive.org/details/a-2-kleider-machen-leute",
+		"label": "Kleider machen Leute",
 		"formats": [
 			"Text PDF"
 		]
