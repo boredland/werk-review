@@ -118,6 +118,8 @@ async function getLibriVoxBooks(authorName) {
 	}
 }
 
+const authorPageCache = new Map();
+
 async function searchProjektGutenberg(work, authorName) {
 	const titles = [work.title, ...(work.aliases || [])];
 	const authorSlug = authorName.toLowerCase().replace(/ /g, '-');
@@ -162,9 +164,16 @@ async function searchProjektGutenberg(work, authorName) {
 		// 2. Fallback to Author Page scan (More reliable than search)
 		try {
 			const authorPageUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/`;
-			const authRes = await fetch(authorPageUrl);
-			if (authRes.ok) {
-				const authHtml = await authRes.text();
+			let authHtml = authorPageCache.get(authorPageUrl);
+			if (!authHtml) {
+				const authRes = await fetch(authorPageUrl);
+				if (authRes.ok) {
+					authHtml = await authRes.text();
+					authorPageCache.set(authorPageUrl, authHtml);
+				}
+			}
+
+			if (authHtml) {
 				const bookLinkPattern = new RegExp(`href="(https:\\/\\/projekt-gutenberg\\.org\\/authors\\/${authorSlug}\\/books\\/[^"]*)"`, 'g');
 				const authMatches = [...new Set([...authHtml.matchAll(bookLinkPattern)].map((m) => m[1]))];
 				
