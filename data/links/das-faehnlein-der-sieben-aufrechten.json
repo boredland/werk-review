@@ -2,11 +2,10 @@
 	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
-		"url": "https://archive.org/details/bwb_S0-BRR-696",
-		"label": "Das Fahnlein Der Sieben Aufrechten",
+		"url": "https://archive.org/details/dasfhnleindersi00kellgoog",
+		"label": "Das Fähnlein Der Sieben Aufrechten: Novelle",
 		"formats": [
-			"EPUB",
-			"Text PDF"
+			"EPUB"
 		]
 	}
 ]

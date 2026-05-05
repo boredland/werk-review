@@ -2,11 +2,10 @@
 	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
-		"url": "https://archive.org/details/bwb_C0-BGR-694",
-		"label": "Zuricher Novellen",
+		"url": "https://archive.org/details/zrichernovellen01kellgoog",
+		"label": "Züricher Novellen",
 		"formats": [
-			"EPUB",
-			"Text PDF"
+			"EPUB"
 		]
 	}
 ]
