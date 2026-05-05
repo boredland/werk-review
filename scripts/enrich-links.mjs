@@ -174,12 +174,12 @@ async function searchArchiveOrg(work, authorName) {
 
 	for (const title of titles) {
 		// 1. Search for Texts/Downloads
-		const textQuery = `creator:("${authorName}") AND title:("${title}") AND mediatype:(texts)`;
+		const textQuery = `creator:("${authorName}") AND title:("${title}") AND mediatype:(texts) AND (language:ger OR language:german OR language:deu OR language:de)`;
 		const textParams = new URLSearchParams({
 			q: textQuery,
-			fl: 'identifier,title,format',
+			fl: 'identifier,title,format,language',
 			output: 'json',
-			rows: '3',
+			rows: '10',
 		});
 
 		try {
@@ -187,6 +187,10 @@ async function searchArchiveOrg(work, authorName) {
 			if (res.ok) {
 				const data = await res.json();
 				const docs = data.response?.docs || [];
+
+				let bestDoc = null;
+				let bestScore = -1;
+
 				for (const doc of docs) {
 					const formats = doc.format || [];
 					const hasGoodFormat = formats.some((f) =>
@@ -194,25 +198,38 @@ async function searchArchiveOrg(work, authorName) {
 					);
 					if (!hasGoodFormat) continue;
 
+					let score = 0;
+					if (formats.includes('EPUB')) score += 10;
+					if (formats.includes('Text PDF')) score += 5;
+					if (formats.includes('Kindle')) score += 2;
+
+					if (score > bestScore) {
+						bestScore = score;
+						bestDoc = doc;
+					}
+				}
+
+				if (bestDoc) {
 					results.push({
 						source: 'Internet Archive',
 						format: 'Volltext / Download',
-						url: `https://archive.org/details/${doc.identifier}`,
-						label: doc.title || work.title,
-						formats: formats.filter((f) => ['EPUB', 'Text PDF', 'Kindle'].includes(f)),
+						url: `https://archive.org/details/${bestDoc.identifier}`,
+						label: bestDoc.title || work.title,
+						formats: (bestDoc.format || []).filter((f) => ['EPUB', 'Text PDF', 'Kindle'].includes(f)),
 					});
-					break;
 				}
 			}
-		} catch { /* ignore */ }
+		} catch {
+			/* ignore */
+		}
 
 		// 2. Search for Videos (Verfilmungen)
-		const videoQuery = `(("${authorName}") AND ("${title}")) AND mediatype:(movies OR video)`;
+		const videoQuery = `(("${authorName}") AND ("${title}")) AND mediatype:(movies OR video) AND (language:ger OR language:german OR language:deu OR language:de)`;
 		const videoParams = new URLSearchParams({
 			q: videoQuery,
-			fl: 'identifier,title,mediatype',
+			fl: 'identifier,title,mediatype,language',
 			output: 'json',
-			rows: '3',
+			rows: '5',
 		});
 
 		try {
@@ -234,7 +251,9 @@ async function searchArchiveOrg(work, authorName) {
 					}
 				}
 			}
-		} catch { /* ignore */ }
+		} catch {
+			/* ignore */
+		}
 
 		if (results.length > 0) break;
 	}
