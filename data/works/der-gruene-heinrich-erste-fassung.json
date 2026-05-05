@@ -13,5 +13,13 @@
 	"parent_slugs": [],
 	"gnd_id": "4099259-7",
 	"plot": null,
-	"sources": []
+	"sources": [
+		{
+			"source": "Projekt Gutenberg-DE",
+			"format": "Volltext",
+			"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/der-gruene-heinrich-erste-fassung",
+			"label": "E-Book",
+			"manual": true
+		}
+	]
 }

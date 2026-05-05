@@ -74,7 +74,7 @@ export function getGenre(idOrSlug: string): Genre | undefined {
 
 let _links: Map<string, ExternalLink[]> | null = null;
 
-export function getLinksForWork(slug: string): ExternalLink[] {
+export function getLinksForWork(work: Work): ExternalLink[] {
 	if (!_links) {
 		_links = new Map();
 		for (const [path, links] of Object.entries(linkModules)) {
@@ -82,7 +82,34 @@ export function getLinksForWork(slug: string): ExternalLink[] {
 			_links.set(filename, links);
 		}
 	}
-	return _links.get(slug) ?? [];
+	const enrichedLinks = _links.get(work.slug) ?? [];
+	const manualLinks = (work.sources ?? []) as ExternalLink[];
+
+	const generatedLinks: ExternalLink[] = [];
+	if (work.gnd_id) {
+		generatedLinks.push({
+			source: 'DNB',
+			label: 'Deutsche Nationalbibliothek',
+			url: `https://d-nb.info/gnd/${work.gnd_id}`,
+			format: 'Katalogeintrag',
+		});
+	}
+
+	const author = getAuthor(work.author_id);
+	if (author?.gnd_id) {
+		generatedLinks.push({
+			source: 'DNB',
+			label: `DNB: ${author.name}`,
+			url: `https://d-nb.info/gnd/${author.gnd_id}`,
+			format: 'Personeneintrag',
+		});
+	}
+
+	// Deduplicate by URL
+	const seenUrls = new Set([...manualLinks, ...generatedLinks].map((l) => l.url));
+	const uniqueEnriched = enrichedLinks.filter((l) => !seenUrls.has(l.url));
+
+	return [...manualLinks, ...generatedLinks, ...uniqueEnriched];
 }
 
 export function getSimilarWorks(workId: string): SimilarWork[] {

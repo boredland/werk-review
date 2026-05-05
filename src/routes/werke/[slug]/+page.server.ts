@@ -163,7 +163,7 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		}
 	}
 
-	const externalLinks = getLinksForWork(work.slug);
+	const externalLinks = getLinksForWork(work);
 	const librivoxData: Record<string, LibriVoxData> = {};
 
 	await Promise.all(

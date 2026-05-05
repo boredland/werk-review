@@ -75,7 +75,15 @@ const WorkSchema = z.object({
 	parent_slugs: z.array(z.string()),
 	gnd_id: z.string().nullable(),
 	plot: z.string().nullable(),
-	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
+	sources: z.array(
+		z.object({
+			label: z.string(),
+			url: z.string().url(),
+			source: z.string().optional(),
+			format: z.string().optional(),
+			manual: z.boolean().optional(),
+		}),
+	),
 });
 
 const GenreSchema = z.object({
@@ -151,6 +159,27 @@ async function fetchSheet(sheetName) {
 	return parseCsv(text);
 }
 
+function parseManualLink(url, type) {
+	if (!url || url.trim() === '') return null;
+	const trimmedUrl = url.trim();
+	let source = 'Unbekannt';
+	let format = type === 'audiobook' ? 'Hörbuch' : 'Volltext';
+	const label = type === 'audiobook' ? 'Hörbuch' : 'E-Book';
+
+	if (trimmedUrl.includes('youtube.com') || trimmedUrl.includes('youtu.be')) {
+		source = 'YouTube';
+	} else if (trimmedUrl.includes('librivox.org')) {
+		source = 'LibriVox';
+	} else if (trimmedUrl.includes('projekt-gutenberg.org')) {
+		source = 'Projekt Gutenberg-DE';
+	} else if (trimmedUrl.includes('archive.org')) {
+		source = 'Internet Archive';
+		format = type === 'audiobook' ? 'Hörbuch' : 'Volltext / Download';
+	}
+
+	return { source, format, url: trimmedUrl, label, manual: true };
+}
+
 // --- Transform rows to JSON ---
 
 function transformAuthor(row) {
@@ -177,6 +206,14 @@ function transformWork(row) {
 		yearDisplay = yearTo && yearTo !== yearFrom ? `${yearFrom}–${yearTo}` : `${yearFrom}`;
 	}
 
+	const sources = parseSources(row.sources);
+
+	const audiobookLink = parseManualLink(row.audiobook, 'audiobook');
+	if (audiobookLink) sources.unshift(audiobookLink);
+
+	const ebookLink = parseManualLink(row.ebook, 'ebook');
+	if (ebookLink) sources.unshift(ebookLink);
+
 	return {
 		id: row.id || slug,
 		author_id: row.author_id,
@@ -190,7 +227,7 @@ function transformWork(row) {
 		parent_slugs: parsePipeSeparated(row.parent_slug || row.parent_slugs),
 		gnd_id: row.gnd_id || null,
 		plot: row.plot || null,
-		sources: parseSources(row.sources),
+		sources,
 	};
 }
 

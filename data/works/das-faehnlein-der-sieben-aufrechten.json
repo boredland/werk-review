@@ -17,5 +17,13 @@
 	],
 	"gnd_id": null,
 	"plot": null,
-	"sources": []
+	"sources": [
+		{
+			"source": "Internet Archive",
+			"format": "Volltext / Download",
+			"url": "https://archive.org/details/bwb_S0-BRR-696",
+			"label": "E-Book",
+			"manual": true
+		}
+	]
 }

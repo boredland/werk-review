@@ -17,5 +17,20 @@
 	],
 	"gnd_id": null,
 	"plot": null,
-	"sources": []
+	"sources": [
+		{
+			"source": "Projekt Gutenberg-DE",
+			"format": "Volltext",
+			"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-das-verlorene-lachen-i1",
+			"label": "E-Book",
+			"manual": true
+		},
+		{
+			"source": "YouTube",
+			"format": "Hörbuch",
+			"url": "https://www.youtube.com/playlist?list=OLAK5uy_l6OOIeXsmb6s6DG8chOGI9nwine-2lfzM",
+			"label": "Hörbuch",
+			"manual": true
+		}
+	]
 }

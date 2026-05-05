@@ -15,5 +15,13 @@
 	],
 	"gnd_id": null,
 	"plot": null,
-	"sources": []
+	"sources": [
+		{
+			"source": "Projekt Gutenberg-DE",
+			"format": "Volltext",
+			"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-romeo-und-julia",
+			"label": "E-Book",
+			"manual": true
+		}
+	]
 }

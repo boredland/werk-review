@@ -13,5 +13,13 @@
 	"parent_slugs": [],
 	"gnd_id": null,
 	"plot": null,
-	"sources": []
+	"sources": [
+		{
+			"source": "Projekt Gutenberg-DE",
+			"format": "Volltext",
+			"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/nachgelassene-erzaehlungen/chapter/11",
+			"label": "E-Book",
+			"manual": true
+		}
+	]
 }
