@@ -41,5 +41,21 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 
 	const wikiUrl = `https://de.wikipedia.org/wiki/${encodeURIComponent(author.name.replace(/ /g, '_'))}`;
 
-	return { author, works, imageUrl, wikiUrl };
+	const sources = [...author.sources];
+	if (author.gnd_id) {
+		const dnbUrl = `https://d-nb.info/gnd/${author.gnd_id}`;
+		if (!sources.some((s) => s.url === dnbUrl)) {
+			sources.unshift({
+				label: 'Deutsche Nationalbibliothek (GND)',
+				url: dnbUrl,
+			});
+		}
+	}
+
+	return {
+		author: { ...author, sources },
+		works,
+		imageUrl,
+		wikiUrl,
+	};
 };
