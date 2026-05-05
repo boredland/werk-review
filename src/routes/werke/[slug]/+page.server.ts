@@ -125,11 +125,13 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	}
 
 	const externalLinks = getLinksForWork(work.slug);
+	const parentWork = work.parent_slug ? workMap.get(work.parent_slug) : null;
 
 	return {
 		work,
 		author: author ? { name: author.name, slug: author.slug } : null,
 		genre: genre ? { name: genre.name, slug: genre.slug } : null,
+		parentWork: parentWork ? { title: parentWork.title, slug: parentWork.slug } : null,
 		similar,
 		reviews: workReviews,
 		userReview,

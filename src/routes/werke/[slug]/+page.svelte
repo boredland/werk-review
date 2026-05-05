@@ -95,8 +95,10 @@ $effect(() => {
 		</div>
 	</header>
 
-	{#if data.work.collection_title}
-		<p class="collection">Aus der Sammlung: <em>{data.work.collection_title}</em></p>
+	{#if data.parentWork}
+		<p class="collection">
+			Aus der Sammlung: <a href="/werke/{data.parentWork.slug}"><em>{data.parentWork.title}</em></a>
+		</p>
 	{/if}
 
 	{#if data.work.plot}

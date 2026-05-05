@@ -21,8 +21,6 @@ export interface Work {
 	year_to: number | null;
 	year_display: string;
 	parent_slug: string | null;
-	collection_title: string | null;
-	collection_aliases: string[];
 	gnd_id: string | null;
 	plot: string | null;
 	plot_source: { label: string; url: string } | null;

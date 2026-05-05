@@ -19,12 +19,15 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 	const allAuthors = getAuthors();
 	const authorMap = new Map(allAuthors.map((a) => [a.id, a]));
 
-	const works = getWorks()
+	const allWorks = getWorks();
+	const workMap = new Map(allWorks.map((w) => [w.id, w]));
+
+	const works = allWorks
 		.filter(
 			(w) =>
 				w.title.toLowerCase().includes(lower) ||
 				w.aliases.some((al) => al.toLowerCase().includes(lower)) ||
-				(w.collection_title?.toLowerCase().includes(lower) ?? false) ||
+				(w.parent_slug && workMap.get(w.parent_slug)?.title.toLowerCase().includes(lower)) ||
 				(w.plot?.toLowerCase().includes(lower) ?? false),
 		)
 		.map((w) => ({
