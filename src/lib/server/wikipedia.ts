@@ -14,13 +14,25 @@ export async function getWikipediaImageUrl(name: string, kv?: KVNamespace): Prom
 		const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`;
 		const res = await fetch(url);
 		if (!res.ok) {
-			if (kv) kv.put(cacheKey, '__none__', { expirationTtl: CACHE_TTL });
+			// Only cache negative hits for 1 hour to allow for retry
+			if (kv) kv.put(cacheKey, '__none__', { expirationTtl: 3600 });
 			return null;
 		}
 
-		const data = await res.json<{ thumbnail?: { source: string; width: number } }>();
-		let imageUrl = data.thumbnail?.source ?? null;
-		if (imageUrl && data.thumbnail && data.thumbnail.width < THUMB_SIZE) {
+		const data = await res.json<{
+			thumbnail?: { source: string; width: number };
+			originalimage?: { source: string; width: number };
+		}>();
+
+		let imageUrl = data.thumbnail?.source ?? data.originalimage?.source ?? null;
+
+		// If it's a thumbnail URL, try to get a higher resolution version
+		if (
+			imageUrl &&
+			imageUrl.includes('/thumb/') &&
+			data.thumbnail &&
+			data.thumbnail.width < THUMB_SIZE
+		) {
 			imageUrl = imageUrl.replace(/\/\d+px-/, `/${THUMB_SIZE}px-`);
 		}
 

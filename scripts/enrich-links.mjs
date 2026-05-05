@@ -177,7 +177,8 @@ async function searchArchiveOrg(work, authorName) {
 		const textQuery = `creator:("${authorName}") AND title:("${title}") AND mediatype:(texts) AND (language:ger OR language:german OR language:deu OR language:de)`;
 		const textParams = new URLSearchParams({
 			q: textQuery,
-			fl: 'identifier,title,format,language',
+			fl: 'identifier,title,format,language,date,publicdate',
+			sort: 'date desc',
 			output: 'json',
 			rows: '10',
 		});
