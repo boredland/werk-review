@@ -13,5 +13,10 @@
 		"label": "Erzählungen aus 'Die Leute von Seldwyla'",
 		"librivox_id": "4079"
 	},
-	"h"
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/die-leute-von-seldwyla-teil-i",
+		"label": "Die Leute von Seldwyla. Teil I"
+	}
 ]

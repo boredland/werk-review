@@ -9,5 +9,10 @@
 			"Text PDF"
 		]
 	},
-	"h"
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/das-sinngedicht",
+		"label": "Das Sinngedicht"
+	}
 ]

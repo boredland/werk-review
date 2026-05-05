@@ -1,3 +1,8 @@
 [
-	"h"
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/die-jungfrau-als-ritter",
+		"label": "Die Jungfrau als Ritter"
+	}
 ]

@@ -137,7 +137,7 @@ async function searchProjektGutenberg(work, authorName) {
 		const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}`;
 		try {
 			const headRes = await fetch(predictedUrl, { method: 'HEAD' });
-			if (headRes.ok) return predictedUrl;
+			if (headRes.ok) return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: predictedUrl, label: title }];
 		} catch (e) {
 			// Ignore network errors for prediction
 		}
@@ -173,7 +173,7 @@ async function searchProjektGutenberg(work, authorName) {
 				return common.length >= Math.min(workWords.length, 2);
 			});
 
-			if (match) return [{ source: 'Projekt Gutenberg-DE', url: match, label: title }];
+			if (match) return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: match, label: title }];
 		} catch (e) {
 			console.error(`Error searching Gutenberg for ${title}:`, e);
 		}
@@ -312,7 +312,8 @@ async function main() {
 					const existingSources = new Set(existing.map((l) => l.source));
 
 					let workUpdated = false;
-					const newLinks = [...existing];
+					const newLinks = existing.filter(l => typeof l === 'object' && l !== null);
+					if (newLinks.length !== existing.length) workUpdated = true;
 
 					// LibriVox matching
 					for (const book of lvBooks) {

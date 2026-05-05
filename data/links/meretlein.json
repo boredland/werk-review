@@ -6,5 +6,10 @@
 		"label": "Grüne Heinrich (zweite Fassung)",
 		"librivox_id": "3771"
 	},
-	"h"
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/meretlein",
+		"label": "Meretlein"
+	}
 ]

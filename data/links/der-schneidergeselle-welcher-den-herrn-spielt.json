@@ -1,3 +1,8 @@
 [
-	"h"
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/der-schneidergeselle-welcher-den-herrn-spielt",
+		"label": "Der Schneidergeselle, welcher den Herrn spielt"
+	}
 ]
