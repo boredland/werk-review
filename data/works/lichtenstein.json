@@ -1,0 +1,19 @@
+{
+	"id": "lichtenstein",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Lichtenstein",
+	"slug": "lichtenstein",
+	"aliases": [
+		"Lichtenstein: romantische Sage aus der württembergischen Geschichte / Erzählung aus dem Zeitalter des großen Bauernkrieges"
+	],
+	"year_from": 1823,
+	"year_to": null,
+	"year_display": "1823",
+	"parent_slugs": [],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

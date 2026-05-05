@@ -1,0 +1,19 @@
+{
+	"id": "der-mann-im-mond",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Mann im Mond",
+	"slug": "der-mann-im-mond",
+	"aliases": [
+		"Der Zug des Herzens ist des Schicksals Stimme / Der Mann im Monde"
+	],
+	"year_from": 1826,
+	"year_to": null,
+	"year_display": "1826",
+	"parent_slugs": [],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,21 @@
+{
+	"id": "die-geschichte-von-dem-gespensterschiff",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Geschichte von dem Gespensterschiff",
+	"slug": "die-geschichte-von-dem-gespensterschiff",
+	"aliases": [
+		"Das Gespensterschiff"
+	],
+	"year_from": 1825,
+	"year_to": null,
+	"year_display": "1825",
+	"parent_slugs": [
+		"maerchen-almanach-auf-das-jahr-1826-für-soehne-und-toechter-gebildeter-staende"
+	],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

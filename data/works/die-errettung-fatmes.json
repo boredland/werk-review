@@ -1,0 +1,19 @@
+{
+	"id": "die-errettung-fatmes",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Errettung Fatmes",
+	"slug": "die-errettung-fatmes",
+	"aliases": [],
+	"year_from": 1825,
+	"year_to": null,
+	"year_display": "1825",
+	"parent_slugs": [
+		"maerchen-almanach-auf-das-jahr-1826-für-soehne-und-toechter-gebildeter-staende"
+	],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

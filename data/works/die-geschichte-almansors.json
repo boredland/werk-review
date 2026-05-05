@@ -1,0 +1,19 @@
+{
+	"id": "die-geschichte-almansors",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Geschichte Almansors",
+	"slug": "die-geschichte-almansors",
+	"aliases": [],
+	"year_from": 1826,
+	"year_to": null,
+	"year_display": "1826",
+	"parent_slugs": [
+		"maerchen-almanach-auf-das-jahr-1827-für-soehne-und-toechter-gebildeter-staende"
+	],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

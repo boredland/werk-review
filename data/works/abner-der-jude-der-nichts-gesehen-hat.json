@@ -1,0 +1,19 @@
+{
+	"id": "abner-der-jude-der-nichts-gesehen-hat",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Abner, der Jude, der nichts gesehen hat",
+	"slug": "abner-der-jude-der-nichts-gesehen-hat",
+	"aliases": [],
+	"year_from": 1826,
+	"year_to": null,
+	"year_display": "1826",
+	"parent_slugs": [
+		"maerchen-almanach-auf-das-jahr-1827-für-soehne-und-toechter-gebildeter-staende"
+	],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

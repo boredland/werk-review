@@ -1,0 +1,19 @@
+{
+	"id": "jud-suess",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Jud Süß",
+	"slug": "jud-suess",
+	"aliases": [
+		"Jud Süss"
+	],
+	"year_from": 1827,
+	"year_to": null,
+	"year_display": "1827",
+	"parent_slugs": [],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}

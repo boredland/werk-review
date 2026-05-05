@@ -1,0 +1,17 @@
+{
+	"id": "das-bild-des-kaisers",
+	"author_id": "wilhelm-hauff",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Bild des Kaisers",
+	"slug": "das-bild-des-kaisers",
+	"aliases": [],
+	"year_from": 1827,
+	"year_to": null,
+	"year_display": "1827",
+	"parent_slugs": [],
+	"gnd_id": null,
+	"plot": null,
+	"sources": []
+}
