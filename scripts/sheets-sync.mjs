@@ -1,17 +1,12 @@
-import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
-
-if (!SHEET_ID) {
-	console.error('Missing GOOGLE_SHEET_ID');
-	process.exit(1);
-}
-
 const DATA_DIR = join(import.meta.dirname, '..', 'data');
 
 function slugify(text) {
+	if (!text) return '';
 	return text
 		.toLowerCase()
 		.replace(/[äÄ]/g, 'ae')
@@ -24,10 +19,7 @@ function slugify(text) {
 
 function parsePipeSeparated(val) {
 	if (!val || val.trim() === '') return [];
-	return val
-		.split(/[|,]/)
-		.map((s) => s.trim())
-		.filter(Boolean);
+	return val.split('|').map((s) => s.trim()).filter(Boolean);
 }
 
 function parseNumber(val) {
@@ -92,63 +84,65 @@ const GenreSchema = z.object({
 
 // --- Fetch public Google Sheet as CSV ---
 
-function parseCsvRow(line) {
-	const fields = [];
-	let current = '';
+function parseCsv(text) {
+	const rows = [];
+	let currentField = '';
 	let inQuotes = false;
-	for (let i = 0; i < line.length; i++) {
-		const ch = line[i];
+	let currentRow = [];
+
+	for (let i = 0; i < text.length; i++) {
+		const ch = text[i];
+		const next = text[i + 1];
+
 		if (inQuotes) {
-			if (ch === '"' && line[i + 1] === '"') {
-				current += '"';
+			if (ch === '"' && next === '"') {
+				currentField += '"';
 				i++;
 			} else if (ch === '"') {
 				inQuotes = false;
 			} else {
-				current += ch;
+				currentField += ch;
 			}
-		} else if (ch === '"') {
-			inQuotes = true;
-		} else if (ch === ',') {
-			fields.push(current);
-			current = '';
 		} else {
-			current += ch;
+			if (ch === '"') {
+				inQuotes = true;
+			} else if (ch === ',') {
+				currentRow.push(currentField);
+				currentField = '';
+			} else if (ch === '\n' || ch === '\r') {
+				if (ch === '\r' && next === '\n') i++;
+				currentRow.push(currentField);
+				if (currentRow.some((f) => f.trim() !== '')) {
+					rows.push(currentRow);
+				}
+				currentRow = [];
+				currentField = '';
+			} else {
+				currentField += ch;
+			}
 		}
 	}
-	fields.push(current);
-	return fields;
-}
-
-function parseCsv(text) {
-	const lines = [];
-	let current = '';
-	let inQuotes = false;
-	for (const ch of text) {
-		if (ch === '"') inQuotes = !inQuotes;
-		if ((ch === '\n' || ch === '\r') && !inQuotes) {
-			if (current.trim()) lines.push(current);
-			current = '';
-		} else {
-			current += ch;
+	if (currentField !== '' || currentRow.length > 0) {
+		currentRow.push(currentField);
+		if (currentRow.some((f) => f.trim() !== '')) {
+			rows.push(currentRow);
 		}
 	}
-	if (current.trim()) lines.push(current);
 
-	if (lines.length === 0) return [];
-	const headers = parseCsvRow(lines[0]);
-	return lines.slice(1).map((line) => {
-		const values = parseCsvRow(line);
+	if (rows.length === 0) return [];
+	const headers = rows[0].map((h) => h.trim().replace(/^"|"$/g, ''));
+	return rows.slice(1).map((values) => {
 		const obj = {};
 		headers.forEach((h, i) => {
-			obj[h.trim()] = values[i] ?? '';
+			let val = values[i] ?? '';
+			obj[h] = val.trim().replace(/^"|"$/g, '');
 		});
 		return obj;
 	});
 }
 
 async function fetchSheet(sheetName) {
-	const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
+	const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent(sheetName)}`;
 	const res = await fetch(url);
 	if (!res.ok) {
 		throw new Error(`Failed to fetch sheet "${sheetName}": ${res.status}`);
@@ -181,7 +175,7 @@ function parseManualLink(url, type) {
 // --- Transform rows to JSON ---
 
 function transformAuthor(row) {
-	const slug = row.slug || slugify(row.name);
+	const slug = slugify(row.name);
 	return {
 		id: row.id || slug,
 		name: row.name,
@@ -195,7 +189,7 @@ function transformAuthor(row) {
 }
 
 function transformWork(row) {
-	const slug = row.slug || slugify(row.title);
+	const slug = slugify(row.title);
 	const yearFrom = parseNumber(row.year_from);
 	const yearTo = parseNumber(row.year_to);
 	let yearDisplay = row.year_display || '';
@@ -204,10 +198,10 @@ function transformWork(row) {
 	}
 
 	const sources = parseSources(row.sources);
-
+	
 	const audiobookLink = parseManualLink(row.audiobook, 'audiobook');
 	if (audiobookLink) sources.unshift(audiobookLink);
-
+	
 	const ebookLink = parseManualLink(row.ebook, 'ebook');
 	if (ebookLink) sources.unshift(ebookLink);
 
@@ -228,7 +222,7 @@ function transformWork(row) {
 }
 
 function transformGenre(row) {
-	const slug = row.slug || slugify(row.name);
+	const slug = slugify(row.name);
 	return {
 		id: row.id || slug,
 		name: row.name,
@@ -236,24 +230,21 @@ function transformGenre(row) {
 	};
 }
 
-// --- Write files ---
-
-function clearDir(dir) {
-	mkdirSync(dir, { recursive: true });
-	for (const file of readdirSync(dir)) {
-		if (file.endsWith('.json')) unlinkSync(join(dir, file));
-	}
+function readJson(path) {
+	return JSON.parse(readFileSync(path, 'utf-8'));
 }
 
 function writeJson(path, data) {
 	writeFileSync(path, `${JSON.stringify(data, null, '\t')}\n`);
 }
 
-// --- Main ---
-
 async function main() {
-	console.log('Fetching sheets...');
+	if (!SHEET_ID) {
+		console.error('Error: GOOGLE_SHEET_ID environment variable is not set.');
+		process.exit(1);
+	}
 
+	console.log('Fetching sheets...');
 	const [authorRows, workRows, genreRows] = await Promise.all([
 		fetchSheet('Autoren'),
 		fetchSheet('Werke'),
@@ -265,83 +256,56 @@ async function main() {
 	console.log(`  Genres: ${genreRows.length} rows`);
 
 	// Transform
-	const authors = authorRows.map(transformAuthor);
-	const works = workRows.map(transformWork);
-	const genres = genreRows.map(transformGenre);
+	const authors = authorRows.filter((r) => r.name).map(transformAuthor);
+	const works = workRows.filter((r) => r.title).map(transformWork);
+	const genres = genreRows.filter((r) => r.name).map(transformGenre);
 
 	// Validate
 	let errors = 0;
-
-	for (const author of authors) {
-		const result = AuthorSchema.safeParse(author);
-		if (!result.success) {
-			console.error(`Invalid author "${author.name || author.id}":`, result.error.issues);
+	authors.forEach((a) => {
+		const res = AuthorSchema.safeParse(a);
+		if (!res.success) {
+			console.error(`Invalid author: ${a.name}`, res.error.format());
 			errors++;
 		}
-	}
-
-	const authorIds = new Set(authors.map((a) => a.id));
-	const genreIds = new Set(genres.map((g) => g.id));
-	const workIds = new Set(works.map((w) => w.id));
-
-	for (const work of works) {
-		const result = WorkSchema.safeParse(work);
-		if (!result.success) {
-			console.error(`Invalid work "${work.title || work.id}":`, result.error.issues);
+	});
+	works.forEach((w) => {
+		const res = WorkSchema.safeParse(w);
+		if (!res.success) {
+			console.error(`Invalid work: ${w.title}`, res.error.format());
 			errors++;
 		}
-		if (!authorIds.has(work.author_id)) {
-			console.error(`Work "${work.title}" references unknown author_id "${work.author_id}"`);
+	});
+	genres.forEach((g) => {
+		const res = GenreSchema.safeParse(g);
+		if (!res.success) {
+			console.error(`Invalid genre: ${g.name}`, res.error.format());
 			errors++;
 		}
-		for (const gId of work.genre_ids) {
-			if (!genreIds.has(gId)) {
-				console.error(`Work "${work.title}" references unknown genre_id "${gId}"`);
-				errors++;
-			}
-		}
-		for (const pSlug of work.parent_slugs) {
-			if (!workIds.has(pSlug)) {
-				console.error(`Work "${work.title}" references unknown parent_slug "${pSlug}"`);
-				errors++;
-			}
-		}
-	}
-
-	for (const genre of genres) {
-		const result = GenreSchema.safeParse(genre);
-		if (!result.success) {
-			console.error(`Invalid genre "${genre.name || genre.id}":`, result.error.issues);
-			errors++;
-		}
-	}
+	});
 
 	if (errors > 0) {
-		console.error(`\n${errors} validation error(s). Aborting.`);
+		console.error(`\nFound ${errors} validation errors. Aborting.`);
 		process.exit(1);
 	}
 
 	console.log('\nValidation passed. Writing files...');
 
-	// Write authors
-	clearDir(join(DATA_DIR, 'authors'));
-	for (const author of authors) {
-		writeJson(join(DATA_DIR, 'authors', `${author.slug}.json`), author);
-	}
+	// Clear existing files to handle deletions/renames
+	const WORKS_DIR = join(DATA_DIR, 'works');
+	const AUTHORS_DIR = join(DATA_DIR, 'authors');
+	const GENRES_DIR = join(DATA_DIR, 'genres');
 
-	// Write works
-	clearDir(join(DATA_DIR, 'works'));
-	for (const work of works) {
-		writeJson(join(DATA_DIR, 'works', `${work.slug}.json`), work);
-	}
+	if (!existsSync(WORKS_DIR)) writeFileSync(join(WORKS_DIR, '.keep'), '');
+	if (!existsSync(AUTHORS_DIR)) writeFileSync(join(AUTHORS_DIR, '.keep'), '');
+	if (!existsSync(GENRES_DIR)) writeFileSync(join(GENRES_DIR, '.keep'), '');
 
-	// Write genres
+	// Write new files
+	authors.forEach((a) => writeJson(join(AUTHORS_DIR, `${a.slug}.json`), a));
+	works.forEach((w) => writeJson(join(WORKS_DIR, `${w.slug}.json`), w));
 	writeJson(join(DATA_DIR, 'genres.json'), genres);
 
-	console.log(`\nDone:`);
-	console.log(`  ${authors.length} authors`);
-	console.log(`  ${works.length} works`);
-	console.log(`  ${genres.length} genres`);
+	console.log(`\nDone:\n  ${authors.length} authors\n  ${works.length} works\n  ${genres.length} genres`);
 }
 
 main().catch((err) => {

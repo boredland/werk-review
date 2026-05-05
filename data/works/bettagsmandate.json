@@ -9,8 +9,8 @@
 	"aliases": [
 		"Ein Bettags-Mandat"
 	],
-	"year_from": 1862,
-	"year_to": 1867,
+	"year_from": null,
+	"year_to": null,
 	"year_display": "1862–1867",
 	"parent_slugs": [],
 	"plot": null,

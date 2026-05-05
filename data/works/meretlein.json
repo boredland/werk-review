@@ -7,8 +7,8 @@
 	"title": "Meretlein",
 	"slug": "meretlein",
 	"aliases": [],
-	"year_from": 1879,
-	"year_to": 1880,
+	"year_from": null,
+	"year_to": null,
 	"year_display": "1879–1880",
 	"parent_slugs": [
 		"der-gruene-heinrich-zweite-fassung"
