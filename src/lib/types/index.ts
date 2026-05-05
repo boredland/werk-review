@@ -20,7 +20,7 @@ export interface Work {
 	year_from: number | null;
 	year_to: number | null;
 	year_display: string;
-	parent_slug: string | null;
+	parent_slugs: string[];
 	gnd_id: string | null;
 	plot: string | null;
 	plot_source: { label: string; url: string } | null;

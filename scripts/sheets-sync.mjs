@@ -25,7 +25,7 @@ function slugify(text) {
 function parsePipeSeparated(val) {
 	if (!val || val.trim() === '') return [];
 	return val
-		.split('|')
+		.split(/[|,]/)
 		.map((s) => s.trim())
 		.filter(Boolean);
 }
@@ -72,7 +72,7 @@ const WorkSchema = z.object({
 	year_from: z.number().nullable(),
 	year_to: z.number().nullable(),
 	year_display: z.string(),
-	parent_slug: z.string().nullable(),
+	parent_slugs: z.array(z.string()),
 	gnd_id: z.string().nullable(),
 	plot: z.string().nullable(),
 	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
@@ -187,7 +187,7 @@ function transformWork(row) {
 		year_from: yearFrom,
 		year_to: yearTo,
 		year_display: yearDisplay,
-		parent_slug: row.parent_slug || null,
+		parent_slugs: parsePipeSeparated(row.parent_slug || row.parent_slugs),
 		gnd_id: row.gnd_id || null,
 		plot: row.plot || null,
 		sources: parseSources(row.sources),
@@ -265,9 +265,11 @@ async function main() {
 			console.error(`Work "${work.title}" references unknown genre_id "${work.genre_id}"`);
 			errors++;
 		}
-		if (work.parent_slug && !workIds.has(work.parent_slug)) {
-			console.error(`Work "${work.title}" references unknown parent_slug "${work.parent_slug}"`);
-			errors++;
+		for (const pSlug of work.parent_slugs) {
+			if (!workIds.has(pSlug)) {
+				console.error(`Work "${work.title}" references unknown parent_slug "${pSlug}"`);
+				errors++;
+			}
 		}
 	}
 

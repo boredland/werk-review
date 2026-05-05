@@ -95,9 +95,12 @@ $effect(() => {
 		</div>
 	</header>
 
-	{#if data.parentWork}
+	{#if data.parentWorks.length > 0}
 		<p class="collection">
-			Aus der Sammlung: <a href="/werke/{data.parentWork.slug}"><em>{data.parentWork.title}</em></a>
+			Aus der Sammlung:
+			{#each data.parentWorks as pw, i}
+				<a href="/werke/{pw.slug}"><em>{pw.title}</em></a>{#if i < data.parentWorks.length - 1}<span>, </span>{/if}
+			{/each}
 		</p>
 	{/if}
 
