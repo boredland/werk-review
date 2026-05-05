@@ -10,7 +10,9 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 
 	const kv = platform?.env.SESSION_KV;
 
-	const authorWorks = getWorksByAuthor(author.id);
+	const authorWorks = getWorksByAuthor(author.id).filter(
+		(w) => !w.parent_slugs || w.parent_slugs.length === 0,
+	);
 	const [stats, imageUrl] = await Promise.all([
 		platform?.env.DB
 			? getWorkReviewStats(
