@@ -87,7 +87,7 @@ export type AuthorReviewStats = { totalPoints: number; recommendations: number }
 export async function getAuthorReviewStats(
 	d1: D1Database,
 	workIdsByAuthor: Map<string, string[]>,
-	kv?: KVNamespace,
+	_kv?: KVNamespace,
 ): Promise<Map<string, AuthorReviewStats>> {
 	const result = new Map<string, AuthorReviewStats>();
 	const allWorkIds = Array.from(workIdsByAuthor.values()).flat();

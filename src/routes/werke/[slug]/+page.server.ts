@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
-import { and, desc, eq } from 'drizzle-orm';
-import { bookmarks, reads, reviews, users } from '$lib/db/schema';
+import { and, desc, eq, inArray } from 'drizzle-orm';
+import { bookmarks, reads, reviewReactions, reviews, users } from '$lib/db/schema';
 import { getRatingByLabel } from '$lib/ratings';
 import {
 	getAuthor,
@@ -70,6 +70,8 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		version: string | null;
 		createdAt: string;
 		username: string;
+		reactionCount: number;
+		hasUserReacted: boolean;
 	}[] = [];
 	let userReview: (typeof workReviews)[number] | null = null;
 	let score = 0;
@@ -94,20 +96,51 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 				.where(eq(reviews.workId, work.id))
 				.orderBy(desc(reviews.createdAt));
 
-			workReviews = rows.map((r) => ({
-				id: r.id,
-				rating: r.rating,
-				ratingLabel: r.ratingLabel,
-				title: r.title,
-				body: r.body,
-				version: r.version,
-				createdAt: r.createdAt,
-				username: r.username,
-			}));
+			// Fetch all reactions for these reviews in one go
+			const reviewIds = rows.map((r) => r.id);
+			const reactionsList =
+				reviewIds.length > 0
+					? await db
+							.select()
+							.from(reviewReactions)
+							.where(inArray(reviewReactions.reviewId, reviewIds))
+					: [];
+
+			const reactionsByReview = new Map<string, { count: number; hasUserReacted: boolean }>();
+			for (const rId of reviewIds) {
+				reactionsByReview.set(rId, { count: 0, hasUserReacted: false });
+			}
+
+			for (const reaction of reactionsList) {
+				const entry = reactionsByReview.get(reaction.reviewId);
+				if (entry) {
+					entry.count++;
+					if (locals.user && reaction.userId === locals.user.id) {
+						entry.hasUserReacted = true;
+					}
+				}
+			}
+
+			workReviews = rows.map((r) => {
+				const reactionData = reactionsByReview.get(r.id);
+				return {
+					id: r.id,
+					rating: r.rating,
+					ratingLabel: r.ratingLabel,
+					title: r.title,
+					body: r.body,
+					version: r.version,
+					createdAt: r.createdAt,
+					username: r.username,
+					reactionCount: reactionData?.count ?? 0,
+					hasUserReacted: reactionData?.hasUserReacted ?? false,
+				};
+			});
 
 			if (locals.user) {
 				const mine = rows.find((r) => r.userId === locals.user?.id);
 				if (mine) {
+					const reactionData = reactionsByReview.get(mine.id);
 					userReview = {
 						id: mine.id,
 						rating: mine.rating,
@@ -117,6 +150,8 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 						version: mine.version,
 						createdAt: mine.createdAt,
 						username: mine.username,
+						reactionCount: reactionData?.count ?? 0,
+						hasUserReacted: reactionData?.hasUserReacted ?? false,
 					};
 				}
 			}
@@ -292,5 +327,39 @@ export const actions: Actions = {
 		}
 
 		return { reviewDeleted: true };
+	},
+
+	toggleReaction: async ({ request, platform, locals }) => {
+		if (!locals.user || !platform?.env.DB) {
+			return fail(401, { error: 'Nicht autorisiert.' });
+		}
+
+		const data = await request.formData();
+		const reviewId = data.get('reviewId') as string;
+		if (!reviewId) return fail(400, { error: 'Review-ID fehlt.' });
+
+		const db = getDb(platform.env.DB);
+		const existing = await db
+			.select()
+			.from(reviewReactions)
+			.where(
+				and(eq(reviewReactions.userId, locals.user.id), eq(reviewReactions.reviewId, reviewId)),
+			)
+			.get();
+
+		if (existing) {
+			await db
+				.delete(reviewReactions)
+				.where(
+					and(eq(reviewReactions.userId, locals.user.id), eq(reviewReactions.reviewId, reviewId)),
+				);
+		} else {
+			await db.insert(reviewReactions).values({
+				userId: locals.user.id,
+				reviewId,
+			});
+		}
+
+		return { reactionToggled: true };
 	},
 };

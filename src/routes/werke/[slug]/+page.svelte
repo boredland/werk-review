@@ -190,7 +190,7 @@ $effect(() => {
 		</section>
 	{/if}
 
-	<ReviewList reviews={data.reviews} score={data.score} />
+	<ReviewList reviews={data.reviews} score={data.score} {user} />
 
 	{#if user}
 		<ReviewForm userReview={data.userReview} {form} />

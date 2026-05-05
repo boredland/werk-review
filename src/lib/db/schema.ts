@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const users = sqliteTable('users', {
 	id: text('id').primaryKey(),
@@ -64,3 +64,19 @@ export const authorSuggestions = sqliteTable('author_suggestions', {
 	status: text('status').notNull().default('pending'),
 	createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
 });
+
+export const reviewReactions = sqliteTable(
+	'review_reactions',
+	{
+		userId: text('user_id')
+			.notNull()
+			.references(() => users.id),
+		reviewId: text('review_id')
+			.notNull()
+			.references(() => reviews.id, { onDelete: 'cascade' }),
+		createdAt: text('created_at').notNull().default(sql`(current_timestamp)`),
+	},
+	(table) => ({
+		pk: primaryKey({ columns: [table.userId, table.reviewId] }),
+	}),
+);
