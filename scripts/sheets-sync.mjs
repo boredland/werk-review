@@ -73,7 +73,7 @@ const WorkSchema = z.object({
 	year_from: z.number().nullable(),
 	year_to: z.number().nullable(),
 	year_display: z.string(),
-	parent_id: z.string().nullable(),
+	parent_slug: z.string().nullable(),
 	collection_title: z.string().nullable(),
 	collection_aliases: z.array(z.string()),
 	gnd_id: z.string().nullable(),
@@ -198,7 +198,7 @@ function transformWork(row) {
 		year_from: yearFrom,
 		year_to: yearTo,
 		year_display: yearDisplay,
-		parent_id: row.parent_id || null,
+		parent_slug: row.parent_slug || null,
 		collection_title: row.collection_title || null,
 		collection_aliases: parsePipeSeparated(row.collection_aliases),
 		gnd_id: row.gnd_id || null,
@@ -302,8 +302,8 @@ async function main() {
 			console.error(`Work "${work.title}" references unknown genre_id "${work.genre_id}"`);
 			errors++;
 		}
-		if (work.parent_id && !workIds.has(work.parent_id)) {
-			console.error(`Work "${work.title}" references unknown parent_id "${work.parent_id}"`);
+		if (work.parent_slug && !workIds.has(work.parent_slug)) {
+			console.error(`Work "${work.title}" references unknown parent_slug "${work.parent_slug}"`);
 			errors++;
 		}
 	}
