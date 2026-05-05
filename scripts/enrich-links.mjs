@@ -128,23 +128,8 @@ async function searchProjektGutenberg(work, authorName) {
 	for (const title of titles) {
 		const baseSlug = title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 		const strippedSlug = title.toLowerCase().replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-		const noSuffixSlug = title.toLowerCase().replace(/[\. ]+(teil|band|buch) [iv0-9]+$/i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-		const noSuffixStrippedSlug = title.toLowerCase().replace(/[\. ]+(teil|band|buch) [iv0-9]+$/i, '').replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 		
-		const slugs = [
-			baseSlug,
-			strippedSlug,
-			noSuffixSlug,
-			noSuffixStrippedSlug,
-			`${authorSlug}-${baseSlug}`,
-			`${authorSlug}-${strippedSlug}`,
-			`${authorSlug}-${noSuffixSlug}`,
-			`${authorSlug}-${noSuffixStrippedSlug}`,
-			`g-${lastName}-${baseSlug}`,
-			`g-${lastName}-${strippedSlug}`,
-			`g-${lastName}-${noSuffixSlug}`,
-			`g-${lastName}-${noSuffixStrippedSlug}`
-		];
+		const slugs = [baseSlug, strippedSlug];
 
 		for (const workSlug of [...new Set(slugs)]) {
 			const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}/`;
@@ -161,7 +146,7 @@ async function searchProjektGutenberg(work, authorName) {
 			}
 		}
 
-		// 2. Fallback to Author Page scan (More reliable than search)
+		// 2. Fallback to Author Page scan (Most reliable & now cached)
 		try {
 			const authorPageUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/`;
 			let authHtml = authorPageCache.get(authorPageUrl);
@@ -178,6 +163,8 @@ async function searchProjektGutenberg(work, authorName) {
 				const authMatches = [...new Set([...authHtml.matchAll(bookLinkPattern)].map((m) => m[1]))];
 				
 				const nWork = normalize(title);
+				const noSuffixWork = nWork.replace(/[\. ]+(teil|band|buch) [iv0-9]+$/i, '').trim();
+
 				const pageMatch = authMatches.find((m) => {
 					const slug = m.toLowerCase().split('/').filter(Boolean).pop();
 					const cleanSlug = slug
@@ -185,7 +172,10 @@ async function searchProjektGutenberg(work, authorName) {
 						.replace(`g-${lastName}-`, '')
 						.replace(/-/g, ' ');
 					const nSlug = normalize(cleanSlug);
-					return nSlug.includes(nWork) || nWork.includes(nSlug);
+					const noSuffixSlug = nSlug.replace(/[\. ]+(teil|band|buch) [iv0-9]+$/i, '').trim();
+					
+					return nSlug.includes(nWork) || nWork.includes(nSlug) || 
+						   noSuffixSlug.includes(noSuffixWork) || noSuffixWork.includes(noSuffixSlug);
 				});
 				
 				if (pageMatch) {
