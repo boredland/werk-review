@@ -196,11 +196,11 @@ function transformWork(row) {
 	const yearMatch = yearFromStr.match(/\d{4}/);
 	const year = yearMatch ? Number(yearMatch[0]) : null;
 
-	const sources = parseSources(row.sources);
-
+	const sources = [];
+	
 	const audiobookLink = parseManualLink(row.audiobook, 'audiobook');
 	if (audiobookLink) sources.unshift(audiobookLink);
-
+	
 	const ebookLink = parseManualLink(row.ebook, 'ebook');
 	if (ebookLink) sources.unshift(ebookLink);
 

@@ -180,17 +180,6 @@ $effect(() => {
 		</section>
 	{/if}
 
-	{#if data.work.sources.length > 0}
-		<section class="sources">
-			<h3>Quellen</h3>
-			<ul>
-				{#each data.work.sources as source}
-					<li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>
-				{/each}
-			</ul>
-		</section>
-	{/if}
-
 	<ReviewList reviews={data.reviews} score={data.score} {user} />
 
 	{#if user}

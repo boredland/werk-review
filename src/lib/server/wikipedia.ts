@@ -1,4 +1,4 @@
-const THUMB_SIZE = 800;
+const THUMB_SIZE = 960;
 const CACHE_TTL = 86400 * 7;
 
 export async function getWikipediaImageUrl(name: string, kv?: KVNamespace): Promise<string | null> {
