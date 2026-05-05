@@ -20,6 +20,7 @@ export interface Work {
 	year_from: number | null;
 	year_to: number | null;
 	year_display: string;
+	parent_id: string | null;
 	collection_title: string | null;
 	collection_aliases: string[];
 	gnd_id: string | null;
