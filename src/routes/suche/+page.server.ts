@@ -1,3 +1,4 @@
+import Fuse from 'fuse.js';
 import { getAuthors, getGenre, getGenres, getWorks } from '$lib/server/data';
 import { getWikipediaImageUrls } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
@@ -6,31 +7,35 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 	const q = url.searchParams.get('q')?.trim() ?? '';
 	if (!q) return { query: '', authors: [], works: [], genres: [] };
 
-	const lower = q.toLowerCase();
-
-	const authors = getAuthors()
-		.filter(
-			(a) =>
-				a.name.toLowerCase().includes(lower) ||
-				a.aliases.some((al) => al.toLowerCase().includes(lower)),
-		)
-		.map((a) => ({ name: a.name, slug: a.slug }));
-
 	const allAuthors = getAuthors();
 	const authorMap = new Map(allAuthors.map((a) => [a.id, a]));
+	const authorFuse = new Fuse(allAuthors, {
+		keys: ['name', 'aliases'],
+		threshold: 0.3,
+	});
+	const authors = authorFuse.search(q).map((res) => ({ name: res.item.name, slug: res.item.slug }));
 
 	const allWorks = getWorks();
 	const workMap = new Map(allWorks.map((w) => [w.id, w]));
+	const worksForSearch = allWorks.map((w) => ({
+		...w,
+		parent_titles: w.parent_slugs.map((pSlug) => workMap.get(pSlug)?.title).filter(Boolean),
+	}));
 
-	const works = allWorks
-		.filter(
-			(w) =>
-				w.title.toLowerCase().includes(lower) ||
-				w.aliases.some((al) => al.toLowerCase().includes(lower)) ||
-				w.parent_slugs.some((pSlug) => workMap.get(pSlug)?.title.toLowerCase().includes(lower)) ||
-				(w.plot?.toLowerCase().includes(lower) ?? false),
-		)
-		.map((w) => ({
+	const workFuse = new Fuse(worksForSearch, {
+		keys: [
+			{ name: 'title', weight: 3 },
+			{ name: 'aliases', weight: 2 },
+			{ name: 'parent_titles', weight: 1.5 },
+			{ name: 'plot', weight: 0.5 },
+		],
+		threshold: 0.3,
+		ignoreLocation: true,
+	});
+
+	const works = workFuse.search(q).map((res) => {
+		const w = res.item;
+		return {
 			title: w.title,
 			slug: w.slug,
 			year_display: w.year_display,
@@ -39,11 +44,14 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 				.map((id) => getGenre(id)?.name)
 				.filter(Boolean)
 				.join(', '),
-		}));
+		};
+	});
 
-	const genres = getGenres()
-		.filter((g) => g.name.toLowerCase().includes(lower))
-		.map((g) => ({ name: g.name, slug: g.slug }));
+	const genresFuse = new Fuse(getGenres(), {
+		keys: ['name'],
+		threshold: 0.3,
+	});
+	const genres = genresFuse.search(q).map((res) => ({ name: res.item.name, slug: res.item.slug }));
 
 	const imageUrls = await getWikipediaImageUrls(
 		authors.map((a) => a.name),
