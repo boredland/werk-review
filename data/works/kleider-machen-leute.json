@@ -1,15 +1,18 @@
 {
 	"id": "kleider-machen-leute",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Kleider machen Leute",
 	"slug": "kleider-machen-leute",
 	"aliases": [],
 	"year_from": 1873,
 	"year_to": 1874,
 	"year_display": "1873–1874",
-	"collection_title": "Die Leute von Seldwyla. Teil II",
-	"collection_aliases": [],
+	"parent_slugs": [
+		"die-leute-von-seldwyla-teil-ii"
+	],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

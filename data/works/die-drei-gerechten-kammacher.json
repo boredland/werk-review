@@ -1,7 +1,9 @@
 {
 	"id": "die-drei-gerechten-kammacher",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Die drei gerechten Kammacher",
 	"slug": "die-drei-gerechten-kammacher",
 	"aliases": [
@@ -10,8 +12,9 @@
 	"year_from": 1856,
 	"year_to": null,
 	"year_display": "1856",
-	"collection_title": "Die Leute von Seldwyla. Teil I",
-	"collection_aliases": [],
+	"parent_slugs": [
+		"die-leute-von-seldwyla-teil-i"
+	],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

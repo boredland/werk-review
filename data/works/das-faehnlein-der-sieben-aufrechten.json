@@ -1,7 +1,9 @@
 {
 	"id": "das-faehnlein-der-sieben-aufrechten",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Das Fähnlein der sieben Aufrechten",
 	"slug": "das-faehnlein-der-sieben-aufrechten",
 	"aliases": [
@@ -10,8 +12,9 @@
 	"year_from": 1861,
 	"year_to": null,
 	"year_display": "1861",
-	"collection_title": "Züricher Novellen",
-	"collection_aliases": [],
+	"parent_slugs": [
+		"zuericher-novellen"
+	],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

@@ -1,15 +1,18 @@
 {
 	"id": "dorotheas-blumenkoerbchen",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Dorotheas Blumenkörbchen",
 	"slug": "dorotheas-blumenkoerbchen",
 	"aliases": [],
 	"year_from": 1872,
 	"year_to": null,
 	"year_display": "1872",
-	"collection_title": "Sieben Legenden",
-	"collection_aliases": [],
+	"parent_slugs": [
+		"sieben-legenden"
+	],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

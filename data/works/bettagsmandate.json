@@ -1,7 +1,9 @@
 {
 	"id": "bettagsmandate",
 	"author_id": "gottfried-keller",
-	"genre_id": "prosa",
+	"genre_ids": [
+		"prosa"
+	],
 	"title": "Bettagsmandate",
 	"slug": "bettagsmandate",
 	"aliases": [
@@ -10,8 +12,7 @@
 	"year_from": 1862,
 	"year_to": 1867,
 	"year_display": "1862–1867",
-	"collection_title": null,
-	"collection_aliases": [],
+	"parent_slugs": [],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

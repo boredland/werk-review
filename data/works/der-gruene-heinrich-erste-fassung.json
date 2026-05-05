@@ -1,15 +1,16 @@
 {
 	"id": "der-gruene-heinrich-erste-fassung",
 	"author_id": "gottfried-keller",
-	"genre_id": "roman",
+	"genre_ids": [
+		"roman"
+	],
 	"title": "Der grüne Heinrich. Erste Fassung",
 	"slug": "der-gruene-heinrich-erste-fassung",
 	"aliases": [],
 	"year_from": 1854,
 	"year_to": 1855,
 	"year_display": "1854–1855",
-	"collection_title": null,
-	"collection_aliases": [],
+	"parent_slugs": [],
 	"gnd_id": "4099259-7",
 	"plot": null,
 	"sources": []

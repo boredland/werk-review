@@ -1,15 +1,18 @@
 {
 	"id": "hadlaub",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Hadlaub",
 	"slug": "hadlaub",
 	"aliases": [],
 	"year_from": 1877,
 	"year_to": null,
 	"year_display": "1877",
-	"collection_title": "Züricher Novellen",
-	"collection_aliases": [],
+	"parent_slugs": [
+		"zuericher-novellen"
+	],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

@@ -1,7 +1,9 @@
 {
 	"id": "der-wahltag",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Der Wahltag",
 	"slug": "der-wahltag",
 	"aliases": [
@@ -11,8 +13,7 @@
 	"year_from": 1866,
 	"year_to": null,
 	"year_display": "1866",
-	"collection_title": null,
-	"collection_aliases": [],
+	"parent_slugs": [],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

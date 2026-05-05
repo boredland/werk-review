@@ -1,15 +1,16 @@
 {
 	"id": "eine-nacht-auf-dem-uto",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Eine Nacht auf dem Uto",
 	"slug": "eine-nacht-auf-dem-uto",
 	"aliases": [],
 	"year_from": null,
 	"year_to": null,
 	"year_display": "postum veröffentlicht",
-	"collection_title": null,
-	"collection_aliases": [],
+	"parent_slugs": [],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []

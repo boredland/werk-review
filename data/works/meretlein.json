@@ -1,15 +1,19 @@
 {
 	"id": "meretlein",
 	"author_id": "gottfried-keller",
-	"genre_id": "erzaehlung",
+	"genre_ids": [
+		"erzaehlung"
+	],
 	"title": "Meretlein",
 	"slug": "meretlein",
 	"aliases": [],
 	"year_from": 1879,
 	"year_to": 1880,
 	"year_display": "1879–1880",
-	"collection_title": "Der grüne Heinrich",
-	"collection_aliases": [],
+	"parent_slugs": [
+		"der-gruene-heinrich-erste-fassung",
+		"der-gruene-heinrich-zweite-fassung"
+	],
 	"gnd_id": null,
 	"plot": null,
 	"sources": []
