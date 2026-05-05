@@ -120,9 +120,29 @@ async function getLibriVoxBooks(authorName) {
 
 async function searchProjektGutenberg(work, authorName) {
 	const titles = [work.title, ...(work.aliases || [])];
+	const authorSlug = authorName.toLowerCase().replace(/ /g, '-');
 	const lastName = authorName.split(' ').pop().toLowerCase();
 
 	for (const title of titles) {
+		// 1. Try to predict the URL
+		const workSlug = title
+			.toLowerCase()
+			.replace(/ä/g, 'ae')
+			.replace(/ö/g, 'oe')
+			.replace(/ü/g, 'ue')
+			.replace(/ß/g, 'ss')
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/^-+|-+$/g, '');
+		
+		const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}`;
+		try {
+			const headRes = await fetch(predictedUrl, { method: 'HEAD' });
+			if (headRes.ok) return predictedUrl;
+		} catch (e) {
+			// Ignore network errors for prediction
+		}
+
+		// 2. Fallback to search
 		const params = new URLSearchParams({ s: `${title} ${authorName}` });
 		const url = `https://projekt-gutenberg.org/?${params}`;
 
@@ -131,38 +151,31 @@ async function searchProjektGutenberg(work, authorName) {
 			if (!res.ok) continue;
 			const html = await res.text();
 
-			const linkPattern =
-				/href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
-			const matches = [...html.matchAll(linkPattern)].map((m) => m[1]);
+			const linkPattern = /href="(https:\/\/projekt-gutenberg\.org\/authors\/[^"]*\/books\/[^"]*)"/g;
+			const matches = [...new Set([...html.matchAll(linkPattern)].map((m) => m[1]))];
 			if (matches.length === 0) continue;
 
+			const nWork = normalize(title);
 			const match = matches.find((m) => {
 				const urlLower = m.toLowerCase();
 				if (!urlLower.includes(lastName)) return false;
 
-				const nWork = normalize(title);
-				const slug = urlLower
-					.split('/')
-					.pop()
-					.replace(/^g-[^-]+-/, '')
-					.replace(/-/g, ' ');
-				const nSlug = normalize(slug);
-
-				return nSlug.includes(nWork) || nWork.includes(nSlug) || isMatch({ title: title }, slug);
+				const slug = urlLower.split('/').filter(Boolean).pop();
+				const nSlug = slug.replace(/-/g, ' ');
+				
+				// Direct match or inclusion
+				if (nSlug.includes(nWork) || nWork.includes(nSlug)) return true;
+				
+				// Fuzzy match words
+				const workWords = nWork.split(' ').filter(w => w.length > 3);
+				const slugWords = nSlug.split(' ').filter(w => w.length > 3);
+				const common = workWords.filter(w => slugWords.includes(w));
+				return common.length >= Math.min(workWords.length, 2);
 			});
 
-			if (match) {
-				return [
-					{
-						source: 'Projekt Gutenberg-DE',
-						format: 'Volltext',
-						url: match,
-						label: work.title,
-					},
-				];
-			}
-		} catch {
-			// ignore
+			if (match) return [{ source: 'Projekt Gutenberg-DE', url: match, label: title }];
+		} catch (e) {
+			console.error(`Error searching Gutenberg for ${title}:`, e);
 		}
 	}
 	return [];
