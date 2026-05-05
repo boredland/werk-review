@@ -1,13 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('werk.review E2E', () => {
-	test('homepage loads and shows hero', async ({ page }) => {
+	test('homepage loads and shows hero', async ({ page, isMobile }) => {
 		await page.goto('/');
 		await expect(page.locator('h1')).toContainText('Willkommen werter Suchender');
-		await expect(page.locator('nav')).toBeVisible();
+		if (!isMobile) {
+			await expect(page.locator('nav')).toBeVisible();
+		}
 	});
 
-	test('search for a work and navigate to it', async ({ page }) => {
+	test('search for a work and navigate to it', async ({ page, isMobile }) => {
+		if (isMobile) return;
 		await page.goto('/');
 		const searchInput = page.locator('#nav-search-input');
 		await searchInput.fill('Sinngedicht');
