@@ -124,22 +124,24 @@ async function searchProjektGutenberg(work, authorName) {
 	const lastName = authorName.split(' ').pop().toLowerCase();
 
 	for (const title of titles) {
-		// 1. Try to predict the URL
-		const workSlug = title
-			.toLowerCase()
-			.replace(/ä/g, 'ae')
-			.replace(/ö/g, 'oe')
-			.replace(/ü/g, 'ue')
-			.replace(/ß/g, 'ss')
-			.replace(/[^a-z0-9]+/g, '-')
-			.replace(/^-+|-+$/g, '');
-		
-		const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}`;
-		try {
-			const headRes = await fetch(predictedUrl, { method: 'HEAD' });
-			if (headRes.ok) return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: predictedUrl, label: title }];
-		} catch (e) {
-			// Ignore network errors for prediction
+		const slugs = [
+			title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+			title.toLowerCase().replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+		];
+
+		for (const workSlug of [...new Set(slugs)]) {
+			const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}/`;
+			try {
+				const verifyRes = await fetch(predictedUrl);
+				if (verifyRes.ok) {
+					const text = await verifyRes.text();
+					if (!text.includes('Buch nicht gefunden')) {
+						return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: predictedUrl, label: title }];
+					}
+				}
+			} catch (e) {
+				// Ignore network errors
+			}
 		}
 
 		// 2. Fallback to search

@@ -29,21 +29,24 @@ async function searchProjektGutenberg(work, authorName) {
 	const lastName = authorName.split(' ').pop().toLowerCase();
 
 	for (const title of titles) {
-		const workSlug = title
-			.toLowerCase()
-			.replace(/ä/g, 'ae')
-			.replace(/ö/g, 'oe')
-			.replace(/ü/g, 'ue')
-			.replace(/ß/g, 'ss')
-			.replace(/[^a-z0-9]+/g, '-')
-			.replace(/^-+|-+$/g, '');
-		
-		const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}`;
-		console.log(`Trying prediction: ${predictedUrl}`);
-		try {
-			const headRes = await fetch(predictedUrl, { method: 'HEAD' });
-			if (headRes.ok) return [{ source: 'Projekt Gutenberg-DE', url: predictedUrl, label: title }];
-		} catch (e) {}
+		const slugs = [
+			title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+			title.toLowerCase().replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+		];
+
+		for (const workSlug of [...new Set(slugs)]) {
+			const predictedUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/books/${workSlug}/`;
+			console.log(`Trying prediction: ${predictedUrl}`);
+			try {
+				const verifyRes = await fetch(predictedUrl);
+				if (verifyRes.ok) {
+					const text = await verifyRes.text();
+					if (!text.includes('Buch nicht gefunden')) {
+						return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: predictedUrl, label: title }];
+					}
+				}
+			} catch (e) {}
+		}
 
 		const params = new URLSearchParams({ s: `${title} ${authorName}` });
 		const url = `https://projekt-gutenberg.org/?${params}`;
@@ -63,7 +66,7 @@ async function searchProjektGutenberg(work, authorName) {
 				if (nSlug.includes(nWork) || nWork.includes(nSlug)) return true;
 				return false;
 			});
-			if (match) return [{ source: 'Projekt Gutenberg-DE', url: match, label: title }];
+			if (match) return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: match, label: title }];
 		} catch (e) {}
 	}
 	return [];
