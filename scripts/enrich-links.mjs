@@ -124,9 +124,24 @@ async function searchProjektGutenberg(work, authorName) {
 	const lastName = authorName.split(' ').pop().toLowerCase();
 
 	for (const title of titles) {
+		const baseSlug = title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+		const strippedSlug = title.toLowerCase().replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+		const noSuffixSlug = title.toLowerCase().replace(/[\. ]+(teil|band|buch) [iv0-9]+$/i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+		const noSuffixStrippedSlug = title.toLowerCase().replace(/[\. ]+(teil|band|buch) [iv0-9]+$/i, '').replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+		
 		const slugs = [
-			title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
-			title.toLowerCase().replace(/^(das|der|die|ein|eine) /i, '').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+			baseSlug,
+			strippedSlug,
+			noSuffixSlug,
+			noSuffixStrippedSlug,
+			`${authorSlug}-${baseSlug}`,
+			`${authorSlug}-${strippedSlug}`,
+			`${authorSlug}-${noSuffixSlug}`,
+			`${authorSlug}-${noSuffixStrippedSlug}`,
+			`g-${lastName}-${baseSlug}`,
+			`g-${lastName}-${strippedSlug}`,
+			`g-${lastName}-${noSuffixSlug}`,
+			`g-${lastName}-${noSuffixStrippedSlug}`
 		];
 
 		for (const workSlug of [...new Set(slugs)]) {
@@ -144,7 +159,36 @@ async function searchProjektGutenberg(work, authorName) {
 			}
 		}
 
-		// 2. Fallback to search
+		// 2. Fallback to Author Page scan (More reliable than search)
+		try {
+			const authorPageUrl = `https://projekt-gutenberg.org/authors/${authorSlug}/`;
+			const authRes = await fetch(authorPageUrl);
+			if (authRes.ok) {
+				const authHtml = await authRes.text();
+				const bookLinkPattern = new RegExp(`href="(https:\\/\\/projekt-gutenberg\\.org\\/authors\\/${authorSlug}\\/books\\/[^"]*)"`, 'g');
+				const authMatches = [...new Set([...authHtml.matchAll(bookLinkPattern)].map((m) => m[1]))];
+				
+				const nWork = normalize(title);
+				const pageMatch = authMatches.find((m) => {
+					const slug = m.toLowerCase().split('/').filter(Boolean).pop();
+					const cleanSlug = slug
+						.replace(`${authorSlug}-`, '')
+						.replace(`g-${lastName}-`, '')
+						.replace(/-/g, ' ');
+					const nSlug = normalize(cleanSlug);
+					return nSlug.includes(nWork) || nWork.includes(nSlug);
+				});
+				
+				if (pageMatch) {
+					console.log(`  * Found via author page: "${title}" -> ${pageMatch}`);
+					return [{ source: 'Projekt Gutenberg-DE', format: 'Volltext', url: pageMatch, label: title }];
+				}
+			}
+		} catch (e) {
+			console.error(`Error scanning author page for ${title}:`, e);
+		}
+
+		// 3. Last fallback: Global search
 		const params = new URLSearchParams({ s: `${title} ${authorName}` });
 		const url = `https://projekt-gutenberg.org/?${params}`;
 
