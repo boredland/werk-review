@@ -5,7 +5,6 @@ export interface Author {
 	aliases: string[];
 	born: number | null;
 	died: number | null;
-	gnd_id: string | null;
 	bio: string;
 	sources: Source[];
 }
@@ -17,11 +16,9 @@ export interface Work {
 	title: string;
 	slug: string;
 	aliases: string[];
-	year_from: number | null;
-	year_to: number | null;
+	year: number | null;
 	year_display: string;
 	parent_slugs: string[];
-	gnd_id: string | null;
 	plot: string | null;
 	plot_source: { label: string; url: string } | null;
 	plot_fetched_at: string | null;

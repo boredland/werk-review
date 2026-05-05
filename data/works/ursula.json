@@ -7,8 +7,7 @@
 	"title": "Ursula",
 	"slug": "ursula",
 	"aliases": [],
-	"year_from": null,
-	"year_to": null,
+	"year": 1877,
 	"year_display": "1877",
 	"parent_slugs": [
 		"zuericher-novellen"

@@ -39,7 +39,7 @@ $effect(() => {
 						name: data.author.name,
 					}
 				: undefined,
-			datePublished: data.work.year_from?.toString(),
+			datePublished: data.work.year?.toString(),
 			genre: data.genres.map(g => g.name).join(', '),
 			description: data.work.plot || undefined,
 			aggregateRating: data.score

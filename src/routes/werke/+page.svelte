@@ -31,7 +31,7 @@ const sorted = $derived(
 			return (
 				(b.totalPoints ?? -Infinity) - (a.totalPoints ?? -Infinity) || b.reviewCount - a.reviewCount
 			);
-		return (a.year_from ?? 9999) - (b.year_from ?? 9999);
+		return (a.year ?? 9999) - (b.year ?? 9999);
 	}),
 );
 

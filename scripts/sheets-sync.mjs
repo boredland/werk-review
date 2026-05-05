@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 
@@ -19,7 +19,10 @@ function slugify(text) {
 
 function parsePipeSeparated(val) {
 	if (!val || val.trim() === '') return [];
-	return val.split('|').map((s) => s.trim()).filter(Boolean);
+	return val
+		.split('|')
+		.map((s) => s.trim())
+		.filter(Boolean);
 }
 
 function parseNumber(val) {
@@ -60,8 +63,7 @@ const WorkSchema = z.object({
 	title: z.string().min(1),
 	slug: z.string().min(1),
 	aliases: z.array(z.string()),
-	year_from: z.number().nullable(),
-	year_to: z.number().nullable(),
+	year: z.number().nullable(),
 	year_display: z.string(),
 	parent_slugs: z.array(z.string()),
 	plot: z.string().nullable(),
@@ -134,7 +136,7 @@ function parseCsv(text) {
 	return rows.slice(1).map((values) => {
 		const obj = {};
 		headers.forEach((h, i) => {
-			let val = values[i] ?? '';
+			const val = values[i] ?? '';
 			obj[h] = val.trim().replace(/^"|"$/g, '');
 		});
 		return obj;
@@ -190,18 +192,15 @@ function transformAuthor(row) {
 
 function transformWork(row) {
 	const slug = slugify(row.title);
-	const yearFrom = parseNumber(row.year_from);
-	const yearTo = parseNumber(row.year_to);
-	let yearDisplay = row.year_display || '';
-	if (!yearDisplay && yearFrom) {
-		yearDisplay = yearTo && yearTo !== yearFrom ? `${yearFrom}–${yearTo}` : `${yearFrom}`;
-	}
+	const yearFromStr = row.year_display || '';
+	const yearMatch = yearFromStr.match(/\d{4}/);
+	const year = yearMatch ? Number(yearMatch[0]) : null;
 
 	const sources = parseSources(row.sources);
-	
+
 	const audiobookLink = parseManualLink(row.audiobook, 'audiobook');
 	if (audiobookLink) sources.unshift(audiobookLink);
-	
+
 	const ebookLink = parseManualLink(row.ebook, 'ebook');
 	if (ebookLink) sources.unshift(ebookLink);
 
@@ -212,9 +211,8 @@ function transformWork(row) {
 		title: row.title,
 		slug,
 		aliases: parsePipeSeparated(row.aliases),
-		year_from: yearFrom,
-		year_to: yearTo,
-		year_display: yearDisplay,
+		year,
+		year_display: row.year_display || '',
 		parent_slugs: parsePipeSeparated(row.parent_slug || row.parent_slugs),
 		plot: row.plot || null,
 		sources,
@@ -301,11 +299,17 @@ async function main() {
 	if (!existsSync(GENRES_DIR)) writeFileSync(join(GENRES_DIR, '.keep'), '');
 
 	// Write new files
-	authors.forEach((a) => writeJson(join(AUTHORS_DIR, `${a.slug}.json`), a));
-	works.forEach((w) => writeJson(join(WORKS_DIR, `${w.slug}.json`), w));
+	authors.forEach((a) => {
+		writeJson(join(AUTHORS_DIR, `${a.slug}.json`), a);
+	});
+	works.forEach((w) => {
+		writeJson(join(WORKS_DIR, `${w.slug}.json`), w);
+	});
 	writeJson(join(DATA_DIR, 'genres.json'), genres);
 
-	console.log(`\nDone:\n  ${authors.length} authors\n  ${works.length} works\n  ${genres.length} genres`);
+	console.log(
+		`\nDone:\n  ${authors.length} authors\n  ${works.length} works\n  ${genres.length} genres`,
+	);
 }
 
 main().catch((err) => {

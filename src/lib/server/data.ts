@@ -40,8 +40,8 @@ export function getAuthor(idOrSlug: string): Author | undefined {
 export function getWorks(): Work[] {
 	if (!_works) {
 		_works = loadAll(workModules).sort((a, b) => {
-			const yearA = a.year_from ?? 9999;
-			const yearB = b.year_from ?? 9999;
+			const yearA = a.year ?? 9999;
+			const yearB = b.year ?? 9999;
 			return yearA - yearB || a.title.localeCompare(b.title, 'de');
 		});
 	}
@@ -111,8 +111,7 @@ function computeSimilarities(): Map<string, SimilarWork[]> {
 
 			let score = 0;
 			if (other.genre_ids.some((g) => work.genre_ids.includes(g))) score += 3;
-			if (work.year_from && other.year_from && Math.abs(work.year_from - other.year_from) <= 25)
-				score += 2;
+			if (work.year && other.year && Math.abs(work.year - other.year) <= 25) score += 2;
 			if (other.author_id === work.author_id) score += 1;
 
 			if (score > 0) {
