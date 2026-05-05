@@ -59,7 +59,6 @@ const AuthorSchema = z.object({
 	died: z.number().nullable(),
 	gnd_id: z.string().nullable(),
 	bio: z.string(),
-	photo_r2_key: z.string().nullable(),
 	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
 });
 
@@ -83,13 +82,6 @@ const GenreSchema = z.object({
 	id: z.string().min(1),
 	name: z.string().min(1),
 	slug: z.string().min(1),
-});
-
-const LinkSchema = z.object({
-	source: z.string().min(1),
-	format: z.string().min(1),
-	url: z.string().url(),
-	label: z.string().min(1),
 });
 
 // --- Fetch public Google Sheet as CSV ---
@@ -172,7 +164,6 @@ function transformAuthor(row) {
 		died: parseNumber(row.died),
 		gnd_id: row.gnd_id || null,
 		bio: row.bio || '',
-		photo_r2_key: row.photo_r2_key || null,
 		sources: parseSources(row.sources),
 	};
 }
@@ -212,15 +203,6 @@ function transformGenre(row) {
 	};
 }
 
-function transformLink(row) {
-	return {
-		source: row.source,
-		format: row.format,
-		url: row.url,
-		label: row.label,
-	};
-}
-
 // --- Write files ---
 
 function clearDir(dir) {
@@ -239,35 +221,20 @@ function writeJson(path, data) {
 async function main() {
 	console.log('Fetching sheets...');
 
-	const [authorRows, workRows, genreRows, linkRows] = await Promise.all([
+	const [authorRows, workRows, genreRows] = await Promise.all([
 		fetchSheet('Autoren'),
 		fetchSheet('Werke'),
 		fetchSheet('Genres'),
-		fetchSheet('Links').catch(() => {
-			console.log('No "Links" sheet found, skipping.');
-			return [];
-		}),
 	]);
 
 	console.log(`  Autoren: ${authorRows.length} rows`);
 	console.log(`  Werke: ${workRows.length} rows`);
 	console.log(`  Genres: ${genreRows.length} rows`);
-	console.log(`  Links: ${linkRows.length} rows`);
 
 	// Transform
 	const authors = authorRows.map(transformAuthor);
 	const works = workRows.map(transformWork);
 	const genres = genreRows.map(transformGenre);
-
-	// Group links by work_id
-	const linksByWork = new Map();
-	for (const row of linkRows) {
-		const workId = row.work_id;
-		if (!workId) continue;
-		const link = transformLink(row);
-		if (!linksByWork.has(workId)) linksByWork.set(workId, []);
-		linksByWork.get(workId).push(link);
-	}
 
 	// Validate
 	let errors = 0;
@@ -312,21 +279,6 @@ async function main() {
 		}
 	}
 
-	const workIds = new Set(works.map((w) => w.id));
-	for (const [workId, links] of linksByWork) {
-		if (!workIds.has(workId)) {
-			console.error(`Links reference unknown work_id "${workId}"`);
-			errors++;
-		}
-		for (const link of links) {
-			const result = LinkSchema.safeParse(link);
-			if (!result.success) {
-				console.error(`Invalid link for work "${workId}":`, result.error.issues);
-				errors++;
-			}
-		}
-	}
-
 	if (errors > 0) {
 		console.error(`\n${errors} validation error(s). Aborting.`);
 		process.exit(1);
@@ -349,19 +301,10 @@ async function main() {
 	// Write genres
 	writeJson(join(DATA_DIR, 'genres.json'), genres);
 
-	// Write links
-	clearDir(join(DATA_DIR, 'links'));
-	for (const [workId, links] of linksByWork) {
-		const work = works.find((w) => w.id === workId);
-		const filename = work ? work.slug : workId;
-		writeJson(join(DATA_DIR, 'links', `${filename}.json`), links);
-	}
-
 	console.log(`\nDone:`);
 	console.log(`  ${authors.length} authors`);
 	console.log(`  ${works.length} works`);
 	console.log(`  ${genres.length} genres`);
-	console.log(`  ${linksByWork.size} works with links`);
 }
 
 main().catch((err) => {
