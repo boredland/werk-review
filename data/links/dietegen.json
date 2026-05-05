@@ -14,12 +14,6 @@
 		"librivox_id": "7191"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-dietegen",
-		"label": "Dietegen"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/gottfried-keller-dietegen",
@@ -28,5 +22,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-dietegen",
+		"label": "Dietegen"
 	}
 ]

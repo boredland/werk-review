@@ -27,11 +27,5 @@
 		"formats": [
 			"EPUB"
 		]
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/romeo-und-julia-auf-dem-dorfe",
-		"label": "Romeo und Julia auf dem Dorfe"
 	}
 ]

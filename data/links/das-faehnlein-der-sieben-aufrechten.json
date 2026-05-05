@@ -8,11 +8,5 @@
 			"EPUB",
 			"Text PDF"
 		]
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/das-faehnlein-der-sieben-aufrechten",
-		"label": "Das Fähnlein der sieben Aufrechten"
 	}
 ]

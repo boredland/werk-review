@@ -15,11 +15,5 @@
 			"EPUB",
 			"Text PDF"
 		]
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/spiegel-das-kaetzchen-ein-maerchen",
-		"label": "Spiegel, das Kätzchen. Ein Märchen"
 	}
 ]

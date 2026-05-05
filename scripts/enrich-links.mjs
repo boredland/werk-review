@@ -350,13 +350,18 @@ async function main() {
 					}
 
 					// Projekt Gutenberg-DE matching
-					if (!existingSources.has('Projekt Gutenberg-DE')) {
-						const pg = await searchProjektGutenberg(work, author.name);
-						if (pg.length > 0 && !existingUrls.has(pg[0].url)) {
-							newLinks.push(pg[0]);
-							workUpdated = true;
-							console.log(`  + Projekt Gutenberg-DE: "${work.title}"`);
-						}
+					const pg = await searchProjektGutenberg(work, author.name);
+					// Filter out old Gutenberg links and add the new verified ones
+					const cleanedLinks = newLinks.filter(l => l.source !== 'Projekt Gutenberg-DE');
+					if (pg.length > 0) {
+						cleanedLinks.push(...pg);
+					}
+					
+					if (JSON.stringify(cleanedLinks) !== JSON.stringify(newLinks)) {
+						newLinks.length = 0;
+						newLinks.push(...cleanedLinks);
+						workUpdated = true;
+						console.log(`  ~ Updated Gutenberg links for "${work.title}"`);
 					}
 
 					// Archive.org matching
