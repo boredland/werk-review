@@ -57,7 +57,6 @@ const AuthorSchema = z.object({
 	aliases: z.array(z.string()),
 	born: z.number().nullable(),
 	died: z.number().nullable(),
-	gnd_id: z.string().nullable(),
 	bio: z.string(),
 	sources: z.array(z.object({ label: z.string(), url: z.string().url() })),
 });
@@ -73,7 +72,6 @@ const WorkSchema = z.object({
 	year_to: z.number().nullable(),
 	year_display: z.string(),
 	parent_slugs: z.array(z.string()),
-	gnd_id: z.string().nullable(),
 	plot: z.string().nullable(),
 	sources: z.array(
 		z.object({
@@ -191,7 +189,6 @@ function transformAuthor(row) {
 		aliases: parsePipeSeparated(row.aliases),
 		born: parseNumber(row.born),
 		died: parseNumber(row.died),
-		gnd_id: row.gnd_id || null,
 		bio: row.bio || '',
 		sources: parseSources(row.sources),
 	};
@@ -225,7 +222,6 @@ function transformWork(row) {
 		year_to: yearTo,
 		year_display: yearDisplay,
 		parent_slugs: parsePipeSeparated(row.parent_slug || row.parent_slugs),
-		gnd_id: row.gnd_id || null,
 		plot: row.plot || null,
 		sources,
 	};

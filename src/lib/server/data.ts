@@ -85,31 +85,11 @@ export function getLinksForWork(work: Work): ExternalLink[] {
 	const enrichedLinks = _links.get(work.slug) ?? [];
 	const manualLinks = (work.sources ?? []) as ExternalLink[];
 
-	const generatedLinks: ExternalLink[] = [];
-	if (work.gnd_id) {
-		generatedLinks.push({
-			source: 'DNB',
-			label: 'Deutsche Nationalbibliothek',
-			url: `https://d-nb.info/gnd/${work.gnd_id}`,
-			format: 'Katalogeintrag',
-		});
-	}
-
-	const author = getAuthor(work.author_id);
-	if (author?.gnd_id) {
-		generatedLinks.push({
-			source: 'DNB',
-			label: `DNB: ${author.name}`,
-			url: `https://d-nb.info/gnd/${author.gnd_id}`,
-			format: 'Personeneintrag',
-		});
-	}
-
 	// Deduplicate by URL
-	const seenUrls = new Set([...manualLinks, ...generatedLinks].map((l) => l.url));
+	const seenUrls = new Set(manualLinks.map((l) => l.url));
 	const uniqueEnriched = enrichedLinks.filter((l) => !seenUrls.has(l.url));
 
-	return [...manualLinks, ...generatedLinks, ...uniqueEnriched];
+	return [...manualLinks, ...uniqueEnriched];
 }
 
 export function getSimilarWorks(workId: string): SimilarWork[] {
