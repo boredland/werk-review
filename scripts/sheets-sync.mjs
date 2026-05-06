@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 
@@ -195,10 +195,10 @@ function transformWork(row) {
 	const year = yearMatch ? Number(yearMatch[0]) : null;
 
 	const sources = [];
-	
+
 	const audiobookLink = parseManualLink(row.audiobook, 'audiobook');
 	if (audiobookLink) sources.unshift(audiobookLink);
-	
+
 	const ebookLink = parseManualLink(row.ebook, 'ebook');
 	if (ebookLink) sources.unshift(ebookLink);
 
@@ -287,14 +287,11 @@ async function main() {
 
 	console.log('\nValidation passed. Writing files...');
 
-	// Clear existing files to handle deletions/renames
 	const WORKS_DIR = join(DATA_DIR, 'works');
 	const AUTHORS_DIR = join(DATA_DIR, 'authors');
-	const GENRES_DIR = join(DATA_DIR, 'genres');
 
-	if (!existsSync(WORKS_DIR)) writeFileSync(join(WORKS_DIR, '.keep'), '');
-	if (!existsSync(AUTHORS_DIR)) writeFileSync(join(AUTHORS_DIR, '.keep'), '');
-	if (!existsSync(GENRES_DIR)) writeFileSync(join(GENRES_DIR, '.keep'), '');
+	mkdirSync(WORKS_DIR, { recursive: true });
+	mkdirSync(AUTHORS_DIR, { recursive: true });
 
 	// Write new files
 	authors.forEach((a) => {
