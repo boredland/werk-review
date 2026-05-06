@@ -1,0 +1,29 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1826-by-wilhelm-hauff/",
+		"label": "Märchen - Almanach auf das Jahr 1826",
+		"librivox_id": "2034"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1827-by-wilhelm-hauff/",
+		"label": "Märchen - Almanach auf das Jahr 1827",
+		"librivox_id": "2931"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1828-by-wilhelm-hauff/",
+		"label": "Märchen - Almanach auf das Jahr 1828",
+		"librivox_id": "5620"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/wilhelm-hauff/books/maerchen-almanach-auf-das-jahr-1826",
+		"label": "Märchen-Almanach auf das Jahr 1826 für Söhne und Töchter gebildeter Stände"
+	}
+]

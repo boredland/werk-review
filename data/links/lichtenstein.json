@@ -1,0 +1,17 @@
+[
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/wilhelm-hauff/books/lichtenstein/",
+		"label": "Lichtenstein"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/lichtenstein00unkngoog",
+		"label": "Lichtenstein; romantische Sage aus der württembergischen Geschichte",
+		"formats": [
+			"EPUB"
+		]
+	}
+]
