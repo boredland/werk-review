@@ -10,7 +10,7 @@
 	"year": 1856,
 	"year_display": "1856",
 	"parent_slugs": [],
-	"plot": "Romeo und Julia auf dem Dorfe gehört zu den bekanntesten Erzählungen aus dem Novellenzyklus Die Leute von Seldwyla von Gottfried Keller. Wie die meisten Werke des Schweizer Dichters hat sie eine lange Entstehungszeit: 1847 konzipiert, 1855/56 ausgearbeitet und veröffentlicht, erreichte sie erst 1875 ihre endgültige Textgestalt. Der Titel verweist auf Shakespeares Romeo und Julia und kündigt eine Adaption des berühmten Stoffes an. Der Autor verlegt dazu den Schauplatz der tragischen Liebesgeschichte in seine Gegenwart und in ein Dorf seiner Heimat: Zwei junge Leute, Sohn und Tochter wohlhabender Bauern, lieben sich trotz der erbitterten Feindschaft ihrer Väter. Nachdem diese Feindschaft den Ruin beider Familien herbeigeführt und die Aussicht der Kinder auf eine gemeinsame Zukunft zerstört hat, sieht das Paar keinen anderen Ausweg, als gemeinsam in den Tod zu gehen.",
+	"plot": null,
 	"sources": [
 		{
 			"source": "Projekt Gutenberg-DE",
@@ -18,15 +18,6 @@
 			"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-romeo-und-julia",
 			"label": "E-Book",
 			"manual": true
-		},
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Romeo_und_Julia_auf_dem_Dorfe"
 		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Romeo_und_Julia_auf_dem_Dorfe"
-	},
-	"plot_fetched_at": "2026-05-07"
+	]
 }
