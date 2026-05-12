@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/lenz-by-georg-buchner/",
+		"label": "Lenz",
+		"librivox_id": "2993"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/lenz-by-georg-buechner-2/",
+		"label": "Lenz (version 2)",
+		"librivox_id": "4204"
+	}
+]
