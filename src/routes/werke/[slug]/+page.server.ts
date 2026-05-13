@@ -4,13 +4,16 @@ import { bookmarks, reads, reviewReactions, reviews, users } from '$lib/db/schem
 import { getRatingByLabel } from '$lib/ratings';
 import {
 	getAuthor,
+	getCollectionType,
+	getDescendantWorkIds,
+	getFortsetzungNeighbors,
 	getGenre,
 	getLinksForWork,
 	getSimilarWorks,
 	getWork,
 	getWorks,
 } from '$lib/server/data';
-import { getDb } from '$lib/server/db';
+import { getDb, getWorkReviewStats } from '$lib/server/db';
 import type { LibriVoxData } from '$lib/types';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -158,6 +161,18 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 			}
 
 			score = rows.reduce((sum, r) => sum + r.rating, 0);
+
+			const descendants = getDescendantWorkIds(work.id);
+			if (descendants.length > 0) {
+				const descStats = await getWorkReviewStats(
+					platform.env.DB,
+					descendants,
+					platform.env.SESSION_KV,
+				);
+				for (const s of descStats.values()) {
+					score += s.totalPoints;
+				}
+			}
 		} catch {
 			// D1 tables may not exist yet in local dev
 		}
@@ -187,11 +202,23 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 	const parentWorks = work.parent_slugs
 		.map((slug) => workMap.get(slug))
 		.filter((w): w is NonNullable<typeof w> => !!w)
-		.map((w) => ({ title: w.title, slug: w.slug }));
+		.map((w) => ({ title: w.title, slug: w.slug, type: getCollectionType(w) }));
 
 	const childWorks = allWorks
 		.filter((w) => w.parent_slugs?.includes(work.slug))
 		.map((w) => ({ title: w.title, slug: w.slug, year_display: w.year_display }));
+
+	const collectionType = getCollectionType(work);
+	const childrenType = childWorks.length > 0 ? getChildrenType(work.id) : null;
+	const neighbors = getFortsetzungNeighbors(work.id);
+	const fortsetzungVon = neighbors.predecessors
+		.map((id) => workMap.get(id))
+		.filter((w): w is NonNullable<typeof w> => !!w)
+		.map((w) => ({ title: w.title, slug: w.slug }));
+	const fortgesetztDurch = neighbors.successors
+		.map((id) => workMap.get(id))
+		.filter((w): w is NonNullable<typeof w> => !!w)
+		.map((w) => ({ title: w.title, slug: w.slug }));
 
 	return {
 		work,
@@ -199,6 +226,10 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		genres,
 		parentWorks,
 		childWorks,
+		collectionType,
+		childrenType,
+		fortsetzungVon,
+		fortgesetztDurch,
 		similar,
 		reviews: workReviews,
 		userReview,
@@ -209,6 +240,15 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		librivoxData,
 	};
 };
+
+function getChildrenType(parentId: string): 'zyklus' | 'band' {
+	const children = getWorks().filter((w) => w.parent_slugs?.includes(parentId));
+	const anyHasChain = children.some((c) => {
+		const n = getFortsetzungNeighbors(c.id);
+		return n.predecessors.length > 0 || n.successors.length > 0;
+	});
+	return anyHasChain ? 'zyklus' : 'band';
+}
 
 export const actions: Actions = {
 	review: async ({ request, platform, locals, params }) => {

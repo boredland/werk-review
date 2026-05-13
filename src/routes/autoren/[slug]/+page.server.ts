@@ -1,5 +1,12 @@
 import { error } from '@sveltejs/kit';
-import { getAuthor, getGenre, getWorksByAuthor } from '$lib/server/data';
+import {
+	getAuthor,
+	getCollectionType,
+	getGenre,
+	getWorksByAuthor,
+	rollUpStats,
+	withDescendantIds,
+} from '$lib/server/data';
 import { getWorkReviewStats } from '$lib/server/db';
 import { getWikipediaImageUrl } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
@@ -11,31 +18,26 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 	const kv = platform?.env.SESSION_KV;
 	const forceRefresh = url.searchParams.get('refresh') === 'true';
 
-	const authorWorks = getWorksByAuthor(author.id).filter(
-		(w) => !w.parent_slugs || w.parent_slugs.length === 0,
-	);
+	const authorWorks = getWorksByAuthor(author.id).filter((w) => getCollectionType(w) !== 'band');
+	const statsIds = withDescendantIds(authorWorks.map((w) => w.id));
 	const [stats, imageUrl] = await Promise.all([
 		platform?.env.DB
-			? getWorkReviewStats(
-					platform.env.DB,
-					authorWorks.map((w) => w.id),
-					kv,
-				).catch(() => new Map())
+			? getWorkReviewStats(platform.env.DB, statsIds, kv).catch(() => new Map())
 			: new Map(),
 		getWikipediaImageUrl(author.name, forceRefresh ? undefined : kv),
 	]);
 
 	const works = authorWorks.map((w) => {
-		const s = stats.get(w.id);
+		const s = rollUpStats(w.id, stats);
 		return {
 			...w,
 			genre_name: w.genre_ids
 				.map((id) => getGenre(id)?.name)
 				.filter(Boolean)
 				.join(', '),
-			reviewCount: s?.reviewCount ?? 0,
-			avgRating: s?.avgRating ?? null,
-			totalPoints: s?.totalPoints ?? 0,
+			reviewCount: s.reviewCount,
+			avgRating: s.avgRating,
+			totalPoints: s.totalPoints,
 		};
 	});
 

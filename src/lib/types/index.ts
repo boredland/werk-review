@@ -25,6 +25,8 @@ export interface Work {
 	sources: Source[];
 }
 
+export type CollectionType = 'standalone' | 'reihe' | 'band' | 'zyklus';
+
 export interface Genre {
 	id: string;
 	name: string;

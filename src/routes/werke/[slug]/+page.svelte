@@ -107,16 +107,37 @@ $effect(() => {
 
 	{#if data.parentWorks.length > 0}
 		<p class="collection">
-			Aus der Sammlung:
+			{data.collectionType === 'zyklus' ? 'Aus dem Zyklus:' : 'Aus der Sammlung:'}
 			{#each data.parentWorks as pw, i}
 				<a href="/werke/{pw.slug}"><em>{pw.title}</em></a>{#if i < data.parentWorks.length - 1}<span>, </span>{/if}
 			{/each}
 		</p>
 	{/if}
 
+	{#if data.fortsetzungVon.length > 0 || data.fortgesetztDurch.length > 0}
+		<nav class="series-nav" aria-label="Reihenfolge">
+			{#if data.fortsetzungVon.length > 0}
+				<p class="series-line">
+					Fortsetzung von
+					{#each data.fortsetzungVon as p, i}
+						<a href="/werke/{p.slug}"><em>{p.title}</em></a>{#if i < data.fortsetzungVon.length - 1}<span>, </span>{/if}
+					{/each}
+				</p>
+			{/if}
+			{#if data.fortgesetztDurch.length > 0}
+				<p class="series-line">
+					Fortgesetzt durch
+					{#each data.fortgesetztDurch as s, i}
+						<a href="/werke/{s.slug}"><em>{s.title}</em></a>{#if i < data.fortgesetztDurch.length - 1}<span>, </span>{/if}
+					{/each}
+				</p>
+			{/if}
+		</nav>
+	{/if}
+
 	{#if data.childWorks.length > 0}
 		<section class="child-works">
-			<h2>In dieser Sammlung</h2>
+			<h2>{data.childrenType === 'zyklus' ? 'In diesem Zyklus' : 'In dieser Sammlung'}</h2>
 			<div class="similar-list">
 				{#each data.childWorks as cw}
 					<a href="/werke/{cw.slug}" class="similar-item">
@@ -322,6 +343,22 @@ $effect(() => {
 		padding: 0.75rem 1rem;
 		background: var(--color-gold-light);
 		border-left: 3px solid var(--color-gold);
+	}
+
+	.series-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		margin-bottom: 2rem;
+		padding: 0.75rem 1rem;
+		border-left: 3px solid var(--color-border);
+	}
+
+	.series-line {
+		font-family: var(--font-ui);
+		color: var(--color-text-muted);
+		font-size: 0.9rem;
+		margin: 0;
 	}
 
 	.child-works {

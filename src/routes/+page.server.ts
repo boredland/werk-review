@@ -1,4 +1,11 @@
-import { getAuthors, getGenres, getWorks } from '$lib/server/data';
+import {
+	getAuthors,
+	getCollectionType,
+	getGenres,
+	getWorks,
+	rollUpStats,
+	withDescendantIds,
+} from '$lib/server/data';
 import { getWorkReviewStats } from '$lib/server/db';
 import { getWikipediaImageUrls } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
@@ -10,15 +17,13 @@ export const load: PageServerLoad = async ({ platform }) => {
 	const kv = platform?.env.SESSION_KV;
 
 	const displayedAuthors = allAuthors.slice(0, 6);
-	const recentWorksRaw = works.slice(0, 6);
+	const visibleWorks = works.filter((w) => getCollectionType(w) !== 'band');
+	const recentWorksRaw = visibleWorks.slice(0, 6);
+	const statsIds = withDescendantIds(recentWorksRaw.map((w) => w.id));
 
 	const [stats, imageUrls] = await Promise.all([
 		platform?.env.DB
-			? getWorkReviewStats(
-					platform.env.DB,
-					recentWorksRaw.map((w) => w.id),
-					kv,
-				).catch(() => new Map())
+			? getWorkReviewStats(platform.env.DB, statsIds, kv).catch(() => new Map())
 			: new Map(),
 		getWikipediaImageUrls(
 			displayedAuthors.map((a) => a.name),
@@ -32,12 +37,12 @@ export const load: PageServerLoad = async ({ platform }) => {
 	}));
 
 	const recentWorks = recentWorksRaw.map((w) => {
-		const s = stats.get(w.id);
+		const s = rollUpStats(w.id, stats);
 		return {
 			...w,
-			reviewCount: s?.reviewCount ?? 0,
-			avgRating: s?.avgRating ?? null,
-			totalPoints: s?.totalPoints ?? 0,
+			reviewCount: s.reviewCount,
+			avgRating: s.avgRating,
+			totalPoints: s.totalPoints,
 		};
 	});
 
