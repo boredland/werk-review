@@ -18,6 +18,7 @@ export interface Work {
 	year: number | null;
 	year_display: string;
 	parent_slugs: string[];
+	fortsetzung_von_ids: string[];
 	plot: string | null;
 	plot_source: { label: string; url: string } | null;
 	plot_fetched_at: string | null;

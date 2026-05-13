@@ -65,6 +65,7 @@ const WorkSchema = z.object({
 	year: z.number().nullable(),
 	year_display: z.string(),
 	parent_slugs: z.array(z.string()),
+	fortsetzung_von_ids: z.array(z.string()),
 	plot: z.string().nullable(),
 	sources: z.array(
 		z.object({
@@ -212,6 +213,7 @@ function transformWork(row) {
 		year,
 		year_display: row.year_display || '',
 		parent_slugs: parsePipeSeparated(row.parent_ids || row.parent_slug || row.parent_slugs),
+		fortsetzung_von_ids: parsePipeSeparated(row.fortsetzung_von || row.fortsetzung_von_ids),
 		plot: row.plot || null,
 		sources,
 	};
