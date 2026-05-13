@@ -57,15 +57,28 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		} catch {}
 	}
 
-	const similar = getSimilarWorks(work.id)
+	const similarRaw = getSimilarWorks(work.id)
 		.map((s) => workMap.get(s.work_id))
 		.filter((w): w is NonNullable<typeof w> => !!w)
-		.filter((w) => !userReadWorkIds.has(w.id))
-		.map((w) => ({
+		.filter((w) => !userReadWorkIds.has(w.id));
+	const similarStats = platform?.env.DB
+		? await getWorkReviewStats(
+				platform.env.DB,
+				withDescendantIds(similarRaw.map((w) => w.id)),
+				platform.env.SESSION_KV,
+			).catch(() => new Map())
+		: new Map();
+	const similar = similarRaw.map((w) => {
+		const s = rollUpStats(w.id, similarStats);
+		return {
 			slug: w.slug,
 			title: w.title,
 			year_display: w.year_display,
-		}));
+			reviewCount: s.reviewCount,
+			avgRating: s.avgRating,
+			totalPoints: s.totalPoints,
+		};
+	});
 
 	let workReviews: {
 		id: string;

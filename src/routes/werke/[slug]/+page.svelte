@@ -260,9 +260,12 @@ const jsonLd = $derived.by(() => {
 			<h2>Ähnliche Werke</h2>
 			<div class="similar-list">
 				{#each data.similar as s}
-					<a href="/werke/{s.slug}" class="similar-item">
+					<a href="/werke/{s.slug}" class="similar-item similar-item--with-rating">
 						<span class="similar-title">{s.title}</span>
-						<span class="similar-year">{s.year_display}</span>
+						<span class="similar-end">
+							<RatingBadge avgRating={s.avgRating} totalPoints={s.totalPoints} reviewCount={s.reviewCount} />
+							<span class="similar-year">{s.year_display}</span>
+						</span>
 					</a>
 				{/each}
 			</div>
