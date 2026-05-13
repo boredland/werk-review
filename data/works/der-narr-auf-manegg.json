@@ -9,7 +9,9 @@
 	"aliases": [],
 	"year": 1877,
 	"year_display": "1877",
-	"parent_slugs": [],
+	"parent_slugs": [
+		"zuericher-novellen"
+	],
 	"plot": null,
 	"sources": []
 }

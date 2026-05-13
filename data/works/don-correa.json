@@ -9,7 +9,9 @@
 	"aliases": [],
 	"year": 1881,
 	"year_display": "1881",
-	"parent_slugs": [],
+	"parent_slugs": [
+		"das-sinngedicht"
+	],
 	"plot": null,
 	"sources": []
 }

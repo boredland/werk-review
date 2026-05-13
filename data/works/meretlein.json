@@ -9,7 +9,9 @@
 	"aliases": [],
 	"year": 1879,
 	"year_display": "1879–1880",
-	"parent_slugs": [],
+	"parent_slugs": [
+		"der-gruene-heinrich-zweite-fassung"
+	],
 	"plot": null,
 	"sources": []
 }

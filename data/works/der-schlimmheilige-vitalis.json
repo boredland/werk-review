@@ -11,7 +11,9 @@
 	],
 	"year": 1872,
 	"year_display": "1872",
-	"parent_slugs": [],
+	"parent_slugs": [
+		"sieben-legenden"
+	],
 	"plot": null,
 	"sources": []
 }

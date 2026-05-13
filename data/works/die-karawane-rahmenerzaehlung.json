@@ -11,7 +11,9 @@
 	],
 	"year": 1825,
 	"year_display": "1825",
-	"parent_slugs": [],
+	"parent_slugs": [
+		"maerchen-almanach-auf-das-jahr-1826-für-soehne-und-toechter-gebildeter-staende"
+	],
 	"plot": null,
 	"sources": []
 }
