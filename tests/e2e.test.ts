@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('werk.review E2E', () => {
 	test('homepage loads and shows hero', async ({ page, isMobile }) => {
 		await page.goto('/');
-		await expect(page.locator('h1')).toContainText('Willkommen werter Suchender');
+		await expect(page.locator('h1')).toContainText('Klassische deutsche Literatur');
 		if (!isMobile) {
 			await expect(page.locator('nav')).toBeVisible();
 		}
