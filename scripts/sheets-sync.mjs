@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 
@@ -234,6 +234,19 @@ function writeJson(path, data) {
 	writeFileSync(path, `${JSON.stringify(data, null, '\t')}\n`);
 }
 
+function pruneOrphans(dir, keepSlugs) {
+	let removed = 0;
+	for (const file of readdirSync(dir)) {
+		if (!file.endsWith('.json')) continue;
+		const slug = file.slice(0, -5);
+		if (!keepSlugs.has(slug)) {
+			unlinkSync(join(dir, file));
+			removed++;
+		}
+	}
+	return removed;
+}
+
 async function main() {
 	if (!SHEET_ID) {
 		console.error('Error: GOOGLE_SHEET_ID environment variable is not set.');
@@ -289,9 +302,11 @@ async function main() {
 
 	const WORKS_DIR = join(DATA_DIR, 'works');
 	const AUTHORS_DIR = join(DATA_DIR, 'authors');
+	const LINKS_DIR = join(DATA_DIR, 'links');
 
 	mkdirSync(WORKS_DIR, { recursive: true });
 	mkdirSync(AUTHORS_DIR, { recursive: true });
+	mkdirSync(LINKS_DIR, { recursive: true });
 
 	// Write new files
 	authors.forEach((a) => {
@@ -302,8 +317,14 @@ async function main() {
 	});
 	writeJson(join(DATA_DIR, 'genres.json'), genres);
 
+	const authorSlugs = new Set(authors.map((a) => a.slug));
+	const workSlugs = new Set(works.map((w) => w.slug));
+	const removedAuthors = pruneOrphans(AUTHORS_DIR, authorSlugs);
+	const removedWorks = pruneOrphans(WORKS_DIR, workSlugs);
+	const removedLinks = pruneOrphans(LINKS_DIR, workSlugs);
+
 	console.log(
-		`\nDone:\n  ${authors.length} authors\n  ${works.length} works\n  ${genres.length} genres`,
+		`\nDone:\n  ${authors.length} authors (${removedAuthors} pruned)\n  ${works.length} works (${removedWorks} pruned)\n  ${genres.length} genres\n  links: ${removedLinks} pruned`,
 	);
 }
 
