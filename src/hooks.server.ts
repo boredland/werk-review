@@ -4,6 +4,15 @@ import { getSession, SESSION_COOKIE } from '$lib/server/auth';
 const NO_CACHE_ROUTES = ['/login', '/registrieren', '/konto', '/admin', '/logout'];
 
 export const handle: Handle = async ({ event, resolve }) => {
+	if (event.url.hostname === 'www.werk.review') {
+		const target = new URL(event.url.href);
+		target.hostname = 'werk.review';
+		return new Response(null, {
+			status: 308,
+			headers: { location: target.href },
+		});
+	}
+
 	event.locals.user = null;
 
 	const token = event.cookies.get(SESSION_COOKIE);
