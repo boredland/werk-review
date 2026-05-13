@@ -3,6 +3,7 @@ import { enhance } from '$app/forms';
 import { page } from '$app/state';
 import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 import LibriVoxPlayer from '$lib/components/LibriVoxPlayer.svelte';
+import RatingBadge from '$lib/components/RatingBadge.svelte';
 import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
 import ReviewList from '$lib/components/reviews/ReviewList.svelte';
 
@@ -172,9 +173,12 @@ const jsonLd = $derived.by(() => {
 			<h2>{data.childrenType === 'zyklus' ? 'In diesem Zyklus' : 'In dieser Sammlung'}</h2>
 			<div class="similar-list">
 				{#each data.childWorks as cw}
-					<a href="/werke/{cw.slug}" class="similar-item">
+					<a href="/werke/{cw.slug}" class="similar-item similar-item--with-rating">
 						<span class="similar-title">{cw.title}</span>
-						<span class="similar-year">{cw.year_display}</span>
+						<span class="similar-end">
+							<RatingBadge avgRating={cw.avgRating} totalPoints={cw.totalPoints} reviewCount={cw.reviewCount} />
+							<span class="similar-year">{cw.year_display}</span>
+						</span>
 					</a>
 				{/each}
 			</div>
@@ -604,6 +608,17 @@ const jsonLd = $derived.by(() => {
 		font-size: 0.82rem;
 		color: var(--color-gold);
 		font-weight: 500;
+	}
+
+	.similar-item--with-rating {
+		align-items: center;
+	}
+
+	.similar-end {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		flex-shrink: 0;
 	}
 
 	@media (max-width: 640px) {

@@ -12,6 +12,8 @@ import {
 	getSimilarWorks,
 	getWork,
 	getWorks,
+	rollUpStats,
+	withDescendantIds,
 } from '$lib/server/data';
 import { getDb, getWorkReviewStats } from '$lib/server/db';
 import type { LibriVoxData } from '$lib/types';
@@ -204,9 +206,25 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		.filter((w): w is NonNullable<typeof w> => !!w)
 		.map((w) => ({ title: w.title, slug: w.slug, type: getCollectionType(w) }));
 
-	const childWorks = allWorks
-		.filter((w) => w.parent_slugs?.includes(work.slug))
-		.map((w) => ({ title: w.title, slug: w.slug, year_display: w.year_display }));
+	const childWorkRaw = allWorks.filter((w) => w.parent_slugs?.includes(work.slug));
+	const childStats = platform?.env.DB
+		? await getWorkReviewStats(
+				platform.env.DB,
+				withDescendantIds(childWorkRaw.map((w) => w.id)),
+				platform.env.SESSION_KV,
+			).catch(() => new Map())
+		: new Map();
+	const childWorks = childWorkRaw.map((w) => {
+		const s = rollUpStats(w.id, childStats);
+		return {
+			title: w.title,
+			slug: w.slug,
+			year_display: w.year_display,
+			reviewCount: s.reviewCount,
+			avgRating: s.avgRating,
+			totalPoints: s.totalPoints,
+		};
+	});
 
 	const collectionType = getCollectionType(work);
 	const childrenType = childWorks.length > 0 ? getChildrenType(work.id) : null;
