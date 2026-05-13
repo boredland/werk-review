@@ -25,7 +25,6 @@ bucket_name = "werk-review-images"
 
 [[send_email]]
 name = "EMAIL"
-remote = true
 
 [observability]
 enabled = true
