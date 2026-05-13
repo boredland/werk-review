@@ -1,0 +1,20 @@
+{
+	"id": "der-geheime-teilhaber",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der geheime Teilhaber",
+	"slug": "der-geheime-teilhaber",
+	"aliases": [
+		"The Secret Sharer, Der heimliche Teilhaber"
+	],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [
+		"zwischen-land-und-see"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

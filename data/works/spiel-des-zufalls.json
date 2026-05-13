@@ -1,0 +1,18 @@
+{
+	"id": "spiel-des-zufalls",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Spiel des Zufalls",
+	"slug": "spiel-des-zufalls",
+	"aliases": [
+		"Chance"
+	],
+	"year": 1913,
+	"year_display": "1913",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

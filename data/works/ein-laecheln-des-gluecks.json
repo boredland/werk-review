@@ -1,0 +1,20 @@
+{
+	"id": "ein-laecheln-des-gluecks",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Lächeln des Glücks",
+	"slug": "ein-laecheln-des-gluecks",
+	"aliases": [
+		"A Smile of Fortune"
+	],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [
+		"zwischen-land-und-see"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

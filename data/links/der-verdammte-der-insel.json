@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/an-outcast-of-the-islands-by-joseph-conrad/",
+		"label": "Outcast Of The Islands",
+		"librivox_id": "7007"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	}
+]

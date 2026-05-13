@@ -1,0 +1,20 @@
+{
+	"id": "die-lagune",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Lagune",
+	"slug": "die-lagune",
+	"aliases": [
+		"The Lagoon"
+	],
+	"year": 1898,
+	"year_display": "1898",
+	"parent_slugs": [
+		"geschichten-der-unrast"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

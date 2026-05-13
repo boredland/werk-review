@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/twixt-land-and-sea-by-joseph-conrad/",
+		"label": "'Twixt Land and Sea",
+		"librivox_id": "18306"
+	}
+]

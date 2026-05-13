@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-nigger-of-the-narcissus-by-joseph-conrad/",
+		"label": "Nigger of the Narcissus",
+		"librivox_id": "4111"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-nigger-vom-narzissus",
+		"label": "Der Nigger von der Narzissus"
+	}
+]

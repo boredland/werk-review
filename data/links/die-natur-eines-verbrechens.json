@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-nature-of-a-crime-by-joseph-conrad/",
+		"label": "Nature of a Crime",
+		"librivox_id": "18848"
+	}
+]

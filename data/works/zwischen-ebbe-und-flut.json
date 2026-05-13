@@ -1,0 +1,18 @@
+{
+	"id": "zwischen-ebbe-und-flut",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Zwischen Ebbe und Flut",
+	"slug": "zwischen-ebbe-und-flut",
+	"aliases": [
+		"Im Wechsel der Gezeiten / Within the tide"
+	],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

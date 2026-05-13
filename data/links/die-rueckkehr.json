@@ -1,0 +1,23 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/tales-of-unrest-by-joseph-conrad/",
+		"label": "Tales of Unrest",
+		"librivox_id": "2792"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/tales-of-unrest-ver2-by-joseph-conrad/",
+		"label": "Tales of Unrest (version 2)",
+		"librivox_id": "17672"
+	}
+]

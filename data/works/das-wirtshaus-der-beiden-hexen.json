@@ -1,0 +1,20 @@
+{
+	"id": "das-wirtshaus-der-beiden-hexen",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Wirtshaus der beiden Hexen",
+	"slug": "das-wirtshaus-der-beiden-hexen",
+	"aliases": [
+		"The Inn of the Two Witches: A Find"
+	],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [
+		"zwischen-ebbe-und-flut"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

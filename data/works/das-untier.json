@@ -1,0 +1,20 @@
+{
+	"id": "das-untier",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Untier",
+	"slug": "das-untier",
+	"aliases": [
+		"The Brute"
+	],
+	"year": 1908,
+	"year_display": "1908",
+	"parent_slugs": [
+		"sechs-erzaehlungen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

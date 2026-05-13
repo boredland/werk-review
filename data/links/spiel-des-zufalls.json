@@ -1,0 +1,29 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/chance-by-joseph-conrad/",
+		"label": "Chance",
+		"librivox_id": "6344"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/chance-ver2-by-joseph-conrad/",
+		"label": "Chance (version 2)",
+		"librivox_id": "18492"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/spiel-des-zufalls/",
+		"label": "Spiel des Zufalls"
+	}
+]

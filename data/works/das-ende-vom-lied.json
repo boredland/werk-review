@@ -1,0 +1,20 @@
+{
+	"id": "das-ende-vom-lied",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Ende vom Lied",
+	"slug": "das-ende-vom-lied",
+	"aliases": [
+		"The End of the Tether"
+	],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"jugend"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

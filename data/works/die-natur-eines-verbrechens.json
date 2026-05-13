@@ -1,0 +1,18 @@
+{
+	"id": "die-natur-eines-verbrechens",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Natur eines Verbrechens",
+	"slug": "die-natur-eines-verbrechens",
+	"aliases": [
+		"The Nature of a Crime"
+	],
+	"year": 1909,
+	"year_display": "1909",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

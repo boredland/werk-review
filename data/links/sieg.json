@@ -1,0 +1,23 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/victory-an-island-tale-by-joseph-conrad/",
+		"label": "Victory: An Island Tale",
+		"librivox_id": "4422"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/victory-ver2-by-joseph-conrad/",
+		"label": "Victory (Version 2)",
+		"librivox_id": "18840"
+	}
+]

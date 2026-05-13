@@ -1,0 +1,16 @@
+{
+	"id": "lord-jim",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Lord Jim",
+	"slug": "lord-jim",
+	"aliases": [],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

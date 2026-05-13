@@ -1,0 +1,16 @@
+{
+	"id": "nostromo",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Nostromo",
+	"slug": "nostromo",
+	"aliases": [],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

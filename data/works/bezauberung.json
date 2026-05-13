@@ -1,0 +1,18 @@
+{
+	"id": "bezauberung",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Bezauberung",
+	"slug": "bezauberung",
+	"aliases": [
+		"Romance"
+	],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

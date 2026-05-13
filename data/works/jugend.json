@@ -1,0 +1,20 @@
+{
+	"id": "jugend",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Jugend",
+	"slug": "jugend",
+	"aliases": [
+		"Youth"
+	],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"jugend"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

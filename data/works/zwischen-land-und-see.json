@@ -1,0 +1,18 @@
+{
+	"id": "zwischen-land-und-see",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Zwischen Land und See",
+	"slug": "zwischen-land-und-see",
+	"aliases": [
+		"Twixt land and sea"
+	],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

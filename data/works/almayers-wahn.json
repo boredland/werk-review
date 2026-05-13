@@ -1,0 +1,18 @@
+{
+	"id": "almayers-wahn",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Almayers Wahn",
+	"slug": "almayers-wahn",
+	"aliases": [
+		"Almayer's folly / Almayers Luftschloss"
+	],
+	"year": 1895,
+	"year_display": "1895",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

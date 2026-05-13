@@ -1,0 +1,18 @@
+{
+	"id": "sechs-erzaehlungen",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Sechs Erzählungen",
+	"slug": "sechs-erzaehlungen",
+	"aliases": [
+		"A set of Six"
+	],
+	"year": 1908,
+	"year_display": "1908",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "der-freibeuter",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Freibeuter",
+	"slug": "der-freibeuter",
+	"aliases": [
+		"The rover"
+	],
+	"year": 1923,
+	"year_display": "1923",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

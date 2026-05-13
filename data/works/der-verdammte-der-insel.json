@@ -1,0 +1,18 @@
+{
+	"id": "der-verdammte-der-insel",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Verdammte der Insel",
+	"slug": "der-verdammte-der-insel",
+	"aliases": [
+		"An outcast of the islands"
+	],
+	"year": 1896,
+	"year_display": "1896",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

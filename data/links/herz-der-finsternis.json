@@ -1,0 +1,43 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/heart-of-darkness-by-joseph-conrad",
+		"label": "Heart of Darkness",
+		"librivox_id": "64"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/heart-of-darkness-version-2-by-joseph-conrad/",
+		"label": "Heart of Darkness (version 2)",
+		"librivox_id": "6336"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/heart-of-darkness-version-3-by-joseph-conrad/",
+		"label": "Heart of Darkness (version 3)",
+		"librivox_id": "15059"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/heart-of-darkness-ver4-by-joseph-conrad/",
+		"label": "Heart of Darkness (version 4)",
+		"librivox_id": "17219"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/das-herz-der-finsternis",
+		"label": "Herz der Finsternis"
+	}
+]

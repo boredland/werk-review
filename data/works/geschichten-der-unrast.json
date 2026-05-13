@@ -1,0 +1,18 @@
+{
+	"id": "geschichten-der-unrast",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Geschichten der Unrast",
+	"slug": "geschichten-der-unrast",
+	"aliases": [
+		"Tales of unrest"
+	],
+	"year": 1898,
+	"year_display": "1898",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "die-rettung",
+	"author_id": "joseph-conrad",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Rettung",
+	"slug": "die-rettung",
+	"aliases": [
+		"The rescue"
+	],
+	"year": 1920,
+	"year_display": "1920",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

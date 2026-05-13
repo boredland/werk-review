@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-secret-agent-by-joseph-conrad/",
+		"label": "Secret Agent",
+		"librivox_id": "406"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
+		"label": "Rover",
+		"librivox_id": "15237"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-geheimagent/",
+		"label": "Der Geheimagent"
+	}
+]
