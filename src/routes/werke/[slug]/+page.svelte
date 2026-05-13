@@ -84,6 +84,14 @@ $effect(() => {
 				</div>
 			{/if}
 		</div>
+		{#if data.work.aliases.length > 0}
+			<p class="aliases">
+				auch:
+				{#each data.work.aliases as alias, i}
+					<em>{alias}</em>{#if i < data.work.aliases.length - 1}<span>, </span>{/if}
+				{/each}
+			</p>
+		{/if}
 		<div class="meta">
 			{#if data.author}
 				<a href="/autoren/{data.author.slug}" class="meta-link">{data.author.name}</a>
@@ -262,6 +270,12 @@ $effect(() => {
 	}
 
 	.work-header h1 {
+		margin-bottom: 0.5rem;
+	}
+
+	.aliases {
+		font-size: 0.95rem;
+		color: var(--color-text-muted);
 		margin-bottom: 0.5rem;
 	}
 
