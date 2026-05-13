@@ -211,7 +211,7 @@ function transformWork(row) {
 		aliases: parsePipeSeparated(row.aliases),
 		year,
 		year_display: row.year_display || '',
-		parent_slugs: parsePipeSeparated(row.parent_slug || row.parent_slugs),
+		parent_slugs: parsePipeSeparated(row.parent_ids || row.parent_slug || row.parent_slugs),
 		plot: row.plot || null,
 		sources,
 	};
