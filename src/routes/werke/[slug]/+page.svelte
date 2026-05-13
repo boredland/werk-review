@@ -434,29 +434,6 @@ $effect(() => {
 		text-decoration: underline;
 	}
 
-	.sources {
-		margin-bottom: 2rem;
-	}
-
-	.sources h3 {
-		font-family: var(--font-ui);
-		font-size: 0.82rem;
-		font-weight: 500;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--color-text-muted);
-	}
-
-	.sources ul {
-		list-style: none;
-		padding: 0;
-	}
-
-	.sources li {
-		padding: 0.3rem 0;
-		font-size: 0.9rem;
-	}
-
 	.login-hint {
 		margin-top: 2.5rem;
 		padding: 1.25rem 1.5rem;

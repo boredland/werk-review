@@ -1,9 +1,9 @@
 const THUMB_SIZE = 960;
-const CACHE_TTL = 86400 * 7;
+const CACHE_TTL = 3600; // Reduced from 1 week to 1 hour to propagate fixes
 
 export async function getWikipediaImageUrl(name: string, kv?: KVNamespace): Promise<string | null> {
 	const title = name.replace(/ /g, '_');
-	const cacheKey = `wiki-img:${title}`;
+	const cacheKey = `wiki-img-v2:${title}`;
 
 	if (kv) {
 		const cached = await kv.get(cacheKey);
@@ -12,7 +12,11 @@ export async function getWikipediaImageUrl(name: string, kv?: KVNamespace): Prom
 
 	try {
 		const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`;
-		const res = await fetch(url);
+		const res = await fetch(url, {
+			headers: {
+				'User-Agent': 'werk.review/0.1 (https://werk.review; info@werk.review) generic-library/1.0',
+			},
+		});
 		if (!res.ok) {
 			// Only cache negative hits for 1 hour to allow for retry
 			if (kv) kv.put(cacheKey, '__none__', { expirationTtl: 3600 });
@@ -27,13 +31,12 @@ export async function getWikipediaImageUrl(name: string, kv?: KVNamespace): Prom
 		let imageUrl = data.thumbnail?.source ?? data.originalimage?.source ?? null;
 
 		// If it's a thumbnail URL, try to get a higher resolution version
-		if (
-			imageUrl &&
-			imageUrl.includes('/thumb/') &&
-			data.thumbnail &&
-			data.thumbnail.width < THUMB_SIZE
-		) {
+		if (imageUrl?.includes('/thumb/') && data.thumbnail && data.thumbnail.width < THUMB_SIZE) {
 			imageUrl = imageUrl.replace(/\/\d+px-/, `/${THUMB_SIZE}px-`);
+		}
+
+		if (imageUrl) {
+			imageUrl = `/img/${imageUrl.replace('https://', '')}?w=${THUMB_SIZE}`;
 		}
 
 		if (kv) {
