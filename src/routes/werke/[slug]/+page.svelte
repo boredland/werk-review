@@ -19,6 +19,33 @@ $effect(() => {
 	bookmarked = data.isBookmarked;
 	isRead = data.isRead;
 });
+
+const jsonLd = $derived.by(() => {
+	const reviewCount = data.reviews.length;
+	const avgRating =
+		reviewCount > 0 ? data.reviews.reduce((acc, r) => acc + r.rating, 0) / reviewCount : null;
+	return JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Book',
+		name: data.work.title,
+		alternateName: data.work.aliases.length > 0 ? data.work.aliases : undefined,
+		author: data.author ? { '@type': 'Person', name: data.author.name } : undefined,
+		datePublished: data.work.year?.toString(),
+		genre: data.genres.map((g) => g.name).join(', '),
+		description: data.work.plot || undefined,
+		url: `https://werk.review/werke/${data.work.slug}`,
+		aggregateRating:
+			reviewCount > 0 && avgRating !== null
+				? {
+						'@type': 'AggregateRating',
+						ratingValue: avgRating,
+						reviewCount,
+						bestRating: 3,
+						worstRating: -3,
+					}
+				: undefined,
+	});
+});
 </script>
 
 <svelte:head>
@@ -27,32 +54,7 @@ $effect(() => {
 	<meta property="og:description" content="{data.author?.name ?? 'Unbekannt'} · {data.genres.map(g => g.name).join(', ')} · {data.work.year_display}" />
 	<meta property="og:type" content="book" />
 
-	<!-- Structured Data (JSON-LD) -->
-	<script type="application/ld+json">
-		{JSON.stringify({
-			'@context': 'https://schema.org',
-			'@type': 'Book',
-			name: data.work.title,
-			author: data.author
-				? {
-						'@type': 'Person',
-						name: data.author.name,
-					}
-				: undefined,
-			datePublished: data.work.year?.toString(),
-			genre: data.genres.map(g => g.name).join(', '),
-			description: data.work.plot || undefined,
-			aggregateRating: data.score
-				? {
-						'@type': 'AggregateRating',
-						ratingValue: data.reviews.reduce((acc, r) => acc + r.rating, 0) / data.reviews.length || undefined,
-						reviewCount: data.reviews.length,
-						bestRating: 3,
-						worstRating: -3,
-					}
-				: undefined,
-		})}
-	</script>
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <Breadcrumbs items={[
@@ -85,12 +87,14 @@ $effect(() => {
 			{/if}
 		</div>
 		{#if data.work.aliases.length > 0}
-			<p class="aliases">
-				auch:
-				{#each data.work.aliases as alias, i}
-					<em>{alias}</em>{#if i < data.work.aliases.length - 1}<span>, </span>{/if}
-				{/each}
-			</p>
+			<div class="aliases" aria-label="Alternative Titel">
+				<span class="aliases-label">auch bekannt als</span>
+				<ul class="aliases-list">
+					{#each data.work.aliases as alias}
+						<li class="alias-chip">{alias}</li>
+					{/each}
+				</ul>
+			</div>
 		{/if}
 		<div class="meta">
 			{#if data.author}
@@ -295,9 +299,41 @@ $effect(() => {
 	}
 
 	.aliases {
-		font-size: 0.95rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.45rem 0.6rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.aliases-label {
+		font-family: var(--font-ui);
+		font-size: 0.72rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
 		color: var(--color-text-muted);
-		margin-bottom: 0.5rem;
+	}
+
+	.aliases-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem 0.45rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.alias-chip {
+		font-family: var(--font-display);
+		font-size: 0.85rem;
+		font-style: italic;
+		color: var(--color-text);
+		background: var(--color-surface-warm, var(--color-surface));
+		border: 1px solid var(--color-border-light);
+		border-radius: 999px;
+		padding: 0.1rem 0.65rem;
+		line-height: 1.5;
 	}
 
 	.meta {

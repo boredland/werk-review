@@ -12,6 +12,21 @@ const totalPages = $derived(Math.ceil(data.works.length / PAGE_SIZE));
 const paginated = $derived(
 	data.works.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
 );
+
+const jsonLd = $derived(
+	JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: data.author.name,
+		birthDate: data.author.born?.toString(),
+		deathDate: data.author.died?.toString(),
+		description: data.author.bio || undefined,
+		image: data.imageUrl || undefined,
+		url: `https://werk.review/autoren/${data.author.slug}`,
+		sameAs: [data.wikiUrl].filter(Boolean),
+		alternateName: data.author.aliases.length > 0 ? data.author.aliases : undefined,
+	}),
+);
 </script>
 
 <svelte:head>
@@ -23,20 +38,7 @@ const paginated = $derived(
 		<meta property="og:image" content={data.imageUrl} />
 	{/if}
 
-	<!-- Structured Data (JSON-LD) -->
-	<script type="application/ld+json">
-		{JSON.stringify({
-			'@context': 'https://schema.org',
-			'@type': 'Person',
-			name: data.author.name,
-			birthDate: data.author.born?.toString(),
-			deathDate: data.author.died?.toString(),
-			description: data.author.bio || undefined,
-			image: data.imageUrl || undefined,
-			url: `https://werk.review/autoren/${data.author.slug}`,
-			sameAs: [data.wikiUrl, ...data.author.sources.map((s) => s.url)].filter(Boolean),
-		})}
-	</script>
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <Breadcrumbs items={[
