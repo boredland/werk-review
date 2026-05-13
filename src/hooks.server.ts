@@ -27,6 +27,16 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	const response = await resolve(event);
 
+	response.headers.set('strict-transport-security', 'max-age=63072000; includeSubDomains; preload');
+	response.headers.set('x-content-type-options', 'nosniff');
+	response.headers.set('x-frame-options', 'DENY');
+	response.headers.set('referrer-policy', 'strict-origin-when-cross-origin');
+	response.headers.set(
+		'permissions-policy',
+		'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+	);
+	response.headers.set('cross-origin-opener-policy', 'same-origin');
+
 	const path = event.url.pathname;
 	if (!response.headers.has('cache-control') && event.request.method === 'GET') {
 		if (NO_CACHE_ROUTES.some((r) => path === r || path.startsWith(`${r}/`))) {
