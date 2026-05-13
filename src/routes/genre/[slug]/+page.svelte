@@ -40,12 +40,49 @@ $effect(() => {
 
 const totalPages = $derived(Math.ceil(sorted.length / PAGE_SIZE));
 const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE));
+
+const jsonLd = $derived(
+	JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'CollectionPage',
+				name: data.genre.name,
+				url: `https://werk.review/genre/${data.genre.slug}`,
+				inLanguage: 'de',
+				mainEntity: {
+					'@type': 'ItemList',
+					numberOfItems: data.works.length,
+					itemListElement: data.works.slice(0, 50).map((w, i) => ({
+						'@type': 'ListItem',
+						position: i + 1,
+						url: `https://werk.review/werke/${w.slug}`,
+						name: w.title,
+					})),
+				},
+			},
+			{
+				'@type': 'BreadcrumbList',
+				itemListElement: [
+					{ '@type': 'ListItem', position: 1, name: 'Genres', item: 'https://werk.review/genre' },
+					{
+						'@type': 'ListItem',
+						position: 2,
+						name: data.genre.name,
+						item: `https://werk.review/genre/${data.genre.slug}`,
+					},
+				],
+			},
+		],
+	}),
+);
 </script>
 
 <svelte:head>
 	<title>{data.genre.name} – werk.review</title>
 	<meta property="og:title" content="{data.genre.name} – werk.review" />
 	<meta property="og:description" content="{data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'} im Genre {data.genre.name}" />
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <Breadcrumbs items={[

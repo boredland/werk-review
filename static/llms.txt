@@ -1,0 +1,32 @@
+# werk.review
+
+> Deutschsprachige Datenbank klassischer Literatur. Bibliografische Einträge zu Autoren und Werken der deutschen Literaturgeschichte mit Inhaltsangaben, Bewertungen und Links zu Volltext- und Hörbuch-Quellen (Projekt Gutenberg-DE, Internet Archive, LibriVox).
+
+## Autoren
+
+- [/autoren](https://werk.review/autoren): Liste aller Autoren, alphabetisch und nach Bewertungspunkten sortierbar
+- [/autoren/{slug}](https://werk.review/autoren/gottfried-keller): Autorenseite mit Biografie, Lebensdaten, Aliassen und vollständiger Werkliste
+
+## Werke
+
+- [/werke](https://werk.review/werke): Liste aller Werke mit Filter nach Genre und Sortierung nach Jahr, Titel oder Bewertung
+- [/werke/{slug}](https://werk.review/werke/der-gruene-heinrich-zweite-fassung): Werkseite mit Titel, alternativen Titeln, Entstehungsjahr, Genre, Inhaltsangabe, Bewertungen und Links zu Volltexten / Hörbüchern
+- Beziehungen: Reihen, Bände in Sammlungen und Zyklen sind sichtbar verknüpft
+
+## Genre
+
+- [/genre](https://werk.review/genre): Übersicht aller Genres
+- [/genre/{slug}](https://werk.review/genre/roman): Werke eines Genres
+
+## Suche
+
+- [/suche?q=...](https://werk.review/suche?q=Keller): Volltextsuche über Autoren, Werke und Genres
+
+## Datenherkunft
+
+- Biografien und Inhaltsangaben stammen primär aus Wikipedia (mit Quellenangabe und Abrufdatum auf jeder Seite) und werden teilweise durch redaktionelle Ergänzungen kuratiert.
+- Bewertungen (-3 bis +3) und Rezensionen sind Nutzerbeiträge.
+
+## Nutzung durch KI
+
+Inhalte stehen für Suche und KI-gestützte Antworten zur Verfügung. Bitte zitieren Sie die jeweilige Werk- oder Autorenseite als Quelle.

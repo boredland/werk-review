@@ -1,8 +1,11 @@
 <script lang="ts">
+import { page } from '$app/state';
 import '../app.css';
 import Header from '$lib/components/layout/Header.svelte';
 
 let { children } = $props();
+
+const canonicalUrl = $derived(`https://werk.review${page.url.pathname.replace(/\/$/, '') || '/'}`);
 </script>
 
 <svelte:head>
@@ -10,11 +13,12 @@ let { children } = $props();
 	<meta property="og:site_name" content="werk.review" />
 	<meta property="og:locale" content="de_DE" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="/icon-512.png" />
+	<meta property="og:image" content="https://werk.review/icon-512.png" />
 	<meta property="og:image:width" content="512" />
 	<meta property="og:image:height" content="512" />
 	<meta name="twitter:card" content="summary" />
 	<link rel="alternate" type="application/rss+xml" title="werk.review – Neue Bewertungen" href="/feed.xml" />
+	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <Header />

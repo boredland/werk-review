@@ -11,6 +11,34 @@ let genreFilter = $state('');
 let sortBy = $state<'year' | 'title' | 'rating'>('year');
 let currentPage = $state(1);
 
+const jsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'CollectionPage',
+			name: 'Werke',
+			url: 'https://werk.review/werke',
+			inLanguage: 'de',
+			mainEntity: {
+				'@type': 'ItemList',
+				numberOfItems: data.works.length,
+				itemListElement: data.works.slice(0, 50).map((w, i) => ({
+					'@type': 'ListItem',
+					position: i + 1,
+					url: `https://werk.review/werke/${w.slug}`,
+					name: w.title,
+				})),
+			},
+		},
+		{
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Werke', item: 'https://werk.review/werke' },
+			],
+		},
+	],
+});
+
 const filtered = $derived(
 	data.works.filter((w) => {
 		if (genreFilter && !w.genre_ids.includes(genreFilter)) return false;
@@ -46,6 +74,7 @@ const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPa
 
 <svelte:head>
 	<title>Werke – werk.review</title>
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <div class="page-header">

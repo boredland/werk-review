@@ -13,20 +13,45 @@ const paginated = $derived(
 	data.works.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
 );
 
-const jsonLd = $derived(
-	JSON.stringify({
-		'@context': 'https://schema.org',
+const jsonLd = $derived.by(() => {
+	const absoluteImage = data.imageUrl
+		? data.imageUrl.startsWith('http')
+			? data.imageUrl
+			: `https://werk.review${data.imageUrl}`
+		: undefined;
+	const person = {
 		'@type': 'Person',
 		name: data.author.name,
 		birthDate: data.author.born?.toString(),
 		deathDate: data.author.died?.toString(),
 		description: data.author.bio || undefined,
-		image: data.imageUrl || undefined,
+		image: absoluteImage,
 		url: `https://werk.review/autoren/${data.author.slug}`,
 		sameAs: [data.wikiUrl].filter(Boolean),
 		alternateName: data.author.aliases.length > 0 ? data.author.aliases : undefined,
-	}),
-);
+	};
+	const breadcrumbs = {
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Autoren',
+				item: 'https://werk.review/autoren',
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: data.author.name,
+				item: `https://werk.review/autoren/${data.author.slug}`,
+			},
+		],
+	};
+	return JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [person, breadcrumbs],
+	});
+});
 </script>
 
 <svelte:head>
@@ -35,7 +60,7 @@ const jsonLd = $derived(
 	<meta property="og:description" content="{data.author.born ?? '?'}–{data.author.died ?? '?'} · {data.works.length} {data.works.length === 1 ? 'Werk' : 'Werke'}" />
 	<meta property="og:type" content="profile" />
 	{#if data.imageUrl}
-		<meta property="og:image" content={data.imageUrl} />
+		<meta property="og:image" content={data.imageUrl.startsWith('http') ? data.imageUrl : `https://werk.review${data.imageUrl}`} />
 	{/if}
 
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}

@@ -2,18 +2,50 @@
 import RatingBadge from '$lib/components/RatingBadge.svelte';
 
 let { data } = $props();
+
+const jsonLd = $derived(
+	JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'WebSite',
+				name: 'werk.review',
+				url: 'https://werk.review',
+				inLanguage: 'de',
+				description:
+					'Datenbank klassischer deutschsprachiger Literatur – Autoren, Werke und Bewertungen.',
+				potentialAction: {
+					'@type': 'SearchAction',
+					target: {
+						'@type': 'EntryPoint',
+						urlTemplate: 'https://werk.review/suche?q={search_term_string}',
+					},
+					'query-input': 'required name=search_term_string',
+				},
+			},
+			{
+				'@type': 'Organization',
+				name: 'werk.review',
+				url: 'https://werk.review',
+				logo: 'https://werk.review/icon-512.png',
+			},
+		],
+	}),
+);
 </script>
 
 <svelte:head>
-	<title>werk.review – Datenbank klassischer Literatur</title>
-	<meta property="og:title" content="werk.review – Datenbank klassischer Literatur" />
+	<title>werk.review – Klassische deutsche Literatur: Autoren, Werke, Bewertungen</title>
+	<meta property="og:title" content="werk.review – Klassische deutsche Literatur" />
 	<meta property="og:description" content="{data.totalAuthors} Autoren, {data.totalWorks} Werke, {data.genres.length} Genres – Entdecke die Meisterwerke der deutschen Literatur" />
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <section class="hero">
-	<h1>Willkommen werter Suchender,</h1>
+	<h1>Klassische deutsche Literatur</h1>
+	<p class="hero-kicker">Autoren, Werke, Bewertungen</p>
 	<p class="hero-welcome">
-		diese Website ist eine Datenbank der klassischen Literatur. Bibliothekarisch sind hier die wichtigsten klassischen Autoren mit all ihren Werken eingepflegt, welche in deutscher Sprache erhältlich sind.
+		Willkommen, werter Suchender. Diese Website ist eine Datenbank der klassischen Literatur. Bibliothekarisch sind hier die wichtigsten klassischen Autoren mit all ihren Werken eingepflegt, welche in deutscher Sprache erhältlich sind.
 	</p>
 	<div class="hero-stats">
 		<div class="stat">
@@ -104,9 +136,19 @@ let { data } = $props();
 
 	.hero h1 {
 		font-size: 2.8rem;
-		margin-bottom: 1.5rem;
+		margin-bottom: 0.35rem;
 		letter-spacing: -0.02em;
 		line-height: 1.1;
+	}
+
+	.hero-kicker {
+		font-family: var(--font-ui);
+		font-size: 0.85rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--color-gold);
+		margin-bottom: 1.5rem;
 	}
 
 	.hero-stats {

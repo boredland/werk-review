@@ -35,10 +35,39 @@ $effect(() => {
 
 const totalPages = $derived(Math.ceil(sorted.length / PAGE_SIZE));
 const paginated = $derived(sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE));
+
+const jsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'CollectionPage',
+			name: 'Autoren',
+			url: 'https://werk.review/autoren',
+			inLanguage: 'de',
+			mainEntity: {
+				'@type': 'ItemList',
+				numberOfItems: data.authors.length,
+				itemListElement: data.authors.slice(0, 50).map((a, i) => ({
+					'@type': 'ListItem',
+					position: i + 1,
+					url: `https://werk.review/autoren/${a.slug}`,
+					name: a.name,
+				})),
+			},
+		},
+		{
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{ '@type': 'ListItem', position: 1, name: 'Autoren', item: 'https://werk.review/autoren' },
+			],
+		},
+	],
+});
 </script>
 
 <svelte:head>
 	<title>Autoren – werk.review</title>
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <div class="page-header">

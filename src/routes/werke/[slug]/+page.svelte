@@ -24,26 +24,54 @@ const jsonLd = $derived.by(() => {
 	const reviewCount = data.reviews.length;
 	const avgRating =
 		reviewCount > 0 ? data.reviews.reduce((acc, r) => acc + r.rating, 0) / reviewCount : null;
-	return JSON.stringify({
-		'@context': 'https://schema.org',
+	const schemaRating = avgRating !== null ? avgRating + 4 : null;
+	const breadcrumbs = {
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Werke',
+				item: 'https://werk.review/werke',
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: data.work.title,
+				item: `https://werk.review/werke/${data.work.slug}`,
+			},
+		],
+	};
+	const book = {
 		'@type': 'Book',
 		name: data.work.title,
 		alternateName: data.work.aliases.length > 0 ? data.work.aliases : undefined,
-		author: data.author ? { '@type': 'Person', name: data.author.name } : undefined,
+		inLanguage: 'de',
+		author: data.author
+			? {
+					'@type': 'Person',
+					name: data.author.name,
+					url: `https://werk.review/autoren/${data.author.slug}`,
+				}
+			: undefined,
 		datePublished: data.work.year?.toString(),
 		genre: data.genres.map((g) => g.name).join(', '),
 		description: data.work.plot || undefined,
 		url: `https://werk.review/werke/${data.work.slug}`,
 		aggregateRating:
-			reviewCount > 0 && avgRating !== null
+			reviewCount > 0 && schemaRating !== null
 				? {
 						'@type': 'AggregateRating',
-						ratingValue: avgRating,
+						ratingValue: schemaRating,
 						reviewCount,
-						bestRating: 3,
-						worstRating: -3,
+						bestRating: 7,
+						worstRating: 1,
 					}
 				: undefined,
+	};
+	return JSON.stringify({
+		'@context': 'https://schema.org',
+		'@graph': [book, breadcrumbs],
 	});
 });
 </script>
