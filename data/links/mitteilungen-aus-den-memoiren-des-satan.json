@@ -1,5 +1,12 @@
 [
 	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/der-mann-im-mond-oder-der-zug-des-herzens-ist-des-schicksals-stimme-by-wilhelm-hauff/",
+		"label": "Mann im Mond oder Der Zug des Herzens ist des Schicksals Stimme",
+		"librivox_id": "3469"
+	},
+	{
 		"source": "Projekt Gutenberg-DE",
 		"format": "Volltext",
 		"url": "https://projekt-gutenberg.org/authors/wilhelm-hauff/books/wilhelm-hauff-mitteilungen-aus-den-memoiren-des-satan",
