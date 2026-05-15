@@ -1,6 +1,7 @@
 <script lang="ts">
 import EmptyState from '$lib/components/EmptyState.svelte';
 import Pagination from '$lib/components/Pagination.svelte';
+import RatingBadge from '$lib/components/RatingBadge.svelte';
 
 const PAGE_SIZE = 20;
 
@@ -108,9 +109,7 @@ const jsonLd = JSON.stringify({
 				{/if}
 			</div>
 			<div class="author-stats">
-				{#if author.recommendations > 0}
-					<span class="stat-badge">{author.recommendations} {author.recommendations === 1 ? 'Empfehlung' : 'Empfehlungen'}</span>
-				{/if}
+				<RatingBadge avgRating={author.avgRating} totalPoints={author.totalPoints} reviewCount={author.reviewCount} />
 				<span class="work-count">{author.workCount} {author.workCount === 1 ? 'Werk' : 'Werke'}</span>
 			</div>
 		</a>
@@ -268,17 +267,6 @@ const jsonLd = JSON.stringify({
 		flex-direction: column;
 		align-items: flex-end;
 		gap: 0.25rem;
-	}
-
-	.stat-badge {
-		font-family: var(--font-ui);
-		font-size: 0.8rem;
-		font-weight: 600;
-		color: var(--color-accent);
-		background: var(--color-accent-light);
-		padding: 0.15rem 0.5rem;
-		border-radius: 12px;
-		white-space: nowrap;
 	}
 
 	.work-count {

@@ -38,26 +38,26 @@ export const load: PageServerLoad = async ({ platform }) => {
 	const authors = allAuthors.map((a) => {
 		const authorWorks = worksByAuthor.get(a.id) ?? [];
 		let totalPoints = 0;
-		let recommendations = 0;
+		let reviewCount = 0;
 		for (const w of authorWorks) {
 			const s = rollUpStats(w.id, workStats);
 			totalPoints += s.totalPoints;
-			if (s.reviewCount > 0 && s.avgRating !== null && s.avgRating > 0) recommendations++;
+			reviewCount += s.reviewCount;
 		}
 		return {
 			...a,
 			workCount: authorWorks.length,
 			imageUrl: imageUrls.get(a.name) ?? null,
 			totalPoints,
-			recommendations,
+			reviewCount,
+			avgRating: reviewCount > 0 ? totalPoints / reviewCount : null,
 			rank: 0,
 		};
 	});
 
-	// Calculate ranking based on total points
 	authors.sort((a, b) => {
 		if (b.totalPoints !== a.totalPoints) return b.totalPoints - a.totalPoints;
-		if (b.recommendations !== a.recommendations) return b.recommendations - a.recommendations;
+		if (b.reviewCount !== a.reviewCount) return b.reviewCount - a.reviewCount;
 		return a.name.localeCompare(b.name, 'de');
 	});
 
