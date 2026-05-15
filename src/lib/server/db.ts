@@ -41,28 +41,33 @@ export async function getWorkReviewStats(
 
 	if (uncachedWorkIds.length > 0) {
 		const db = getDb(d1);
-		const rows = await db
-			.select({
-				workId: reviews.workId,
-				reviewCount: count(reviews.id),
-				avgRating: avg(reviews.rating),
-				totalPoints: sum(reviews.rating),
-			})
-			.from(reviews)
-			.where(inArray(reviews.workId, uncachedWorkIds))
-			.groupBy(reviews.workId);
-
 		const fetchedStats = new Map<string, WorkReviewStats>();
 		for (const id of uncachedWorkIds) {
 			fetchedStats.set(id, { reviewCount: 0, avgRating: null, totalPoints: 0 });
 		}
 
-		for (const row of rows) {
-			fetchedStats.set(row.workId, {
-				reviewCount: row.reviewCount,
-				avgRating: row.avgRating !== null ? Number(row.avgRating) : null,
-				totalPoints: row.totalPoints !== null ? Number(row.totalPoints) : 0,
-			});
+		// D1 has a bound-parameter limit; chunk to stay safely under it
+		const CHUNK_SIZE = 50;
+		for (let i = 0; i < uncachedWorkIds.length; i += CHUNK_SIZE) {
+			const chunk = uncachedWorkIds.slice(i, i + CHUNK_SIZE);
+			const rows = await db
+				.select({
+					workId: reviews.workId,
+					reviewCount: count(reviews.id),
+					avgRating: avg(reviews.rating),
+					totalPoints: sum(reviews.rating),
+				})
+				.from(reviews)
+				.where(inArray(reviews.workId, chunk))
+				.groupBy(reviews.workId);
+
+			for (const row of rows) {
+				fetchedStats.set(row.workId, {
+					reviewCount: row.reviewCount,
+					avgRating: row.avgRating !== null ? Number(row.avgRating) : null,
+					totalPoints: row.totalPoints !== null ? Number(row.totalPoints) : 0,
+				});
+			}
 		}
 
 		for (const [id, stats] of fetchedStats.entries()) {
@@ -70,7 +75,6 @@ export async function getWorkReviewStats(
 		}
 
 		if (kv) {
-			// Don't await the cache set to avoid blocking the response
 			Promise.all(
 				Array.from(fetchedStats.entries()).map(([id, stats]) =>
 					kv.put(`review-stats:${id}`, JSON.stringify(stats), { expirationTtl: STATS_CACHE_TTL }),
