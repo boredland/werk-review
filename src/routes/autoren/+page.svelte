@@ -108,7 +108,9 @@ const jsonLd = JSON.stringify({
 				{/if}
 			</div>
 			<div class="author-stats">
-				<span class="stat-badge">{author.recommendations} {author.recommendations === 1 ? 'Empfehlung' : 'Empfehlungen'}</span>
+				{#if author.recommendations > 0}
+					<span class="stat-badge">{author.recommendations} {author.recommendations === 1 ? 'Empfehlung' : 'Empfehlungen'}</span>
+				{/if}
 				<span class="work-count">{author.workCount} {author.workCount === 1 ? 'Werk' : 'Werke'}</span>
 			</div>
 		</a>

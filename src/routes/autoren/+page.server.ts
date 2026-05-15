@@ -1,37 +1,55 @@
-import { getAuthors, getWorksByAuthor } from '$lib/server/data';
-import { getAuthorReviewStats } from '$lib/server/db';
+import {
+	getAuthors,
+	getCollectionType,
+	getWorksByAuthor,
+	rollUpStats,
+	withDescendantIds,
+} from '$lib/server/data';
+import { getWorkReviewStats } from '$lib/server/db';
 import { getWikipediaImageUrls } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ platform }) => {
 	const allAuthors = getAuthors();
 	const kv = platform?.env.SESSION_KV;
-	const workIdsByAuthor = new Map<string, string[]>();
-	for (const a of allAuthors) {
-		workIdsByAuthor.set(
-			a.id,
-			getWorksByAuthor(a.id).map((w) => w.id),
-		);
-	}
 
-	const [imageUrls, stats] = await Promise.all([
+	const worksByAuthor = new Map(
+		allAuthors.map((a) => [
+			a.id,
+			getWorksByAuthor(a.id).filter((w) => getCollectionType(w) !== 'band'),
+		]),
+	);
+	const allStatsIds = withDescendantIds(
+		Array.from(worksByAuthor.values())
+			.flat()
+			.map((w) => w.id),
+	);
+
+	const [imageUrls, workStats] = await Promise.all([
 		getWikipediaImageUrls(
 			allAuthors.map((a) => a.name),
 			kv,
 		),
 		platform?.env.DB
-			? getAuthorReviewStats(platform.env.DB, workIdsByAuthor, kv).catch(() => new Map())
+			? getWorkReviewStats(platform.env.DB, allStatsIds, kv).catch(() => new Map())
 			: new Map(),
 	]);
 
 	const authors = allAuthors.map((a) => {
-		const s = stats.get(a.id);
+		const authorWorks = worksByAuthor.get(a.id) ?? [];
+		let totalPoints = 0;
+		let recommendations = 0;
+		for (const w of authorWorks) {
+			const s = rollUpStats(w.id, workStats);
+			totalPoints += s.totalPoints;
+			if (s.reviewCount > 0 && s.avgRating !== null && s.avgRating > 0) recommendations++;
+		}
 		return {
 			...a,
-			workCount: workIdsByAuthor.get(a.id)?.length ?? 0,
+			workCount: authorWorks.length,
 			imageUrl: imageUrls.get(a.name) ?? null,
-			totalPoints: s?.totalPoints ?? 0,
-			recommendations: s?.recommendations ?? 0,
+			totalPoints,
+			recommendations,
 			rank: 0,
 		};
 	});
