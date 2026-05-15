@@ -4,15 +4,15 @@
 	"genre_ids": [
 		"erzaehlband"
 	],
-	"title": "Jugend: Eine Erzählung und zwei andere Geschichten",
+	"title": "Jugend",
 	"slug": "jugend-erzaehlband",
 	"aliases": [
-		"Youth: A Narrative, and Two Other Stories"
+		"Youth"
 	],
 	"year": 1902,
 	"year_display": "1902",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "In diesem Sammelband erzählt Conrad von den Abenteuern, Prüfungen und ersten Erfahrungen junger Seeleute auf hoher See. Mit poetischer Sprache und psychologischer Schärfe schildert er Mut, Freundschaft, Sehnsucht und die Ungewissheiten des Erwachsenwerdens. Jugend ist eine Sammlung von Geschichten über die Herausforderungen des Lebens, die Kraft der Erinnerung und die unvergängliche Faszination des Meeres. [KI-generierter Inhalt]",
 	"sources": []
 }
