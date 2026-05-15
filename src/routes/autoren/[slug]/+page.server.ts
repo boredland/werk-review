@@ -27,19 +27,27 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 		getWikipediaImageUrl(author.name, forceRefresh ? undefined : kv),
 	]);
 
-	const works = authorWorks.map((w) => {
-		const s = rollUpStats(w.id, stats);
-		return {
-			...w,
-			genre_name: w.genre_ids
-				.map((id) => getGenre(id)?.name)
-				.filter(Boolean)
-				.join(', '),
-			reviewCount: s.reviewCount,
-			avgRating: s.avgRating,
-			totalPoints: s.totalPoints,
-		};
-	});
+	const works = authorWorks
+		.map((w) => {
+			const s = rollUpStats(w.id, stats);
+			return {
+				...w,
+				genre_name: w.genre_ids
+					.map((id) => getGenre(id)?.name)
+					.filter(Boolean)
+					.join(', '),
+				reviewCount: s.reviewCount,
+				avgRating: s.avgRating,
+				totalPoints: s.totalPoints,
+			};
+		})
+		.sort((a, b) => {
+			const aHasRating = a.reviewCount > 0;
+			const bHasRating = b.reviewCount > 0;
+			if (aHasRating !== bHasRating) return aHasRating ? -1 : 1;
+			if (aHasRating && bHasRating) return b.totalPoints - a.totalPoints;
+			return (a.year ?? 9999) - (b.year ?? 9999);
+		});
 
 	const wikiUrl = `https://de.wikipedia.org/wiki/${encodeURIComponent(author.name.replace(/ /g, '_'))}`;
 

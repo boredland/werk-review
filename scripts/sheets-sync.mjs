@@ -190,7 +190,7 @@ function transformAuthor(row) {
 }
 
 function transformWork(row) {
-	const slug = slugify(row.title);
+	const slug = row.id ? row.id : slugify(row.title);
 	const yearFromStr = row.year_display || '';
 	const yearMatch = yearFromStr.match(/\d{4}/);
 	const year = yearMatch ? Number(yearMatch[0]) : null;
