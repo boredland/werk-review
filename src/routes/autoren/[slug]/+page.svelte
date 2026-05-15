@@ -84,9 +84,12 @@ const jsonLd = $derived.by(() => {
 		{/if}
 		<div>
 			<h1>{data.author.name}</h1>
-			{#if data.author.born || data.author.died}
-				<p class="years">{data.author.born ?? '?'}–{data.author.died ?? '?'}</p>
-			{/if}
+			<div class="author-meta">
+				{#if data.author.born || data.author.died}
+					<p class="years">{data.author.born ?? '?'}–{data.author.died ?? '?'}</p>
+				{/if}
+				<RatingBadge avgRating={data.authorAvgRating} totalPoints={data.authorTotalPoints} reviewCount={data.authorReviewCount} />
+			</div>
 		</div>
 	</header>
 
@@ -154,11 +157,18 @@ const jsonLd = $derived.by(() => {
 		margin-bottom: 0;
 	}
 
+	.author-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-top: 0.15rem;
+	}
+
 	.years {
 		font-family: var(--font-ui);
 		color: var(--color-text-muted);
 		font-size: 1rem;
-		margin-top: 0.15rem;
+		margin: 0;
 	}
 
 	.bio {

@@ -49,6 +49,10 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 			return (a.year ?? 9999) - (b.year ?? 9999);
 		});
 
+	const authorReviewCount = works.reduce((sum, w) => sum + w.reviewCount, 0);
+	const authorTotalPoints = works.reduce((sum, w) => sum + w.totalPoints, 0);
+	const authorAvgRating = authorReviewCount > 0 ? authorTotalPoints / authorReviewCount : null;
+
 	const wikiUrl = `https://de.wikipedia.org/wiki/${encodeURIComponent(author.name.replace(/ /g, '_'))}`;
 
 	return {
@@ -56,5 +60,8 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 		works,
 		imageUrl,
 		wikiUrl,
+		authorReviewCount,
+		authorTotalPoints,
+		authorAvgRating,
 	};
 };
