@@ -15,6 +15,11 @@
 		"sechs-erzaehlungen"
 	],
 	"fortsetzung_von_ids": [],
-	"plot": null,
-	"sources": []
+	"plot": "Das Duell ist eine Erzählung von Joseph Conrad, die 1908 in der Sammlung A Set of Six erschien. Sie erschien aber zuvor bereits einmal in dem Band The Point of Honour.",
+	"sources": [],
+	"plot_source": {
+		"label": "Wikipedia",
+		"url": "https://de.wikipedia.org/wiki/Das_Duell_(Conrad)"
+	},
+	"plot_fetched_at": "2026-05-16"
 }
