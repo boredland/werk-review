@@ -15,16 +15,6 @@
 		"jugend-erzaehlband"
 	],
 	"fortsetzung_von_ids": [],
-	"plot": "Herz der Finsternis ist eine erstmals 1899 im Blackwood’s Magazine in drei Teilausgaben abgedruckte Erzählung von Joseph Conrad, die im November 1902 auch in Buchform veröffentlicht wurde. In dieser Erzählung berichtet der Seemann Charlie Marlow Freunden von seiner Reise in Zentralafrika als Kapitän eines Flussdampfers. Er wurde dort Augenzeuge einer beispiellosen Grausamkeit gegenüber den Einheimischen und zweifelte zunehmend an den Rechtfertigungen der Ausbeutung, aber seine einflussreichen, in die Ausbeutung von Kolonien verwickelten Londoner Freunde zeigen sich wenig beeindruckt von Marlows Erschütterung.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Herz_der_Finsternis"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Herz_der_Finsternis"
-	},
-	"plot_fetched_at": "2026-05-21"
+	"plot": null,
+	"sources": []
 }
