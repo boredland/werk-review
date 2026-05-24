@@ -15,16 +15,6 @@
 		"jugend-erzaehlband"
 	],
 	"fortsetzung_von_ids": [],
-	"plot": "Unter Jugend ist im Allgemeinen eine soziale Altersgruppe gemeint, die sich in ihrem Alter und ihrem Status in der Gesellschaft unterscheidet und in der Altersperiode zwischen Kindheit und mittlerem Alter liegt. Die unteren Altersgrenzen werden zwischen 14 und 16 Jahren festgelegt, die oberen Altersgrenzen zwischen 25 und 35 Jahren und sogar später festgelegt. Wegen ihrer Länge wird die Lebensphase Jugend auch in die Abschnitte Adoleszenz und Postadoleszenz untergliedert, wobei umstritten ist, wo die Grenze verläuft. In der Praxis ist die Volljährigkeit relevant und nicht eine wissenschaftliche Abgrenzung.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Jugend"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Jugend"
-	},
-	"plot_fetched_at": "2026-05-24"
+	"plot": null,
+	"sources": []
 }
