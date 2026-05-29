@@ -15,6 +15,16 @@
 		"taifun-erzaehlband"
 	],
 	"fortsetzung_von_ids": [],
-	"plot": null,
-	"sources": []
+	"plot": "Taifun bezeichnet einen tropischen Wirbelsturm in Ost- und Südostasien sowie im nordwestlichen Teil des Pazifiks, westlich der internationalen Datumsgrenze und nördlich des Äquators. Er wird durch ein mächtiges Tiefdruckgebiet gebildet.",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Taifun"
+		}
+	],
+	"plot_source": {
+		"label": "Wikipedia",
+		"url": "https://de.wikipedia.org/wiki/Taifun"
+	},
+	"plot_fetched_at": "2026-05-29"
 }
