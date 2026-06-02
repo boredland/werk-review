@@ -12,5 +12,11 @@
 		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
 		"label": "Rover",
 		"librivox_id": "15237"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-nigger-vom-narzissus",
+		"label": "Der Nigger von der Narzissus"
 	}
 ]
