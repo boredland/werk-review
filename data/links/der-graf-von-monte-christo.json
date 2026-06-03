@@ -7,12 +7,6 @@
 		"librivox_id": "9845"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/alexandre-dumas-der-aeltere/books/der-graf-von-monte-christo-1",
-		"label": "Der Graf von Monte Christo"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/dergrafvonmonte02dumagoog",
@@ -20,5 +14,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/alexandre-dumas-der-aeltere/books/der-graf-von-monte-christo-1",
+		"label": "Der Graf von Monte Christo"
 	}
 ]
