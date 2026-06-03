@@ -1,0 +1,18 @@
+{
+	"id": "kapitaen-pamphile",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Kapitän Pamphile",
+	"slug": "kapitaen-pamphile",
+	"aliases": [
+		"Le capitaine Pamphile"
+	],
+	"year": 1839,
+	"year_display": "1839",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

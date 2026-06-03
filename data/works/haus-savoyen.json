@@ -1,0 +1,18 @@
+{
+	"id": "haus-savoyen",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"romanreihe"
+	],
+	"title": "Das Haus Savoyen",
+	"slug": "haus-savoyen",
+	"aliases": [
+		"La Maison de Savoie"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

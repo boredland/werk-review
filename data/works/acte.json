@@ -1,0 +1,18 @@
+{
+	"id": "acte",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Acte",
+	"slug": "acte",
+	"aliases": [
+		"Acte: Roman aus der Zeit des Kaisers Nero / Acté / Akte"
+	],
+	"year": 1838,
+	"year_display": "1838",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "mohikaner-von-paris",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Mohikaner von Paris",
+	"slug": "mohikaner-von-paris",
+	"aliases": [
+		"Die Mohicaner von Paris, Les Mohicans de Paris"
+	],
+	"year": 1854,
+	"year_display": "1854-1855",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [
+		"mohikaner-von-paris"
+	],
+	"plot": null,
+	"sources": []
+}

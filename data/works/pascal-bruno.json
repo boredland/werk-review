@@ -1,0 +1,16 @@
+{
+	"id": "pascal-bruno",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Pascal Bruno",
+	"slug": "pascal-bruno",
+	"aliases": [],
+	"year": 1837,
+	"year_display": "1837",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

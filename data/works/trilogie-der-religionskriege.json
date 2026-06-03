@@ -1,0 +1,18 @@
+{
+	"id": "trilogie-der-religionskriege",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"romanreihe"
+	],
+	"title": "Trilogie der Religionskriege",
+	"slug": "trilogie-der-religionskriege",
+	"aliases": [
+		"Trilogie der letzten Valois"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "murat",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Murat",
+	"slug": "murat",
+	"aliases": [],
+	"year": 1839,
+	"year_display": "1839–1840",
+	"parent_slugs": [
+		"beruehmte-kriminalfaelle"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

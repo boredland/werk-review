@@ -1,0 +1,18 @@
+{
+	"id": "die-flucht-nach-varennes",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Flucht nach Varennes",
+	"slug": "die-flucht-nach-varennes",
+	"aliases": [
+		"La Route de Varennes"
+	],
+	"year": 1858,
+	"year_display": "1858",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

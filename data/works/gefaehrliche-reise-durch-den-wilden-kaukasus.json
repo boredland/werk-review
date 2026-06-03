@@ -1,0 +1,18 @@
+{
+	"id": "gefaehrliche-reise-durch-den-wilden-kaukasus",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Gefährliche Reise durch den wilden Kaukasus",
+	"slug": "gefaehrliche-reise-durch-den-wilden-kaukasus",
+	"aliases": [
+		"Le Caucase"
+	],
+	"year": 1858,
+	"year_display": "1858-1859",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

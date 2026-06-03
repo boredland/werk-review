@@ -1,0 +1,18 @@
+{
+	"id": "der-frauenkrieg",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Der Frauenkrieg",
+	"slug": "der-frauenkrieg",
+	"aliases": [
+		"La Guerre des femmes"
+	],
+	"year": 1845,
+	"year_display": "1845",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,22 @@
+{
+	"id": "zehn-jahre-nachher",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Zehn Jahre nachher",
+	"slug": "zehn-jahre-nachher",
+	"aliases": [
+		"Zehn Jahre später / Der Graf von Bragelonne / Der Vicomte von Bragelonne / Der Mann in der eisernen Maske"
+	],
+	"year": 1847,
+	"year_display": "1847",
+	"parent_slugs": [
+		"die-drei-musketiere-zyklus"
+	],
+	"fortsetzung_von_ids": [
+		"zwanzig-jahre-danach"
+	],
+	"plot": null,
+	"sources": []
+}

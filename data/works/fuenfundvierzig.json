@@ -1,0 +1,20 @@
+{
+	"id": "fuenfundvierzig",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Die Fünfundvierzig",
+	"slug": "fuenfundvierzig",
+	"aliases": [],
+	"year": 1847,
+	"year_display": "1847-1848",
+	"parent_slugs": [
+		"trilogie-der-religionskriege"
+	],
+	"fortsetzung_von_ids": [
+		"dame-von-monsoreau"
+	],
+	"plot": null,
+	"sources": []
+}

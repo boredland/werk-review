@@ -1,0 +1,18 @@
+{
+	"id": "der-wolfsfuehrer",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Wolfsführer. Ein Werwolfroman",
+	"slug": "der-wolfsfuehrer",
+	"aliases": [
+		"Le Meneur de loups"
+	],
+	"year": 1857,
+	"year_display": "1857",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

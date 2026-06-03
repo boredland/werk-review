@@ -1,0 +1,20 @@
+{
+	"id": "jakob-i-und-jakob-ii",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Jakob I und Jakob II",
+	"slug": "jakob-i-und-jakob-ii",
+	"aliases": [
+		"Jacques I et Jacques II"
+	],
+	"year": 1835,
+	"year_display": "1835",
+	"parent_slugs": [
+		"antonys-erinnerungen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

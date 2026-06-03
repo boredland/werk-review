@@ -1,0 +1,18 @@
+{
+	"id": "olympia-von-cleves",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Olympia von Clèves",
+	"slug": "olympia-von-cleves",
+	"aliases": [
+		"Olympe de Clèves"
+	],
+	"year": 1851,
+	"year_display": "1851",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

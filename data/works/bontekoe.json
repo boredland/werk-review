@@ -1,0 +1,18 @@
+{
+	"id": "bontekoe",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Bontekoe",
+	"slug": "bontekoe",
+	"aliases": [],
+	"year": 1852,
+	"year_display": "1852",
+	"parent_slugs": [
+		"schiffbrueche-wahre-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

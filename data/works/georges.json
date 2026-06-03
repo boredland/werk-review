@@ -1,0 +1,16 @@
+{
+	"id": "georges",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Georges",
+	"slug": "georges",
+	"aliases": [],
+	"year": 1843,
+	"year_display": "1843",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

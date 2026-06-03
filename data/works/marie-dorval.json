@@ -1,0 +1,18 @@
+{
+	"id": "marie-dorval",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Marie Dorval",
+	"slug": "marie-dorval",
+	"aliases": [],
+	"year": 1845,
+	"year_display": "1845",
+	"parent_slugs": [
+		"eine-amazone-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

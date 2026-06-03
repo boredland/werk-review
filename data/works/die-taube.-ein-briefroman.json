@@ -1,0 +1,18 @@
+{
+	"id": "die-taube.-ein-briefroman",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"briefroman"
+	],
+	"title": "Die Taube. Ein Briefroman",
+	"slug": "die-taube.-ein-briefroman",
+	"aliases": [
+		"La colombe"
+	],
+	"year": 1850,
+	"year_display": "1850",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

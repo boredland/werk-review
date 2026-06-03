@@ -1,0 +1,20 @@
+{
+	"id": "joseph-balsamo",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Joseph Balsamo",
+	"slug": "joseph-balsamo",
+	"aliases": [
+		"Cagliostro / Der Ratschluss des Magiers"
+	],
+	"year": 1846,
+	"year_display": "1846",
+	"parent_slugs": [
+		"memoiren-eines-arztes"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

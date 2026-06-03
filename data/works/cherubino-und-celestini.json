@@ -1,0 +1,20 @@
+{
+	"id": "cherubino-und-celestini",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Cherubino und Celestini",
+	"slug": "cherubino-und-celestini",
+	"aliases": [
+		"Cherubino et Celestini"
+	],
+	"year": 1835,
+	"year_display": "1835",
+	"parent_slugs": [
+		"antonys-erinnerungen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

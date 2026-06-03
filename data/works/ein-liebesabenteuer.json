@@ -1,0 +1,18 @@
+{
+	"id": "ein-liebesabenteuer",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Ein Liebesabenteuer",
+	"slug": "ein-liebesabenteuer",
+	"aliases": [
+		"Une aventure d'amour. un voyage en Italie"
+	],
+	"year": 1859,
+	"year_display": "1859-1860",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

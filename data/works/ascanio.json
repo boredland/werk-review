@@ -1,0 +1,18 @@
+{
+	"id": "ascanio",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Ascanio",
+	"slug": "ascanio",
+	"aliases": [
+		"Ascanio / l'Orfèvre du roi"
+	],
+	"year": 1843,
+	"year_display": "1843",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

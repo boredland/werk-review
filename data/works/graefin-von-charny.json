@@ -1,0 +1,22 @@
+{
+	"id": "graefin-von-charny",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Die Gräfin von Charny",
+	"slug": "graefin-von-charny",
+	"aliases": [
+		"La Comtesse de Charny"
+	],
+	"year": 1852,
+	"year_display": "1852-1855",
+	"parent_slugs": [
+		"memoiren-eines-arztes"
+	],
+	"fortsetzung_von_ids": [
+		"ange-pitou, der-gruene-heinrich-erste-fassung"
+	],
+	"plot": null,
+	"sources": []
+}

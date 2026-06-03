@@ -1,0 +1,16 @@
+{
+	"id": "napoleon-bonaparte",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Napoleon Bonaparte",
+	"slug": "napoleon-bonaparte",
+	"aliases": [],
+	"year": 1831,
+	"year_display": "1831",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

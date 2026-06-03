@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/histoire-dun-casse-noisette-by-dumas-alexandre/ ",
+		"label": "Histoire d'un casse-noisette",
+		"librivox_id": "7361"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
+		"librivox_id": "9845"
+	}
+]

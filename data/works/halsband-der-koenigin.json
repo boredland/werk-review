@@ -1,0 +1,22 @@
+{
+	"id": "halsband-der-koenigin",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Das Halsband der Königin",
+	"slug": "halsband-der-koenigin",
+	"aliases": [
+		"Die Halsbandaffäre / Le Collier de la reine"
+	],
+	"year": 1848,
+	"year_display": "1848–50",
+	"parent_slugs": [
+		"memoiren-eines-arztes"
+	],
+	"fortsetzung_von_ids": [
+		"joseph-balsamo, der-gruene-heinrich-erste-fassung"
+	],
+	"plot": null,
+	"sources": []
+}

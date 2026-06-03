@@ -1,0 +1,20 @@
+{
+	"id": "bartholomaeusnacht-",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Die Bartholomäusnacht",
+	"slug": "bartholomaeusnacht-",
+	"aliases": [
+		"Die Königin Margot, Der Geliebte einer Königin"
+	],
+	"year": 1845,
+	"year_display": "1845",
+	"parent_slugs": [
+		"trilogie-der-religionskriege"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

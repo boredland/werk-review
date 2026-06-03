@@ -1,0 +1,16 @@
+{
+	"id": "eine-amazone-erzaehlband",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Eine Amazone",
+	"slug": "eine-amazone-erzaehlband",
+	"aliases": [],
+	"year": 1845,
+	"year_display": "1845",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

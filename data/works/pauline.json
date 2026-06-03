@@ -1,0 +1,16 @@
+{
+	"id": "pauline",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Pauline",
+	"slug": "pauline",
+	"aliases": [],
+	"year": 1838,
+	"year_display": "1838",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

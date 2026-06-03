@@ -1,0 +1,22 @@
+{
+	"id": "zwanzig-jahre-danach",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Zwanzig Jahre danach",
+	"slug": "zwanzig-jahre-danach",
+	"aliases": [
+		"Zwanzig Jahre nachher / Zwanzig Jahre später"
+	],
+	"year": 1845,
+	"year_display": "1845",
+	"parent_slugs": [
+		"die-drei-musketiere-zyklus"
+	],
+	"fortsetzung_von_ids": [
+		"die-drei-musketiere"
+	],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "die-schwarze-tulpe",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Die schwarze Tulpe",
+	"slug": "die-schwarze-tulpe",
+	"aliases": [
+		"La Tulipe noire"
+	],
+	"year": 1850,
+	"year_display": "1850",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

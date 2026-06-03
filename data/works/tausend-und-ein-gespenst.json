@@ -1,0 +1,18 @@
+{
+	"id": "tausend-und-ein-gespenst",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"gruselgeschichte"
+	],
+	"title": "Tausend und ein Gespenst",
+	"slug": "tausend-und-ein-gespenst",
+	"aliases": [
+		"1001 Gespenst / Teure Hedwig / Les Mille et Un Fantômes"
+	],
+	"year": 1849,
+	"year_display": "1849",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

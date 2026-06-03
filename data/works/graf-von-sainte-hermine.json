@@ -1,0 +1,20 @@
+{
+	"id": "graf-von-sainte-hermine",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Der Graf von Sainte-Hermine",
+	"slug": "graf-von-sainte-hermine",
+	"aliases": [
+		"Le Chevalier de Sainte-Hermine"
+	],
+	"year": 1869,
+	"year_display": "1869",
+	"parent_slugs": [
+		"trilogie-von-sainte-hermine"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

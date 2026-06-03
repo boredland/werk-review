@@ -1,0 +1,23 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/celebrated-crimes-vol-1-by-alexandre-dumas/",
+		"label": "Celebrated Crimes, Vol. 1:  The Borgias and The Cenci",
+		"librivox_id": "3339"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
+		"librivox_id": "9845"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/celebrated-crimes-vol-1-the-borgias-and-the-cenci-version-2-by-alexandre-dumas/",
+		"label": "Celebrated Crimes, Vol. 1: The Borgias and the Cenci (version 2)",
+		"librivox_id": "11216"
+	}
+]

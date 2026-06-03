@@ -1,0 +1,16 @@
+{
+	"id": "der-chevalier-dharmental",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Der Chevalier d'Harmental",
+	"slug": "der-chevalier-dharmental",
+	"aliases": [],
+	"year": 1842,
+	"year_display": "1842",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

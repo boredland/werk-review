@@ -1,0 +1,18 @@
+{
+	"id": "geschichte-der-regentschaft-des-herzogs-von-orleans",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Geschichte der Regentschaft des Herzogs von Orleans: auch als Forts. d. Geschichte Ludwigs XIV.",
+	"slug": "geschichte-der-regentschaft-des-herzogs-von-orleans",
+	"aliases": [
+		"La Régence"
+	],
+	"year": 1850,
+	"year_display": "1850",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

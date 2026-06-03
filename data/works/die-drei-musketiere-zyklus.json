@@ -1,0 +1,16 @@
+{
+	"id": "die-drei-musketiere-zyklus",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"romanreihe"
+	],
+	"title": "Die Drei Musketiere",
+	"slug": "die-drei-musketiere-zyklus",
+	"aliases": [],
+	"year": 1844,
+	"year_display": "1844-1847",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

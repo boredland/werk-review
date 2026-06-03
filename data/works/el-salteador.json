@@ -1,0 +1,16 @@
+{
+	"id": "el-salteador",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "El Salteador. Spanischer Roman aus der Zeit Karls V.",
+	"slug": "el-salteador",
+	"aliases": [],
+	"year": 1854,
+	"year_display": "1854",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

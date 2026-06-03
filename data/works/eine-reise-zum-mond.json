@@ -1,0 +1,16 @@
+{
+	"id": "eine-reise-zum-mond",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Eine Reise zum Mond",
+	"slug": "eine-reise-zum-mond",
+	"aliases": [],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

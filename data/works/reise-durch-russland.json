@@ -1,0 +1,18 @@
+{
+	"id": "reise-durch-russland",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Reise durch Russland",
+	"slug": "reise-durch-russland",
+	"aliases": [
+		"Russlandreise"
+	],
+	"year": 1858,
+	"year_display": "1858",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "burg-eppstein",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Burg Eppstein",
+	"slug": "burg-eppstein",
+	"aliases": [
+		"Le château d'Eppstein / Albine"
+	],
+	"year": 1843,
+	"year_display": "1843",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

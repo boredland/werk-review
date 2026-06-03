@@ -1,0 +1,20 @@
+{
+	"id": "die-graefin-von-saint-geran",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Gräfin von Saint-Geran",
+	"slug": "die-graefin-von-saint-geran",
+	"aliases": [
+		"La Comtesse de Saint-Géran"
+	],
+	"year": 1839,
+	"year_display": "1839–1840",
+	"parent_slugs": [
+		"beruehmte-kriminalfaelle"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

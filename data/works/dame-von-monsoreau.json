@@ -1,0 +1,20 @@
+{
+	"id": "dame-von-monsoreau",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Die Dame von Monsoreau",
+	"slug": "dame-von-monsoreau",
+	"aliases": [],
+	"year": 1846,
+	"year_display": "1846",
+	"parent_slugs": [
+		"trilogie-der-religionskriege"
+	],
+	"fortsetzung_von_ids": [
+		"bartholomaeusnacht-"
+	],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "trilogie-von-sainte-hermine",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"romanreihe"
+	],
+	"title": "Trilogie von Sainte-Hermine",
+	"slug": "trilogie-von-sainte-hermine",
+	"aliases": [
+		"Trilogie de Sainte-Hermine"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

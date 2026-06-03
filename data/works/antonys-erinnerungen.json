@@ -1,0 +1,18 @@
+{
+	"id": "antonys-erinnerungen",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Antonys Erinnerungen",
+	"slug": "antonys-erinnerungen",
+	"aliases": [
+		"Souvenirs d'Antony"
+	],
+	"year": 1835,
+	"year_display": "1835",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

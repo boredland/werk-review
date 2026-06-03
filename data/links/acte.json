@@ -1,0 +1,51 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/le-comte-de-monte-cristo-by-alexandre-dumas/",
+		"label": "Comte de Monte-Cristo",
+		"librivox_id": "1259"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/louise-de-la-valliere-by-alexandre-dumas/",
+		"label": "Louise de la Valliere",
+		"librivox_id": "7451"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/marguerite-de-valois-by-alexandre-dumas/",
+		"label": "Marguerite de Valois",
+		"librivox_id": "9684"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
+		"librivox_id": "9845"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/catherine-howard-by-alexandre-dumas/",
+		"label": "Catherine Howard (Dramatic Reading)",
+		"librivox_id": "11279"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/paul-jones-by-alexandre-dumas/",
+		"label": "Paul Jones",
+		"librivox_id": "11634"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/mademoiselle-de-belle-isle-by-alexandre-dumas/",
+		"label": "Mademoiselle De Belle Isle",
+		"librivox_id": "12120"
+	}
+]

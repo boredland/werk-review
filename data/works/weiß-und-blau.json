@@ -1,0 +1,20 @@
+{
+	"id": "weiß-und-blau",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Weiß und Blau",
+	"slug": "weiß-und-blau",
+	"aliases": [
+		"Les Blancs et les Bleus"
+	],
+	"year": 1867,
+	"year_display": "1867-1868",
+	"parent_slugs": [
+		"trilogie-von-sainte-hermine"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

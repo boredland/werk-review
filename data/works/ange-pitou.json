@@ -1,0 +1,22 @@
+{
+	"id": "ange-pitou",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Ange Pitou",
+	"slug": "ange-pitou",
+	"aliases": [
+		"Die Erstürmung der Bastille"
+	],
+	"year": 1851,
+	"year_display": "1851",
+	"parent_slugs": [
+		"memoiren-eines-arztes"
+	],
+	"fortsetzung_von_ids": [
+		"halsband-der-koenigin"
+	],
+	"plot": null,
+	"sources": []
+}

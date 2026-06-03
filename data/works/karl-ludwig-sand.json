@@ -1,0 +1,18 @@
+{
+	"id": "karl-ludwig-sand",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Karl Ludwig Sand",
+	"slug": "karl-ludwig-sand",
+	"aliases": [],
+	"year": 1839,
+	"year_display": "1839–1840",
+	"parent_slugs": [
+		"beruehmte-kriminalfaelle"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

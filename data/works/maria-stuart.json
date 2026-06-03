@@ -1,0 +1,20 @@
+{
+	"id": "maria-stuart",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Maria Stuart",
+	"slug": "maria-stuart",
+	"aliases": [
+		"Marie Stuart"
+	],
+	"year": 1839,
+	"year_display": "1839–1840",
+	"parent_slugs": [
+		"beruehmte-kriminalfaelle"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

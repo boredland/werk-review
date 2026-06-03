@@ -1,0 +1,20 @@
+{
+	"id": "page-des-herzogs-von-savoyen",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Der Page des Herzogs von Savoyen",
+	"slug": "page-des-herzogs-von-savoyen",
+	"aliases": [
+		"Le Page du duc de Savoie, Emmanuel Philibert"
+	],
+	"year": 1854,
+	"year_display": "1854-1855",
+	"parent_slugs": [
+		"haus-savoyen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

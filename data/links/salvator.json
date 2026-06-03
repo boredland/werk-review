@@ -1,0 +1,18 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
+		"librivox_id": "9845"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_PDQ6AAAAcAAJ",
+		"label": "Salvator Die Mohicaner von Paris. Von Alexander Dumas. Aus dem Französischen von August Zoller ab 5 von Edmund Zoller",
+		"formats": [
+			"Text PDF"
+		]
+	}
+]

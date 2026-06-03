@@ -1,0 +1,20 @@
+{
+	"id": "don-martin-von-freytas",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Don Martin von Freytas",
+	"slug": "don-martin-von-freytas",
+	"aliases": [
+		"Don Martin de Freytas"
+	],
+	"year": 1840,
+	"year_display": "1840",
+	"parent_slugs": [
+		"der-pfarrer-chambard-don-martin-von-freytas"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

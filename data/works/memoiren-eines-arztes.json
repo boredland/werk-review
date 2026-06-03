@@ -1,0 +1,18 @@
+{
+	"id": "memoiren-eines-arztes",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"romanreihe"
+	],
+	"title": "Memoiren eines Arztes",
+	"slug": "memoiren-eines-arztes",
+	"aliases": [
+		"Denkwürdigkeiten eines Arztes"
+	],
+	"year": 1846,
+	"year_display": "1846-1855",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

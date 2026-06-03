@@ -1,0 +1,18 @@
+{
+	"id": "geschichte-eines-nussknackers",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Geschichte eines Nussknackers",
+	"slug": "geschichte-eines-nussknackers",
+	"aliases": [
+		"Histoire d'un casse-noisette"
+	],
+	"year": 1844,
+	"year_display": "1844",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

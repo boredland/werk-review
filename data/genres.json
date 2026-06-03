@@ -38,5 +38,25 @@
 		"id": "historischer-roman",
 		"name": "Historischer Roman",
 		"slug": "historischer-roman"
+	},
+	{
+		"id": "bericht",
+		"name": "Bericht",
+		"slug": "bericht"
+	},
+	{
+		"id": "briefroman",
+		"name": "Briefroman",
+		"slug": "briefroman"
+	},
+	{
+		"id": "gruselgeschichte",
+		"name": "Gruselgechichte",
+		"slug": "gruselgechichte"
+	},
+	{
+		"id": "romanreihe",
+		"name": "Romanreihe",
+		"slug": "romanreihe"
 	}
 ]

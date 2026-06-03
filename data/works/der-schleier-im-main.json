@@ -1,0 +1,18 @@
+{
+	"id": "der-schleier-im-main",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Der Schleier im Main",
+	"slug": "der-schleier-im-main",
+	"aliases": [
+		"Der Schleier im Main: ein Frankfurt-Roman von 1866"
+	],
+	"year": 1866,
+	"year_display": "1866",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

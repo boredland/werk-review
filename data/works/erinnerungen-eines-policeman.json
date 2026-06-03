@@ -1,0 +1,18 @@
+{
+	"id": "erinnerungen-eines-policeman",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Erinnerungen eines Policeman",
+	"slug": "erinnerungen-eines-policeman",
+	"aliases": [
+		"Erinnerungen eines Policeman: ein Beitrag zur Sittengeschichte Englands"
+	],
+	"year": 1856,
+	"year_display": "1856",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
+		"librivox_id": "9845"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_pTE6AAAAcAAJ",
+		"label": "Tausend und Ein Gespenst Von Alexander Dumas. Aus dem Französischen übersetzt von W. L. Wesché",
+		"formats": [
+			"Text PDF"
+		]
+	}
+]

@@ -1,0 +1,20 @@
+{
+	"id": "ein-maskenball",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Maskenball",
+	"slug": "ein-maskenball",
+	"aliases": [
+		"Un bal masqué"
+	],
+	"year": 1835,
+	"year_display": "1835",
+	"parent_slugs": [
+		"antonys-erinnerungen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

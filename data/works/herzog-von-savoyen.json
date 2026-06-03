@@ -1,0 +1,20 @@
+{
+	"id": "herzog-von-savoyen",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Der Herzog von Savoyen",
+	"slug": "herzog-von-savoyen",
+	"aliases": [
+		"La Royale Maison de Savoie"
+	],
+	"year": 1852,
+	"year_display": "1852-1856",
+	"parent_slugs": [
+		"haus-savoyen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "genossen-jehus",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Die Genossen Jehus",
+	"slug": "genossen-jehus",
+	"aliases": [
+		"Les Compagnons de Jéhu"
+	],
+	"year": 1856,
+	"year_display": "1856",
+	"parent_slugs": [
+		"trilogie-von-sainte-hermine"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

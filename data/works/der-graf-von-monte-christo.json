@@ -1,0 +1,16 @@
+{
+	"id": "der-graf-von-monte-christo",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Der Graf von Monte Christo",
+	"slug": "der-graf-von-monte-christo",
+	"aliases": [],
+	"year": 1844,
+	"year_display": "1844-1846",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

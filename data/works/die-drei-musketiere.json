@@ -1,0 +1,20 @@
+{
+	"id": "die-drei-musketiere",
+	"author_id": "alexandre-dumas",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Die Drei Musketiere",
+	"slug": "die-drei-musketiere",
+	"aliases": [
+		"Die Diamanten der Königin"
+	],
+	"year": 1844,
+	"year_display": "1844",
+	"parent_slugs": [
+		"die-drei-musketiere-zyklus"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
