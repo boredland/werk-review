@@ -21,5 +21,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-die-drei-gerechten-kammacher",
+		"label": "Die drei gerechten Kammacher"
 	}
 ]

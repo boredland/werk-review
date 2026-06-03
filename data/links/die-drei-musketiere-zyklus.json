@@ -5,5 +5,15 @@
 		"url": "",
 		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
 		"librivox_id": "9845"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_UaI5AAAAcAAJ",
+		"label": "Die drei Musketiere Von Artagnan, oder zwanzig Jahre nachher ; 1",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
 	}
 ]

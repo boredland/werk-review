@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/die-misbrauchten-liebesbriefe-by-gottfried-keller/",
 		"label": "mißbrauchten Liebesbriefe",
 		"librivox_id": "7816"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-die-missbrauchten-liebesbriefe",
+		"label": "Die mißbrauchten Liebesbriefe"
 	}
 ]
