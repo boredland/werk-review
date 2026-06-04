@@ -8,7 +8,11 @@ import {
 	withDescendantIds,
 } from '$lib/server/data';
 import { getWorkReviewStats } from '$lib/server/db';
-import { getWikipediaImageUrl } from '$lib/server/wikipedia';
+import {
+	getWikipediaImageUrl,
+	resolveWikipediaTitle,
+	wikipediaPageUrl,
+} from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, platform, url }) => {
@@ -20,11 +24,13 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 
 	const authorWorks = getWorksByAuthor(author.id).filter((w) => getCollectionType(w) !== 'band');
 	const statsIds = withDescendantIds(authorWorks.map((w) => w.id));
+	const imageKv = forceRefresh ? undefined : kv;
+	const wikiTitle = await resolveWikipediaTitle(author, imageKv);
 	const [stats, imageUrl] = await Promise.all([
 		platform?.env.DB
 			? getWorkReviewStats(platform.env.DB, statsIds, kv).catch(() => new Map())
 			: new Map(),
-		getWikipediaImageUrl(author.name, forceRefresh ? undefined : kv),
+		getWikipediaImageUrl(author.name, imageKv, wikiTitle),
 	]);
 
 	const works = authorWorks
@@ -53,7 +59,7 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 	const authorTotalPoints = works.reduce((sum, w) => sum + w.totalPoints, 0);
 	const authorAvgRating = authorReviewCount > 0 ? authorTotalPoints / authorReviewCount : null;
 
-	const wikiUrl = `https://de.wikipedia.org/wiki/${encodeURIComponent(author.name.replace(/ /g, '_'))}`;
+	const wikiUrl = wikipediaPageUrl(wikiTitle);
 
 	return {
 		author,

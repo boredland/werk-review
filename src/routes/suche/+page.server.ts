@@ -13,7 +13,12 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 		keys: ['name', 'aliases'],
 		threshold: 0.3,
 	});
-	const authors = authorFuse.search(q).map((res) => ({ name: res.item.name, slug: res.item.slug }));
+	const authors = authorFuse.search(q).map((res) => ({
+		name: res.item.name,
+		slug: res.item.slug,
+		born: res.item.born,
+		died: res.item.died,
+	}));
 
 	const allWorks = getWorks();
 	const workMap = new Map(allWorks.map((w) => [w.id, w]));
@@ -53,10 +58,7 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 	});
 	const genres = genresFuse.search(q).map((res) => ({ name: res.item.name, slug: res.item.slug }));
 
-	const imageUrls = await getWikipediaImageUrls(
-		authors.map((a) => a.name),
-		platform?.env.SESSION_KV,
-	);
+	const imageUrls = await getWikipediaImageUrls(authors, platform?.env.SESSION_KV);
 
 	const authorsWithImages = authors.map((a) => ({
 		...a,

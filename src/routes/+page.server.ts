@@ -25,10 +25,7 @@ export const load: PageServerLoad = async ({ platform }) => {
 		platform?.env.DB
 			? getWorkReviewStats(platform.env.DB, statsIds, kv).catch(() => new Map())
 			: new Map(),
-		getWikipediaImageUrls(
-			displayedAuthors.map((a) => a.name),
-			kv,
-		),
+		getWikipediaImageUrls(displayedAuthors, kv),
 	]);
 
 	const authors = displayedAuthors.map((a) => ({

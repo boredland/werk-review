@@ -26,10 +26,7 @@ export const load: PageServerLoad = async ({ platform }) => {
 	);
 
 	const [imageUrls, workStats] = await Promise.all([
-		getWikipediaImageUrls(
-			allAuthors.map((a) => a.name),
-			kv,
-		),
+		getWikipediaImageUrls(allAuthors, kv),
 		platform?.env.DB
 			? getWorkReviewStats(platform.env.DB, allStatsIds, kv).catch(() => new Map())
 			: new Map(),
