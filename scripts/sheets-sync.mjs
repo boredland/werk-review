@@ -58,7 +58,7 @@ const AuthorSchema = z.object({
 const WorkSchema = z.object({
 	id: z.string().min(1),
 	author_id: z.string().min(1),
-	genre_ids: z.array(z.string()).min(1),
+	genre_ids: z.array(z.string()),
 	title: z.string().min(1),
 	slug: z.string().min(1),
 	aliases: z.array(z.string()),
