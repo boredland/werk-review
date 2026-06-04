@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { openCache } from './lib/enrich-cache.mjs';
 
 const DATA_DIR = join(import.meta.dirname, '..', 'data');
 const LINKS_DIR = join(DATA_DIR, 'links');
@@ -357,10 +358,17 @@ async function searchArchiveOrg(work, authorName) {
 async function main() {
 	let updated = 0;
 	let skipped = 0;
+	let cached = 0;
+	const now = new Date().toISOString().split('T')[0];
+	const cache = openCache(DATA_DIR, 'links');
 
 	// Group works by author for efficiency
 	const worksByAuthor = new Map();
 	for (const work of works) {
+		if (!cache.needsCheck(work, now)) {
+			cached++;
+			continue;
+		}
 		if (!worksByAuthor.has(work.author_id)) {
 			worksByAuthor.set(work.author_id, []);
 		}
@@ -473,6 +481,8 @@ async function main() {
 					} else {
 						skipped++;
 					}
+
+					cache.mark(work, now);
 				},
 				CONCURRENCY,
 			);
@@ -480,7 +490,10 @@ async function main() {
 		3,
 	);
 
-	console.log(`\nDone: ${updated} updated, ${skipped} unchanged`);
+	cache.prune(new Set(works.map((w) => w.slug)));
+	cache.save();
+
+	console.log(`\nDone: ${updated} updated, ${skipped} unchanged, ${cached} cached (skipped)`);
 }
 
 main().catch((err) => {

@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { openCache } from './lib/enrich-cache.mjs';
 
 const DATA_DIR = join(import.meta.dirname, '..', 'data');
 const WORKS_DIR = join(DATA_DIR, 'works');
@@ -112,16 +113,25 @@ async function main() {
 	let updatedPlots = 0;
 	let geminiPlots = 0;
 	let updatedSources = 0;
+	let cached = 0;
 	const now = new Date().toISOString().split('T')[0];
+	const cache = openCache(DATA_DIR, 'wiki');
 
 	const workFiles = readdirSync(WORKS_DIR).filter((f) => f.endsWith('.json'));
+	const slugs = new Set();
 
 	await pMap(
 		workFiles,
 		async (file) => {
 			const path = join(WORKS_DIR, file);
 			const work = readJson(path);
+			slugs.add(work.slug);
 			let changed = false;
+
+			if (!cache.needsCheck(work, now)) {
+				cached++;
+				return;
+			}
 
 			const author = authors.get(work.author_id);
 			const authorName = author?.name || '';
@@ -171,12 +181,17 @@ async function main() {
 			if (changed) {
 				writeJson(path, work);
 			}
+
+			cache.mark(work, now);
 		},
 		CONCURRENCY,
 	);
 
+	cache.prune(slugs);
+	cache.save();
+
 	console.log(
-		`\nDone: ${updatedPlots} Wikipedia plots, ${geminiPlots} Gemini plots, ${updatedSources} Wikipedia sources added`,
+		`\nDone: ${updatedPlots} Wikipedia plots, ${geminiPlots} Gemini plots, ${updatedSources} Wikipedia sources added, ${cached} cached (skipped)`,
 	);
 }
 

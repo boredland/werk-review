@@ -32,14 +32,19 @@ jobs:
           GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
         run: node scripts/sheets-sync.mjs
 
-      - name: Enrich with external links
-        run: node scripts/enrich-links.mjs
-
-      - name: Enrich with Wikipedia data
+      - name: Enrich with external links and Wikipedia data
         env:
           GEMINI_PROXY_URL: ${{ secrets.GEMINI_PROXY_URL }}
           GEMINI_PROXY_SECRET: ${{ secrets.GEMINI_PROXY_SECRET }}
-        run: node scripts/enrich-wikipedia.mjs
+        run: |
+          node scripts/enrich-links.mjs &
+          links_pid=$!
+          node scripts/enrich-wikipedia.mjs &
+          wikipedia_pid=$!
+          fail=0
+          wait "$links_pid" || fail=1
+          wait "$wikipedia_pid" || fail=1
+          exit "$fail"
 
       - name: Check for changes
         id: changes
