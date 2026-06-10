@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DATA_DIR = join(import.meta.dirname, '..', 'data');
@@ -26,11 +26,16 @@ function sourcesToString(sources) {
 	return sources.map((s) => `${s.label} <${s.url}>`).join('|');
 }
 
+function readJsonDir(subdir) {
+	return readdirSync(join(DATA_DIR, subdir))
+		.filter((f) => f.endsWith('.json'))
+		.map((f) => ({ file: f, data: JSON.parse(readFileSync(join(DATA_DIR, subdir, f), 'utf-8')) }));
+}
+
+mkdirSync(OUT_DIR, { recursive: true });
+
 // Authors
-const authorFiles = readdirSync(join(DATA_DIR, 'authors')).filter((f) => f.endsWith('.json'));
-const authors = authorFiles.map((f) =>
-	JSON.parse(readFileSync(join(DATA_DIR, 'authors', f), 'utf-8')),
-);
+const authors = readJsonDir('authors').map((e) => e.data);
 
 const authorRows = authors.map((a) => ({
 	id: a.id,
@@ -39,39 +44,29 @@ const authorRows = authors.map((a) => ({
 	aliases: (a.aliases || []).join('|'),
 	born: a.born,
 	died: a.died,
-	gnd_id: a.gnd_id,
 	bio: a.bio,
-	photo_r2_key: a.photo_r2_key,
-	sources: sourcesToString(a.sources),
 }));
 
 writeFileSync(
 	join(OUT_DIR, 'Autoren.csv'),
-	toCsv(
-		['id', 'name', 'slug', 'aliases', 'born', 'died', 'gnd_id', 'bio', 'photo_r2_key', 'sources'],
-		authorRows,
-	),
+	toCsv(['id', 'name', 'slug', 'aliases', 'born', 'died', 'bio'], authorRows),
 );
 
 // Works
-const workFiles = readdirSync(join(DATA_DIR, 'works')).filter((f) => f.endsWith('.json'));
-const works = workFiles.map((f) => JSON.parse(readFileSync(join(DATA_DIR, 'works', f), 'utf-8')));
+const works = readJsonDir('works').map((e) => e.data);
 
 const workRows = works
-	.sort((a, b) => (a.year_from ?? 9999) - (b.year_from ?? 9999))
+	.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999))
 	.map((w) => ({
 		id: w.id,
 		author_id: w.author_id,
-		genre_id: w.genre_id,
+		genre_ids: (w.genre_ids || []).join('|'),
 		title: w.title,
 		slug: w.slug,
 		aliases: (w.aliases || []).join('|'),
-		year_from: w.year_from,
-		year_to: w.year_to,
 		year_display: w.year_display,
-		collection_title: w.collection_title,
-		collection_aliases: (w.collection_aliases || []).join('|'),
-		gnd_id: w.gnd_id,
+		parent_slugs: (w.parent_slugs || []).join('|'),
+		fortsetzung_von_ids: (w.fortsetzung_von_ids || []).join('|'),
 		plot: w.plot,
 		sources: sourcesToString(w.sources),
 	}));
@@ -82,16 +77,13 @@ writeFileSync(
 		[
 			'id',
 			'author_id',
-			'genre_id',
+			'genre_ids',
 			'title',
 			'slug',
 			'aliases',
-			'year_from',
-			'year_to',
 			'year_display',
-			'collection_title',
-			'collection_aliases',
-			'gnd_id',
+			'parent_slugs',
+			'fortsetzung_von_ids',
 			'plot',
 			'sources',
 		],
@@ -105,38 +97,25 @@ const genreRows = genres.map((g) => ({ id: g.id, name: g.name, slug: g.slug }));
 
 writeFileSync(join(OUT_DIR, 'Genres.csv'), toCsv(['id', 'name', 'slug'], genreRows));
 
-// Links (example data since none exist yet)
-const linkRows = [
-	{
-		work_id: 'der-gruene-heinrich-erste-fassung',
-		source: 'Project Gutenberg',
-		format: 'HTML',
-		url: 'https://www.gutenberg.org/ebooks/12285',
-		label: 'Der grüne Heinrich (Gutenberg)',
-	},
-	{
-		work_id: 'kleider-machen-leute',
-		source: 'Zeno.org',
-		format: 'HTML',
-		url: 'http://www.zeno.org/Literatur/M/Keller,+Gottfried/Erz%C3%A4hlung/Kleider+machen+Leute',
-		label: 'Kleider machen Leute (Zeno)',
-	},
-	{
-		work_id: 'romeo-und-julia-auf-dem-dorfe',
-		source: 'Project Gutenberg',
-		format: 'HTML',
-		url: 'https://www.gutenberg.org/ebooks/24042',
-		label: 'Romeo und Julia auf dem Dorfe (Gutenberg)',
-	},
-];
+// Links (enriched external links, one row per link; work_slug is the filename)
+const linkRows = readJsonDir('links').flatMap(({ file, data }) => {
+	const workSlug = file.slice(0, -5);
+	return (Array.isArray(data) ? data : []).map((l) => ({
+		work_slug: workSlug,
+		source: l.source,
+		format: l.format,
+		url: l.url,
+		label: l.label,
+	}));
+});
 
 writeFileSync(
 	join(OUT_DIR, 'Links.csv'),
-	toCsv(['work_id', 'source', 'format', 'url', 'label'], linkRows),
+	toCsv(['work_slug', 'source', 'format', 'url', 'label'], linkRows),
 );
 
 console.log('Exported CSVs to scripts/example-sheets/');
 console.log(`  Autoren.csv: ${authorRows.length} rows`);
 console.log(`  Werke.csv: ${workRows.length} rows`);
 console.log(`  Genres.csv: ${genreRows.length} rows`);
-console.log(`  Links.csv: ${linkRows.length} rows (example data)`);
+console.log(`  Links.csv: ${linkRows.length} rows`);

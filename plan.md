@@ -2,8 +2,8 @@
 
 ## Content
 
-- [ ] Add more authors (currently only Gottfried Keller)
-- [ ] Add more genres beyond what Keller covers
+- [ ] Add more authors (currently 5: Keller, Dumas, Büchner, Conrad, Hauff)
+- [ ] Add more genres (currently 12)
 - [ ] Write/improve plot summaries for works missing them
 - [x] Author photos fetched automatically from Wikipedia
 

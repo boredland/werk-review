@@ -1,8 +1,7 @@
 import json
-import os
 from pathlib import Path
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment
+from openpyxl.styles import Font, PatternFill
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 OUT = Path(__file__).parent / "example-sheets" / "werk-review.xlsx"
@@ -30,7 +29,7 @@ def sources_to_str(sources):
 # --- Autoren ---
 ws = wb.active
 ws.title = "Autoren"
-headers = ["id", "name", "slug", "aliases", "born", "died", "gnd_id", "bio", "photo_r2_key", "sources"]
+headers = ["id", "name", "slug", "aliases", "born", "died", "bio"]
 ws.append(headers)
 
 for f in sorted(DATA_DIR.glob("authors/*.json")):
@@ -38,40 +37,39 @@ for f in sorted(DATA_DIR.glob("authors/*.json")):
     ws.append([
         a["id"], a["name"], a["slug"],
         "|".join(a.get("aliases", [])),
-        a.get("born"), a.get("died"), a.get("gnd_id"),
-        a.get("bio", ""), a.get("photo_r2_key"),
-        sources_to_str(a.get("sources", []))
+        a.get("born"), a.get("died"),
+        a.get("bio", ""),
     ])
 
 style_header(ws)
 ws.column_dimensions["B"].width = 25
-ws.column_dimensions["H"].width = 60
-ws.column_dimensions["J"].width = 40
+ws.column_dimensions["G"].width = 60
 
 # --- Werke ---
 ws = wb.create_sheet("Werke")
-headers = ["id", "author_id", "genre_id", "title", "slug", "aliases", "year_from", "year_to",
-           "year_display", "collection_title", "collection_aliases", "gnd_id", "plot", "sources"]
+headers = ["id", "author_id", "genre_ids", "title", "slug", "aliases", "year_display",
+           "parent_slugs", "fortsetzung_von_ids", "plot", "sources"]
 ws.append(headers)
 
 works = []
 for f in sorted(DATA_DIR.glob("works/*.json")):
     works.append(json.loads(f.read_text()))
-works.sort(key=lambda w: w.get("year_from") or 9999)
+works.sort(key=lambda w: w.get("year") or 9999)
 
 for w in works:
     ws.append([
-        w["id"], w["author_id"], w["genre_id"], w["title"], w["slug"],
-        "|".join(w.get("aliases", [])),
-        w.get("year_from"), w.get("year_to"), w.get("year_display", ""),
-        w.get("collection_title"), "|".join(w.get("collection_aliases", [])),
-        w.get("gnd_id"), w.get("plot"),
-        sources_to_str(w.get("sources", []))
+        w["id"], w["author_id"], "|".join(w.get("genre_ids", [])),
+        w["title"], w["slug"], "|".join(w.get("aliases", [])),
+        w.get("year_display", ""),
+        "|".join(w.get("parent_slugs", [])),
+        "|".join(w.get("fortsetzung_von_ids", [])),
+        w.get("plot"),
+        sources_to_str(w.get("sources", [])),
     ])
 
 style_header(ws)
 ws.column_dimensions["D"].width = 40
-ws.column_dimensions["J"].width = 30
+ws.column_dimensions["J"].width = 50
 
 # --- Genres ---
 ws = wb.create_sheet("Genres")
@@ -85,18 +83,19 @@ for g in genres:
 style_header(ws)
 ws.column_dimensions["B"].width = 20
 
-# --- Links ---
+# --- Links (enriched external links, one row per link; work_slug is the filename) ---
 ws = wb.create_sheet("Links")
-headers = ["work_id", "source", "format", "url", "label"]
+headers = ["work_slug", "source", "format", "url", "label"]
 ws.append(headers)
 
-example_links = [
-    ["der-gruene-heinrich-erste-fassung", "Project Gutenberg", "HTML", "https://www.gutenberg.org/ebooks/12285", "Der grüne Heinrich (Gutenberg)"],
-    ["kleider-machen-leute", "Zeno.org", "HTML", "http://www.zeno.org/Literatur/M/Keller,+Gottfried/Erzählung/Kleider+machen+Leute", "Kleider machen Leute (Zeno)"],
-    ["romeo-und-julia-auf-dem-dorfe", "Project Gutenberg", "HTML", "https://www.gutenberg.org/ebooks/24042", "Romeo und Julia auf dem Dorfe (Gutenberg)"],
-]
-for row in example_links:
-    ws.append(row)
+link_count = 0
+for f in sorted(DATA_DIR.glob("links/*.json")):
+    links = json.loads(f.read_text())
+    if not isinstance(links, list):
+        continue
+    for l in links:
+        ws.append([f.stem, l.get("source"), l.get("format"), l.get("url"), l.get("label")])
+        link_count += 1
 
 style_header(ws)
 ws.column_dimensions["A"].width = 35
@@ -109,4 +108,4 @@ print(f"Created {OUT}")
 print(f"  Autoren: {wb['Autoren'].max_row - 1} rows")
 print(f"  Werke: {wb['Werke'].max_row - 1} rows")
 print(f"  Genres: {wb['Genres'].max_row - 1} rows")
-print(f"  Links: {wb['Links'].max_row - 1} rows")
+print(f"  Links: {link_count} rows")

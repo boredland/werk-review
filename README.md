@@ -34,7 +34,7 @@
 Das Herzstück von werk.review ist die automatisierte Daten-Pipeline:
 
 1. **Source of Truth**: Ein Google Sheet dient als CMS für Autoren und Werke.
-2. **Sync**: Ein GitHub Action (`sheets-sync.yml`) zieht alle 6 Stunden die Daten.
+2. **Sync**: Ein GitHub Action (`sheets-sync.yml`) zieht stündlich (zwischen 8 und 22 Uhr UTC) die Daten.
 3. **Enrichment**:
    - `enrich-links.mjs`: Findet passende Volltexte und Hörbücher.
    - `enrich-wikipedia.mjs`: Lädt Plot-Zusammenfassungen und Wikipedia-Links (parallelisiert).
