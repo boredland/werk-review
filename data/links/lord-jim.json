@@ -1,5 +1,11 @@
 [
 	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/joseph-conrad-lord-jim",
+		"label": "Lord Jim"
+	},
+	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/lord-jim-by-joseph-conrad",
@@ -9,21 +15,8 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
-		"label": "Rover",
-		"librivox_id": "15237"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
 		"url": "https://librivox.org/lord-jim-ver2-by-joseph-conrad/",
 		"label": "Lord Jim (version 2)",
 		"librivox_id": "17737"
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/joseph-conrad-lord-jim",
-		"label": "Lord Jim"
 	}
 ]

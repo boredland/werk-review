@@ -1,5 +1,11 @@
 [
 	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-geheimagent/",
+		"label": "Der Geheimagent"
+	},
+	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/the-secret-agent-by-joseph-conrad/",
@@ -9,14 +15,15 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
-		"label": "Rover",
-		"librivox_id": "15237"
+		"url": "https://librivox.org/the-secret-agent-by-joseph-conrad-2/",
+		"label": "Secret Agent: A Simple Tale (Version 2)",
+		"librivox_id": "10425"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-geheimagent/",
-		"label": "Der Geheimagent"
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-secret-agent-version-3-by-joseph-conrad/",
+		"label": "Secret Agent (Version 3)",
+		"librivox_id": "16233"
 	}
 ]

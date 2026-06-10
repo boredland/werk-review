@@ -1,5 +1,11 @@
 [
 	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/im-taifun",
+		"label": "Taifun"
+	},
+	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/typhoon-by-joseph-conrad/",
@@ -9,21 +15,8 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
-		"label": "Rover",
-		"librivox_id": "15237"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
 		"url": "https://librivox.org/typhoon-and-other-stories-by-joseph-conrad/",
 		"label": "Typhoon and Other Stories",
 		"librivox_id": "17941"
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/im-taifun",
-		"label": "Taifun"
 	}
 ]

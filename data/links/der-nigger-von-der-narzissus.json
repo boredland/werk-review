@@ -1,5 +1,11 @@
 [
 	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-nigger-vom-narzissus",
+		"label": "Der Nigger von der Narzissus"
+	},
+	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/the-nigger-of-the-narcissus-by-joseph-conrad/",
@@ -9,14 +15,8 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
-		"label": "Rover",
-		"librivox_id": "15237"
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-nigger-vom-narzissus",
-		"label": "Der Nigger von der Narzissus"
+		"url": "https://librivox.org/nigger-of-the-narcissus-version-2-by-joseph-conrad/",
+		"label": "Nigger of the \"Narcissus\" (Version 2)",
+		"librivox_id": "17646"
 	}
 ]

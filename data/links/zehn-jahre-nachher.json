@@ -2,8 +2,22 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "",
-		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
-		"librivox_id": "9845"
+		"url": "https://librivox.org/the-vicomte-de-bragelonne-by-alexandre-dumas/",
+		"label": "Vicomte De Bragelonne",
+		"librivox_id": "4485"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/ten-years-later-by-alexandre-dumas/",
+		"label": "Ten Years Later",
+		"librivox_id": "5863"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/louise-de-la-valliere-by-alexandre-dumas/",
+		"label": "Louise de la Valliere",
+		"librivox_id": "7451"
 	}
 ]

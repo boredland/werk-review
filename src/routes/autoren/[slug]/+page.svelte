@@ -106,16 +106,22 @@ const jsonLd = $derived.by(() => {
 		<h2>Werke <span class="works-count">({data.works.length})</span></h2>
 		<div class="works-list">
 			{#each paginated as work}
-				<a href="/werke/{work.slug}" class="work-row">
-					<div class="work-main">
+				<div class="work-row">
+					<a href="/werke/{work.slug}" class="work-main">
 						<span class="work-title">{work.title}</span>
 						<span class="work-genre">{work.genre_name}</span>
-					</div>
+					</a>
+					{#if work.parentSeries}
+						<a href="/werke/{work.parentSeries.slug}" class="work-series">
+							<span class="series-prefix">aus der Reihe</span>
+							<span class="series-title">{work.parentSeries.title}</span>
+						</a>
+					{/if}
 					<div class="work-end">
 						<RatingBadge avgRating={work.avgRating} totalPoints={work.totalPoints} reviewCount={work.reviewCount} />
 						<span class="work-year">{work.year_display}</span>
 					</div>
-				</a>
+				</div>
 			{/each}
 		</div>
 		<Pagination {currentPage} {totalPages} onPageChange={(p) => currentPage = p} />
@@ -239,6 +245,36 @@ const jsonLd = $derived.by(() => {
 		display: flex;
 		align-items: baseline;
 		gap: 0.75rem;
+		flex: 1;
+		min-width: 0;
+		color: var(--color-text);
+		text-decoration: none;
+	}
+
+	.work-main:hover {
+		text-decoration: none;
+	}
+
+	.work-series {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.4rem;
+		font-family: var(--font-ui);
+		font-size: 0.82rem;
+		color: var(--color-accent);
+		text-decoration: none;
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+
+	.work-series:hover {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.series-prefix {
+		color: var(--color-text-muted);
+		font-style: italic;
 	}
 
 	.work-title {

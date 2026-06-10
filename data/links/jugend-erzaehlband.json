@@ -1,5 +1,11 @@
 [
 	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/jugend/",
+		"label": "Jugend"
+	},
+	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/youth-a-narrative-by-joseph-conrad/",
@@ -12,11 +18,5 @@
 		"url": "https://librivox.org/youth-version-2-by-joseph-conrad/",
 		"label": "Youth (Version 2)",
 		"librivox_id": "17921"
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/jugend/",
-		"label": "Jugend"
 	}
 ]

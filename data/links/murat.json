@@ -2,13 +2,6 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "",
-		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
-		"librivox_id": "9845"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
 		"url": "https://librivox.org/celebrated-crimes-vol-7-part-3-murat-by-alexandre-dumas/",
 		"label": "Celebrated Crimes, Vol. 7: Part 3: Murat",
 		"librivox_id": "12554"

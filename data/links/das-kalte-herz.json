@@ -1,12 +1,5 @@
 [
 	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
-		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1828-by-wilhelm-hauff/",
-		"label": "Märchen - Almanach auf das Jahr 1828",
-		"librivox_id": "5620"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/daskalteherzmitm0000wilh",
@@ -15,5 +8,12 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1828-by-wilhelm-hauff/",
+		"label": "Märchen - Almanach auf das Jahr 1828",
+		"librivox_id": "5620"
 	}
 ]

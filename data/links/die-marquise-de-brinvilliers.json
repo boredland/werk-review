@@ -2,13 +2,6 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "",
-		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
-		"librivox_id": "9845"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
 		"url": "https://librivox.org/celebrated-crimes-vol-8-part-1-the-marquise-de-brinvilliers-by-alexandre-dumas/",
 		"label": "Celebrated Crimes, Vol. 8: Part 1: The Marquise de Brinvilliers",
 		"librivox_id": "12686"

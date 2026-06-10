@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { openCache } from './lib/enrich-cache.mjs';
+import { isMatch, normalize } from './lib/match.mjs';
 
 const DATA_DIR = join(import.meta.dirname, '..', 'data');
 const LINKS_DIR = join(DATA_DIR, 'links');
@@ -32,44 +33,6 @@ async function pMap(items, mapper, concurrency) {
 	}
 	await Promise.all(Array.from({ length: Math.min(items.length, concurrency) }, worker));
 	return results;
-}
-
-function normalize(str) {
-	if (!str) return '';
-	return str
-		.toLowerCase()
-		.replace(/ß/g, 'ss')
-		.replace(/mmm/g, 'mm')
-		.replace(/nnn/g, 'nn')
-		.replace(/[^a-z0-9]/g, ' ')
-		.replace(/\s+/g, ' ')
-		.trim();
-}
-
-function isMatch(work, lvTitle) {
-	const nLv = normalize(lvTitle);
-	const titles = [work.title, ...(work.aliases || [])];
-
-	for (const t of titles) {
-		const nWork = normalize(t);
-		if (nWork === nLv) return true;
-		if (nWork.length > 5 && (nLv.includes(nWork) || nWork.includes(nLv))) return true;
-
-		// Simple fuzzy: remove common prefixes/suffixes
-		const simplify = (s) =>
-			s
-				.replace(/^(die|der|das|ein|eine|auswahl aus|erzaehlungen aus|novellen) /g, '')
-				.replace(/ teil i+$/g, '')
-				.replace(/ \d+$/g, '')
-				.trim();
-
-		const sWork = simplify(nWork);
-		const sLv = simplify(nLv);
-
-		if (sWork.length > 3 && (sWork === sLv || sLv.includes(sWork) || sWork.includes(sLv)))
-			return true;
-	}
-	return false;
 }
 
 const authors = new Map();

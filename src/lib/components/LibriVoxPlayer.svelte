@@ -72,27 +72,43 @@ function normalize(str: string) {
 		.trim();
 }
 
+const STOP = new Set(
+	(
+		'die der das ein eine und oder von vom zu zur zum auf aus im in an als bei mit nach ' +
+		'the of a an and or to le la les un une de des du et ou ' +
+		'jahr teil band buch erste zweite dritte vierte fassung version dramatic reading ' +
+		'auswahl novellen erzaehlungen erzaehlung roman novelle hoerbuch'
+	).split(' '),
+);
+
+function sigTokens(n: string): string[] {
+	return n.split(' ').filter((t) => t.length >= 4 && !STOP.has(t));
+}
+
+function phraseIncludes(haystack: string, needle: string) {
+	if (!needle) return false;
+	const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	return new RegExp(`(^| )${escaped}( |$)`).test(haystack);
+}
+
+// Whole-word / shared-significant-token matching. A naive substring check would
+// flag a section like "Character" as relevant to a work titled "Acte".
 function isRelevant(sectionTitle: string) {
 	if (workTitles.length === 0) return true;
 	const nLv = normalize(sectionTitle);
+	if (!nLv) return false;
+	const lvSig = new Set(sigTokens(nLv));
 
 	for (const t of workTitles) {
 		const nWork = normalize(t);
+		if (!nWork) continue;
 		if (nWork === nLv) return true;
-		if (nWork.length > 5 && (nLv.includes(nWork) || nWork.includes(nLv))) return true;
-
-		const simplify = (s: string) =>
-			s
-				.replace(/^(die|der|das|ein|eine|auswahl aus|erzaehlungen aus|novellen) /g, '')
-				.replace(/ teil i+$/g, '')
-				.replace(/ \d+$/g, '')
-				.trim();
-
-		const sWork = simplify(nWork);
-		const sLv = simplify(nLv);
-
-		if (sWork.length > 3 && (sWork === sLv || sLv.includes(sWork) || sWork.includes(sLv)))
-			return true;
+		const workHasSig = sigTokens(nWork).length > 0;
+		if (workHasSig && nWork.length >= 5 && phraseIncludes(nLv, nWork)) return true;
+		if (workHasSig && nLv.length >= 5 && phraseIncludes(nWork, nLv)) return true;
+		let shared = 0;
+		for (const x of new Set(sigTokens(nWork))) if (lvSig.has(x)) shared++;
+		if (shared >= 2) return true;
 	}
 	return false;
 }

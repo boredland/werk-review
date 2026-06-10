@@ -2,13 +2,6 @@
 	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
-		"url": "",
-		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
-		"librivox_id": "9845"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
 		"url": "https://librivox.org/celebrated-crimes-vol-4-karl-ludwig-sand-by-alexandre-dumas/",
 		"label": "Celebrated Crimes, Vol. 4: Karl-Ludwig Sand",
 		"librivox_id": "10660"

@@ -6,20 +6,6 @@
 		"label": "Kleider machen Leute (Zeno)"
 	},
 	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
-		"url": "https://librivox.org/kleider-machen-leute-by-gottfried-keller/",
-		"label": "Kleider machen Leute",
-		"librivox_id": "545"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
-		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
-		"label": "Erzählungen aus 'Die Leute von Seldwyla'",
-		"librivox_id": "4079"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/a-2-kleider-machen-leute",
@@ -39,5 +25,19 @@
 		"format": "Volltext",
 		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/g-keller-kleider-machen-leute",
 		"label": "Kleider machen Leute"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/kleider-machen-leute-by-gottfried-keller/",
+		"label": "Kleider machen Leute",
+		"librivox_id": "545"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
+		"label": "Erzählungen aus 'Die Leute von Seldwyla'",
+		"librivox_id": "4079"
 	}
 ]

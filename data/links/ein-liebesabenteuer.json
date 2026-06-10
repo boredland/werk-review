@@ -1,19 +1,5 @@
 [
 	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
-		"url": "https://librivox.org/les-trois-mousquetaires-by-alexandre-dumas/",
-		"label": "Trois Mousquetaires",
-		"librivox_id": "2105"
-	},
-	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
-		"url": "",
-		"label": "Count of Monte Cristo (version 4 Dramatic Reading)",
-		"librivox_id": "9845"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/bub_gb__Ms5AAAAcAAJ",
@@ -21,5 +7,12 @@
 		"formats": [
 			"Text PDF"
 		]
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/les-trois-mousquetaires-by-alexandre-dumas/",
+		"label": "Trois Mousquetaires",
+		"librivox_id": "2105"
 	}
 ]

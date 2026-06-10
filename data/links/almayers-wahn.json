@@ -5,5 +5,19 @@
 		"url": "https://librivox.org/almayers-folly-by-joseph-conrad-2/",
 		"label": "Almayer's Folly",
 		"librivox_id": "7076"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/almayers-folly-by-joseph-conrad/",
+		"label": "Almayer's Folly (version 2)",
+		"librivox_id": "7170"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/almayers-folly-by-joseph-conrad-3/",
+		"label": "Almayer's Folly (Version 3)",
+		"librivox_id": "17352"
 	}
 ]

@@ -3,6 +3,7 @@ import {
 	getAuthor,
 	getCollectionType,
 	getGenre,
+	getWork,
 	getWorksByAuthor,
 	rollUpStats,
 	withDescendantIds,
@@ -13,6 +14,7 @@ import {
 	resolveWikipediaTitle,
 	wikipediaPageUrl,
 } from '$lib/server/wikipedia';
+import type { Work } from '$lib/types';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, platform, url }) => {
@@ -22,7 +24,24 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 	const kv = platform?.env.SESSION_KV;
 	const forceRefresh = url.searchParams.get('refresh') === 'true';
 
-	const authorWorks = getWorksByAuthor(author.id).filter((w) => getCollectionType(w) !== 'band');
+	const isRomanreihe = (w: Work) => w.genre_ids.includes('romanreihe');
+	const romanreiheParent = (w: Work) => {
+		for (const slug of w.parent_slugs ?? []) {
+			const parent = getWork(slug);
+			if (parent && isRomanreihe(parent)) return { title: parent.title, slug: parent.slug };
+		}
+		return null;
+	};
+
+	// A "Romanreihe" (e.g. the Drei-Musketiere cycle) is hidden as its own row;
+	// its member novels are listed instead with a link back to the series.
+	// Members of a regular Sammlung/Erzählband (parent is not a Romanreihe) stay
+	// collapsed into the collection as before.
+	const authorWorks = getWorksByAuthor(author.id).filter((w) => {
+		if (isRomanreihe(w)) return false;
+		if (getCollectionType(w) === 'band') return !!romanreiheParent(w);
+		return true;
+	});
 	const statsIds = withDescendantIds(authorWorks.map((w) => w.id));
 	const imageKv = forceRefresh ? undefined : kv;
 	const wikiTitle = await resolveWikipediaTitle(author, imageKv);
@@ -42,6 +61,7 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 					.map((id) => getGenre(id)?.name)
 					.filter(Boolean)
 					.join(', '),
+				parentSeries: romanreiheParent(w),
 				reviewCount: s.reviewCount,
 				avgRating: s.avgRating,
 				totalPoints: s.totalPoints,

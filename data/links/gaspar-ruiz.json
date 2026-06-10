@@ -1,10 +1,9 @@
 [
 	{
-		"source": "LibriVox",
-		"format": "Hörbuch",
-		"url": "https://librivox.org/the-rover-by-joseph-conrad/",
-		"label": "Rover",
-		"librivox_id": "15237"
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/gaspar-ruiz/",
+		"label": "Gaspar Ruiz"
 	},
 	{
 		"source": "LibriVox",
@@ -12,11 +11,5 @@
 		"url": "https://librivox.org/set-of-six-by-joseph-conrad/",
 		"label": "Set of Six",
 		"librivox_id": "18092"
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/gaspar-ruiz/",
-		"label": "Gaspar Ruiz"
 	}
 ]
