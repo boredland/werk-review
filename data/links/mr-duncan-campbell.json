@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/captain-singleton-by-daniel-defoe/",
+		"label": "Life, Adventures & Piracies of Captain Singleton",
+		"librivox_id": "3332"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Robinson Crusoe (Version 3)",
+		"librivox_id": "21060"
+	}
+]

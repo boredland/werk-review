@@ -1,0 +1,18 @@
+{
+	"id": "moll-flanders",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Moll Flanders",
+	"slug": "moll-flanders",
+	"aliases": [
+		"Glück und Unglück der berühmten Moll Flanders / The fortunes and misfortunes of the famous Moll Flanders"
+	],
+	"year": 1721,
+	"year_display": "1721",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

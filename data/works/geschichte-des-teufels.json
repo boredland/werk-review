@@ -1,0 +1,18 @@
+{
+	"id": "geschichte-des-teufels",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Geschichte des Teufels",
+	"slug": "geschichte-des-teufels",
+	"aliases": [
+		"The Political History of the Devil"
+	],
+	"year": 1726,
+	"year_display": "1726",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

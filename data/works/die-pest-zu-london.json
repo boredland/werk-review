@@ -1,0 +1,18 @@
+{
+	"id": "die-pest-zu-london",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Pest zu London",
+	"slug": "die-pest-zu-london",
+	"aliases": [
+		"Ein Bericht vom Pestjahr / A journal of the plague Year"
+	],
+	"year": 1722,
+	"year_display": "1722",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "ein-wahrheitsgetreuer-bericht",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Ein wahrheitsgetreuer Bericht, wie eine Mrs. Veal am 8. Tag des September 1705, einen Tag nach ihrem Tod, einer Mrs. Bargrave zu Canterbury erschienen ist",
+	"slug": "ein-wahrheitsgetreuer-bericht",
+	"aliases": [
+		"A true relation of the apparition of one Mrs. Veal, the next day after her death: to one Mrs. Bargrave at Canterbury, the 8th day of september, 1705"
+	],
+	"year": 1706,
+	"year_display": "1706",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein gewöhnlicher Tag wird zum Rätsel des Übernatürlichen, als eine Frau Besuch von jemandem erhält, der eigentlich längst tot sein müsste – und doch so wirklich erscheint, dass jede Gewissheit ins Wanken gerät. [KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "das-leben-und-die-abenteuer-des-robinson-crusoe",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Das Leben und die Abenteuer des Robinson Crusoe",
+	"slug": "das-leben-und-die-abenteuer-des-robinson-crusoe",
+	"aliases": [
+		"The life and strange surprizing adventures of Robinson Crusoe"
+	],
+	"year": 1719,
+	"year_display": "1719",
+	"parent_slugs": [
+		"robinson-crusoe-romanzyklus"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

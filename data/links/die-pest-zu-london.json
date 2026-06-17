@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/a-journal-of-the-plague-year-by-daniel-defoe/",
+		"label": "Journal of the Plague Year",
+		"librivox_id": "629"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/daniel-defoe/books/die-pest-zu-london/",
+		"label": "Die Pest zu London"
+	}
+]

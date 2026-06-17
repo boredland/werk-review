@@ -1,0 +1,18 @@
+{
+	"id": "kapitaens-singleton",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Kapitäns Singleton",
+	"slug": "kapitaens-singleton",
+	"aliases": [
+		"Leben und Abenteuer des Kapitäns Singleton / Leben und Abenteuer des weltbekannten Seeräubers Bob Singleton / The life, adventures and pyracies of the famous captain Singleton"
+	],
+	"year": 1720,
+	"year_display": "1720",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

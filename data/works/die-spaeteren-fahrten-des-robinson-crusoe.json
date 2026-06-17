@@ -1,0 +1,22 @@
+{
+	"id": "die-spaeteren-fahrten-des-robinson-crusoe",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"abenteuerroman"
+	],
+	"title": "Die späteren Fahrten des Robinson Crusoe zu seiner Insel und rund um die Welt",
+	"slug": "die-spaeteren-fahrten-des-robinson-crusoe",
+	"aliases": [
+		"The farther adventures of Robinson Crusoe"
+	],
+	"year": 1719,
+	"year_display": "1719",
+	"parent_slugs": [
+		"robinson-crusoe-romanzyklus"
+	],
+	"fortsetzung_von_ids": [
+		"das-leben-und-die-abenteuer-des-robinson-crusoe"
+	],
+	"plot": null,
+	"sources": []
+}

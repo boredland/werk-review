@@ -1,0 +1,29 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/moll-flanders-by-daniel-defoe/",
+		"label": "Fortunes and Misfortunes of the Famous Moll Flanders",
+		"librivox_id": "606"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/moll-flanders-by-daniel-defoe-2/",
+		"label": "Moll Flanders - Version 2",
+		"librivox_id": "20774"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/moll-flanders-by-daniel-defoe-3/",
+		"label": "Moll Flanders (Deutsch)",
+		"librivox_id": "22312"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/daniel-defoe/books/daniel-defoe-moll-flanders",
+		"label": "Moll Flanders"
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"id": "der-consolidator",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Der Consolidator oder Erinnerungen an allerlei Vorgänge aus der Welt des Mondes",
+	"slug": "der-consolidator",
+	"aliases": [
+		"The consolidator: or, memoirs of sundry transactions from the world in the moon"
+	],
+	"year": 1705,
+	"year_display": "1705",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein Mann findet sich plötzlich in einer Welt wieder, die nicht die seine ist – einer Welt aus fremden Perspektiven, politischen Spiegelungen und seltsamen Visionen, die den Blick auf die Erde selbst verändern. Was zunächst wie eine fantastische Reise beginnt, entpuppt sich als satirische Abrechnung mit Macht, Wissenschaft und menschlicher Selbstüberschätzung. [KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,30 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/captain-singleton-by-daniel-defoe/",
+		"label": "Life, Adventures & Piracies of Captain Singleton",
+		"librivox_id": "3332"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Robinson Crusoe (Version 3)",
+		"librivox_id": "21060"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/leben-und-abenteuer-des-weltbekannten-seeraeubers-bob-singleton-by-daniel-defoe/",
+		"label": "Leben und Abenteuer des weltbekannten Seeräubers Bob Singleton",
+		"librivox_id": "21722"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/leben-und-abenteuer-des-robinson-crusoe-by-daniel-defoe/",
+		"label": "Leben und Abenteuer des Robinson Crusoe",
+		"librivox_id": "21920"
+	}
+]

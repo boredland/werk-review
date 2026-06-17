@@ -1,0 +1,73 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/robinson-crusoe-written-anew-for-children-by-james-baldwin/",
+		"label": "Robinson Crusoe Written Anew for Children",
+		"librivox_id": "241"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/robinson-crusoe-by-daniel-defoe/",
+		"label": "Robinson Crusoe",
+		"librivox_id": "696"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/robinson-crusoe-in-words-of-one-syllable-by-mary-godolphin/",
+		"label": "Robinson Crusoe in Words of One Syllable",
+		"librivox_id": "1033"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-farther-adventures-of-robinson-crusoe-by-daniel-defoe/",
+		"label": "Further Adventures of Robinson Crusoe",
+		"librivox_id": "3561"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/robinson-crusoe-by-daniel-defoe-2/",
+		"label": "Robinson Crusoe (version 2)",
+		"librivox_id": "4284"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/robinson-crusoe-in-words-of-one-syllable-by-lucy-aikin/",
+		"label": "Robinson Crusoe in Words of One Syllable (Version 2)",
+		"librivox_id": "6761"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "",
+		"label": "Robinson Crusoe (Version 3)",
+		"librivox_id": "21060"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/leben-und-abenteuer-des-robinson-crusoe-by-daniel-defoe/",
+		"label": "Leben und Abenteuer des Robinson Crusoe",
+		"librivox_id": "21920"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/daniel-defoe/books/daniel-defoe-robinson-crusoe",
+		"label": "Robinson Crusoe"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/RobinsonCrusoe_201610",
+		"label": "Robinson Crusoe",
+		"formats": [
+			"EPUB"
+		]
+	}
+]

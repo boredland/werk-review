@@ -1,0 +1,16 @@
+{
+	"id": "robinson-crusoe-romanzyklus",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"romanreihe"
+	],
+	"title": "Robinson Crusoe",
+	"slug": "robinson-crusoe-romanzyklus",
+	"aliases": [],
+	"year": 1719,
+	"year_display": "1719-1920",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

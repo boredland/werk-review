@@ -1,0 +1,18 @@
+{
+	"id": "mr-duncan-campbell",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Geschichte des Lebens und der Abenteuer des Mr. Duncan Campbell",
+	"slug": "mr-duncan-campbell",
+	"aliases": [
+		"The history of the life and adventures of Mr. Duncan Campbell"
+	],
+	"year": 1720,
+	"year_display": "1720",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

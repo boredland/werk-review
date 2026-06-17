@@ -1,0 +1,18 @@
+{
+	"id": "oberst-hannes",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Oberst Hannes",
+	"slug": "oberst-hannes",
+	"aliases": [
+		"Die Geschichte und das ungewöhnliche Leben des sehr ehrenwerten Colonel Jacques, allgemein Oberst Jack genannt / The history and remarkable life of the truly honourable Colonel Jacque, commonly call'd Colonel Jack"
+	],
+	"year": 1723,
+	"year_display": "1723",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

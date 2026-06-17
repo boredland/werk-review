@@ -1,0 +1,18 @@
+{
+	"id": "die-glueckliche-maetresse",
+	"author_id": "daniel-defoe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die glückliche Mätresse",
+	"slug": "die-glueckliche-maetresse",
+	"aliases": [
+		"Roxana: The Fortunate Mistress"
+	],
+	"year": 1724,
+	"year_display": "1724",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
