@@ -1,0 +1,20 @@
+{
+	"id": "die-handschuh",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Handschuh",
+	"slug": "die-handschuh",
+	"aliases": [
+		"The Pair of Gloves (Three Detective Anecdotes)"
+	],
+	"year": 1860,
+	"year_display": "1860",
+	"parent_slugs": [
+		"detektivgeschichten-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

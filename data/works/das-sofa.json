@@ -1,0 +1,20 @@
+{
+	"id": "das-sofa",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Sofa",
+	"slug": "das-sofa",
+	"aliases": [
+		"The Sofa (Three Detective Anecdotes)"
+	],
+	"year": 1860,
+	"year_display": "1860",
+	"parent_slugs": [
+		"detektivgeschichten-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

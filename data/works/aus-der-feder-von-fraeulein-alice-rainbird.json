@@ -1,0 +1,20 @@
+{
+	"id": "aus-der-feder-von-fraeulein-alice-rainbird",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Märchen: Aus der Feder von Fräulein Alice Rainbird, sieben Jahre alt",
+	"slug": "aus-der-feder-von-fraeulein-alice-rainbird",
+	"aliases": [
+		"The Magic Fishbone, A Holiday Romance from the Pen of Miss Alice Rainbird, Aged 7"
+	],
+	"year": 1867,
+	"year_display": "1867",
+	"parent_slugs": [
+		"ferienmaerchen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

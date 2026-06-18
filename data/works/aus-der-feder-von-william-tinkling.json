@@ -1,0 +1,18 @@
+{
+	"id": "aus-der-feder-von-william-tinkling",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Einleitungsgeschichte: Aus der Feder von William Tinkling, Hochwoblgeboren, acht Jahre alt",
+	"slug": "aus-der-feder-von-william-tinkling",
+	"aliases": [],
+	"year": 1867,
+	"year_display": "1867",
+	"parent_slugs": [
+		"ferienmaerchen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

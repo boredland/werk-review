@@ -1,0 +1,18 @@
+{
+	"id": "aus-der-feder-von-oberstleutnant-robin-redforth",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Romantisches Abenteuer: Aus der Feder von Oberstleutnant Robin Redforth, neun Jahre alt",
+	"slug": "aus-der-feder-von-oberstleutnant-robin-redforth",
+	"aliases": [],
+	"year": 1867,
+	"year_display": "1867",
+	"parent_slugs": [
+		"ferienmaerchen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "auf-runde-mit-inspektor-field",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Auf Runde mit Inspektor Field",
+	"slug": "auf-runde-mit-inspektor-field",
+	"aliases": [
+		"On Duty With Inspector Field"
+	],
+	"year": 1860,
+	"year_display": "1860",
+	"parent_slugs": [
+		"detektivgeschichten-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

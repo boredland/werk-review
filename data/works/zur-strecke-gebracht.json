@@ -1,0 +1,20 @@
+{
+	"id": "zur-strecke-gebracht",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Zur Strecke gebracht",
+	"slug": "zur-strecke-gebracht",
+	"aliases": [
+		"Treibjagt / Hunted Down"
+	],
+	"year": 1860,
+	"year_display": "1860",
+	"parent_slugs": [
+		"detektivgeschichten-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

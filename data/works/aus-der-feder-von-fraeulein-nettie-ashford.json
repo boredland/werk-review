@@ -1,0 +1,18 @@
+{
+	"id": "aus-der-feder-von-fraeulein-nettie-ashford",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Märchen: Aus der Feder von Fräulein Nettie Ashford, sechseinhalb Jahre alt",
+	"slug": "aus-der-feder-von-fraeulein-nettie-ashford",
+	"aliases": [],
+	"year": 1867,
+	"year_display": "1867",
+	"parent_slugs": [
+		"ferienmaerchen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
