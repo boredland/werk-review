@@ -20,16 +20,6 @@
 		"slug": "prosa"
 	},
 	{
-		"id": "novelle",
-		"name": "Novelle",
-		"slug": "novelle"
-	},
-	{
-		"id": "drama",
-		"name": "Drama",
-		"slug": "drama"
-	},
-	{
 		"id": "abenteuerroman",
 		"name": "Abenteuerroman",
 		"slug": "abenteuerroman"
