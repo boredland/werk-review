@@ -1,0 +1,18 @@
+{
+	"id": "ein-kleiner-held",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein kleiner Held",
+	"slug": "ein-kleiner-held",
+	"aliases": [
+		"Маленький герой / Malen’kij geroj"
+	],
+	"year": 1849,
+	"year_display": "1849",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein sensibler Junge erlebt auf einem Landsitz einen Sommer voller neuer Gefühle und Geheimnisse. Die Begegnung mit einer faszinierenden Frau verändert seinen Blick auf die Welt für immer. Eine poetische Geschichte über die ersten Schritte ins Erwachsenwerden. [KI-generierter Inhalt]",
+	"sources": []
+}

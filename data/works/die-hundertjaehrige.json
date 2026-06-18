@@ -1,0 +1,18 @@
+{
+	"id": "die-hundertjaehrige",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Hundertjährige",
+	"slug": "die-hundertjaehrige",
+	"aliases": [
+		"Столетняя / Stoletnjaja"
+	],
+	"year": 1876,
+	"year_display": "1876",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Eine Begegnung mit einer außergewöhnlich alten Frau wird zum Anlass für Betrachtungen über Zeit, Erinnerung und Vergänglichkeit. In wenigen Seiten entfaltet Dostojewski ein eindrucksvolles Bild menschlicher Lebenserfahrung. [KI-generierter Inhalt]",
+	"sources": []
+}

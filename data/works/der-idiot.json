@@ -1,0 +1,18 @@
+{
+	"id": "der-idiot",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Idiot",
+	"slug": "der-idiot",
+	"aliases": [
+		"Идиот"
+	],
+	"year": 1869,
+	"year_display": "1869",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Fürst Lew Myschkin kehrt nach langer Krankheit in die russische Gesellschaft zurück. Seine Offenheit und Güte wirken auf andere zugleich anziehend und verstörend. Doch kann ein wahrhaft guter Mensch in einer Welt voller Leidenschaften und Intrigen bestehen? [KI-generierter Inhalt]",
+	"sources": []
+}

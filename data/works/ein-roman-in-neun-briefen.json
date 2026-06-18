@@ -1,0 +1,18 @@
+{
+	"id": "ein-roman-in-neun-briefen",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"briefroman"
+	],
+	"title": "Ein Roman in neun Briefen",
+	"slug": "ein-roman-in-neun-briefen",
+	"aliases": [
+		"Eine Novelle in neun Briefen / Roman in 9 Briefen / Роман в девяти письмах / Roman v devjati pis’mach"
+	],
+	"year": 1847,
+	"year_display": "1847",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein harmloser Briefwechsel zwischen Pjotr Iwanowitsch und Iwan Petrowitsch entwickelt eine Dynamik, die keiner von beiden erwartet hat. Missverständnisse, Eitelkeiten und kleine Täuschungen führen zu immer neuen Verwicklungen. Eine geistreiche und humorvolle Satire auf die menschliche Natur. [KI-generierter Inhalt]",
+	"sources": []
+}

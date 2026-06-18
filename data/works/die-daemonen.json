@@ -1,0 +1,18 @@
+{
+	"id": "die-daemonen",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Dämonen",
+	"slug": "die-daemonen",
+	"aliases": [
+		"Die Teufel / Böse Geister / Die Besessenen / Bei Tichon / Бесы / Besy"
+	],
+	"year": 1872,
+	"year_display": "1872",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Eine Provinzstadt gerät in den Sog revolutionärer Ideen und persönlicher Abgründe. Im Zentrum steht der geheimnisvolle Nikolai Stawrogin, dessen Einfluss Menschen anzieht und zerstört. Ein düsterer Roman über Fanatismus, Nihilismus und die Macht von Ideen. [KI-generierter Inhalt]",
+	"sources": []
+}

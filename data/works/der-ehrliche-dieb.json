@@ -1,0 +1,18 @@
+{
+	"id": "der-ehrliche-dieb",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der ehrliche Dieb",
+	"slug": "der-ehrliche-dieb",
+	"aliases": [
+		"Честный вор / Čestnyj vor"
+	],
+	"year": 1848,
+	"year_display": "1848",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der verarmte Jemeljan Iljitsch findet Unterkunft bei einem gutmütigen Erzähler. Als ein Diebstahl geschieht, geraten Vertrauen und Mitgefühl auf eine harte Probe. Eine stille Geschichte über Schuld, Scham und die Sehnsucht nach Vergebung. [KI-generierter Inhalt]",
+	"sources": []
+}

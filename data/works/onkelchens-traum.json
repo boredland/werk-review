@@ -1,0 +1,18 @@
+{
+	"id": "onkelchens-traum",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Onkelchens Traum",
+	"slug": "onkelchens-traum",
+	"aliases": [
+		"Des Onkels Traum / Дядюшкин сон / Djaduškin son"
+	],
+	"year": 1859,
+	"year_display": "1859",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Die ehrgeizige Maria Alexandrowna Moskaleva sieht ihre große Chance gekommen, als ein wohlhabender Fürst in die Stadt reist. Mit allen Mitteln versucht sie, das Schicksal ihrer Familie zu lenken. Doch Pläne und Wirklichkeit gehen selten denselben Weg. [KI-generierter Inhalt]",
+	"sources": []
+}

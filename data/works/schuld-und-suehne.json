@@ -1,0 +1,18 @@
+{
+	"id": "schuld-und-suehne",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Schuld und Sühne",
+	"slug": "schuld-und-suehne",
+	"aliases": [
+		"Raskolnikow / Verbrechen und Strafe / Raskolnikoff / Преступление и наказание / Prestuplenie i nakazanie"
+	],
+	"year": 1866,
+	"year_display": "1866",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der verarmte Student Rodion Raskolnikow glaubt, eine außergewöhnliche Tat rechtfertigen zu können. Doch nachdem er eine Grenze überschritten hat, beginnt ein Kampf gegen das eigene Gewissen, der unerbittlicher ist als jedes Gericht. Einer der größten Romane über Schuld und Erlösung. [KI-generierter Inhalt]",
+	"sources": []
+}

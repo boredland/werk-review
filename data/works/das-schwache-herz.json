@@ -1,0 +1,18 @@
+{
+	"id": "das-schwache-herz",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das schwache Herz",
+	"slug": "das-schwache-herz",
+	"aliases": [
+		"Ein schwaches Herz / Слабое сердце / Slaboje serdce"
+	],
+	"year": 1848,
+	"year_display": "1848",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Für den jungen Beamten Wassja Schumkow scheint sich das Leben endlich zum Guten zu wenden. Doch je größer sein Glück wird, desto mehr wächst die Angst, es wieder zu verlieren. Eine erschütternde Erzählung über die Zerbrechlichkeit der Seele. [KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "die-brueder-karamasow",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Brüder Karamasow",
+	"slug": "die-brueder-karamasow",
+	"aliases": [
+		"Die Brüder Karamasoff / Братья Карамазовы / Brat’ja Karamazovy"
+	],
+	"year": 1880,
+	"year_display": "1880",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Die Brüder Dmitri, Iwan und Aljoscha Karamasow verbindet mehr als nur ihr gemeinsamer Name: Jeder von ihnen ringt auf seine Weise mit den großen Fragen des Lebens. Als ein Verbrechen die Familie erschüttert, geraten Liebe, Glaube, Freiheit und Schuld in einen Strudel von Ereignissen. Dostojewskis letzter Roman gilt als Höhepunkt seines Schaffens. [KI-generierter Inhalt]",
+	"sources": []
+}

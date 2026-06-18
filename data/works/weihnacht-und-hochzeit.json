@@ -1,0 +1,18 @@
+{
+	"id": "weihnacht-und-hochzeit",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Weihnacht und Hochzeit",
+	"slug": "weihnacht-und-hochzeit",
+	"aliases": [
+		"Weihnachtsbaum und Hochzeit / Christbaum und Hochzeit / Ёлка и свадьба / Elka i svadʹba"
+	],
+	"year": 1848,
+	"year_display": "1848",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Auf einem festlich geschmückten Weihnachtsabend beobachtet ein Erzähler einen wohlhabenden Mann und ein kleines Mädchen. Jahre später wird deutlich, welche Absichten sich hinter dieser Begegnung verbargen. Eine scharfe Kritik an einer Gesellschaft, in der Geld oft mehr zählt als Gefühle. [KI-generierter Inhalt]",
+	"sources": []
+}

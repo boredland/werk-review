@@ -1,0 +1,18 @@
+{
+	"id": "herr-prochartschin",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Herr Prochartschin",
+	"slug": "herr-prochartschin",
+	"aliases": [
+		"Господин Прохарчин / Gospodin Procharčin"
+	],
+	"year": 1846,
+	"year_display": "1846",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der verschlossene Beamte Semjon Prochartschin lebt zurückgezogen und unscheinbar unter seinen Mitmenschen. Doch hinter seiner äußerlichen Bedeutungslosigkeit verbirgt sich ein Geheimnis, das erst ans Licht kommt, als es längst zu spät ist. Eine eindringliche Studie über Angst, Einsamkeit und menschliche Selbsttäuschung. [KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "der-spieler",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Spieler",
+	"slug": "der-spieler",
+	"aliases": [
+		"Игрок / Igrok"
+	],
+	"year": 1867,
+	"year_display": "1867",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Für Alexej Iwanowitsch wird das Roulette zum Mittelpunkt seines Lebens. Zwischen Liebe, Hoffnung und Verzweiflung jagt er einem Glück hinterher, das ihm immer wieder entgleitet. Ein packender Roman über Sucht und Selbstzerstörung. [KI-generierter Inhalt]",
+	"sources": []
+}

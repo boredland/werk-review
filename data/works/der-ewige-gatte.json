@@ -1,0 +1,18 @@
+{
+	"id": "der-ewige-gatte",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der ewige Gatte",
+	"slug": "der-ewige-gatte",
+	"aliases": [
+		"Der lebenslängliche Ehemann / Вечный муж / Večnyj muž"
+	],
+	"year": 1870,
+	"year_display": "1870",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Als Alexej Weltschaninow dem rätselhaften Pawel Pawlowitsch begegnet, wird er von seiner Vergangenheit eingeholt. Zwischen den beiden Männern entsteht ein psychologisches Kräftemessen, in dem Schuld, Eifersucht und verborgenes Wissen eine entscheidende Rolle spielen. [KI-generierter Inhalt]",
+	"sources": []
+}

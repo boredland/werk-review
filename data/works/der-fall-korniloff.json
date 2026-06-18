@@ -1,0 +1,16 @@
+{
+	"id": "der-fall-korniloff",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Der Fall Korniloff",
+	"slug": "der-fall-korniloff",
+	"aliases": [],
+	"year": 1861,
+	"year_display": "1861",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Fall des Verbrechers Kornilow sorgt für Aufsehen und wirft Fragen auf, die weit über das einzelne Verbrechen hinausgehen. Dostojewski interessiert sich weniger für die Tat als für den Menschen dahinter. Eine faszinierende Verbindung von Kriminalfall und psychologischer Beobachtung. [KI-generierter Inhalt]",
+	"sources": []
+}
