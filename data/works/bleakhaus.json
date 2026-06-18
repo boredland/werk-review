@@ -1,0 +1,18 @@
+{
+	"id": "bleakhaus",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Bleakhaus",
+	"slug": "bleakhaus",
+	"aliases": [
+		"Bleak House"
+	],
+	"year": 1852,
+	"year_display": "1852-1853",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

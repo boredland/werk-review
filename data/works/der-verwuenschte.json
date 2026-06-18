@@ -1,0 +1,18 @@
+{
+	"id": "der-verwuenschte",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Verwünschte",
+	"slug": "der-verwuenschte",
+	"aliases": [
+		"Der Heimgesuchte / The Haunted Man and the Ghost's Bargain / A Fancy for Christmas-Time"
+	],
+	"year": 1848,
+	"year_display": "1848",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

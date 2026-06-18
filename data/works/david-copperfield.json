@@ -1,0 +1,16 @@
+{
+	"id": "david-copperfield",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "David Copperfield",
+	"slug": "david-copperfield",
+	"aliases": [],
+	"year": 1849,
+	"year_display": "1849-1850",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

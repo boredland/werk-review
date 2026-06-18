@@ -1,0 +1,18 @@
+{
+	"id": "martin-chuzzlewit",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Leben und Abenteuer des Martin Chuzzlewit",
+	"slug": "martin-chuzzlewit",
+	"aliases": [
+		"Martin Chuzzlewit"
+	],
+	"year": 1843,
+	"year_display": "1843-1844",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

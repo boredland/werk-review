@@ -1,0 +1,18 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/a-childs-history-of-england-by-charles-dickens/",
+		"label": "Child's History of England",
+		"librivox_id": "1142"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_sD4PAAAAQAAJ",
+		"label": "Die Geschichte Englands für Jung und Alt",
+		"formats": [
+			"Text PDF"
+		]
+	}
+]

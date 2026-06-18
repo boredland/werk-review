@@ -1,0 +1,20 @@
+{
+	"id": "die-straßen-am-morgen",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Straßen am Morgen",
+	"slug": "die-straßen-am-morgen",
+	"aliases": [
+		"The Streets – Morning"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

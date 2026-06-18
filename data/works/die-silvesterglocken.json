@@ -1,0 +1,18 @@
+{
+	"id": "die-silvesterglocken",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Silvesterglocken: Ein Märchen von Glocken, die ein altes Jahr aus und ein neues Jahr einläuteten",
+	"slug": "die-silvesterglocken",
+	"aliases": [
+		"Toby Veck und die Silvesterglocken / The Chimes: A Goblin Story of Some Bells that Rang an Old Year Out and a New Year In"
+	],
+	"year": 1844,
+	"year_display": "1844",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

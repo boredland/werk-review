@@ -1,0 +1,18 @@
+{
+	"id": "harte-zeiten",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Harte Zeiten",
+	"slug": "harte-zeiten",
+	"aliases": [
+		"Harte Zeiten - für diese Zeiten / Schwere Zeiten / Hard times"
+	],
+	"year": 1854,
+	"year_display": "1854",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

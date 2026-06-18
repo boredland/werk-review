@@ -1,0 +1,18 @@
+{
+	"id": "dombey-und-sohn",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Dombey und Sohn",
+	"slug": "dombey-und-sohn",
+	"aliases": [
+		"Dombey & Sohn / Dombey and son"
+	],
+	"year": 1846,
+	"year_display": "1846-1848",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

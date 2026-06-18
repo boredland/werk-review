@@ -1,0 +1,18 @@
+{
+	"id": "klein-dorrit",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Klein Dorrit",
+	"slug": "klein-dorrit",
+	"aliases": [
+		"Little Dorrit"
+	],
+	"year": 1855,
+	"year_display": "1855-1857",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

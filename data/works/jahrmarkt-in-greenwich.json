@@ -1,0 +1,20 @@
+{
+	"id": "jahrmarkt-in-greenwich",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Jahrmarkt in Greenwich",
+	"slug": "jahrmarkt-in-greenwich",
+	"aliases": [
+		"Greenwich Fair"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

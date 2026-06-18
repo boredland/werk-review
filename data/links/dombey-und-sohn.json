@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/dombey-and-son-by-charles-dickens/",
+		"label": "Dombey and Son",
+		"librivox_id": "2102"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/dombey-und-sohn-band-1",
+		"label": "Dombey und Sohn"
+	}
+]

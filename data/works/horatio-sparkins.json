@@ -1,0 +1,20 @@
+{
+	"id": "horatio-sparkins",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Horatio Sparkins",
+	"slug": "horatio-sparkins",
+	"aliases": [
+		"Horatio Sparkins"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

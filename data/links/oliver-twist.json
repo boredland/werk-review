@@ -1,0 +1,31 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/oliver-twist-by-charles-dickens/",
+		"label": "Oliver Twist",
+		"librivox_id": "578"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/oliver-twist-by-charles-dickens-2/",
+		"label": "Oliver Twist (version 2)",
+		"librivox_id": "4159"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/oliver-twist/",
+		"label": "Oliver Twist"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/olivertwist56586gut",
+		"label": "Oliver Twist",
+		"formats": [
+			"EPUB"
+		]
+	}
+]

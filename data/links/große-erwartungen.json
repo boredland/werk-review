@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/great-expectations-by-charles-dickens/",
+		"label": "Great Expectations",
+		"librivox_id": "2591"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/grosse-erwartungen-dritter-theil",
+		"label": "Große Erwartungen"
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"id": "der-signalwaerter",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"gruselgeschichte"
+	],
+	"title": "Der Signalwärter",
+	"slug": "der-signalwaerter",
+	"aliases": [
+		"Der Bahnwärter / Im Tunnel / The Signal-Man"
+	],
+	"year": 1866,
+	"year_display": "1866",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "oliver-twist",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Oliver Twist",
+	"slug": "oliver-twist",
+	"aliases": [
+		"Der Weg eines Armenhausjungen / Der Werdegang eines Jungen aus dem Armenhaus"
+	],
+	"year": 1837,
+	"year_display": "1837-1839",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

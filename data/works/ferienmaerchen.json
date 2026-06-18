@@ -1,0 +1,18 @@
+{
+	"id": "ferienmaerchen",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Ferienmärchen",
+	"slug": "ferienmaerchen",
+	"aliases": [
+		"Holiday Romance"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

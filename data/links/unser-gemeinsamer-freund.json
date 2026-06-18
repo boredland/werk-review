@@ -1,0 +1,23 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/our-mutual-friend-by-charles-dickens/",
+		"label": "Our Mutual Friend",
+		"librivox_id": "316"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/our-mutual-friend-by-charles-dickens-librivox-version-2/",
+		"label": "Our Mutual Friend, Version 2",
+		"librivox_id": "4600"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/our-mutual-friend-version-3-by-charles-dickens/",
+		"label": "Our Mutual Friend, Version 3",
+		"librivox_id": "4676"
+	}
+]

@@ -1,0 +1,20 @@
+{
+	"id": "londoner-vergnuegungen-und-ergoetzlichkeiten",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Londoner Vergnügungen und Ergötzlichkeiten",
+	"slug": "londoner-vergnuegungen-und-ergoetzlichkeiten",
+	"aliases": [
+		"London Recreations"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

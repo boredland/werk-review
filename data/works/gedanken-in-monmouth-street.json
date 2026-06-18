@@ -1,0 +1,20 @@
+{
+	"id": "gedanken-in-monmouth-street",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gedanken in Monmouth-Street",
+	"slug": "gedanken-in-monmouth-street",
+	"aliases": [
+		"Meditations in Monmouth-Street"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

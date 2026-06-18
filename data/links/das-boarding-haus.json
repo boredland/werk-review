@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-life-and-adventures-of-martin-chuzzlewit/",
+		"label": "Life and Adventures of Martin Chuzzlewit",
+		"librivox_id": "1038"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/sketches-by-boz-by-charles-dickens/",
+		"label": "Sketches by Boz: Illustrative of Every-Day Life and Every-Day People",
+		"librivox_id": "3813"
+	}
+]

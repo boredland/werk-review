@@ -1,0 +1,25 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/little-dorrit-by-charles-dickens/",
+		"label": "Little Dorrit",
+		"librivox_id": "1950"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/klein-dorrit-erstes-buch",
+		"label": "Klein Dorrit"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_uLYOAAAAQAAJ",
+		"label": "Klein Dorrit Roman in zwei Büchern",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

@@ -1,0 +1,30 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/a-christmas-carol-by-charles-dickens/",
+		"label": "Christmas Carol",
+		"librivox_id": "140"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/a-christmas-carol-by-charles-dickens-2/",
+		"label": "Christmas Carol (version 02)",
+		"librivox_id": "685"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/een-kerstlied-in-proza-by-charles-dickens/",
+		"label": "Kerstlied in Proza (A Christmas Carol)",
+		"librivox_id": "3719"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/a-christmas-carol-by-charles-dickens-3/",
+		"label": "Christmas Carol (Version 03)",
+		"librivox_id": "5008"
+	}
+]

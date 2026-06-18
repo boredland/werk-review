@@ -1,0 +1,18 @@
+{
+	"id": "nicholas-nickleby",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Nicholas Nickleby",
+	"slug": "nicholas-nickleby",
+	"aliases": [
+		"Leben und Abenteuer des Nicholas Nickleby / Leben und Schicksale des Nicholas Nickleby / Nikolas Nickleby"
+	],
+	"year": 1838,
+	"year_display": "1838-1839",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

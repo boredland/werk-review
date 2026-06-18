@@ -1,0 +1,20 @@
+{
+	"id": "der-strom",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Strom",
+	"slug": "der-strom",
+	"aliases": [
+		"The River"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

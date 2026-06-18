@@ -1,0 +1,20 @@
+{
+	"id": "die-ehrgeizige-putzmacherin",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die ehrgeizige Putzmacherin",
+	"slug": "die-ehrgeizige-putzmacherin",
+	"aliases": [
+		"The Mistaken Milliner. A Tale of Ambition"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

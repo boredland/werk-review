@@ -1,0 +1,20 @@
+{
+	"id": "der-erste-mai",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der erste Mai",
+	"slug": "der-erste-mai",
+	"aliases": [
+		"The First of Ma"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

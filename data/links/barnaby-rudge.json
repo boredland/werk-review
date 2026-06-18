@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/barnaby-rudge-by-charles-dickens/",
+		"label": "Barnaby Rudge",
+		"librivox_id": "2450"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/barnaby-rudge-by-charles-dickens-2/",
+		"label": "Barnaby Rudge (version 2)",
+		"librivox_id": "3019"
+	}
+]

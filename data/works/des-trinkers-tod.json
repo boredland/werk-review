@@ -1,0 +1,20 @@
+{
+	"id": "des-trinkers-tod",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Des Trinkers Tod",
+	"slug": "des-trinkers-tod",
+	"aliases": [
+		"The Drunkard's Death"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

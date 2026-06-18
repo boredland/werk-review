@@ -1,0 +1,16 @@
+{
+	"id": "barnaby-rudge",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Barnaby Rudge: Eine Geschichte der Unruhen von 1780",
+	"slug": "barnaby-rudge",
+	"aliases": [],
+	"year": 1841,
+	"year_display": "1841",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

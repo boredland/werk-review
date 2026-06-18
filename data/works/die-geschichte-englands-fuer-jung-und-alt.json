@@ -1,0 +1,18 @@
+{
+	"id": "die-geschichte-englands-fuer-jung-und-alt",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Die Geschichte Englands für Jung und Alt",
+	"slug": "die-geschichte-englands-fuer-jung-und-alt",
+	"aliases": [
+		"A Child's History of England"
+	],
+	"year": 1851,
+	"year_display": "1851–1853",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

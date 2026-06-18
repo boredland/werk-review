@@ -1,0 +1,30 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-pickwick-papers-by-charles-dickens/",
+		"label": "Pickwick Papers",
+		"librivox_id": "942"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-life-and-adventures-of-martin-chuzzlewit/",
+		"label": "Life and Adventures of Martin Chuzzlewit",
+		"librivox_id": "1038"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/pickwick-papers-the-version-2-by-charles-dickens/",
+		"label": "Pickwick Papers (Version 2)",
+		"librivox_id": "4128"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-chimes-by-charles-dickens/",
+		"label": "Chimes",
+		"librivox_id": "4924"
+	}
+]

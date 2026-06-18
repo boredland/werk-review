@@ -1,0 +1,18 @@
+{
+	"id": "eine-geschichte-von-zwei-staedten",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"historischer-roman"
+	],
+	"title": "Eine Geschichte von zwei Städten",
+	"slug": "eine-geschichte-von-zwei-staedten",
+	"aliases": [
+		"Eine Geschichte aus zwei Städten / Eine Geschichte zweier Städte / A tale Of two Cities"
+	],
+	"year": 1859,
+	"year_display": "1859",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-old-curiosity-shop-by-charles-dickens/",
+		"label": "Old Curiosity Shop",
+		"librivox_id": "1013"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-old-curiosity-shop-by-charles-dickens-2/",
+		"label": "Old Curiosity Shop (version 2)",
+		"librivox_id": "3877"
+	}
+]

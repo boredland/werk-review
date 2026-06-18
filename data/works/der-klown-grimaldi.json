@@ -1,0 +1,18 @@
+{
+	"id": "der-klown-grimaldi",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Klown Grimaldi",
+	"slug": "der-klown-grimaldi",
+	"aliases": [
+		"Clown Grimaldi"
+	],
+	"year": 1842,
+	"year_display": "1842",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

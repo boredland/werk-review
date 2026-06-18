@@ -1,0 +1,20 @@
+{
+	"id": "die-vier-schwestern",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die vier Schwestern",
+	"slug": "die-vier-schwestern",
+	"aliases": [
+		"The Four Sisters"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

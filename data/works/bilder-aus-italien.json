@@ -1,0 +1,18 @@
+{
+	"id": "bilder-aus-italien",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Bilder aus Italien",
+	"slug": "bilder-aus-italien",
+	"aliases": [
+		"Pictures from Italy"
+	],
+	"year": 1846,
+	"year_display": "1846",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

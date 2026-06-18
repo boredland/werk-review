@@ -1,0 +1,20 @@
+{
+	"id": "master-kitterbells-taufe",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Master Kitterbells Taufe",
+	"slug": "master-kitterbells-taufe",
+	"aliases": [
+		"The Bloomsbury Christening"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

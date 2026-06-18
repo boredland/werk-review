@@ -1,0 +1,18 @@
+{
+	"id": "unser-gemeinsamer-freund",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Unser gemeinsamer Freund",
+	"slug": "unser-gemeinsamer-freund",
+	"aliases": [
+		"Our mutual friend"
+	],
+	"year": 1864,
+	"year_display": "1864-1865",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

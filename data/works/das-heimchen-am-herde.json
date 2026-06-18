@@ -1,0 +1,18 @@
+{
+	"id": "das-heimchen-am-herde",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Heimchen am Herde",
+	"slug": "das-heimchen-am-herde",
+	"aliases": [
+		"The Cricket on the Hearth / A Fairy Tale of Home"
+	],
+	"year": 1845,
+	"year_display": "1845",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

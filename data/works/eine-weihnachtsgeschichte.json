@@ -1,0 +1,18 @@
+{
+	"id": "eine-weihnachtsgeschichte",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Eine Weihnachtsgeschichte",
+	"slug": "eine-weihnachtsgeschichte",
+	"aliases": [
+		"A Christmas Carol: Being a Ghost Story of Christmas:"
+	],
+	"year": 1843,
+	"year_display": "1843",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

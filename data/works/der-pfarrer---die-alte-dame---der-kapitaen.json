@@ -1,0 +1,20 @@
+{
+	"id": "der-pfarrer---die-alte-dame---der-kapitaen",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Pfarrer - Die alte Dame - Der Kapitän",
+	"slug": "der-pfarrer---die-alte-dame---der-kapitaen",
+	"aliases": [
+		"The Curate. The Old Lady. The Half-pay Captain"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

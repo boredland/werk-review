@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/hard-times-by-charles-dickens/",
+		"label": "Hard Times",
+		"librivox_id": "845"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/schwere-zeiten",
+		"label": "Harte Zeiten - für diese Zeiten / Schwere Zeiten / Hard times"
+	}
+]

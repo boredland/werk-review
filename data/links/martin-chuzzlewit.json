@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-life-and-adventures-of-martin-chuzzlewit/",
+		"label": "Life and Adventures of Martin Chuzzlewit",
+		"librivox_id": "1038"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/martin-chuzzlewit",
+		"label": "Leben und Abenteuer des Martin Chuzzlewit"
+	}
+]

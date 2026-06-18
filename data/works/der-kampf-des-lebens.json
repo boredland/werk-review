@@ -1,0 +1,18 @@
+{
+	"id": "der-kampf-des-lebens",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Kampf des Lebens",
+	"slug": "der-kampf-des-lebens",
+	"aliases": [
+		"Das Leben ein Kampf / The Battle of Life: A Love Story"
+	],
+	"year": 1846,
+	"year_display": "1846",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

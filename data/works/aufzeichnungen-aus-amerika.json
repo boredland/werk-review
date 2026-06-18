@@ -1,0 +1,18 @@
+{
+	"id": "aufzeichnungen-aus-amerika",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Aufzeichnungen aus Amerika",
+	"slug": "aufzeichnungen-aus-amerika",
+	"aliases": [
+		"American Notes for General Circulation"
+	],
+	"year": 1842,
+	"year_display": "1842",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

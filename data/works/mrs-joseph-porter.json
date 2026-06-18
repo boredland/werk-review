@@ -1,0 +1,20 @@
+{
+	"id": "mrs-joseph-porter",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Mrs. Joseph Porter",
+	"slug": "mrs-joseph-porter",
+	"aliases": [
+		"Mrs Joseph Porter"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/sketches-by-boz-by-charles-dickens/",
+		"label": "Sketches by Boz: Illustrative of Every-Day Life and Every-Day People",
+		"librivox_id": "3813"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/londoner-skizzen/",
+		"label": "Londoner Skizzen"
+	}
+]

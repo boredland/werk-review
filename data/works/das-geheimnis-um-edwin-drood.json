@@ -1,0 +1,18 @@
+{
+	"id": "das-geheimnis-um-edwin-drood",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Das Geheimnis um Edwin Drood",
+	"slug": "das-geheimnis-um-edwin-drood",
+	"aliases": [
+		"Das Geheimnis des Edwin Drood / The Mystery of Edwin Drood"
+	],
+	"year": 1870,
+	"year_display": "1870",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

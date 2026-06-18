@@ -1,0 +1,20 @@
+{
+	"id": "astley's-circus",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Astley's Circus",
+	"slug": "astley's-circus",
+	"aliases": [
+		"Astley's"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

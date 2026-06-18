@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/bleak-house-by-charles-dickens/",
+		"label": "Bleak House",
+		"librivox_id": "53"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/bleakhaus/",
+		"label": "Bleakhaus"
+	}
+]

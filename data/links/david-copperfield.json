@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/david-copperfield-by-charles-dickens/",
+		"label": "David Copperfield",
+		"librivox_id": "1411"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/david-copperfield-by-charles-dickens-version-2/",
+		"label": "David Copperfield (version 2)",
+		"librivox_id": "4590"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/david-copperfield-teil-1",
+		"label": "David Copperfield"
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"id": "die-pickwickier",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Pickwickier",
+	"slug": "die-pickwickier",
+	"aliases": [
+		"Die nachgelassenen Papiere des Pickwick-Klubs / Denkwürdigkeiten des Pickwick-Klubs / Pickwick papers"
+	],
+	"year": 1836,
+	"year_display": "1836-1837",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

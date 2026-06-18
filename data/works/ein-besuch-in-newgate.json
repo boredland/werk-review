@@ -1,0 +1,20 @@
+{
+	"id": "ein-besuch-in-newgate",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Besuch in Newgate",
+	"slug": "ein-besuch-in-newgate",
+	"aliases": [
+		"A Visit to Newgate"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

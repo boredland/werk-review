@@ -1,0 +1,20 @@
+{
+	"id": "die-tanzakademie",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Tanzakademie",
+	"slug": "die-tanzakademie",
+	"aliases": [
+		"The Dancing Academy"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "des-mordes-angeklagt",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"gruselgeschichte"
+	],
+	"title": "Des Mordes angeklagt",
+	"slug": "des-mordes-angeklagt",
+	"aliases": [
+		"The Trial for Murder"
+	],
+	"year": 1865,
+	"year_display": "1865",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

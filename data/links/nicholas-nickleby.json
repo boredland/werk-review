@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-life-and-adventures-of-nicholas-nickleby-by/",
+		"label": "Life And Adventures Of Nicholas Nickleby",
+		"librivox_id": "876"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/nikolas-nickleby",
+		"label": "Leben und Abenteuer des Nicholas Nickleby / Leben und Schicksale des Nicholas Nickleby / Nikolas Nickleby"
+	}
+]

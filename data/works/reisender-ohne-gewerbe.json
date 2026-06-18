@@ -1,0 +1,18 @@
+{
+	"id": "reisender-ohne-gewerbe",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Reisender ohne Gewerbe",
+	"slug": "reisender-ohne-gewerbe",
+	"aliases": [
+		"The Uncommercial Traveller"
+	],
+	"year": 1860,
+	"year_display": "1860–1861",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

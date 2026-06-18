@@ -1,0 +1,20 @@
+{
+	"id": "gedanken-ueber-leute-und-leutchen",
+	"author_id": "charles-dickens",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gedanken über Leute und Leutchen",
+	"slug": "gedanken-ueber-leute-und-leutchen",
+	"aliases": [
+		"Thoughts about People"
+	],
+	"year": 1833,
+	"year_display": "1833",
+	"parent_slugs": [
+		"londoner-skizzen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
