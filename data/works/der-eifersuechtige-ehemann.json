@@ -1,0 +1,20 @@
+{
+	"id": "der-eifersuechtige-ehemann",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der eifersüchtige Ehemann",
+	"slug": "der-eifersuechtige-ehemann",
+	"aliases": [
+		"Ревнивый муж / Revnivyi muž"
+	],
+	"year": 1848,
+	"year_display": "1848",
+	"parent_slugs": [
+		"die-fremde-frau-und-der-mann-unter-dem-bett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Iwan Andrejewitsch Schabrin kann seine Eifersucht nicht überwinden und setzt seine Suche nach der vermeintlichen Wahrheit fort. Auf der Jagd nach einem möglichen Rivalen verschlägt es ihn an einen Ort, an dem jede falsche Bewegung unangenehme Folgen haben könnte. Während die Spannung steigt, wird immer unklarer, ob Schabrin einer echten Spur folgt oder vor allem seinen eigenen Befürchtungen. [KI-generierter Inhalt]",
+	"sources": []
+}

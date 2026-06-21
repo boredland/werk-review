@@ -1,0 +1,20 @@
+{
+	"id": "die-fremde-frau",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die fremde Frau",
+	"slug": "die-fremde-frau",
+	"aliases": [
+		"Die Frau eines Andern / Чужая жена / Čužaja žena"
+	],
+	"year": 1848,
+	"year_display": "1848",
+	"parent_slugs": [
+		"die-fremde-frau-und-der-mann-unter-dem-bett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der eifersüchtige Iwan Andrejewitsch Schabrin glaubt, dass seine Frau Glafira Petrowna ihm etwas verheimlicht. Von seinen Verdächtigungen getrieben, verfolgt er eine geheimnisvolle Frau durch die Straßen von Sankt Petersburg und sucht nach Hinweisen auf einen möglichen Betrug. Dabei gerät er in eine Reihe unerwarteter Begegnungen, die seine Gewissheit immer wieder auf die Probe stellen. [KI-generierter Inhalt]",
+	"sources": []
+}
