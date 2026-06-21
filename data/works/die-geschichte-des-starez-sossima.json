@@ -1,0 +1,18 @@
+{
+	"id": "die-geschichte-des-starez-sossima",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Geschichte des Starez Sossima",
+	"slug": "die-geschichte-des-starez-sossima",
+	"aliases": [],
+	"year": 1880,
+	"year_display": "1880",
+	"parent_slugs": [
+		"die-brueder-karamasow"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

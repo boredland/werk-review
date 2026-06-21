@@ -1,0 +1,18 @@
+{
+	"id": "aljoscha-und-die-knaben",
+	"author_id": "fjodor-dostojewski",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Aljoscha und die Knaben",
+	"slug": "aljoscha-und-die-knaben",
+	"aliases": [],
+	"year": 1880,
+	"year_display": "1880",
+	"parent_slugs": [
+		"die-brueder-karamasow"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
