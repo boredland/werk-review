@@ -1,0 +1,18 @@
+{
+	"id": "ingo-und-ingraban",
+	"author_id": "gustav-freytag",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Ingo und Ingraban",
+	"slug": "ingo-und-ingraban",
+	"aliases": [],
+	"year": 1872,
+	"year_display": "1872",
+	"parent_slugs": [
+		"die-ahnen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Im frühen Mittelalter stehen Ingo und Ingraban vor einer Welt im Wandel: alte Stammesordnungen zerbrechen, neue Glaubensvorstellungen breiten sich aus und Machtkämpfe erschüttern das Land. Zwischen Krieg und Frieden, Treue und Verrat müssen die beiden ihren Platz in einer neuen Zeit finden. [KI-generierter Inhalt]",
+	"sources": []
+}

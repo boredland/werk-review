@@ -1,0 +1,18 @@
+{
+	"id": "die-geschwister",
+	"author_id": "gustav-freytag",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Geschwister",
+	"slug": "die-geschwister",
+	"aliases": [],
+	"year": 1878,
+	"year_display": "1878",
+	"parent_slugs": [
+		"die-ahnen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Zwischen den Geschwistern stehen Liebe, Pflichtgefühl und alte Familiengeheimnisse. Die Geschichte zeigt, wie persönliche Wünsche und gesellschaftliche Erwartungen miteinander ringen – und wie eine Familie durch Entscheidungen aus der Vergangenheit geprägt wird. [KI-generierter Inhalt]",
+	"sources": []
+}

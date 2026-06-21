@@ -1,0 +1,18 @@
+{
+	"id": "die-brueder-vom-deutschen-hause",
+	"author_id": "gustav-freytag",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Brüder vom deutschen Hause",
+	"slug": "die-brueder-vom-deutschen-hause",
+	"aliases": [],
+	"year": 1874,
+	"year_display": "1874",
+	"parent_slugs": [
+		"die-ahnen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Die Brüder Hagen und Ingram geraten in die Spannungen einer Zeit, in der Rittertum, Glaube und Herrschaft aufeinanderprallen. Vor dem Hintergrund des Deutschen Ordens erleben sie Abenteuer, Konflikte und Entscheidungen, die ihr Leben für immer verändern. [KI-generierter Inhalt]",
+	"sources": []
+}

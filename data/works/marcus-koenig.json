@@ -1,0 +1,18 @@
+{
+	"id": "marcus-koenig",
+	"author_id": "gustav-freytag",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Marcus König",
+	"slug": "marcus-koenig",
+	"aliases": [],
+	"year": 1876,
+	"year_display": "1876",
+	"parent_slugs": [
+		"die-ahnen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Marcus König steht vor der Herausforderung, sich in einer Gesellschaft zu behaupten, in der Herkunft, Einfluss und Macht über den Erfolg eines Menschen bestimmen. Auf seinem Weg begegnet er politischen Intrigen, persönlichen Prüfungen und der Frage, welchen Preis ein Aufstieg wirklich fordert. [KI-generierter Inhalt]",
+	"sources": []
+}

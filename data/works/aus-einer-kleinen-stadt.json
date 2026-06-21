@@ -1,0 +1,18 @@
+{
+	"id": "aus-einer-kleinen-stadt",
+	"author_id": "gustav-freytag",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Aus einer kleinen Stadt",
+	"slug": "aus-einer-kleinen-stadt",
+	"aliases": [],
+	"year": 1880,
+	"year_display": "1880",
+	"parent_slugs": [
+		"die-ahnen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "In einer scheinbar beschaulichen kleinen Stadt treffen unterschiedliche Charaktere, Hoffnungen und Lebenswege aufeinander. Wolfgang erlebt, wie hinter der vertrauten Fassade des Alltags Ehrgeiz, Liebe, politische Spannungen und menschliche Konflikte verborgen liegen. [KI-generierter Inhalt]",
+	"sources": []
+}
