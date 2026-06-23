@@ -1,0 +1,20 @@
+{
+	"id": "unterhaltungen-deutscher-ausgewanderten-rahmenerzaehlung",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Unterhaltungen deutscher Ausgewanderten (Rahmenerzählung)",
+	"slug": "unterhaltungen-deutscher-ausgewanderten-rahmenerzaehlung",
+	"aliases": [
+		"Unterhaltungen deutscher Ausgewanderter (Rahmenerzählung)"
+	],
+	"year": 1794,
+	"year_display": "1794",
+	"parent_slugs": [
+		"unterhaltungen-deutscher-ausgewanderten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Eine Gruppe deutscher Emigranten sucht in der Fremde Zuflucht vor den politischen Unruhen ihrer Zeit. Um Abstand von der bedrückenden Wirklichkeit zu gewinnen, beginnt sie, sich gegenseitig Geschichten zu erzählen. Doch je mehr die Erzählungen Raum einnehmen, desto stärker vermischen sich Fiktion und Realität in der Gemeinschaft. [KI-generierter Inhalt]",
+	"sources": []
+}

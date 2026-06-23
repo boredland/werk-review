@@ -1,0 +1,18 @@
+{
+	"id": "der-schleier",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Schleier",
+	"slug": "der-schleier",
+	"aliases": [],
+	"year": 1795,
+	"year_display": "1795",
+	"parent_slugs": [
+		"unterhaltungen-deutscher-ausgewanderten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein Schleier wird zum Auslöser einer Reihe von Missverständnissen und verborgenen Leidenschaften. Hinter dem scheinbar alltäglichen Gegenstand entfaltet sich ein Spiel aus Täuschung, Sehnsucht und Enthüllung. Was bleibt verborgen, wenn das Verdeckte langsam ans Licht kommt? [KI-generierter Inhalt]",
+	"sources": []
+}

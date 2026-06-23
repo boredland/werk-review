@@ -7,10 +7,12 @@
 	"title": "Bekenntnisse einer schönen Seele",
 	"slug": "bekenntnisse-einer-schoenen-seele",
 	"aliases": [],
-	"year": null,
-	"year_display": "",
-	"parent_slugs": [],
+	"year": 1795,
+	"year_display": "1795-1796",
+	"parent_slugs": [
+		"wilhelm-meisters-lehrjahre"
+	],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "Die „schöne Seele“ blickt auf ihr Leben zurück und schildert ihren Weg zu innerer Reinheit und religiöser Selbstfindung. Zwischen weltlichen Versuchungen und geistigen Idealen ringt sie um Harmonie mit sich selbst. Kann der Mensch jemals vollkommen mit seinem Gewissen im Einklang leben? [KI-generierter Inhalt]",
 	"sources": []
 }

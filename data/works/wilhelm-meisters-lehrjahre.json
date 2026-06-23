@@ -7,10 +7,10 @@
 	"title": "Wilhelm Meisters Lehrjahre",
 	"slug": "wilhelm-meisters-lehrjahre",
 	"aliases": [],
-	"year": null,
-	"year_display": "",
+	"year": 1795,
+	"year_display": "1795-1796",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "Wilhelm Meister verlässt die vertraute Welt seiner Herkunft und begibt sich auf eine Reise voller Begegnungen, Enttäuschungen und neuer Erkenntnisse. Jeder Schritt stellt seine Vorstellungen von Glück, Erfolg und Bestimmung infrage. Welche Erfahrungen formen den Menschen zu dem, der er werden soll? [KI-generierter Inhalt]",
 	"sources": []
 }

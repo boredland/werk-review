@@ -1,0 +1,18 @@
+{
+	"id": "die-saengerin-antonelli",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Sängerin Antonelli",
+	"slug": "die-saengerin-antonelli",
+	"aliases": [],
+	"year": 1795,
+	"year_display": "1795",
+	"parent_slugs": [
+		"unterhaltungen-deutscher-ausgewanderten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Die geheimnisvolle Sängerin Antonelli zieht mit ihrer Kunst die Aufmerksamkeit eines ganzen Kreises auf sich. Hinter ihrer Bühnenerscheinung verbirgt sich jedoch eine Geschichte voller Ambivalenzen und verborgener Interessen. Was geschieht, wenn Kunst und Leben nicht mehr klar voneinander zu trennen sind? [KI-generierter Inhalt]",
+	"sources": []
+}

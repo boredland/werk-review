@@ -7,10 +7,12 @@
 	"title": "Die wunderlichen Nachbarskinder",
 	"slug": "die-wunderlichen-nachbarskinder",
 	"aliases": [],
-	"year": null,
-	"year_display": "",
-	"parent_slugs": [],
+	"year": 1809,
+	"year_display": "1809",
+	"parent_slugs": [
+		"wilhelm-meisters-wanderjahre"
+	],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "Zwei junge Menschen wachsen Tür an Tür auf und scheinen füreinander bestimmt zu sein. Doch Missverständnisse, Zufälle und die Launen des Schicksals führen ihre Wege immer wieder auseinander. Wird die Nähe ihrer Kindheit stark genug sein, um sie am Ende wieder zusammenzuführen? [KI-generierter Inhalt]",
 	"sources": []
 }

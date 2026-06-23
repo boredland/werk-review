@@ -1,0 +1,18 @@
+{
+	"id": "das-raetselhafte-klopfen",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das rätselhafte Klopfen",
+	"slug": "das-raetselhafte-klopfen",
+	"aliases": [],
+	"year": 1795,
+	"year_display": "1795",
+	"parent_slugs": [
+		"unterhaltungen-deutscher-ausgewanderten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "In einem Haus geschehen unerklärliche Geräusche, die die Bewohner zunehmend verunsichern. Während die einen an Zufall glauben, wittern andere ein verborgenes Geheimnis. Doch je intensiver die Suche nach der Ursache wird, desto merkwürdiger werden die Ereignisse selbst. [KI-generierter Inhalt]",
+	"sources": []
+}

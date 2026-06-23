@@ -1,0 +1,20 @@
+{
+	"id": "das-maerchen",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Märchen",
+	"slug": "das-maerchen",
+	"aliases": [
+		"Mährchen / Das Märchen von der weißen Lilie und der grünen Schlange / Das Märchen von der grünen Schlange / Das Märchen von der grünen Schlange und der weissen Lilie / Märchen"
+	],
+	"year": 1795,
+	"year_display": "1795",
+	"parent_slugs": [
+		"unterhaltungen-deutscher-ausgewanderten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "In einer wundersamen Welt begegnen sich Figuren, die durch geheimnisvolle Kräfte miteinander verbunden sind. Auf ihrer Reise durch ein Reich voller Symbole und Verwandlungen entfaltet sich eine Geschichte über Ordnung, Liebe und Erlösung. Doch welche Wahrheit verbirgt sich hinter den Bildern dieser märchenhaften Wirklichkeit? [KI-generierter Inhalt]",
+	"sources": []
+}

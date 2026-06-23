@@ -9,10 +9,12 @@
 	"aliases": [
 		"Das nußbraune Mädchen"
 	],
-	"year": null,
-	"year_display": "",
-	"parent_slugs": [],
+	"year": 1808,
+	"year_display": "1808-1821",
+	"parent_slugs": [
+		"wilhelm-meisters-wanderjahre"
+	],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "Ein geheimnisvolles Mädchen tritt in das Leben eines jungen Mannes und hinterlässt einen Eindruck, den er nicht mehr vergessen kann. Zwischen Erinnerung, Sehnsucht und Wirklichkeit entsteht das Bild einer Liebe, die nie ganz greifbar wird. Was bleibt von einer Begegnung, die das Herz für immer verändert? [KI-generierter Inhalt]",
 	"sources": []
 }

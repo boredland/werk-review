@@ -1,0 +1,20 @@
+{
+	"id": "der-prokurator",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Prokurator",
+	"slug": "der-prokurator",
+	"aliases": [
+		"Der Prokurator: eine altfranzösische Novelle"
+	],
+	"year": 1795,
+	"year_display": "1795",
+	"parent_slugs": [
+		"unterhaltungen-deutscher-ausgewanderten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein Prokurator sieht sich mit einer Angelegenheit konfrontiert, die seine berufliche Ordnung und persönliche Integrität herausfordert. Zwischen Pflichtgefühl und innerer Unsicherheit gerät er in einen Konflikt, der weitreichende Folgen haben könnte. Kann Recht auch gerecht sein, wenn der Mensch dahinter schwankt? [KI-generierter Inhalt]",
+	"sources": []
+}

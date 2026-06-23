@@ -2,17 +2,17 @@
 	"id": "unterhaltungen-deutscher-ausgewanderten",
 	"author_id": "von-goethe",
 	"genre_ids": [
-		"prosa"
+		"erzaehlband"
 	],
 	"title": "Unterhaltungen deutscher Ausgewanderten",
 	"slug": "unterhaltungen-deutscher-ausgewanderten",
 	"aliases": [
 		"Unterhaltungen deutscher Ausgewanderter"
 	],
-	"year": null,
-	"year_display": "",
+	"year": 1794,
+	"year_display": "1794-1795",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "In einer Zeit politischer Erschütterungen und persönlicher Unsicherheit flüchtet eine Gruppe deutscher Ausgewanderter in die Abgeschiedenheit eines Landhauses. Um den bedrückenden Ereignissen der Außenwelt zu entkommen, beginnen sie ein Spiel aus Erzählungen: Jeder bringt Geschichten ein, die von Liebe, Verrat, Schicksal und überraschenden Wendungen handeln. Doch je länger die Gespräche andauern, desto stärker dringen die Wirklichkeit und ihre Konflikte in die scheinbar geschützte Gemeinschaft ein. Zwischen den einzelnen Erzählungen entstehen Spannungen, die zeigen, dass keine Geschichte ganz losgelöst von der Realität ihres Erzählers existiert. Was geschieht mit einer Gruppe von Menschen, die sich durch Worte retten will – und dabei immer tiefer in die eigene Wirklichkeit zurückfindet? [KI-generierter Inhalt]",
 	"sources": []
 }

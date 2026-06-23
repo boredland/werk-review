@@ -7,10 +7,10 @@
 	"title": "Wilhelm Meisters Wanderjahre",
 	"slug": "wilhelm-meisters-wanderjahre",
 	"aliases": [],
-	"year": null,
-	"year_display": "",
+	"year": 1808,
+	"year_display": "1808-1821",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": null,
+	"plot": "Nach den Lehrjahren setzt Wilhelm Meister seine Suche fort. In einer Welt des Wandels begegnet er Menschen und Ideen, die ihn immer wieder vor neue Entscheidungen stellen. Kann lebenslange Bildung den Schlüssel zu einem erfüllten Dasein bieten? [KI-generierter Inhalt]",
 	"sources": []
 }

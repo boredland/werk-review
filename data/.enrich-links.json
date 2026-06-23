@@ -1551,10 +1551,6 @@
 		"hash": "5737f00bb8b8",
 		"at": "2026-06-23"
 	},
-	"novelle": {
-		"hash": "8d42e4495748",
-		"at": "2026-06-23"
-	},
 	"die-guten-weiber": {
 		"hash": "b57771f53f49",
 		"at": "2026-06-23"
@@ -1569,6 +1565,46 @@
 	},
 	"wilhelm-meisters-theatralische-sendung": {
 		"hash": "441d5ef0dd8e",
+		"at": "2026-06-23"
+	},
+	"novelle-die-jagd": {
+		"hash": "8d42e4495748",
+		"at": "2026-06-23"
+	},
+	"ferdinand": {
+		"hash": "3bf20fc45511",
+		"at": "2026-06-23"
+	},
+	"unterhaltungen-deutscher-ausgewanderten-rahmenerzaehlung": {
+		"hash": "f10df204aa22",
+		"at": "2026-06-23"
+	},
+	"das-maerchen": {
+		"hash": "9f73aff6d7ab",
+		"at": "2026-06-23"
+	},
+	"die-saengerin-antonelli": {
+		"hash": "4302a9a10d13",
+		"at": "2026-06-23"
+	},
+	"der-schleier": {
+		"hash": "9b72a0c7d5bc",
+		"at": "2026-06-23"
+	},
+	"das-raetselhafte-klopfen": {
+		"hash": "9d084d4f20f9",
+		"at": "2026-06-23"
+	},
+	"die-schoene-kraemerin": {
+		"hash": "b1cc88e82a28",
+		"at": "2026-06-23"
+	},
+	"der-neue-paris": {
+		"hash": "0ef2deabc7ea",
+		"at": "2026-06-23"
+	},
+	"der-prokurator": {
+		"hash": "6a8f0eaf5a22",
 		"at": "2026-06-23"
 	}
 }

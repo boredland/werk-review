@@ -7,9 +7,11 @@
 	"title": "Die neue Melusine",
 	"slug": "die-neue-melusine",
 	"aliases": [],
-	"year": null,
-	"year_display": "",
-	"parent_slugs": [],
+	"year": 1797,
+	"year_display": "1797-1812",
+	"parent_slugs": [
+		"wilhelm-meisters-wanderjahre"
+	],
 	"fortsetzung_von_ids": [],
 	"plot": null,
 	"sources": []

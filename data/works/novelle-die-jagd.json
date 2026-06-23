@@ -1,0 +1,18 @@
+{
+	"id": "novelle-die-jagd",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Novelle",
+	"slug": "novelle-die-jagd",
+	"aliases": [
+		"Die Jagd"
+	],
+	"year": 1797,
+	"year_display": "1797-1827",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Während einer Jagdgesellschaft gerät die scheinbar geordnete Welt der Beteiligten aus dem Gleichgewicht. Eine unerwartete Gefahr zwingt die Menschen dazu, ihre Ängste, Wünsche und Überzeugungen zu offenbaren. Was zeigt sich vom wahren Wesen des Menschen, wenn die Kontrolle verloren geht? [KI-generierter Inhalt]",
+	"sources": []
+}
