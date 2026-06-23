@@ -1,0 +1,25 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/die-wahlverwandtschaften-by-johann-wolfgang-von-goethe/",
+		"label": "Wahlverwandtschaften",
+		"librivox_id": "2431"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/die-wahlverwandtschaften/",
+		"label": "Die Wahlverwandtschaften"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_iQ4UAAAAQAAJ",
+		"label": "Die Wahlverwandtschaften ein Roman",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"id": "italienische-reise",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Italienische Reise",
+	"slug": "italienische-reise",
+	"aliases": [
+		"Aus meinem Leben. Zweiter Abteilung erster und zweiter Teil"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

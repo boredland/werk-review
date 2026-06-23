@@ -1,0 +1,25 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/die-leiden-des-jungen-werthers-by-johann-wolfgang-von-goethe/",
+		"label": "Leiden des jungen Werther",
+		"librivox_id": "182"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/die-leiden-des-jungen-werther/",
+		"label": "Die Leiden des jungen Werther"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_bHwHAAAAQAAJ",
+		"label": "Die Leiden des jungen Werther",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

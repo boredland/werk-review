@@ -1,0 +1,16 @@
+{
+	"id": "hermann-und-dorothea",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"epos-vers"
+	],
+	"title": "Hermann und Dorothea",
+	"slug": "hermann-und-dorothea",
+	"aliases": [],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

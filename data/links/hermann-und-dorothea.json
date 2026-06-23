@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/hermann-und-dorothea-by-johann-wolfgang-von-goethe/",
+		"label": "Hermann und Dorothea",
+		"librivox_id": "3732"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/hermann-and-dorothea-by-johann-wolfgang-von-goethe/",
+		"label": "Hermann and Dorothea",
+		"librivox_id": "13257"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/hermann-und-dorothea/",
+		"label": "Hermann und Dorothea"
+	}
+]

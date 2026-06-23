@@ -48,5 +48,10 @@
 		"id": "romanreihe",
 		"name": "Romanreihe",
 		"slug": "romanreihe"
+	},
+	{
+		"id": "epos-vers",
+		"name": "Epos in Versen",
+		"slug": "epos-in-versen"
 	}
 ]

@@ -1,0 +1,18 @@
+{
+	"id": "das-nussbraune-maedchen",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das nussbraune Mädchen",
+	"slug": "das-nussbraune-maedchen",
+	"aliases": [
+		"Das nußbraune Mädchen"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

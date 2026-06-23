@@ -1,0 +1,32 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/wilhelm-meisters-lehrjahre-by-johann-wolfgang-von-goethe/",
+		"label": "Wilhelm Meisters Lehrjahre",
+		"librivox_id": "3121"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/wilhelm-meisters-wanderjahre-by-johann-wolfgang-von-goethe/",
+		"label": "Wilhelm Meisters Wanderjahre oder die Entsagenden",
+		"librivox_id": "3221"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/johann-wolfgang-von-goethe-wilhelm-meisters-lehrjahre",
+		"label": "Wilhelm Meisters Lehrjahre"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/wilhelmmeistersl0000joha",
+		"label": "Wilhelm Meisters Lehrjahre",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

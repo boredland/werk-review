@@ -1,0 +1,16 @@
+{
+	"id": "wilhelm-meisters-lehrjahre",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Wilhelm Meisters Lehrjahre",
+	"slug": "wilhelm-meisters-lehrjahre",
+	"aliases": [],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

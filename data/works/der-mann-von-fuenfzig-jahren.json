@@ -1,0 +1,16 @@
+{
+	"id": "der-mann-von-fuenfzig-jahren",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Mann von fünfzig Jahren",
+	"slug": "der-mann-von-fuenfzig-jahren",
+	"aliases": [],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

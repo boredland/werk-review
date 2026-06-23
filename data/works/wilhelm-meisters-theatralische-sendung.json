@@ -1,0 +1,18 @@
+{
+	"id": "wilhelm-meisters-theatralische-sendung",
+	"author_id": "von-goethe",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Wilhelm Meisters theatralische Sendung (Fragment)",
+	"slug": "wilhelm-meisters-theatralische-sendung",
+	"aliases": [
+		"Urmeister"
+	],
+	"year": null,
+	"year_display": "",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
