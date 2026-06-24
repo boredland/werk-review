@@ -1,0 +1,18 @@
+{
+	"id": "demian",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Demian",
+	"slug": "demian",
+	"aliases": [
+		"Demian: Die Geschichte von Emil Sinclairs Jugend"
+	],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,16 @@
+{
+	"id": "eine-sonate",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Eine Sonate",
+	"slug": "eine-sonate",
+	"aliases": [],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

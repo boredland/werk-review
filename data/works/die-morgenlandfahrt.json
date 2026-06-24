@@ -1,0 +1,16 @@
+{
+	"id": "die-morgenlandfahrt",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Morgenlandfahrt",
+	"slug": "die-morgenlandfahrt",
+	"aliases": [],
+	"year": 1932,
+	"year_display": "1932",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

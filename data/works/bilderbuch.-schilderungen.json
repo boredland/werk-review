@@ -1,0 +1,16 @@
+{
+	"id": "bilderbuch.-schilderungen",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Bilderbuch. Schilderungen",
+	"slug": "bilderbuch.-schilderungen",
+	"aliases": [],
+	"year": 1926,
+	"year_display": "1926",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

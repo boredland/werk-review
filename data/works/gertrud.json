@@ -1,0 +1,16 @@
+{
+	"id": "gertrud",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Gertrud",
+	"slug": "gertrud",
+	"aliases": [],
+	"year": 1908,
+	"year_display": "1908-1909",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

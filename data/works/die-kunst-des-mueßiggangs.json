@@ -1,0 +1,18 @@
+{
+	"id": "die-kunst-des-mueßiggangs",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Die Kunst des Müßiggangs. Kurze Prosa aus dem Nachlass",
+	"slug": "die-kunst-des-mueßiggangs",
+	"aliases": [
+		"Die Kunst des Müssiggangs. Kurze Prosa aus dem Nachlass"
+	],
+	"year": null,
+	"year_display": "postum veröffentlicht",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

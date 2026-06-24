@@ -1,0 +1,16 @@
+{
+	"id": "in-kandy",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "In Kandy",
+	"slug": "in-kandy",
+	"aliases": [],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

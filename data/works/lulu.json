@@ -1,0 +1,16 @@
+{
+	"id": "lulu",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Lulu",
+	"slug": "lulu",
+	"aliases": [],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

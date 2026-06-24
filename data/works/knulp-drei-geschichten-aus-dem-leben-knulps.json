@@ -1,0 +1,16 @@
+{
+	"id": "knulp-drei-geschichten-aus-dem-leben-knulps",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Knulp: Drei Geschichten aus dem Leben Knulps",
+	"slug": "knulp-drei-geschichten-aus-dem-leben-knulps",
+	"aliases": [],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

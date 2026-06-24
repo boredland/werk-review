@@ -1,0 +1,18 @@
+{
+	"id": "das-glasperlenspiel",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Das Glasperlenspiel",
+	"slug": "das-glasperlenspiel",
+	"aliases": [
+		"Das Glasperlenspiel: Versuch einer Lebensbeschreibung des Magister Ludi Josef Knecht samt Knechts hinterlassenen Schriften"
+	],
+	"year": 1943,
+	"year_display": "1943",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

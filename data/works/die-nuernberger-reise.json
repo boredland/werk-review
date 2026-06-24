@@ -1,0 +1,16 @@
+{
+	"id": "die-nuernberger-reise",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Die Nürnberger Reise",
+	"slug": "die-nuernberger-reise",
+	"aliases": [],
+	"year": 1927,
+	"year_display": "1927",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

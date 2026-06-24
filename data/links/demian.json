@@ -1,0 +1,18 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/demian-the-story-of-emil-sinclairs-youth-by-hermann-hesse/",
+		"label": "Demian, The Story of Emil Sinclair's Youth",
+		"librivox_id": "14069"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/demiandiegeschic41907gut",
+		"label": "Demian: Die Geschichte von Emil Sinclairs Jugend",
+		"formats": [
+			"EPUB"
+		]
+	}
+]

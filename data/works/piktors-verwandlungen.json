@@ -1,0 +1,18 @@
+{
+	"id": "piktors-verwandlungen",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Piktors Verwandlungen",
+	"slug": "piktors-verwandlungen",
+	"aliases": [
+		"Piktor's Verwandlungen"
+	],
+	"year": 1922,
+	"year_display": "1922",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "narziss-und-goldmund",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Narziss und Goldmund",
+	"slug": "narziss-und-goldmund",
+	"aliases": [
+		"Narziß und Goldmund"
+	],
+	"year": 1930,
+	"year_display": "1930",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

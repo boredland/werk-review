@@ -1,0 +1,16 @@
+{
+	"id": "wanderung-aufzeichnungen",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Wanderung: Aufzeichnungen",
+	"slug": "wanderung-aufzeichnungen",
+	"aliases": [],
+	"year": 1920,
+	"year_display": "1920",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

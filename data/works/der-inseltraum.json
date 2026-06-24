@@ -1,0 +1,16 @@
+{
+	"id": "der-inseltraum",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Der Inseltraum",
+	"slug": "der-inseltraum",
+	"aliases": [],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
