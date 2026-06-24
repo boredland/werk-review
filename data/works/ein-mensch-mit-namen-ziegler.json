@@ -1,0 +1,18 @@
+{
+	"id": "ein-mensch-mit-namen-ziegler",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Mensch mit Namen Ziegler",
+	"slug": "ein-mensch-mit-namen-ziegler",
+	"aliases": [],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

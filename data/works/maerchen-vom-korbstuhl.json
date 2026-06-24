@@ -1,0 +1,18 @@
+{
+	"id": "maerchen-vom-korbstuhl",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Märchen vom Korbstuhl",
+	"slug": "maerchen-vom-korbstuhl",
+	"aliases": [],
+	"year": 1918,
+	"year_display": "1918",
+	"parent_slugs": [
+		"traumfaehrte-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

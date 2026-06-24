@@ -1,0 +1,18 @@
+{
+	"id": "emil-kolb",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Emil Kolb",
+	"slug": "emil-kolb",
+	"aliases": [],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [
+		"kleine-welt-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

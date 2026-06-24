@@ -1,0 +1,18 @@
+{
+	"id": "koenig-yu",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "König Yu",
+	"slug": "koenig-yu",
+	"aliases": [],
+	"year": 1929,
+	"year_display": "1929",
+	"parent_slugs": [
+		"traumfaehrte-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

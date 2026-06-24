@@ -1,0 +1,18 @@
+{
+	"id": "aus-der-kindheit-des-heiligen-franz-von-assisi",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Aus der Kindheit des heiligen Franz von Assisi",
+	"slug": "aus-der-kindheit-des-heiligen-franz-von-assisi",
+	"aliases": [],
+	"year": 1920,
+	"year_display": "1920",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1758,5 +1758,537 @@
 	"siddhartha-eine-indische-dichtung": {
 		"hash": "fb3d0dad2fc7",
 		"at": "2026-06-24"
+	},
+	"am-weg-erzaehlband": {
+		"hash": "39efe83e4f7d",
+		"at": "2026-06-24"
+	},
+	"aus-kinderzeiten": {
+		"hash": "744940184292",
+		"at": "2026-06-24"
+	},
+	"augustus": {
+		"hash": "e1eddc272d73",
+		"at": "2026-06-24"
+	},
+	"aprilbrief": {
+		"hash": "f4f03d31897d",
+		"at": "2026-06-24"
+	},
+	"aus-meiner-schuelerzeit": {
+		"hash": "cf41df06f5b5",
+		"at": "2026-06-24"
+	},
+	"allerlei-post": {
+		"hash": "779a218edc64",
+		"at": "2026-06-24"
+	},
+	"aus-der-kindheit-des-heiligen-franz-von-assisi": {
+		"hash": "c54f59e033bb",
+		"at": "2026-06-24"
+	},
+	"an-christian-wagner": {
+		"hash": "02a6080d7438",
+		"at": "2026-06-24"
+	},
+	"aufzeichnung-bei-einer-kur-in-baden": {
+		"hash": "977f07c21407",
+		"at": "2026-06-24"
+	},
+	"begegnungen-mit-vergangenem": {
+		"hash": "eb47f60b10cc",
+		"at": "2026-06-24"
+	},
+	"bei-christian-wagners-tod": {
+		"hash": "359222686d52",
+		"at": "2026-06-24"
+	},
+	"beim-einzug-in-ein-neues-haus": {
+		"hash": "40b0e66cd9c1",
+		"at": "2026-06-24"
+	},
+	"bericht-aus-normalien": {
+		"hash": "0f46fd9326fc",
+		"at": "2026-06-24"
+	},
+	"beschreibung-einer-landschaft": {
+		"hash": "82e283bba3bb",
+		"at": "2026-06-24"
+	},
+	"beschwoerungen": {
+		"hash": "ae1f07851d69",
+		"at": "2026-06-24"
+	},
+	"besuch-bei-einem-dichter": {
+		"hash": "17501b932168",
+		"at": "2026-06-24"
+	},
+	"chagrin-damour": {
+		"hash": "3f712b1c016b",
+		"at": "2026-06-24"
+	},
+	"anton-schievelbeyns-reisse": {
+		"hash": "5167ef4750f7",
+		"at": "2026-06-24"
+	},
+	"der-bettler": {
+		"hash": "407b1d74c7f1",
+		"at": "2026-06-24"
+	},
+	"der-brunnen-im-maulbronner-kreuzgang": {
+		"hash": "c49d9c636147",
+		"at": "2026-06-24"
+	},
+	"der-dichter": {
+		"hash": "e2e3ed9daea1",
+		"at": "2026-06-24"
+	},
+	"der-erzaehler": {
+		"hash": "b7d0d841d8fa",
+		"at": "2026-06-24"
+	},
+	"der-europaeer": {
+		"hash": "f69228608be7",
+		"at": "2026-06-24"
+	},
+	"beschwoerungen-erzaehlband": {
+		"hash": "a9e1a00bd961",
+		"at": "2026-06-24"
+	},
+	"der-gestohlene-koffer": {
+		"hash": "cb46b192e392",
+		"at": "2026-06-24"
+	},
+	"der-lateinschueler": {
+		"hash": "e90ce56a51da",
+		"at": "2026-06-24"
+	},
+	"der-mann-mit-den-vielen-buechern": {
+		"hash": "7c01cb0f0447",
+		"at": "2026-06-24"
+	},
+	"der-meermann": {
+		"hash": "a8952e95852a",
+		"at": "2026-06-24"
+	},
+	"der-mohrle": {
+		"hash": "11ae1717ef4a",
+		"at": "2026-06-24"
+	},
+	"der-pfirsichbaum": {
+		"hash": "13c5c1f77840",
+		"at": "2026-06-24"
+	},
+	"der-schwere-weg": {
+		"hash": "562eb3607154",
+		"at": "2026-06-24"
+	},
+	"der-tod-des-bruders-antonio": {
+		"hash": "42e54ccb4031",
+		"at": "2026-06-24"
+	},
+	"der-verliebte-juengling": {
+		"hash": "37e1f4fbb7cd",
+		"at": "2026-06-24"
+	},
+	"der-waldmensch": {
+		"hash": "3004da71ba7b",
+		"at": "2026-06-24"
+	},
+	"der-weltverbesserer": {
+		"hash": "dcd747f4567f",
+		"at": "2026-06-24"
+	},
+	"der-wolf": {
+		"hash": "8999d1457436",
+		"at": "2026-06-24"
+	},
+	"der-zwerg": {
+		"hash": "39af15c10f74",
+		"at": "2026-06-24"
+	},
+	"der-zyklon": {
+		"hash": "fe84de7eb78a",
+		"at": "2026-06-24"
+	},
+	"die-belagerung-von-kremna": {
+		"hash": "aa4fbf17be89",
+		"at": "2026-06-24"
+	},
+	"die-dohle": {
+		"hash": "9114a0bff1ad",
+		"at": "2026-06-24"
+	},
+	"die-heimkehr": {
+		"hash": "770c4ef06095",
+		"at": "2026-06-24"
+	},
+	"die-marmorsaege": {
+		"hash": "61db7b4e4d5a",
+		"at": "2026-06-24"
+	},
+	"die-stadt": {
+		"hash": "bda0dfb73c29",
+		"at": "2026-06-24"
+	},
+	"die-verhaftung": {
+		"hash": "8df2dadb894d",
+		"at": "2026-06-24"
+	},
+	"diesseits-erzaehlband": {
+		"hash": "1b6101772395",
+		"at": "2026-06-24"
+	},
+	"die-verlobung": {
+		"hash": "1b770bb6d141",
+		"at": "2026-06-24"
+	},
+	"drei-linden": {
+		"hash": "4e6fa8100863",
+		"at": "2026-06-24"
+	},
+	"drei-legenden-aus-der-thebais": {
+		"hash": "548b3dc479e6",
+		"at": "2026-06-24"
+	},
+	"edmund": {
+		"hash": "232e7716cf44",
+		"at": "2026-06-24"
+	},
+	"ein-abend-bei-doktor-faust": {
+		"hash": "1c22b7266ab7",
+		"at": "2026-06-24"
+	},
+	"ein-maulbronner-seminarist": {
+		"hash": "96f252a1ad7a",
+		"at": "2026-06-24"
+	},
+	"ein-mensch-mit-namen-ziegler": {
+		"hash": "662476ebf0ad",
+		"at": "2026-06-24"
+	},
+	"ein-wandertag-vor-hundert-jahren": {
+		"hash": "eee35370b856",
+		"at": "2026-06-24"
+	},
+	"eine-fußreise-im-herbst": {
+		"hash": "7b16512d8a08",
+		"at": "2026-06-24"
+	},
+	"eine-gestalt-aus-der-kinderzeit": {
+		"hash": "7b14c85bce37",
+		"at": "2026-06-24"
+	},
+	"eine-traumfolge": {
+		"hash": "755542ca872b",
+		"at": "2026-06-24"
+	},
+	"emil-kolb": {
+		"hash": "68e2c213034e",
+		"at": "2026-06-24"
+	},
+	"engadiner-erlebnisse": {
+		"hash": "108d5a71adea",
+		"at": "2026-06-24"
+	},
+	"erinnerung-an-hans": {
+		"hash": "1c83774d6843",
+		"at": "2026-06-24"
+	},
+	"erinnerungen-an-othmar-schoeck": {
+		"hash": "67eb7fd82435",
+		"at": "2026-06-24"
+	},
+	"erlebnis-auf-einer-alp": {
+		"hash": "01cd0a70396c",
+		"at": "2026-06-24"
+	},
+	"ernst-morgenthaler": {
+		"hash": "f470b8769e09",
+		"at": "2026-06-24"
+	},
+	"eugen-siegel": {
+		"hash": "41ae6c6ddd8d",
+		"at": "2026-06-24"
+	},
+	"fabulierbuch-erzaehlband": {
+		"hash": "8cc05fd96242",
+		"at": "2026-06-24"
+	},
+	"faldum": {
+		"hash": "a9c97eb3738e",
+		"at": "2026-06-24"
+	},
+	"floetentraum": {
+		"hash": "86e81ef8514b",
+		"at": "2026-06-24"
+	},
+	"fuer-marulla": {
+		"hash": "d822a92859ff",
+		"at": "2026-06-24"
+	},
+	"garibaldi": {
+		"hash": "9310289bbc17",
+		"at": "2026-06-24"
+	},
+	"gedenkblatt-fuer-adele": {
+		"hash": "de13545f6fde",
+		"at": "2026-06-24"
+	},
+	"gedenkblatt-fuer-franz-schall": {
+		"hash": "3a75bbe3b6ff",
+		"at": "2026-06-24"
+	},
+	"geheimnisse": {
+		"hash": "c132f6e32195",
+		"at": "2026-06-24"
+	},
+	"glueck": {
+		"hash": "f688b37c0b56",
+		"at": "2026-06-24"
+	},
+	"grossvaeterliches": {
+		"hash": "20aef8978395",
+		"at": "2026-06-24"
+	},
+	"hannes": {
+		"hash": "f8d43e3a77c1",
+		"at": "2026-06-24"
+	},
+	"herbstbeginn": {
+		"hash": "e182bfe7867c",
+		"at": "2026-06-24"
+	},
+	"herbstliche-erlebnisse": {
+		"hash": "3759599fc981",
+		"at": "2026-06-24"
+	},
+	"herr-claassen": {
+		"hash": "c1d6262b1b36",
+		"at": "2026-06-24"
+	},
+	"gedenkblaetter-erzaehlband": {
+		"hash": "f85874e3120b",
+		"at": "2026-06-24"
+	},
+	"heumond": {
+		"hash": "66485ac24989",
+		"at": "2026-06-24"
+	},
+	"hinrichtung": {
+		"hash": "3499626ff867",
+		"at": "2026-06-24"
+	},
+	"in-der-alten-sonne": {
+		"hash": "71ed91875593",
+		"at": "2026-06-24"
+	},
+	"innen-und-außen": {
+		"hash": "bd3dce37f7c7",
+		"at": "2026-06-24"
+	},
+	"iris": {
+		"hash": "bee4e77b5741",
+		"at": "2026-06-24"
+	},
+	"juninacht": {
+		"hash": "7aec41fa08e9",
+		"at": "2026-06-24"
+	},
+	"kaminfegerchen": {
+		"hash": "c7fadc9d0c91",
+		"at": "2026-06-24"
+	},
+	"karl-eugen-eiselein": {
+		"hash": "c148babab16f",
+		"at": "2026-06-24"
+	},
+	"kinderseele": {
+		"hash": "b6ae8378778c",
+		"at": "2026-06-24"
+	},
+	"kindheit-des-zauberers": {
+		"hash": "0721c4aa186d",
+		"at": "2026-06-24"
+	},
+	"klein-und-wagner": {
+		"hash": "aa01c9b546ed",
+		"at": "2026-06-24"
+	},
+	"im-presselschen-gartenhaus": {
+		"hash": "3f01aa2f081b",
+		"at": "2026-06-24"
+	},
+	"kleine-welt-erzaehlband": {
+		"hash": "e1c2b1c2d3ad",
+		"at": "2026-06-24"
+	},
+	"klingsors-letzter-sommer-erzaehlband": {
+		"hash": "c540ce9cc022",
+		"at": "2026-06-24"
+	},
+	"klingsors-letzter-sommer": {
+		"hash": "c540ce9cc022",
+		"at": "2026-06-24"
+	},
+	"koenig-yu": {
+		"hash": "2557984ae128",
+		"at": "2026-06-24"
+	},
+	"kurzgefaßter-lebenslauf": {
+		"hash": "1041c8ec33e1",
+		"at": "2026-06-24"
+	},
+	"ladidel": {
+		"hash": "6bd8d76235a5",
+		"at": "2026-06-24"
+	},
+	"maerchen-erzaehlband": {
+		"hash": "362f5fa730a3",
+		"at": "2026-06-24"
+	},
+	"maerchen-vom-korbstuhl": {
+		"hash": "ccaac42f229a",
+		"at": "2026-06-24"
+	},
+	"maerchen": {
+		"hash": "362f5fa730a3",
+		"at": "2026-06-24"
+	},
+	"maler-und-schriftsteller": {
+		"hash": "8c0d33be6dc1",
+		"at": "2026-06-24"
+	},
+	"merkwuerdige-nachricht-von-einem-andern-stern": {
+		"hash": "c6fd34faa1fc",
+		"at": "2026-06-24"
+	},
+	"nachbarn-erzaehlband": {
+		"hash": "9fbbd575f00a",
+		"at": "2026-06-24"
+	},
+	"nachruf-an-hugo-bai!": {
+		"hash": "50b5919c45e8",
+		"at": "2026-06-24"
+	},
+	"nachruf-auf-christoph-schrempf": {
+		"hash": "e13a2d18f1b7",
+		"at": "2026-06-24"
+	},
+	"naechtliche-spiele": {
+		"hash": "9182c9ea28af",
+		"at": "2026-06-24"
+	},
+	"notizblaetter-um-ostern": {
+		"hash": "767482dd47ef",
+		"at": "2026-06-24"
+	},
+	"pater-matthias": {
+		"hash": "8eb26aaca3d1",
+		"at": "2026-06-24"
+	},
+	"quorm": {
+		"hash": "5ad2aba12928",
+		"at": "2026-06-24"
+	},
+	"rigi-tagebuch": {
+		"hash": "0ef70d925518",
+		"at": "2026-06-24"
+	},
+	"robertagbion": {
+		"hash": "c4523593c5d2",
+		"at": "2026-06-24"
+	},
+	"rundbrief-aus-sils-maria": {
+		"hash": "ede2dd43c21c",
+		"at": "2026-06-24"
+	},
+	"schoen-ist-die-jugend": {
+		"hash": "212e78d20b96",
+		"at": "2026-06-24"
+	},
+	"schulkamerad-martin": {
+		"hash": "8171f9efc45c",
+		"at": "2026-06-24"
+	},
+	"schwaebische-parodie": {
+		"hash": "b528585a3d9b",
+		"at": "2026-06-24"
+	},
+	"spaete-prosa-erzaehlband": {
+		"hash": "c0c0556356ee",
+		"at": "2026-06-24"
+	},
+	"tage-aus-marios-leben": {
+		"hash": "b1fa56c147cd",
+		"at": "2026-06-24"
+	},
+	"tagebuchblaetter": {
+		"hash": "db63a1b9859e",
+		"at": "2026-06-24"
+	},
+	"tessiner-herbsttag": {
+		"hash": "0f2f22887f2f",
+		"at": "2026-06-24"
+	},
+	"tragisch": {
+		"hash": "36c456258b98",
+		"at": "2026-06-24"
+	},
+	"traumfaehrte-erzaehlband": {
+		"hash": "1b444e47dee8",
+		"at": "2026-06-24"
+	},
+	"traumfaehrte": {
+		"hash": "1b444e47dee8",
+		"at": "2026-06-24"
+	},
+	"traumgeschenk": {
+		"hash": "b3a8cc409c80",
+		"at": "2026-06-24"
+	},
+	"ueber-das-alter": {
+		"hash": "3faec6117224",
+		"at": "2026-06-24"
+	},
+	"ueble-aufnahme": {
+		"hash": "f39dbbd0ac52",
+		"at": "2026-06-24"
+	},
+	"umwege-erzaehlband": {
+		"hash": "a5c1964512c9",
+		"at": "2026-06-24"
+	},
+	"unterbrochene-schulstunde": {
+		"hash": "91c1753d82ee",
+		"at": "2026-06-24"
+	},
+	"vogel": {
+		"hash": "98edb0096753",
+		"at": "2026-06-24"
+	},
+	"vom-steppenwolf": {
+		"hash": "cc4134507177",
+		"at": "2026-06-24"
+	},
+	"vor-einer-sennhuette": {
+		"hash": "a681fd6f7b7e",
+		"at": "2026-06-24"
+	},
+	"walter-koempf": {
+		"hash": "84773862ebf3",
+		"at": "2026-06-24"
+	},
+	"walter-koempff": {
+		"hash": "e38cfbd6b1ce",
+		"at": "2026-06-24"
+	},
+	"weihnacht-mit-zwei-kindergeschichten": {
+		"hash": "bdb7d8712850",
+		"at": "2026-06-24"
+	},
+	"zum-gedaechtnis": {
+		"hash": "9bb8af93b2b5",
+		"at": "2026-06-24"
 	}
 }

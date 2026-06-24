@@ -1,0 +1,18 @@
+{
+	"id": "der-verliebte-juengling",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der verliebte Jüngling",
+	"slug": "der-verliebte-juengling",
+	"aliases": [],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

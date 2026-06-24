@@ -1,0 +1,18 @@
+{
+	"id": "der-mohrle",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Mohrle",
+	"slug": "der-mohrle",
+	"aliases": [],
+	"year": 1902,
+	"year_display": "1902 / 1932",
+	"parent_slugs": [
+		"gedenkblaetter-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

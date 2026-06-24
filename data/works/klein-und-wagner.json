@@ -1,0 +1,18 @@
+{
+	"id": "klein-und-wagner",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Klein und Wagner",
+	"slug": "klein-und-wagner",
+	"aliases": [],
+	"year": 1920,
+	"year_display": "1920",
+	"parent_slugs": [
+		"klingsors-letzter-sommer-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

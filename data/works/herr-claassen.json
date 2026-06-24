@@ -1,0 +1,18 @@
+{
+	"id": "herr-claassen",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Herr Claassen",
+	"slug": "herr-claassen",
+	"aliases": [],
+	"year": 1936,
+	"year_display": "1936",
+	"parent_slugs": [
+		"gedenkblaetter-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

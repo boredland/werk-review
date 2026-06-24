@@ -1,0 +1,16 @@
+{
+	"id": "spaete-prosa-erzaehlband",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Späte Prosa",
+	"slug": "spaete-prosa-erzaehlband",
+	"aliases": [],
+	"year": 1951,
+	"year_display": "1951",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

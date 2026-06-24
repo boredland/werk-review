@@ -1,0 +1,18 @@
+{
+	"id": "rundbrief-aus-sils-maria",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Rundbrief aus Sils-Maria",
+	"slug": "rundbrief-aus-sils-maria",
+	"aliases": [],
+	"year": 1955,
+	"year_display": "1955",
+	"parent_slugs": [
+		"beschwoerungen-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

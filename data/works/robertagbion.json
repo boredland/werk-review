@@ -1,0 +1,18 @@
+{
+	"id": "robertagbion",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "RobertAgbion",
+	"slug": "robertagbion",
+	"aliases": [],
+	"year": 1933,
+	"year_display": "1933",
+	"parent_slugs": [
+		"kleine-welt-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

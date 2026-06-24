@@ -1,0 +1,18 @@
+{
+	"id": "der-waldmensch",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Waldmensch",
+	"slug": "der-waldmensch",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

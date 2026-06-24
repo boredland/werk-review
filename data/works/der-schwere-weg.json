@@ -1,0 +1,18 @@
+{
+	"id": "der-schwere-weg",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der schwere Weg",
+	"slug": "der-schwere-weg",
+	"aliases": [],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [
+		"maerchen-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

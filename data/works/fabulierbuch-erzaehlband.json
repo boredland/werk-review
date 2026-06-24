@@ -1,0 +1,16 @@
+{
+	"id": "fabulierbuch-erzaehlband",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Fabulierbuch",
+	"slug": "fabulierbuch-erzaehlband",
+	"aliases": [],
+	"year": 1935,
+	"year_display": "1935",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

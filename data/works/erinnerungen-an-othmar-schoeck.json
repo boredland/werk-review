@@ -1,0 +1,18 @@
+{
+	"id": "erinnerungen-an-othmar-schoeck",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Erinnerungen an Othmar Schoeck",
+	"slug": "erinnerungen-an-othmar-schoeck",
+	"aliases": [],
+	"year": 1935,
+	"year_display": "1935",
+	"parent_slugs": [
+		"gedenkblaetter-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

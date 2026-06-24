@@ -1,0 +1,18 @@
+{
+	"id": "schoen-ist-die-jugend",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Schön ist die Jugend",
+	"slug": "schoen-ist-die-jugend",
+	"aliases": [],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"diesseits-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

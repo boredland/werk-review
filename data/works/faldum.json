@@ -1,0 +1,18 @@
+{
+	"id": "faldum",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Faldum",
+	"slug": "faldum",
+	"aliases": [],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [
+		"maerchen-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

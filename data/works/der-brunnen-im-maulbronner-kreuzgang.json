@@ -1,0 +1,18 @@
+{
+	"id": "der-brunnen-im-maulbronner-kreuzgang",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Brunnen im Maulbronner Kreuzgang",
+	"slug": "der-brunnen-im-maulbronner-kreuzgang",
+	"aliases": [],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [
+		"am-weg-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

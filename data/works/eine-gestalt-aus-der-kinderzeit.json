@@ -1,0 +1,18 @@
+{
+	"id": "eine-gestalt-aus-der-kinderzeit",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Eine Gestalt aus der Kinderzeit",
+	"slug": "eine-gestalt-aus-der-kinderzeit",
+	"aliases": [],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [
+		"am-weg-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

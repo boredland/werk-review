@@ -1,0 +1,18 @@
+{
+	"id": "begegnungen-mit-vergangenem",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Begegnungen mit Vergangenem",
+	"slug": "begegnungen-mit-vergangenem",
+	"aliases": [],
+	"year": 1955,
+	"year_display": "1955",
+	"parent_slugs": [
+		"beschwoerungen-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

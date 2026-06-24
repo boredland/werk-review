@@ -1,0 +1,18 @@
+{
+	"id": "kindheit-des-zauberers",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Kindheit des Zauberers",
+	"slug": "kindheit-des-zauberers",
+	"aliases": [],
+	"year": 1923,
+	"year_display": "1923",
+	"parent_slugs": [
+		"traumfaehrte-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

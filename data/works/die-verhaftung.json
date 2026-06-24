@@ -1,0 +1,18 @@
+{
+	"id": "die-verhaftung",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Verhaftung",
+	"slug": "die-verhaftung",
+	"aliases": [],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

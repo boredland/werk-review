@@ -1,0 +1,18 @@
+{
+	"id": "innen-und-außen",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Innen und Außen",
+	"slug": "innen-und-außen",
+	"aliases": [],
+	"year": 1920,
+	"year_display": "1920",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

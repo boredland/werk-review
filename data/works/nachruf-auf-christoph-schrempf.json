@@ -1,0 +1,18 @@
+{
+	"id": "nachruf-auf-christoph-schrempf",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Nachruf auf Christoph Schrempf",
+	"slug": "nachruf-auf-christoph-schrempf",
+	"aliases": [],
+	"year": 1937,
+	"year_display": "1937",
+	"parent_slugs": [
+		"gedenkblaetter-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

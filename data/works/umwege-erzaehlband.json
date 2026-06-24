@@ -1,0 +1,16 @@
+{
+	"id": "umwege-erzaehlband",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Umwege",
+	"slug": "umwege-erzaehlband",
+	"aliases": [],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

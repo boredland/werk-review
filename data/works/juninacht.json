@@ -1,0 +1,18 @@
+{
+	"id": "juninacht",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Juninacht",
+	"slug": "juninacht",
+	"aliases": [],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [
+		"am-weg-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

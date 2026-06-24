@@ -1,0 +1,18 @@
+{
+	"id": "der-europaeer",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Europäer",
+	"slug": "der-europaeer",
+	"aliases": [],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [
+		"traumfaehrte-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "chagrin-damour",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Chagrin d’Amour",
+	"slug": "chagrin-damour",
+	"aliases": [],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

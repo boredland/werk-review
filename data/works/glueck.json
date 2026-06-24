@@ -1,0 +1,18 @@
+{
+	"id": "glueck",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Glück",
+	"slug": "glueck",
+	"aliases": [],
+	"year": 1951,
+	"year_display": "1951",
+	"parent_slugs": [
+		"spaete-prosa-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

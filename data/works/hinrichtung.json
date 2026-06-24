@@ -1,0 +1,18 @@
+{
+	"id": "hinrichtung",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Hinrichtung",
+	"slug": "hinrichtung",
+	"aliases": [],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [
+		"am-weg-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

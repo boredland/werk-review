@@ -1,0 +1,18 @@
+{
+	"id": "die-stadt",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Stadt",
+	"slug": "die-stadt",
+	"aliases": [],
+	"year": 1910,
+	"year_display": "1910",
+	"parent_slugs": [
+		"traumfaehrte-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

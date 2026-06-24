@@ -1,0 +1,18 @@
+{
+	"id": "aufzeichnung-bei-einer-kur-in-baden",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Aufzeichnung bei einer Kur in Baden",
+	"slug": "aufzeichnung-bei-einer-kur-in-baden",
+	"aliases": [],
+	"year": 1951,
+	"year_display": "1951",
+	"parent_slugs": [
+		"spaete-prosa-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "anton-schievelbeyns-reisse",
+	"author_id": "hermann-hesse",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Anton Schievelbeyn’s Reisse",
+	"slug": "anton-schievelbeyns-reisse",
+	"aliases": [
+		"Anton Schievelbeyn's ohn-freywillige Reisse nacher Ost-Indien"
+	],
+	"year": 1905,
+	"year_display": "1905",
+	"parent_slugs": [
+		"fabulierbuch-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
