@@ -1,0 +1,20 @@
+{
+	"id": "debs-traum",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Debs’ Traum",
+	"slug": "debs-traum",
+	"aliases": [
+		"The dream of Debs"
+	],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"die-kraft-der-starken-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

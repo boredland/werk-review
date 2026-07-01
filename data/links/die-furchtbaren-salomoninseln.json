@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/south-sea-tales-by-jack-london/",
+		"label": "South Sea Tales",
+		"librivox_id": "15528"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/die-furchtbaren-salomoninseln/",
+		"label": "Die furchtbaren Salomoninseln"
+	}
+]

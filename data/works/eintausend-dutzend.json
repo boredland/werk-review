@@ -1,0 +1,20 @@
+{
+	"id": "eintausend-dutzend",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Eintausend Dutzend",
+	"slug": "eintausend-dutzend",
+	"aliases": [
+		"The one thousand dozen"
+	],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [
+		"the-faith-of-men-and-other-stories-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

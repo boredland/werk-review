@@ -1,0 +1,20 @@
+{
+	"id": "lokalkolorit",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Lokalkolorit",
+	"slug": "lokalkolorit",
+	"aliases": [
+		"Moon-face"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"mondgesicht-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

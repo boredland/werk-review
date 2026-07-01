@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/white-fang-by-jack-london/",
+		"label": "White Fang",
+		"librivox_id": "556"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/white-fang-by-jack-london-librivox-version-2/",
+		"label": "White Fang (Version 2)",
+		"librivox_id": "4677"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/wolfsblut/",
+		"label": "Wolfsblut"
+	}
+]

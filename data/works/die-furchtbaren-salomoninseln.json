@@ -1,0 +1,20 @@
+{
+	"id": "die-furchtbaren-salomoninseln",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die furchtbaren Salomoninseln",
+	"slug": "die-furchtbaren-salomoninseln",
+	"aliases": [
+		"The terrible Solomons"
+	],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [
+		"suedsee-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

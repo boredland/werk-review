@@ -1,0 +1,20 @@
+{
+	"id": "die-kraft-der-starken",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Kraft der Starken",
+	"slug": "die-kraft-der-starken",
+	"aliases": [
+		"The strength of the strong / die Macht der Starken"
+	],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"die-kraft-der-starken-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

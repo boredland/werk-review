@@ -1,0 +1,20 @@
+{
+	"id": "treue",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Treue",
+	"slug": "treue",
+	"aliases": [
+		"Trust"
+	],
+	"year": 1910,
+	"year_display": "1910",
+	"parent_slugs": [
+		"verlorenes-gesicht-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

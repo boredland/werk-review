@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/das-ende-vom-lied/",
-		"label": "Das Ende vom Lied"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/the-end-of-the-tether-by-joseph-conrad/",

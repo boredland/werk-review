@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-abysmal-brute-by-jack-london/",
+		"label": "Abysmal Brute",
+		"librivox_id": "13958"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/der-ruhm-des-kaempfers/",
+		"label": "Der Ruhm des Kämpfers"
+	}
+]

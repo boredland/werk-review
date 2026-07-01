@@ -1,0 +1,18 @@
+{
+	"id": "der-gott-seiner-vaeter-erzaehlband",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Der Gott seiner Väter",
+	"slug": "der-gott-seiner-vaeter-erzaehlband",
+	"aliases": [
+		"The God of His Fathers & Other Stories"
+	],
+	"year": 1901,
+	"year_display": "1901",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

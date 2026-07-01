@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-vally-of-the-moon-by-jack-london/",
+		"label": "Valley of the Moon",
+		"librivox_id": "7529"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/das-mondtal/",
+		"label": "Das Mondtal"
+	}
+]

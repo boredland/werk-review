@@ -1,0 +1,20 @@
+{
+	"id": "am-ende-des-regenbogens",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Am Ende des Regenbogens",
+	"slug": "am-ende-des-regenbogens",
+	"aliases": [
+		"At the rainbow's end"
+	],
+	"year": 1901,
+	"year_display": "1901",
+	"parent_slugs": [
+		"der-gott-seiner-vaeter-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

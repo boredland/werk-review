@@ -1,0 +1,20 @@
+{
+	"id": "eine-odyssee-des-nordens",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Eine Odyssee des Nordens",
+	"slug": "eine-odyssee-des-nordens",
+	"aliases": [
+		"An odyssey of the north"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [
+		"der-sohn-des-wolfs-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

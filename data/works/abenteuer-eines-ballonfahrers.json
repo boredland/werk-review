@@ -1,0 +1,16 @@
+{
+	"id": "abenteuer-eines-ballonfahrers",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Abenteuer eines Ballonfahrers",
+	"slug": "abenteuer-eines-ballonfahrers",
+	"aliases": [],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

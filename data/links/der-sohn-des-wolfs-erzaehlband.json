@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-son-of-the-wolf-by-jack-london/",
+		"label": "Son of the Wolf",
+		"librivox_id": "20327"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/der-sohn-des-wolfs/",
+		"label": "Der Sohn des Wolfs"
+	}
+]

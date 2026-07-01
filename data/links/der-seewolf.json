@@ -1,0 +1,25 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-sea-wolf-by-jack-london/",
+		"label": "Sea Wolf",
+		"librivox_id": "3106"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/der-seewolf/",
+		"label": "Der Seewolf"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/derseewolf0000jack",
+		"label": "Der Seewolf.",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

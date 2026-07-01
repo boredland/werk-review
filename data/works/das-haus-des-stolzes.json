@@ -1,0 +1,20 @@
+{
+	"id": "das-haus-des-stolzes",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Haus des Stolzes",
+	"slug": "das-haus-des-stolzes",
+	"aliases": [
+		"The House of Pride"
+	],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [
+		"die-gluecklichen-inseln"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

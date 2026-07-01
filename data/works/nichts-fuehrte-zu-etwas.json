@@ -1,0 +1,20 @@
+{
+	"id": "nichts-fuehrte-zu-etwas",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Nichts führte zu etwas",
+	"slug": "nichts-fuehrte-zu-etwas",
+	"aliases": [
+		"Nothing that Ever Came to Anything"
+	],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [
+		"the-human-drift-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "die-herrin-des-großen-hauses",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Herrin des Großen Hauses",
+	"slug": "die-herrin-des-großen-hauses",
+	"aliases": [
+		"The Little Lady of the Big House"
+	],
+	"year": 1916,
+	"year_display": "1916",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

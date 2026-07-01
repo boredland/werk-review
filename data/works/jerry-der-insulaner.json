@@ -1,0 +1,18 @@
+{
+	"id": "jerry-der-insulaner",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Jerry der Insulaner",
+	"slug": "jerry-der-insulaner",
+	"aliases": [
+		"Jerry of the Islands"
+	],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

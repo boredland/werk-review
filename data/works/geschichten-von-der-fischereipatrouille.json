@@ -1,0 +1,18 @@
+{
+	"id": "geschichten-von-der-fischereipatrouille",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Geschichten von der Fischereipatrouille",
+	"slug": "geschichten-von-der-fischereipatrouille",
+	"aliases": [
+		"Fischpiraten: Abenteuer bei der Fischereipatroullie / Tales of the Fish Patrol / Die Austernpiraten und andere Erzählungen"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

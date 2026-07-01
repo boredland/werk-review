@@ -1,0 +1,20 @@
+{
+	"id": "wie-vor-alters-zog-die-argo",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Wie vor alters zog die Argo",
+	"slug": "wie-vor-alters-zog-die-argo",
+	"aliases": [
+		"Der alte Argonaute / Wie Argos in den alten Zeite / Wie einstmals Argus / Like Argus of the Ancient Times"
+	],
+	"year": 1918,
+	"year_display": "1918",
+	"parent_slugs": [
+		"der-rote-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

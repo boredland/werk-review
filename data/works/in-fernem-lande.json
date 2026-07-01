@@ -1,0 +1,20 @@
+{
+	"id": "in-fernem-lande",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "In fernem Lande",
+	"slug": "in-fernem-lande",
+	"aliases": [
+		"In einem fernen Land / In a far country"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [
+		"der-sohn-des-wolfs-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/tales-of-the-fish-patrol-by-jack-london/",
+		"label": "Tales of the Fish Patrol",
+		"librivox_id": "9576"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/brown-wolf-and-other-jack-london-stories-by-jack-london/",
+		"label": "Brown Wolf and Other Jack London Stories",
+		"librivox_id": "15148"
+	}
+]

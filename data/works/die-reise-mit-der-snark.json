@@ -1,0 +1,18 @@
+{
+	"id": "die-reise-mit-der-snark",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Die Reise mit der Snark",
+	"slug": "die-reise-mit-der-snark",
+	"aliases": [
+		"Die Kreuzfahrt der Snark / Die Fahrt der Snark / The Cruise of the Snark"
+	],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

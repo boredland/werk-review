@@ -1,0 +1,18 @@
+{
+	"id": "menschen-der-tiefe",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Menschen der Tiefe",
+	"slug": "menschen-der-tiefe",
+	"aliases": [
+		"Die Menschen des Abgrunds / In den Slums / The People of the Abyss / Volk am Abgrund / In den Slums"
+	],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

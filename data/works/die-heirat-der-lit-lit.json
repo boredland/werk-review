@@ -1,0 +1,20 @@
+{
+	"id": "die-heirat-der-lit-lit",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Heirat der Lit-Lit",
+	"slug": "die-heirat-der-lit-lit",
+	"aliases": [
+		"The marriage of Lit-lit"
+	],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [
+		"the-faith-of-men-and-other-stories-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

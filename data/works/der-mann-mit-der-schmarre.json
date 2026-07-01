@@ -1,0 +1,20 @@
+{
+	"id": "der-mann-mit-der-schmarre",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Mann mit der Schmarre",
+	"slug": "der-mann-mit-der-schmarre",
+	"aliases": [
+		"The man with the gash"
+	],
+	"year": 1901,
+	"year_display": "1901",
+	"parent_slugs": [
+		"der-gott-seiner-vaeter-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

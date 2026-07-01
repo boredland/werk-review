@@ -1,0 +1,18 @@
+{
+	"id": "die-eiserne-ferse",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die eiserne Ferse",
+	"slug": "die-eiserne-ferse",
+	"aliases": [
+		"The Iron Heel"
+	],
+	"year": 1908,
+	"year_display": "1908",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,16 @@
+{
+	"id": "martin-eden",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Martin Eden",
+	"slug": "martin-eden",
+	"aliases": [],
+	"year": 1909,
+	"year_display": "1909",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

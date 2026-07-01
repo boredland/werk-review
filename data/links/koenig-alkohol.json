@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/john-barleycorn-or-alcoholic-memoirs-by-jack-london/",
+		"label": "John Barleycorn or Alcoholic Memoirs",
+		"librivox_id": "1975"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/koenig-alkohol/",
+		"label": "König Alkohol"
+	}
+]

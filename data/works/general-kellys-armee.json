@@ -1,0 +1,20 @@
+{
+	"id": "general-kellys-armee",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "General Kellys Armee",
+	"slug": "general-kellys-armee",
+	"aliases": [
+		"Two thousand stiffs"
+	],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"abenteurer-des-schienenstrangs"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

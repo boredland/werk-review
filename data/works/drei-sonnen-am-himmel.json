@@ -1,0 +1,20 @@
+{
+	"id": "drei-sonnen-am-himmel",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Drei Sonnen am Himmel",
+	"slug": "drei-sonnen-am-himmel",
+	"aliases": [
+		"Nebensonnen-Wanderung / The sun-dog trail"
+	],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"die-liebe-zum-leben-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

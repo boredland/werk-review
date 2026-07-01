@@ -1,0 +1,20 @@
+{
+	"id": "ein-taifun-vor-der-japanischen-kueste",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Taifun vor der japanischen Küste",
+	"slug": "ein-taifun-vor-der-japanischen-kueste",
+	"aliases": [
+		"Typhoon off the coast of Japan"
+	],
+	"year": 1922,
+	"year_display": "1922",
+	"parent_slugs": [
+		"dutch-courage-and-other-stories"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

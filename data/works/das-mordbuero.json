@@ -1,0 +1,18 @@
+{
+	"id": "das-mordbuero",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Das Mordbüro (Vollendet von Robert L. Fish)",
+	"slug": "das-mordbuero",
+	"aliases": [
+		"Mord auf Bestellung / The Assassination Bureau, Ltd"
+	],
+	"year": 1963,
+	"year_display": "1963",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

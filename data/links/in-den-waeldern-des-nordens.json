@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/children-of-the-frost-by-jack-london/",
+		"label": "Children of the Frost",
+		"librivox_id": "18260"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/in-den-waeldern-des-nordens/",
+		"label": "In den Wäldern des Nordens"
+	}
+]

@@ -1,0 +1,20 @@
+{
+	"id": "das-weib-eines-koenigs",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Weib eines Königs",
+	"slug": "das-weib-eines-koenigs",
+	"aliases": [
+		"The wife of a king"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [
+		"der-sohn-des-wolfs-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

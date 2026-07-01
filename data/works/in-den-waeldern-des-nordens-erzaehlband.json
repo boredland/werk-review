@@ -1,0 +1,18 @@
+{
+	"id": "in-den-waeldern-des-nordens-erzaehlband",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "In den Wäldern des Nordens",
+	"slug": "in-den-waeldern-des-nordens-erzaehlband",
+	"aliases": [
+		"Children of the frost"
+	],
+	"year": 1901,
+	"year_display": "1901-1902",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

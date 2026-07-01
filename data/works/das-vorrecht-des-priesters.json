@@ -1,0 +1,20 @@
+{
+	"id": "das-vorrecht-des-priesters",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Vorrecht des Priesters",
+	"slug": "das-vorrecht-des-priesters",
+	"aliases": [
+		"The priestly prerogative"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [
+		"der-sohn-des-wolfs-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

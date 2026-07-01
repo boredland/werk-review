@@ -1,0 +1,20 @@
+{
+	"id": "die-beispiellose-invasion",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die beispiellose Invasion",
+	"slug": "die-beispiellose-invasion",
+	"aliases": [
+		"The unparalleled invasion"
+	],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"die-kraft-der-starken-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

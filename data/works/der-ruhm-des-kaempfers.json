@@ -1,0 +1,18 @@
+{
+	"id": "der-ruhm-des-kaempfers",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Ruhm des Kämpfers",
+	"slug": "der-ruhm-des-kaempfers",
+	"aliases": [
+		"The Abysmal Brute"
+	],
+	"year": 1913,
+	"year_display": "1913",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

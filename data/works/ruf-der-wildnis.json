@@ -1,0 +1,18 @@
+{
+	"id": "ruf-der-wildnis",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Ruf der Wildnis",
+	"slug": "ruf-der-wildnis",
+	"aliases": [
+		"Wenn die Natur ruft / The Call of the Wild / Der Ruf"
+	],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

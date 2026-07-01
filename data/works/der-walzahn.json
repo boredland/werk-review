@@ -1,0 +1,20 @@
+{
+	"id": "der-walzahn",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Walzahn",
+	"slug": "der-walzahn",
+	"aliases": [
+		"The whale tooth"
+	],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [
+		"suedsee-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

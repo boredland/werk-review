@@ -1,0 +1,18 @@
+{
+	"id": "lockruf-des-goldes",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Lockruf des Goldes",
+	"slug": "lockruf-des-goldes",
+	"aliases": [
+		"Burning Daylight"
+	],
+	"year": 1910,
+	"year_display": "1910",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

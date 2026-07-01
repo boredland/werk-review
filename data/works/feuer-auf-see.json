@@ -1,0 +1,20 @@
+{
+	"id": "feuer-auf-see",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Feuer auf See",
+	"slug": "feuer-auf-see",
+	"aliases": [
+		"Lotse auf brennendem Schiff / The seed of McCoy / The Seed of M'Coy"
+	],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [
+		"suedsee-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

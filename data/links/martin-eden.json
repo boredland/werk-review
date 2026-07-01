@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/martin-eden-by-jack-london/",
+		"label": "Martin Eden",
+		"librivox_id": "4954"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/martin-eden-erster-band",
+		"label": "Martin Eden"
+	}
+]

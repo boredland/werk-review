@@ -1,0 +1,43 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/when-god-laughs-and-other-stories-by-jack-london/",
+		"label": "When God Laughs, and Other Stories",
+		"librivox_id": "9936"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/dutch-courage-and-other-stories-by-jack-london/",
+		"label": "Dutch Courage and Other Stories",
+		"librivox_id": "10201"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/brown-wolf-and-other-jack-london-stories-by-jack-london/",
+		"label": "Brown Wolf and Other Jack London Stories",
+		"librivox_id": "15148"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/lost-face-and-other-stories-by-jack-london/",
+		"label": "Lost Face (and Other Stories)",
+		"librivox_id": "17560"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/moon-face-and-other-stories-by-jack-london/",
+		"label": "Moon-Face and Other Stories",
+		"librivox_id": "18004"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/mondgesicht",
+		"label": "Mondgesicht Erzählband"
+	}
+]

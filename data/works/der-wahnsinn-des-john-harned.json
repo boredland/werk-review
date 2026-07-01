@@ -1,0 +1,20 @@
+{
+	"id": "der-wahnsinn-des-john-harned",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Wahnsinn des John Harned",
+	"slug": "der-wahnsinn-des-john-harned",
+	"aliases": [
+		"The madness of John Harned"
+	],
+	"year": 1913,
+	"year_display": "1913",
+	"parent_slugs": [
+		"die-nachtgeborene-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

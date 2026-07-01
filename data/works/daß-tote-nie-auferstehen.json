@@ -1,0 +1,20 @@
+{
+	"id": "daß-tote-nie-auferstehen",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Daß Tote nie auferstehen",
+	"slug": "daß-tote-nie-auferstehen",
+	"aliases": [
+		"That Dead Men Rise up Never / Dass Tote nie auferstehen"
+	],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [
+		"the-human-drift-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

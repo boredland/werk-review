@@ -1,20 +1,20 @@
 {
 	"id": "das-ende-vom-lied",
-	"author_id": "joseph-conrad",
+	"author_id": "jack-london",
 	"genre_ids": [
 		"erzaehlung"
 	],
 	"title": "Das Ende vom Lied",
 	"slug": "das-ende-vom-lied",
 	"aliases": [
-		"The End of the Tether"
+		"The end of the story"
 	],
-	"year": 1902,
-	"year_display": "1902",
+	"year": 1916,
+	"year_display": "1916",
 	"parent_slugs": [
-		"jugend-erzaehlband"
+		"the-turtles-of-tasman"
 	],
 	"fortsetzung_von_ids": [],
-	"plot": "Ein alter Kapitän steht am Ende seines Lebens – und am Ende seiner Kräfte. Um seine Tochter abzusichern und seine Würde zu bewahren, nimmt er noch einmal das Kommando über ein Schiff an. Doch mit jedem Tag auf See wird deutlicher, dass die Zeit nicht nur seinen Körper, sondern auch seine Entscheidungen längst eingeholt hat.  [KI-generierter Inhalt]",
+	"plot": null,
 	"sources": []
 }

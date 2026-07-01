@@ -1,0 +1,18 @@
+{
+	"id": "die-nachtgeborene-erzaehlband",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Die Nachtgeborene",
+	"slug": "die-nachtgeborene-erzaehlband",
+	"aliases": [
+		"The Night-Born"
+	],
+	"year": 1913,
+	"year_display": "1913",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

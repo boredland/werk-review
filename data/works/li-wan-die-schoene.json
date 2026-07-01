@@ -1,0 +1,20 @@
+{
+	"id": "li-wan-die-schoene",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Li Wan, die Schöne",
+	"slug": "li-wan-die-schoene",
+	"aliases": [
+		"Li Wan, the fair / Li Wan the Fair"
+	],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"in-den-waeldern-des-nordens-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

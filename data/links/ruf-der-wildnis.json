@@ -1,0 +1,37 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/call-of-the-wild-by-jack-london/",
+		"label": "Call of the Wild",
+		"librivox_id": "158"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-call-of-the-wild-by-jack-london-2/",
+		"label": "Call of the Wild (Version 2)",
+		"librivox_id": "4480"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-call-of-the-wild-by-jack-london-3/",
+		"label": "Call of the Wild (Version 3)",
+		"librivox_id": "4751"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-call-of-the-wild-version-4-by-jack-london/",
+		"label": "Call of the Wild (version 4)",
+		"librivox_id": "9909"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-call-of-the-wild-version-5-by-jack-london/",
+		"label": "Call of the Wild (Version 5)",
+		"librivox_id": "15316"
+	}
+]

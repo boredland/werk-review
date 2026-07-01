@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-red-one-by-jack-london/",
+		"label": "Red One",
+		"librivox_id": "18562"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/der-rote/",
+		"label": "Der Rote"
+	}
+]

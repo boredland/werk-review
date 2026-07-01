@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/when-god-laughs-and-other-stories-by-jack-london/",
+		"label": "When God Laughs, and Other Stories",
+		"librivox_id": "9936"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/brown-wolf-and-other-jack-london-stories-by-jack-london/",
+		"label": "Brown Wolf and Other Jack London Stories",
+		"librivox_id": "15148"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/nur-fleisch/",
+		"label": "Nur Fleisch"
+	}
+]

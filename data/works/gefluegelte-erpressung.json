@@ -1,0 +1,20 @@
+{
+	"id": "gefluegelte-erpressung",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Geflügelte Erpressung",
+	"slug": "gefluegelte-erpressung",
+	"aliases": [
+		"Winged blackmail"
+	],
+	"year": 1913,
+	"year_display": "1913",
+	"parent_slugs": [
+		"die-nachtgeborene-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

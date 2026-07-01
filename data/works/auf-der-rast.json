@@ -1,0 +1,20 @@
+{
+	"id": "auf-der-rast",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Auf der Rast",
+	"slug": "auf-der-rast",
+	"aliases": [
+		"To the man on trail"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [
+		"der-sohn-des-wolfs-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

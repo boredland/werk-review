@@ -1,0 +1,20 @@
+{
+	"id": "das-feuer-im-schnee",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Feuer im Schnee",
+	"slug": "das-feuer-im-schnee",
+	"aliases": [
+		"Ein Feuer machen / To Build a Fire"
+	],
+	"year": 1910,
+	"year_display": "1910",
+	"parent_slugs": [
+		"verlorenes-gesicht-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

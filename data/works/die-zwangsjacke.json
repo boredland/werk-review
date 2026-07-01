@@ -1,0 +1,18 @@
+{
+	"id": "die-zwangsjacke",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Zwangsjacke",
+	"slug": "die-zwangsjacke",
+	"aliases": [
+		"The Star Rover / The Jacket"
+	],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

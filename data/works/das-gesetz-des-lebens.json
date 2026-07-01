@@ -1,0 +1,20 @@
+{
+	"id": "das-gesetz-des-lebens",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Gesetz des Lebens",
+	"slug": "das-gesetz-des-lebens",
+	"aliases": [
+		"The law of life"
+	],
+	"year": 1901,
+	"year_display": "1901",
+	"parent_slugs": [
+		"in-den-waeldern-des-nordens-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

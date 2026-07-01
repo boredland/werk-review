@@ -1,0 +1,18 @@
+{
+	"id": "der-seewolf",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Seewolf",
+	"slug": "der-seewolf",
+	"aliases": [
+		"Die Robbeninsel / The Sea Wolf / The Sea-Wolf"
+	],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

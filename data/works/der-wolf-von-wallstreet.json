@@ -1,0 +1,18 @@
+{
+	"id": "der-wolf-von-wallstreet",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Wolf von Wallstreet",
+	"slug": "der-wolf-von-wallstreet",
+	"aliases": [
+		"Hearts of Three"
+	],
+	"year": 1918,
+	"year_display": "1918",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

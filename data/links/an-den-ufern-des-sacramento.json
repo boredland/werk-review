@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/stories-of-ships-and-the-sea-by-jack-london/",
+		"label": "Stories of Ships and the Sea",
+		"librivox_id": "7333"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/dutch-courage-and-other-stories-by-jack-london/",
+		"label": "Dutch Courage and Other Stories",
+		"librivox_id": "10201"
+	}
+]

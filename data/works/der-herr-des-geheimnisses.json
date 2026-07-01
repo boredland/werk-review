@@ -1,0 +1,20 @@
+{
+	"id": "der-herr-des-geheimnisses",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Herr des Geheimnisses",
+	"slug": "der-herr-des-geheimnisses",
+	"aliases": [
+		"The master of mystery"
+	],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"in-den-waeldern-des-nordens-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

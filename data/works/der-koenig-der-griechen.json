@@ -1,0 +1,20 @@
+{
+	"id": "der-koenig-der-griechen",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der König der Griechen",
+	"slug": "der-koenig-der-griechen",
+	"aliases": [
+		"The King of the Greeks"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"geschichten-von-der-fischereipatrouille"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

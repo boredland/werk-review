@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-iron-heel-by-jack-london/",
+		"label": "Iron Heel",
+		"librivox_id": "4342"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/die-eiserne-ferse/",
+		"label": "Die eiserne Ferse"
+	}
+]

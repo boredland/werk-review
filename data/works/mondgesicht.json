@@ -1,0 +1,20 @@
+{
+	"id": "mondgesicht",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Mondgesicht",
+	"slug": "mondgesicht",
+	"aliases": [
+		"The leopard man's story / Die Geschichte vom Leopardenmann"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"mondgesicht-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

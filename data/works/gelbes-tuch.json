@@ -1,0 +1,20 @@
+{
+	"id": "gelbes-tuch",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gelbes Tuch",
+	"slug": "gelbes-tuch",
+	"aliases": [
+		"Yellow handkerchief"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"geschichten-von-der-fischereipatrouille"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

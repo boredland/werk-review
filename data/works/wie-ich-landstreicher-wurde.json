@@ -1,0 +1,20 @@
+{
+	"id": "wie-ich-landstreicher-wurde",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Wie ich Landstreicher wurde",
+	"slug": "wie-ich-landstreicher-wurde",
+	"aliases": [
+		"Road-kids and gay-cats"
+	],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"abenteurer-des-schienenstrangs"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

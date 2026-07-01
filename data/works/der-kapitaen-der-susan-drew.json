@@ -1,0 +1,18 @@
+{
+	"id": "der-kapitaen-der-susan-drew",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Kapitän der Susan Drew",
+	"slug": "der-kapitaen-der-susan-drew",
+	"aliases": [
+		"The Captain of the Susan Drew"
+	],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

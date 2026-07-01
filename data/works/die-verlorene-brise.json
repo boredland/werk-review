@@ -1,0 +1,16 @@
+{
+	"id": "die-verlorene-brise",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die verlorene Brise",
+	"slug": "die-verlorene-brise",
+	"aliases": [],
+	"year": 1901,
+	"year_display": "1901",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

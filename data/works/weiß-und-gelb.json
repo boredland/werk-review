@@ -1,0 +1,20 @@
+{
+	"id": "weiß-und-gelb",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Weiß und gelb",
+	"slug": "weiß-und-gelb",
+	"aliases": [
+		"White and yellow"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"geschichten-von-der-fischereipatrouille"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "die-teufel-von-fuatino",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Teufel von Fuatino",
+	"slug": "die-teufel-von-fuatino",
+	"aliases": [
+		"The devils of Fuatino / The Goat Man of Fuatino"
+	],
+	"year": 1911,
+	"year_display": "1911",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

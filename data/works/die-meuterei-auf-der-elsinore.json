@@ -1,0 +1,18 @@
+{
+	"id": "die-meuterei-auf-der-elsinore",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Meuterei auf der Elsinore",
+	"slug": "die-meuterei-auf-der-elsinore",
+	"aliases": [
+		"The Mutiny of the Elsinore"
+	],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

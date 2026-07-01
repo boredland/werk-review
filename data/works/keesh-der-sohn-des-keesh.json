@@ -1,0 +1,20 @@
+{
+	"id": "keesh-der-sohn-des-keesh",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Keesh, der Sohn des Keesh",
+	"slug": "keesh-der-sohn-des-keesh",
+	"aliases": [
+		"Keesh, the son of Keesh"
+	],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"in-den-waeldern-des-nordens-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

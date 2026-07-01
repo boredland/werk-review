@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-people-of-the-abyss-by-jack-london/",
+		"label": "People of the Abyss",
+		"librivox_id": "3570"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-iron-heel-by-jack-london/",
+		"label": "Iron Heel",
+		"librivox_id": "4342"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/menschen-der-tiefe/",
+		"label": "Menschen der Tiefe"
+	}
+]

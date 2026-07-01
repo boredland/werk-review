@@ -1,0 +1,18 @@
+{
+	"id": "der-rote-erzaehlband",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Der Rote Erzählband",
+	"slug": "der-rote-erzaehlband",
+	"aliases": [
+		"The Red One"
+	],
+	"year": 1918,
+	"year_display": "1918",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

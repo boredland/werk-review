@@ -1,0 +1,20 @@
+{
+	"id": "die-krankheit-des-einsamen-haeuptlings",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Krankheit des einsamen Häuptlings",
+	"slug": "die-krankheit-des-einsamen-haeuptlings",
+	"aliases": [
+		"The sickness of Lone Chief"
+	],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"in-den-waeldern-des-nordens-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "die-art-des-weissen-mannes",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Art des weissen Mannes",
+	"slug": "die-art-des-weissen-mannes",
+	"aliases": [
+		"The white man's way"
+	],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"die-liebe-zum-leben-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

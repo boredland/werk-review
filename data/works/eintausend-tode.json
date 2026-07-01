@@ -1,0 +1,18 @@
+{
+	"id": "eintausend-tode",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Eintausend Tode",
+	"slug": "eintausend-tode",
+	"aliases": [
+		"A Thousand Deaths"
+	],
+	"year": 1899,
+	"year_display": "1899",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

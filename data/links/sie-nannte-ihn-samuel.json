@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-strength-of-the-strong-by-jack-london/",
+		"label": "Strength of the Strong",
+		"librivox_id": "14426"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/best-dog-stories-by-various/",
+		"label": "Best Dog Stories",
+		"librivox_id": "16080"
+	}
+]

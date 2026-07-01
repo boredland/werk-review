@@ -1,0 +1,20 @@
+{
+	"id": "die-belagerung-der-lancashire-queen",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Belagerung der Lancashire Queen",
+	"slug": "die-belagerung-der-lancashire-queen",
+	"aliases": [
+		"The siege of the \"Lancashire Queen"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"geschichten-von-der-fischereipatrouille"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

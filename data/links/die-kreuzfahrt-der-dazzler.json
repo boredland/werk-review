@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-cruise-of-the-dazzler-by-jack-london/",
+		"label": "Cruise of the Dazzler",
+		"librivox_id": "10897"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/joe-unter-den-piraten",
+		"label": "Frisco Kid / Frisco-Kid: Die Fahrt der Dazzler / Joe unter den Piraten / The Cruise of the Dazzler"
+	}
+]

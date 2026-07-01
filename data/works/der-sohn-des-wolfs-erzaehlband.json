@@ -1,0 +1,18 @@
+{
+	"id": "der-sohn-des-wolfs-erzaehlband",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Der Sohn des Wolfs",
+	"slug": "der-sohn-des-wolfs-erzaehlband",
+	"aliases": [
+		"Son of the Wolf"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

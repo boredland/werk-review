@@ -1,0 +1,20 @@
+{
+	"id": "die-weisheit-der-reise",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Weisheit der Reise",
+	"slug": "die-weisheit-der-reise",
+	"aliases": [
+		"The wisdom of the trail"
+	],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [
+		"der-sohn-des-wolfs-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,18 @@
+{
+	"id": "ein-sohn-der-sonne",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Ein Sohn der Sonne",
+	"slug": "ein-sohn-der-sonne",
+	"aliases": [
+		"A Son of the Sun"
+	],
+	"year": 1912,
+	"year_display": "1912",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

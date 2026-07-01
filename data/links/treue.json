@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/brown-wolf-and-other-jack-london-stories-by-jack-london/",
+		"label": "Brown Wolf and Other Jack London Stories",
+		"librivox_id": "15148"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/lost-face-and-other-stories-by-jack-london/",
+		"label": "Lost Face (and Other Stories)",
+		"librivox_id": "17560"
+	}
+]

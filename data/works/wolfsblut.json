@@ -1,0 +1,18 @@
+{
+	"id": "wolfsblut",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Wolfsblut",
+	"slug": "wolfsblut",
+	"aliases": [
+		"Weißzahn, der Wolfshund / Weisszahn, der Wolfshund / Eine Beute der Wölfe / White Fang"
+	],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

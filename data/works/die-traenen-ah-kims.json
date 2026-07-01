@@ -1,0 +1,20 @@
+{
+	"id": "die-traenen-ah-kims",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Tränen Ah Kims",
+	"slug": "die-traenen-ah-kims",
+	"aliases": [
+		"The tears of Ah Kim"
+	],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [
+		"auf-der-makaloa-matt-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

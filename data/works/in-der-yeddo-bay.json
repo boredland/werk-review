@@ -1,0 +1,20 @@
+{
+	"id": "in-der-yeddo-bay",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "In der Yeddo Bay",
+	"slug": "in-der-yeddo-bay",
+	"aliases": [
+		"In Yeddo bay"
+	],
+	"year": 1922,
+	"year_display": "1922",
+	"parent_slugs": [
+		"dutch-courage-and-other-stories"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

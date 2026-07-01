@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/brown-wolf-and-other-jack-london-stories-by-jack-london/",
+		"label": "Brown Wolf and Other Jack London Stories",
+		"librivox_id": "15148"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/south-sea-tales-by-jack-london/",
+		"label": "South Sea Tales",
+		"librivox_id": "15528"
+	}
+]

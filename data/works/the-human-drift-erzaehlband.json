@@ -1,0 +1,16 @@
+{
+	"id": "the-human-drift-erzaehlband",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "The Human Drift",
+	"slug": "the-human-drift-erzaehlband",
+	"aliases": [],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

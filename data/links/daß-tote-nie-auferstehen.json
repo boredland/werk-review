@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-sea-wolf-by-jack-london/",
+		"label": "Sea Wolf",
+		"librivox_id": "3106"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-human-drift-by-jack-london/",
+		"label": "Human Drift",
+		"librivox_id": "19012"
+	}
+]

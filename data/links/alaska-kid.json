@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/smoke-bellew-by-jack-london/",
+		"label": "Smoke Bellew",
+		"librivox_id": "15109"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/kid-co",
+		"label": "Alaska Kid / Smoke Bellew / Kit und Shorty / Kid und Co / Kid & Co. / Kit am Klondike / Alaskagold"
+	}
+]

@@ -1,0 +1,18 @@
+{
+	"id": "the-game",
+	"author_id": "jack-london",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "The Game",
+	"slug": "the-game",
+	"aliases": [
+		"Preisboxer"
+	],
+	"year": 1905,
+	"year_display": "1905",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}
