@@ -15,16 +15,6 @@
 		"die-serapionsbrueder-erzaehlband"
 	],
 	"fortsetzung_von_ids": [],
-	"plot": "Das fremde Kind ist ein romantisches Kunstmärchen von E. T. A. Hoffmann, das im vierten Abschnitt des zweiten Bandes der Sammlung „Die Serapionsbrüder“ 1819 bei G. Reimer in Berlin erschien. Ende November 1817 war es bereits im letzten Band der zweibändigen Sammlung „Kinder-Mährchen“ – ebenfalls bei Reimer – erschienen.",
-	"sources": [
-		{
-			"label": "Wikipedia",
-			"url": "https://de.wikipedia.org/wiki/Das_fremde_Kind_(E._T._A._Hoffmann)"
-		}
-	],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Das_fremde_Kind_(E._T._A._Hoffmann)"
-	},
-	"plot_fetched_at": "2026-07-01"
+	"plot": null,
+	"sources": []
 }
