@@ -1,0 +1,18 @@
+{
+	"id": "die-marquise-de-la-pivardiere",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Marquise de la Pivardiere",
+	"slug": "die-marquise-de-la-pivardiere",
+	"aliases": [
+		"La marquesa de la Pivardière"
+	],
+	"year": 1820,
+	"year_display": "1820",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

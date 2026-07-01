@@ -1,0 +1,18 @@
+{
+	"id": "die-raeuber-abenteuer-zweier-freunde",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Räuber: Abenteuer zweier Freunde auf einem Schlosse in Böhmen",
+	"slug": "die-raeuber-abenteuer-zweier-freunde",
+	"aliases": [
+		"Les brigands"
+	],
+	"year": 1821,
+	"year_display": "1821",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

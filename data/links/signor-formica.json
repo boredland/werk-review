@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/weird-tales-by-e-t-a-hoffmann/",
+		"label": "Weird Tales",
+		"librivox_id": "9367"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/weird-tales-volume-1-by-e-t-a-hoffmann/",
+		"label": "Weird Tales, Volume 1",
+		"librivox_id": "14919"
+	}
+]

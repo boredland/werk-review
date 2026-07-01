@@ -1,0 +1,20 @@
+{
+	"id": "nußknacker-und-mausekoenig",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Nußknacker und Mausekönig",
+	"slug": "nußknacker-und-mausekoenig",
+	"aliases": [
+		"Der Nussknacker / Nussknacker und Mausekönig"
+	],
+	"year": 1816,
+	"year_display": "1816",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

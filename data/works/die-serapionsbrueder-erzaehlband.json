@@ -1,0 +1,18 @@
+{
+	"id": "die-serapionsbrueder-erzaehlband",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Die Serapionsbrüder",
+	"slug": "die-serapionsbrueder-erzaehlband",
+	"aliases": [
+		"Die Serapions-Brüder: gesammelte Erzählungen und Märchen / Die Seraphinenbrüder / Die Märchen der Serapionsbrüder / Les frères de Saint-Sérapion"
+	],
+	"year": 1819,
+	"year_display": "1819-1821",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

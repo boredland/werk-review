@@ -1,0 +1,20 @@
+{
+	"id": "der-einsiedler-serapion",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Einsiedler Serapion",
+	"slug": "der-einsiedler-serapion",
+	"aliases": [
+		"Geschichte vom Einsiedler Serapion"
+	],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

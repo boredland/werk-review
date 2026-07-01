@@ -1,0 +1,18 @@
+{
+	"id": "ignaz-denner",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ignaz Denner",
+	"slug": "ignaz-denner",
+	"aliases": [],
+	"year": 1817,
+	"year_display": "1817",
+	"parent_slugs": [
+		"nachtstuecke-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

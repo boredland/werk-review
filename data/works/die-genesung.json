@@ -1,0 +1,16 @@
+{
+	"id": "die-genesung",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Genesung",
+	"slug": "die-genesung",
+	"aliases": [],
+	"year": 1822,
+	"year_display": "1822",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

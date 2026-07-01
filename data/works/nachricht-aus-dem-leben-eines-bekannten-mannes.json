@@ -1,0 +1,20 @@
+{
+	"id": "nachricht-aus-dem-leben-eines-bekannten-mannes",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Nachricht aus dem Leben eines bekannten Mannes",
+	"slug": "nachricht-aus-dem-leben-eines-bekannten-mannes",
+	"aliases": [
+		"Aus dem Leben eines bekannten Mannes. Nach einer alten märkischen Chronik"
+	],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

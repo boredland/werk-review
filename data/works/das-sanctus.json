@@ -1,0 +1,18 @@
+{
+	"id": "das-sanctus",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Sanctus",
+	"slug": "das-sanctus",
+	"aliases": [],
+	"year": 1816,
+	"year_display": "1816/1817",
+	"parent_slugs": [
+		"nachtstuecke-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

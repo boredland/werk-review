@@ -1,0 +1,20 @@
+{
+	"id": "ritter-gluck",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ritter Gluck",
+	"slug": "ritter-gluck",
+	"aliases": [
+		"[eine Erinnerung aus dem Jahre 1809]"
+	],
+	"year": 1809,
+	"year_display": "1809",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

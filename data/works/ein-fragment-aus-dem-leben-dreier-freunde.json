@@ -1,0 +1,20 @@
+{
+	"id": "ein-fragment-aus-dem-leben-dreier-freunde",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Fragment aus dem Leben dreier Freunde",
+	"slug": "ein-fragment-aus-dem-leben-dreier-freunde",
+	"aliases": [
+		"Aus dem Leben dreier Freunde: Ein Fragment"
+	],
+	"year": 1818,
+	"year_display": "1818",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

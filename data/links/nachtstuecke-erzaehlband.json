@@ -1,0 +1,19 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/nachtstuecke-by-eta-hoffmann/",
+		"label": "Nachtstücke",
+		"librivox_id": "2188"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/nachtstcke0000etah",
+		"label": "Nachtstücke",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

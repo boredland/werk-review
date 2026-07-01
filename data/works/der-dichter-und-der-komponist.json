@@ -1,0 +1,18 @@
+{
+	"id": "der-dichter-und-der-komponist",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Dichter und der Komponist",
+	"slug": "der-dichter-und-der-komponist",
+	"aliases": [],
+	"year": 1813,
+	"year_display": "1813",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

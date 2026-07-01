@@ -1,0 +1,20 @@
+{
+	"id": "die-jesuiterkirche-in-g.",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Jesuiterkirche in G.",
+	"slug": "die-jesuiterkirche-in-g.",
+	"aliases": [
+		"Die Jesuitenkirche in G."
+	],
+	"year": 1816,
+	"year_display": "1816/1817",
+	"parent_slugs": [
+		"nachtstuecke-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

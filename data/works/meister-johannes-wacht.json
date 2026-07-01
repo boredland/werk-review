@@ -1,0 +1,16 @@
+{
+	"id": "meister-johannes-wacht",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Meister Johannes Wacht",
+	"slug": "meister-johannes-wacht",
+	"aliases": [],
+	"year": 1823,
+	"year_display": "1823",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

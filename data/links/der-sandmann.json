@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/nachtstuecke-by-eta-hoffmann/",
+		"label": "Nachtstücke",
+		"librivox_id": "2188"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/der-sandmann-by-e-t-a-hoffmann/",
+		"label": "Sandmann",
+		"librivox_id": "8143"
+	}
+]

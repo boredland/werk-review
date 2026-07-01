@@ -1,0 +1,16 @@
+{
+	"id": "nachtstuecke-erzaehlband",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Nachtstücke",
+	"slug": "nachtstuecke-erzaehlband",
+	"aliases": [],
+	"year": 1816,
+	"year_display": "1816-1817",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

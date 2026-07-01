@@ -1,0 +1,18 @@
+{
+	"id": "prinzessin-blandina",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Prinzessin Blandina",
+	"slug": "prinzessin-blandina",
+	"aliases": [],
+	"year": 1815,
+	"year_display": "1815",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

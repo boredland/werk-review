@@ -1,0 +1,19 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/nachtstuecke-by-eta-hoffmann/",
+		"label": "Nachtstücke",
+		"librivox_id": "2188"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/isbn_9783640235797",
+		"label": "Die Jesuiterkirche in G.",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

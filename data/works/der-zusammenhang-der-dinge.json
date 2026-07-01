@@ -1,0 +1,18 @@
+{
+	"id": "der-zusammenhang-der-dinge",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Zusammenhang der Dinge",
+	"slug": "der-zusammenhang-der-dinge",
+	"aliases": [],
+	"year": 1820,
+	"year_display": "1820",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

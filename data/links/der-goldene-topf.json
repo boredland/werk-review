@@ -1,0 +1,19 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/der-goldne-topf-by-e-t-a-hoffmann/",
+		"label": "goldne Topf",
+		"librivox_id": "4888"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/dergoldenetopfei0000etah",
+		"label": "Der goldene Topf. Ein Mährchen aus der neuen Zeit. Bamberg 1814.",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

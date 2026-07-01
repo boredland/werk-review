@@ -1,0 +1,18 @@
+{
+	"id": "nachricht-von-den-neuesten-schicksalen-des-hundes-berganza",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Nachricht von den neuesten Schicksalen des Hundes Berganza",
+	"slug": "nachricht-von-den-neuesten-schicksalen-des-hundes-berganza",
+	"aliases": [],
+	"year": 1814,
+	"year_display": "1814",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

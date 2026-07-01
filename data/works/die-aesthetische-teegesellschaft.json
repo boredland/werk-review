@@ -1,0 +1,18 @@
+{
+	"id": "die-aesthetische-teegesellschaft",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die ästhetische Teegesellschaft",
+	"slug": "die-aesthetische-teegesellschaft",
+	"aliases": [],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

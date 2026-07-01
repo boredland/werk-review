@@ -1,0 +1,20 @@
+{
+	"id": "vampirismus",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Vampirismus",
+	"slug": "vampirismus",
+	"aliases": [
+		"Hyänen / Eine Vampir-Geschichte"
+	],
+	"year": 1821,
+	"year_display": "1821",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

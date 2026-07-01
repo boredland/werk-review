@@ -1,0 +1,18 @@
+{
+	"id": "die-automate",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Automate",
+	"slug": "die-automate",
+	"aliases": [],
+	"year": 1814,
+	"year_display": "1814",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

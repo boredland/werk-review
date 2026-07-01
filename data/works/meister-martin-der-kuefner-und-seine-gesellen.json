@@ -1,0 +1,20 @@
+{
+	"id": "meister-martin-der-kuefner-und-seine-gesellen",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Meister Martin der Küfner und seine Gesellen",
+	"slug": "meister-martin-der-kuefner-und-seine-gesellen",
+	"aliases": [
+		"Meister Martin der Küfer"
+	],
+	"year": 1818,
+	"year_display": "1818",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

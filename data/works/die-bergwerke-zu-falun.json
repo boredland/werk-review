@@ -1,0 +1,20 @@
+{
+	"id": "die-bergwerke-zu-falun",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Bergwerke zu Falun",
+	"slug": "die-bergwerke-zu-falun",
+	"aliases": [
+		"Les mines de Falun"
+	],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

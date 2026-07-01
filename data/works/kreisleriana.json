@@ -1,0 +1,18 @@
+{
+	"id": "kreisleriana",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Kreisleriana",
+	"slug": "kreisleriana",
+	"aliases": [],
+	"year": 1810,
+	"year_display": "1810-1815",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

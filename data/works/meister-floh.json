@@ -1,0 +1,18 @@
+{
+	"id": "meister-floh",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Meister Floh",
+	"slug": "meister-floh",
+	"aliases": [
+		"Meister Floh: ein Märchen in sieben Abenteuern zweier Freunde"
+	],
+	"year": 1822,
+	"year_display": "1822",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

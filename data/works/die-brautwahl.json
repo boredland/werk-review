@@ -1,0 +1,20 @@
+{
+	"id": "die-brautwahl",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Brautwahl",
+	"slug": "die-brautwahl",
+	"aliases": [
+		"Die Brautwahl: eine berlinische Geschichte, in der mehrere ganz unwahrscheinliche Abentheuer vorkommen"
+	],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,16 @@
+{
+	"id": "haimatochare",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Haimatochare",
+	"slug": "haimatochare",
+	"aliases": [],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

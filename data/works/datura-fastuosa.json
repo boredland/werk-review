@@ -1,0 +1,18 @@
+{
+	"id": "datura-fastuosa",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Datura fastuosa",
+	"slug": "datura-fastuosa",
+	"aliases": [
+		"Der schöne Stechapfel"
+	],
+	"year": 1822,
+	"year_display": "1822",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,19 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/die-serapionsbrueder-by-eta-hoffmann/",
+		"label": "Auswahl aus Die Serapionsbrüder",
+		"librivox_id": "3255"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/dieserapionsbrde0000etah_a5x7",
+		"label": "Die Serapionsbrüder: Gesammelte Erzählungen und Mährchen",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

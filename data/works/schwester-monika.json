@@ -1,0 +1,18 @@
+{
+	"id": "schwester-monika",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erotischer-roman"
+	],
+	"title": "Schwester Monika (Zweifelhafter Verfasser)",
+	"slug": "schwester-monika",
+	"aliases": [
+		"Schwester Monika erzählt und erfährt. Eine erotisch-psychisch-physisch-philantropisch-philantropinische Urkunde des säkularisierten Klosters"
+	],
+	"year": 1815,
+	"year_display": "1815",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

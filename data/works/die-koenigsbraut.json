@@ -1,0 +1,20 @@
+{
+	"id": "die-koenigsbraut",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Königsbraut",
+	"slug": "die-koenigsbraut",
+	"aliases": [
+		"Die Königsbraut: ein nach der Natur entworfenes Märchen"
+	],
+	"year": 1821,
+	"year_display": "1821",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,20 @@
+{
+	"id": "das-fraeulein-von-scuderi",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Fräulein von Scuderi",
+	"slug": "das-fraeulein-von-scuderi",
+	"aliases": [
+		"Fräulein Scuderi"
+	],
+	"year": 1819,
+	"year_display": "1819",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

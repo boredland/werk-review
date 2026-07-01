@@ -1,0 +1,20 @@
+{
+	"id": "der-goldene-topf",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der goldene Topf",
+	"slug": "der-goldene-topf",
+	"aliases": [
+		"Der goldne Topf: ein Märchen aus der neuen Zeit"
+	],
+	"year": 1814,
+	"year_display": "1814",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

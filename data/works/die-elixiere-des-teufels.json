@@ -1,0 +1,18 @@
+{
+	"id": "die-elixiere-des-teufels",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Elixiere des Teufels",
+	"slug": "die-elixiere-des-teufels",
+	"aliases": [
+		"Die Elixiere des Teufels: nachgelassene Papiere des Bruders Medardus eines Kapuziners"
+	],
+	"year": 1815,
+	"year_display": "1815-1816",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

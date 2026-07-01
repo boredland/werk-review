@@ -1,0 +1,18 @@
+{
+	"id": "doge-und-dogaresse",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Doge und Dogaresse",
+	"slug": "doge-und-dogaresse",
+	"aliases": [],
+	"year": 1818,
+	"year_display": "1818",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

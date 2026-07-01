@@ -1,0 +1,18 @@
+{
+	"id": "der-sandmann",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Sandmann",
+	"slug": "der-sandmann",
+	"aliases": [],
+	"year": 1815,
+	"year_display": "1815 -1817",
+	"parent_slugs": [
+		"nachtstuecke-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

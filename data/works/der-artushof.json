@@ -1,0 +1,18 @@
+{
+	"id": "der-artushof",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Artushof",
+	"slug": "der-artushof",
+	"aliases": [],
+	"year": 1816,
+	"year_display": "1816",
+	"parent_slugs": [
+		"die-serapionsbrueder-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

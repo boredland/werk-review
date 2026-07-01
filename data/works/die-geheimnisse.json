@@ -1,0 +1,18 @@
+{
+	"id": "die-geheimnisse",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Geheimnisse",
+	"slug": "die-geheimnisse",
+	"aliases": [
+		"Fortsetzung des Fragments aus dem Leben eines Fantasten: die Irrungen / Merkwürdige Korrespondenz des Autors mit verschiedenen Personen"
+	],
+	"year": 1821,
+	"year_display": "1821",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

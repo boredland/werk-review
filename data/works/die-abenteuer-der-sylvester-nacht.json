@@ -1,0 +1,18 @@
+{
+	"id": "die-abenteuer-der-sylvester-nacht",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Abenteuer der Sylvester-Nacht",
+	"slug": "die-abenteuer-der-sylvester-nacht",
+	"aliases": [],
+	"year": 1815,
+	"year_display": "1815",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

@@ -1,0 +1,16 @@
+{
+	"id": "der-elementargeist",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Elementargeist",
+	"slug": "der-elementargeist",
+	"aliases": [],
+	"year": 1821,
+	"year_display": "1821",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

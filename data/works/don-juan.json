@@ -1,0 +1,20 @@
+{
+	"id": "don-juan",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Don Juan",
+	"slug": "don-juan",
+	"aliases": [
+		"Eine fabelhafte Begebenheit, die sich mit einem reisenden Enthusiasten zugetragen"
+	],
+	"year": 1813,
+	"year_display": "1813",
+	"parent_slugs": [
+		"fantasiestuecke-in-callots-manier-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"sources": []
+}

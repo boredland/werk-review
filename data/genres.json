@@ -1,33 +1,8 @@
 [
 	{
-		"id": "roman",
-		"name": "Roman",
-		"slug": "roman"
-	},
-	{
-		"id": "erzaehlung",
-		"name": "Erzählung",
-		"slug": "erzaehlung"
-	},
-	{
-		"id": "erzaehlband",
-		"name": "Erzählband",
-		"slug": "erzaehlband"
-	},
-	{
-		"id": "prosa",
-		"name": "Prosa",
-		"slug": "prosa"
-	},
-	{
 		"id": "abenteuerroman",
 		"name": "Abenteuerroman",
 		"slug": "abenteuerroman"
-	},
-	{
-		"id": "historischer-roman",
-		"name": "Historischer Roman",
-		"slug": "historischer-roman"
 	},
 	{
 		"id": "bericht",
@@ -40,18 +15,48 @@
 		"slug": "briefroman"
 	},
 	{
+		"id": "epos-vers",
+		"name": "Epos in Versen",
+		"slug": "epos-in-versen"
+	},
+	{
+		"id": "erotischer-roman",
+		"name": "Erotischer Roman",
+		"slug": "erotischer-roman"
+	},
+	{
+		"id": "erzaehlband",
+		"name": "Erzählband",
+		"slug": "erzaehlband"
+	},
+	{
+		"id": "erzaehlung",
+		"name": "Erzählung",
+		"slug": "erzaehlung"
+	},
+	{
 		"id": "gruselgeschichte",
 		"name": "Gruselgechichte",
 		"slug": "gruselgechichte"
 	},
 	{
+		"id": "historischer-roman",
+		"name": "Historischer Roman",
+		"slug": "historischer-roman"
+	},
+	{
+		"id": "prosa",
+		"name": "Prosa",
+		"slug": "prosa"
+	},
+	{
+		"id": "roman",
+		"name": "Roman",
+		"slug": "roman"
+	},
+	{
 		"id": "romanreihe",
 		"name": "Romanreihe",
 		"slug": "romanreihe"
-	},
-	{
-		"id": "epos-vers",
-		"name": "Epos in Versen",
-		"slug": "epos-in-versen"
 	}
 ]
