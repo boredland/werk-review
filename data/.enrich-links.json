@@ -2399,10 +2399,6 @@
 		"hash": "e47e8dd27aff",
 		"at": "2026-07-01"
 	},
-	"die-jesuiterkirche-in-g.": {
-		"hash": "6ad6cb5b726d",
-		"at": "2026-07-01"
-	},
 	"die-bergwerke-zu-falun": {
 		"hash": "2d9ef2cfb188",
 		"at": "2026-07-01"
@@ -2565,6 +2561,10 @@
 	},
 	"zacharias-werner": {
 		"hash": "a326960e43f3",
+		"at": "2026-07-01"
+	},
+	"die-jesuiterkirche-in-g": {
+		"hash": "6ad6cb5b726d",
 		"at": "2026-07-01"
 	}
 }

@@ -1,0 +1,25 @@
+{
+	"id": "die-jesuiterkirche-in-g",
+	"author_id": "eta-hoffmann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Jesuiterkirche in G.",
+	"slug": "die-jesuiterkirche-in-g",
+	"aliases": [
+		"Die Jesuitenkirche in G."
+	],
+	"year": 1816,
+	"year_display": "1816/1817",
+	"parent_slugs": [
+		"nachtstuecke-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Komponist Berthold reist nach G., wo ihn eine kunstvolle Kirchenmusik tief erschüttert. Seine Suche nach der Herkunft dieser überwältigenden Eindrücke führt ihn immer tiefer in ein lange verborgenes Geheimnis. [KI-generierter Inhalt]",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Die_Jesuiterkirche_in_G."
+		}
+	]
+}
