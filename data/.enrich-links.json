@@ -3067,10 +3067,6 @@
 		"hash": "6044811697d9",
 		"at": "2026-07-01"
 	},
-	"jan,-der-unverbesserliche": {
-		"hash": "5c8570d631b1",
-		"at": "2026-07-01"
-	},
 	"jees-uck": {
 		"hash": "ac7221ea65b6",
 		"at": "2026-07-01"
@@ -3125,10 +3121,6 @@
 	},
 	"menschen-der-tiefe": {
 		"hash": "bb70a06b97ac",
-		"at": "2026-07-01"
-	},
-	"michael,-der-bruder-jerrys": {
-		"hash": "e128e6a248fa",
 		"at": "2026-07-01"
 	},
 	"mondgesicht-erzaehlband": {
@@ -3270,5 +3262,13 @@
 	"zuviel-gold": {
 		"hash": "33b6db2a2bd5",
 		"at": "2026-07-01"
+	},
+	"michael-der-bruder-jerrys": {
+		"hash": "e128e6a248fa",
+		"at": "2026-07-02"
+	},
+	"jan-der-unverbesserliche": {
+		"hash": "5c8570d631b1",
+		"at": "2026-07-02"
 	}
 }

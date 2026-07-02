@@ -2,7 +2,7 @@
 	"id": "haus-savoyen",
 	"author_id": "alexandre-dumas",
 	"genre_ids": [
-		"romanreihe"
+		"romanzyklus"
 	],
 	"title": "Das Haus Savoyen",
 	"slug": "haus-savoyen",
@@ -13,6 +13,6 @@
 	"year_display": "1852-1855",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": "Mit der Romanreihe Das Haus Savoyen zeichnet Alexandre Dumas die Geschichte der savoyischen Herrscher vom 16. bis in die Mitte des 19. Jahrhunderts nach – von Emmanuel Philibert bis zu Karl Albert. Historische Ereignisse und lebendige Erzählkunst verbinden sich zu einer farbenreichen Chronik über eine Dynastie, die den Weg vom Herzogtum Savoyen zum Königreich Sardinien-Piemont und schließlich zur Einigung Italiens mitprägte. [KI-generierter Inhalt]",
+	"plot": "Mit dem Romanzyklus Das Haus Savoyen zeichnet Alexandre Dumas die Geschichte der savoyischen Herrscher vom 16. bis in die Mitte des 19. Jahrhunderts nach – von Emmanuel Philibert bis zu Karl Albert. Historische Ereignisse und lebendige Erzählkunst verbinden sich zu einer farbenreichen Chronik über eine Dynastie, die den Weg vom Herzogtum Savoyen zum Königreich Sardinien-Piemont und schließlich zur Einigung Italiens mitprägte. [KI-generierter Inhalt]",
 	"sources": []
 }
