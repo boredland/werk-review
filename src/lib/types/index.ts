@@ -6,6 +6,7 @@ export interface Author {
 	born: number | null;
 	died: number | null;
 	bio: string;
+	source_note: string | null;
 }
 
 export interface Work {
@@ -22,6 +23,7 @@ export interface Work {
 	plot: string | null;
 	plot_source: { label: string; url: string } | null;
 	plot_fetched_at: string | null;
+	source_note: string | null;
 	sources: Source[];
 }
 

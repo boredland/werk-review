@@ -24,22 +24,22 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 	const kv = platform?.env.SESSION_KV;
 	const forceRefresh = url.searchParams.get('refresh') === 'true';
 
-	const isRomanreihe = (w: Work) => w.genre_ids.includes('romanreihe');
-	const romanreiheParent = (w: Work) => {
+	const isRomanzyklus = (w: Work) => w.genre_ids.includes('romanzyklus');
+	const zyklusParent = (w: Work) => {
 		for (const slug of w.parent_slugs ?? []) {
 			const parent = getWork(slug);
-			if (parent && isRomanreihe(parent)) return { title: parent.title, slug: parent.slug };
+			if (parent && isRomanzyklus(parent)) return { title: parent.title, slug: parent.slug };
 		}
 		return null;
 	};
 
-	// A "Romanreihe" (e.g. the Drei-Musketiere cycle) is hidden as its own row;
-	// its member novels are listed instead with a link back to the series.
-	// Members of a regular Sammlung/Erzählband (parent is not a Romanreihe) stay
+	// A "Romanzyklus" (e.g. the Drei-Musketiere cycle) is hidden as its own row;
+	// its member novels are listed instead with a link back to the cycle.
+	// Members of a regular Sammlung/Erzählband (parent is not a Romanzyklus) stay
 	// collapsed into the collection as before.
 	const authorWorks = getWorksByAuthor(author.id).filter((w) => {
-		if (isRomanreihe(w)) return false;
-		if (getCollectionType(w) === 'band') return !!romanreiheParent(w);
+		if (isRomanzyklus(w)) return false;
+		if (getCollectionType(w) === 'band') return !!zyklusParent(w);
 		return true;
 	});
 	const statsIds = withDescendantIds(authorWorks.map((w) => w.id));
@@ -61,19 +61,13 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 					.map((id) => getGenre(id)?.name)
 					.filter(Boolean)
 					.join(', '),
-				parentSeries: romanreiheParent(w),
+				parentSeries: zyklusParent(w),
 				reviewCount: s.reviewCount,
 				avgRating: s.avgRating,
 				totalPoints: s.totalPoints,
 			};
 		})
-		.sort((a, b) => {
-			const aHasRating = a.reviewCount > 0;
-			const bHasRating = b.reviewCount > 0;
-			if (aHasRating !== bHasRating) return aHasRating ? -1 : 1;
-			if (aHasRating && bHasRating) return b.totalPoints - a.totalPoints;
-			return (a.year ?? 9999) - (b.year ?? 9999);
-		});
+		.sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999) || a.title.localeCompare(b.title, 'de'));
 
 	const authorReviewCount = works.reduce((sum, w) => sum + w.reviewCount, 0);
 	const authorTotalPoints = works.reduce((sum, w) => sum + w.totalPoints, 0);

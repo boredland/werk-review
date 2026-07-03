@@ -29,7 +29,7 @@ def sources_to_str(sources):
 # --- Autoren ---
 ws = wb.active
 ws.title = "Autoren"
-headers = ["id", "name", "slug", "aliases", "born", "died", "bio"]
+headers = ["id", "name", "slug", "aliases", "born", "died", "bio", "source_note"]
 ws.append(headers)
 
 for f in sorted(DATA_DIR.glob("authors/*.json")):
@@ -39,6 +39,7 @@ for f in sorted(DATA_DIR.glob("authors/*.json")):
         "|".join(a.get("aliases", [])),
         a.get("born"), a.get("died"),
         a.get("bio", ""),
+        a.get("source_note", ""),
     ])
 
 style_header(ws)
@@ -48,7 +49,7 @@ ws.column_dimensions["G"].width = 60
 # --- Werke ---
 ws = wb.create_sheet("Werke")
 headers = ["id", "author_id", "genre_ids", "title", "slug", "aliases", "year_display",
-           "parent_slugs", "fortsetzung_von_ids", "plot", "sources"]
+           "parent_slugs", "fortsetzung_von_ids", "plot", "source_note", "sources"]
 ws.append(headers)
 
 works = []
@@ -64,6 +65,7 @@ for w in works:
         "|".join(w.get("parent_slugs", [])),
         "|".join(w.get("fortsetzung_von_ids", [])),
         w.get("plot"),
+        w.get("source_note", ""),
         sources_to_str(w.get("sources", [])),
     ])
 

@@ -53,6 +53,7 @@ const AuthorSchema = z.object({
 	born: z.number().nullable(),
 	died: z.number().nullable(),
 	bio: z.string(),
+	source_note: z.string().nullable(),
 });
 
 const WorkSchema = z.object({
@@ -67,6 +68,7 @@ const WorkSchema = z.object({
 	parent_slugs: z.array(z.string()),
 	fortsetzung_von_ids: z.array(z.string()),
 	plot: z.string().nullable(),
+	source_note: z.string().nullable(),
 	sources: z.array(
 		z.object({
 			label: z.string(),
@@ -186,6 +188,7 @@ function transformAuthor(row) {
 		born: parseNumber(row.born),
 		died: parseNumber(row.died),
 		bio: row.bio || '',
+		source_note: row.source_note || null,
 	};
 }
 
@@ -215,6 +218,7 @@ function transformWork(row) {
 		parent_slugs: parsePipeSeparated(row.parent_ids || row.parent_slug || row.parent_slugs),
 		fortsetzung_von_ids: parsePipeSeparated(row.fortsetzung_von || row.fortsetzung_von_ids),
 		plot: row.plot || null,
+		source_note: row.source_note || null,
 		sources,
 	};
 }

@@ -43,7 +43,7 @@ export const load: PageServerLoad = async ({ platform }) => {
 		}
 		return {
 			...a,
-			workCount: authorWorks.length,
+			workCount: getWorksByAuthor(a.id).filter((w) => !w.genre_ids.includes('romanzyklus')).length,
 			imageUrl: imageUrls.get(a.name) ?? null,
 			totalPoints,
 			reviewCount,

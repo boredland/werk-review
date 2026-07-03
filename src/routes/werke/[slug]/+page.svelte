@@ -170,7 +170,7 @@ const jsonLd = $derived.by(() => {
 
 	{#if data.childWorks.length > 0}
 		<section class="child-works">
-			<h2>{data.childrenType === 'zyklus' ? 'In diesem Zyklus' : 'In dieser Sammlung'}</h2>
+			<h2>In diesem Werk enthalten</h2>
 			<div class="similar-list">
 				{#each data.childWorks as cw}
 					<a href="/werke/{cw.slug}" class="similar-item similar-item--with-rating">
@@ -190,7 +190,9 @@ const jsonLd = $derived.by(() => {
 		<section class="plot">
 			<h2>Inhalt</h2>
 			<p>{data.work.plot}</p>
-			{#if data.work.plot_source}
+			{#if data.work.source_note}
+				<p class="plot-attribution">{data.work.source_note}</p>
+			{:else if data.work.plot_source}
 				<p class="plot-attribution">
 					Quelle: <a href={data.work.plot_source.url} target="_blank" rel="noopener">{data.work.plot_source.label}</a>
 					{#if data.work.plot_fetched_at}

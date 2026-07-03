@@ -45,11 +45,12 @@ const authorRows = authors.map((a) => ({
 	born: a.born,
 	died: a.died,
 	bio: a.bio,
+	source_note: a.source_note ?? '',
 }));
 
 writeFileSync(
 	join(OUT_DIR, 'Autoren.csv'),
-	toCsv(['id', 'name', 'slug', 'aliases', 'born', 'died', 'bio'], authorRows),
+	toCsv(['id', 'name', 'slug', 'aliases', 'born', 'died', 'bio', 'source_note'], authorRows),
 );
 
 // Works
@@ -68,6 +69,7 @@ const workRows = works
 		parent_slugs: (w.parent_slugs || []).join('|'),
 		fortsetzung_von_ids: (w.fortsetzung_von_ids || []).join('|'),
 		plot: w.plot,
+		source_note: w.source_note ?? '',
 		sources: sourcesToString(w.sources),
 	}));
 
@@ -85,6 +87,7 @@ writeFileSync(
 			'parent_slugs',
 			'fortsetzung_von_ids',
 			'plot',
+			'source_note',
 			'sources',
 		],
 		workRows,
