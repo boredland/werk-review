@@ -7,11 +7,5 @@
 		"formats": [
 			"EPUB"
 		]
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/alexandre-dumas-der-aeltere/books/der-graf-von-monte-christo-1",
-		"label": "Der Graf von Monte Christo"
 	}
 ]

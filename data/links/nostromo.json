@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/nostromo/",
-		"label": "Nostromo"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/nostromo-by-joseph-conrad/",
@@ -18,5 +12,11 @@
 		"url": "https://librivox.org/nostromo-version-2-by-joseph-conrad/",
 		"label": "Nostromo (Version 2)",
 		"librivox_id": "16761"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/nostromo/",
+		"label": "Nostromo"
 	}
 ]
