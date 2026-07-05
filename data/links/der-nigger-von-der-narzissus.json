@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-nigger-vom-narzissus",
-		"label": "Der Nigger von der Narzissus"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/the-nigger-of-the-narcissus-by-joseph-conrad/",

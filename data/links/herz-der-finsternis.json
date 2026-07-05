@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/das-herz-der-finsternis",
-		"label": "Herz der Finsternis"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/heart-of-darkness-by-joseph-conrad",
@@ -32,5 +26,11 @@
 		"url": "https://librivox.org/heart-of-darkness-ver4-by-joseph-conrad/",
 		"label": "Heart of Darkness (version 4)",
 		"librivox_id": "17219"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/das-herz-der-finsternis",
+		"label": "Herz der Finsternis"
 	}
 ]
