@@ -11,12 +11,7 @@
 	"year_display": "1893",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": "Catriona oder Die Abenteuer David Balfours daheim und in der Fremde ist ein historischer Abenteuerroman des schottischen Schriftstellers Robert Louis Stevenson, der – im September 1892 auf Upolu (Samoa) vollendet – vom Oktober 1892 bis zum September 1893 in der Londoner literarischen Monatszeitschrift Atalanta vorabgedruckt wurde. Ebenfalls 1893 brachten Cassell in London und Charles Scribner’s Sons in New York das Werk heraus. Die deutsche Übersetzung von Marguerite Thesing erschien 1926 bei Buchenau & Reichert in Hamburg.",
+	"plot": null,
 	"source_note": null,
-	"sources": [],
-	"plot_source": {
-		"label": "Wikipedia",
-		"url": "https://de.wikipedia.org/wiki/Catriona_(Robert_Louis_Stevenson)"
-	},
-	"plot_fetched_at": "2026-07-05"
+	"sources": []
 }
