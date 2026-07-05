@@ -1,0 +1,51 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-strange-case-of-dr-jekyll-mr-hyde-by-robert-louis-stevenson/",
+		"label": "Strange Case of Dr. Jekyll and Mr. Hyde",
+		"librivox_id": "417"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-strange-case-of-dr-jekyll-and-mr-hyde-by-robert-louis-stevenson-2",
+		"label": "Strange Case of Dr. Jekyll and Mr. Hyde (Version 2)",
+		"librivox_id": "2454"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-strange-case-of-dr-jekyll-and-mr-hyde-by-robert-louis-stevenson/",
+		"label": "Strange Case of Dr. Jekyll and Mr. Hyde (version 3)",
+		"librivox_id": "6010"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/wunderbares-ereignis-des-dr-jekyll-und-mr-hyde-by-robert-louis-stevenson/",
+		"label": "Wunderbares Ereignis des Dr. Jekyll und Mr. Hyde",
+		"librivox_id": "8990"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-strange-case-of-jekyll-and-hyde-by-robert-louis-stevenson/",
+		"label": "Strange Case of Dr. Jekyll and Mr. Hyde (Version 4 - Dramatic Reading)",
+		"librivox_id": "9686"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/el-extrano-caso-del-doctor-jekyll-y-el-senor-hyde-by-robert-louis-stevenson/",
+		"label": "extraño caso del doctor Jekyll y el señor Hyde",
+		"librivox_id": "12772"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-strange-case-of-dr-jekyll-and-mr-hyde-by-robert-louis-stevenson-5/",
+		"label": "Strange Case of Dr. Jekyll and Mr. Hyde (Version 5)",
+		"librivox_id": "13584"
+	}
+]

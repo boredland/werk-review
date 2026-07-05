@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/more-new-arabian-nights-the-dynamiter-by-robert-louis-and-fanny-van-de-grift-stevenson/",
+		"label": "More New Arabian Nights: The Dynamiter",
+		"librivox_id": "6276"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/new-arabian-nights-by-robert-louis-stevenson/",
+		"label": "New Arabian Nights",
+		"librivox_id": "6417"
+	}
+]

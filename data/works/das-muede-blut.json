@@ -1,0 +1,21 @@
+{
+	"id": "das-muede-blut",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das müde Blut",
+	"slug": "das-muede-blut",
+	"aliases": [
+		"Olalla"
+	],
+	"year": 1885,
+	"year_display": "1885",
+	"parent_slugs": [
+		"the-merry-men-and-other-tales-and-fables"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

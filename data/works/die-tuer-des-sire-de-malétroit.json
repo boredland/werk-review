@@ -1,0 +1,21 @@
+{
+	"id": "die-tuer-des-sire-de-malétroit",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Tür des Sire de Malétroit",
+	"slug": "die-tuer-des-sire-de-malétroit",
+	"aliases": [
+		"Die geheimnisvolle Tür / The Sire De Malétroit's Door"
+	],
+	"year": 1878,
+	"year_display": "1878",
+	"parent_slugs": [
+		"new-arabian-nights"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,21 @@
+{
+	"id": "die-vorsehung-und-die-gitarre",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Vorsehung und die Gitarre",
+	"slug": "die-vorsehung-und-die-gitarre",
+	"aliases": [
+		"Providence and the Guitar"
+	],
+	"year": 1878,
+	"year_display": "1878",
+	"parent_slugs": [
+		"new-arabian-nights"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

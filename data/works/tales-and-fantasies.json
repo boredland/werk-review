@@ -1,0 +1,17 @@
+{
+	"id": "tales-and-fantasies",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Tales and Fantasies",
+	"slug": "tales-and-fantasies",
+	"aliases": [],
+	"year": 1905,
+	"year_display": "1905",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

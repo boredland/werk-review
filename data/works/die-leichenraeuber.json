@@ -1,0 +1,21 @@
+{
+	"id": "die-leichenraeuber",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Leichenräuber",
+	"slug": "die-leichenraeuber",
+	"aliases": [
+		"Der Leichenschnapper / The Body Snatcher"
+	],
+	"year": 1881,
+	"year_display": "1881",
+	"parent_slugs": [
+		"tales-and-fantasies"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

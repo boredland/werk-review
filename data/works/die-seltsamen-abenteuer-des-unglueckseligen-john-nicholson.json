@@ -1,0 +1,21 @@
+{
+	"id": "die-seltsamen-abenteuer-des-unglueckseligen-john-nicholson",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die seltsamen Abenteuer des unglückseligen John Nicholson",
+	"slug": "die-seltsamen-abenteuer-des-unglueckseligen-john-nicholson",
+	"aliases": [
+		"Die unglücklichen Abenteuer des John Nicholson / John Nicholson, der Pechvogel / The Misadventures of John Nicholson"
+	],
+	"year": 1887,
+	"year_display": "1887",
+	"parent_slugs": [
+		"tales-and-fantasies"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

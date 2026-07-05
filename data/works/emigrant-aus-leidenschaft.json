@@ -1,0 +1,19 @@
+{
+	"id": "emigrant-aus-leidenschaft",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Emigrant aus Leidenschaft",
+	"slug": "emigrant-aus-leidenschaft",
+	"aliases": [
+		"The Amateur Emigrant"
+	],
+	"year": 1895,
+	"year_display": "1895",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

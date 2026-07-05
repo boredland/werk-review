@@ -1,0 +1,19 @@
+{
+	"id": "eine-reise-mit-dem-esel-durch-die-cevennen",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Eine Reise mit dem Esel durch die Cevennen",
+	"slug": "eine-reise-mit-dem-esel-durch-die-cevennen",
+	"aliases": [
+		"Travels with a Donkey in the Cévennes"
+	],
+	"year": 1879,
+	"year_display": "1879",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,21 @@
+{
+	"id": "der-strand-von-falesa",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Strand von Falesa",
+	"slug": "der-strand-von-falesa",
+	"aliases": [
+		"The Beach of Falesá"
+	],
+	"year": 1892,
+	"year_display": "1892",
+	"parent_slugs": [
+		"island-nights-entertainments"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

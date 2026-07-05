@@ -1,0 +1,21 @@
+{
+	"id": "die-insel-der-stimmen",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Insel der Stimmen",
+	"slug": "die-insel-der-stimmen",
+	"aliases": [
+		"Die Stimmeninsel / Kalamake, der Zauberer / The Isle of Voices"
+	],
+	"year": 1883,
+	"year_display": "1883",
+	"parent_slugs": [
+		"island-nights-entertainments"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

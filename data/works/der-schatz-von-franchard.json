@@ -1,0 +1,21 @@
+{
+	"id": "der-schatz-von-franchard",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Schatz von Franchard",
+	"slug": "der-schatz-von-franchard",
+	"aliases": [
+		"The Treasure of Franchard"
+	],
+	"year": 1883,
+	"year_display": "1883",
+	"parent_slugs": [
+		"the-merry-men-and-other-tales-and-fables"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,21 @@
+{
+	"id": "ein-nachtquartier",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Nachtquartier",
+	"slug": "ein-nachtquartier",
+	"aliases": [
+		"Eines Dichters Nachquartier / Quartier für die Nacht / A Lodging for the Night"
+	],
+	"year": 1877,
+	"year_display": "1877",
+	"parent_slugs": [
+		"new-arabian-nights"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

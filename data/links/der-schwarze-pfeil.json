@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-black-arrow-a-tale-of-two-roses/",
+		"label": "Black Arrow - A Tale of the Two Roses",
+		"librivox_id": "940"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-black-arrow-by-robert-louis-stevenson/",
+		"label": "Black Arrow",
+		"librivox_id": "11950"
+	}
+]

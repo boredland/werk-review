@@ -1,0 +1,19 @@
+{
+	"id": "markheim",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Markheim",
+	"slug": "markheim",
+	"aliases": [],
+	"year": 1884,
+	"year_display": "1884",
+	"parent_slugs": [
+		"the-merry-men-and-other-tales-and-fables"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

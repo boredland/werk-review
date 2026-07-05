@@ -1,0 +1,21 @@
+{
+	"id": "der-selbstmoerderklub",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Selbstmörderklub",
+	"slug": "der-selbstmoerderklub",
+	"aliases": [
+		"Der Selbstmordklub / Verrückte junge Leute / The Suicide Club"
+	],
+	"year": 1878,
+	"year_display": "1878",
+	"parent_slugs": [
+		"new-arabian-nights"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

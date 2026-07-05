@@ -1,0 +1,21 @@
+{
+	"id": "der-diamant-des-radschahs",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Diamant des Radschahs",
+	"slug": "der-diamant-des-radschahs",
+	"aliases": [
+		"Der Diamant des Rajahs / Des Rajahs Diamant / The Rajah's Diamond"
+	],
+	"year": 1878,
+	"year_display": "1878",
+	"parent_slugs": [
+		"new-arabian-nights"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

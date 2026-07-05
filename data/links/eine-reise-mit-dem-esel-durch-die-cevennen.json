@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/travels-with-a-donkey-in-the-cevennes-by-robert-louis-stevenson/",
+		"label": "Travels with a Donkey in the Cevennes",
+		"librivox_id": "7282"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-wrecker-by-robert-louis-stevenson/",
+		"label": "Wrecker",
+		"librivox_id": "8608"
+	}
+]

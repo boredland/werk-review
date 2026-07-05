@@ -1,0 +1,17 @@
+{
+	"id": "island-nights-entertainments",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Island Nights' Entertainments",
+	"slug": "island-nights-entertainments",
+	"aliases": [],
+	"year": 1893,
+	"year_display": "1893",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,15 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-master-of-ballantrae-by-robert-louis-stevenson/",
+		"label": "Master of Ballantrae",
+		"librivox_id": "9965"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/robert-louis-stevenson/books/der-junker-von-ballantrae",
+		"label": "Der Erbe von Ballantrae / Der Herr von Ballantrae / Der Junker von Ballantrae / Die feindlichen Brüder / The Master of Ballantrae"
+	}
+]

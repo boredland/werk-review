@@ -1,0 +1,19 @@
+{
+	"id": "in-der-suedsee",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "In der Südsee",
+	"slug": "in-der-suedsee",
+	"aliases": [
+		"Reise durch die Südsee / Durch die Inselwelt der Südsee/ In the South Seas"
+	],
+	"year": 1896,
+	"year_display": "1896",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

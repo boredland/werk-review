@@ -1,0 +1,19 @@
+{
+	"id": "st.-ives-fragment",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "St. Ives (Fragment)",
+	"slug": "st.-ives-fragment",
+	"aliases": [
+		"Der springende Löwe"
+	],
+	"year": 1897,
+	"year_display": "1897",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

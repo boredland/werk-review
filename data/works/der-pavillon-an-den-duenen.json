@@ -1,0 +1,21 @@
+{
+	"id": "der-pavillon-an-den-duenen",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Pavillon an den Dünen",
+	"slug": "der-pavillon-an-den-duenen",
+	"aliases": [
+		"Der Pavillon auf den Dünen / Der Pavillon in den Dünen / The Pavilion on the Links"
+	],
+	"year": 1880,
+	"year_display": "1880",
+	"parent_slugs": [
+		"new-arabian-nights"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

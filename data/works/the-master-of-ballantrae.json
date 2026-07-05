@@ -1,0 +1,19 @@
+{
+	"id": "the-master-of-ballantrae",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "The Master of Ballantrae",
+	"slug": "the-master-of-ballantrae",
+	"aliases": [
+		"Der Erbe von Ballantrae / Der Herr von Ballantrae / Der Junker von Ballantrae / Die feindlichen Brüder / The Master of Ballantrae"
+	],
+	"year": 1888,
+	"year_display": "1888",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,21 @@
+{
+	"id": "die-krumme-janet",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die krumme Janet",
+	"slug": "die-krumme-janet",
+	"aliases": [
+		"Die verdrehte Janet / Thrawn Janet"
+	],
+	"year": 1881,
+	"year_display": "1881",
+	"parent_slugs": [
+		"the-merry-men-and-other-tales-and-fables"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

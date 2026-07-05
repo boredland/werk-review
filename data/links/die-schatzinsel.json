@@ -1,0 +1,52 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/treasure-island-by-robert-louis-stevenson/",
+		"label": "Treasure Island",
+		"librivox_id": "449"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/treasure-island-by-robert-louis-stevenson-2/",
+		"label": "Treasure Island (version 2)",
+		"librivox_id": "1557"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/treasure-island-dramatic-reading-by-robert-louis-stevenson/",
+		"label": "Treasure Island (version 3, dramatic reading)",
+		"librivox_id": "6889"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/treasure-island-version-4-by-robert-louis-stevenson/",
+		"label": "Treasure Island (Version 4)",
+		"librivox_id": "7996"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/treasure-island-by-robert-louis-stevenson-5/",
+		"label": "Treasure Island (version 5)",
+		"librivox_id": "10043"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/robert-louis-stevenson/books/die-schatzinsel/",
+		"label": "Die Schatzinsel"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/dieschatzinselro49424gut",
+		"label": "Die Schatzinsel: Roman",
+		"formats": [
+			"EPUB"
+		]
+	}
+]

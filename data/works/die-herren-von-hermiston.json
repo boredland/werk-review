@@ -1,0 +1,19 @@
+{
+	"id": "die-herren-von-hermiston",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Herren von Hermiston (Fragment)",
+	"slug": "die-herren-von-hermiston",
+	"aliases": [
+		"Weir of Hermiston"
+	],
+	"year": 1896,
+	"year_display": "1896",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

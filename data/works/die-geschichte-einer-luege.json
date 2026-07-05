@@ -1,0 +1,21 @@
+{
+	"id": "die-geschichte-einer-luege",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Geschichte einer Lüge",
+	"slug": "die-geschichte-einer-luege",
+	"aliases": [
+		"The Story of a Lie"
+	],
+	"year": 1879,
+	"year_display": "1879",
+	"parent_slugs": [
+		"tales-and-fantasies"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

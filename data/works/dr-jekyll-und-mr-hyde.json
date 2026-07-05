@@ -1,0 +1,19 @@
+{
+	"id": "dr-jekyll-und-mr-hyde",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der seltsame Fall des Dr. Jekyll und Mr. Hyde",
+	"slug": "dr-jekyll-und-mr-hyde",
+	"aliases": [
+		"Strange Case of Dr Jekyll and Mr Hyde"
+	],
+	"year": 1886,
+	"year_display": "1886",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

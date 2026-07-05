@@ -1,0 +1,19 @@
+{
+	"id": "faszinierendes-silverado",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Faszinierendes Silverado",
+	"slug": "faszinierendes-silverado",
+	"aliases": [
+		"The Silverado squatters"
+	],
+	"year": 1884,
+	"year_display": "1884",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

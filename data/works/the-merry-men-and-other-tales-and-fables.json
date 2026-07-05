@@ -1,0 +1,17 @@
+{
+	"id": "the-merry-men-and-other-tales-and-fables",
+	"author_id": "robert-louis-stevenson",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "The Merry Men and Other Tales and Fables",
+	"slug": "the-merry-men-and-other-tales-and-fables",
+	"aliases": [],
+	"year": 1887,
+	"year_display": "1887",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}
