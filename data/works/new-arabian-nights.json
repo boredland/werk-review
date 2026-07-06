@@ -4,14 +4,14 @@
 	"genre_ids": [
 		"erzaehlband"
 	],
-	"title": "New Arabian Nights",
+	"title": "Neue arabische Nächte",
 	"slug": "new-arabian-nights",
-	"aliases": [],
+	"aliases": [
+		"New Arabian Nights"
+	],
 	"year": 1882,
 	"year_display": "1882",
-	"parent_slugs": [
-		"new-arabian-nights"
-	],
+	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
 	"plot": null,
 	"source_note": null,

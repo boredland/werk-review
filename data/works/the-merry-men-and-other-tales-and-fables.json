@@ -4,9 +4,11 @@
 	"genre_ids": [
 		"erzaehlband"
 	],
-	"title": "The Merry Men and Other Tales and Fables",
+	"title": "Die tollen Männer und andere Erzählungen",
 	"slug": "the-merry-men-and-other-tales-and-fables",
-	"aliases": [],
+	"aliases": [
+		"The Merry Men and Other Tales and Fables / Die glücklichen Männer"
+	],
 	"year": 1887,
 	"year_display": "1887",
 	"parent_slugs": [],

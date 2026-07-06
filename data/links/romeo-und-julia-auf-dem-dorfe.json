@@ -15,12 +15,6 @@
 		]
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-romeo-und-julia",
-		"label": "Romeo und Julia auf dem Dorfe"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/auswahl-aus-die-leute-von-seldwyla-by-gottfried-keller/",
