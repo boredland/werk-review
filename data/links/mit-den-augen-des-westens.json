@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/mit-den-augen-des-westens/",
-		"label": "Mit den Augen des Westens"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/under-western-eyes-by-joseph-conrad/",
@@ -18,5 +12,11 @@
 		"url": "https://librivox.org/under-western-eyes-ver2-joseph-conrad/",
 		"label": "Under Western Eyes (version 2)",
 		"librivox_id": "18172"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/mit-den-augen-des-westens/",
+		"label": "Mit den Augen des Westens"
 	}
 ]
