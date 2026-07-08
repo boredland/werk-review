@@ -1,0 +1,17 @@
+{
+	"id": "der-wille-zum-glueck",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Wille zum Glück",
+	"slug": "der-wille-zum-glueck",
+	"aliases": [],
+	"year": 1898,
+	"year_display": "1898",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Paolo Hofmann sehnt sich nach Liebe und Anerkennung und versucht, sein Leben nach eigenen Vorstellungen zu gestalten. Doch zwischen Wunsch und Wirklichkeit entstehen schmerzhafte Spannungen. Thomas Mann erzählt von der Kraft der Hoffnung und den Grenzen menschlicher Selbstbestimmung.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

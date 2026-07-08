@@ -1,0 +1,17 @@
+{
+	"id": "tonio-kroeger",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Tonio Kröger",
+	"slug": "tonio-kroeger",
+	"aliases": [],
+	"year": 1901,
+	"year_display": "1901-1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Schriftsteller Tonio Kröger fühlt sich schon als Kind zwischen der bürgerlichen Welt seiner Familie und der Welt der Kunst hin- und hergerissen. Auf der Suche nach Zugehörigkeit begegnet er alten Freunden und erkennt, wie tief seine Sehnsucht nach dem einfachen Leben geblieben ist. Die Erzählung ist ein feinfühliges Porträt eines Künstlers zwischen Nähe und Fremdheit.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

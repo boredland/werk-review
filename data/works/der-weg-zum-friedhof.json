@@ -1,0 +1,17 @@
+{
+	"id": "der-weg-zum-friedhof",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Weg zum Friedhof",
+	"slug": "der-weg-zum-friedhof",
+	"aliases": [],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der alte Hans Hansen begegnet auf seinem Weg zum Friedhof einem jungen Mann, der ihn an vergangene Hoffnungen und verpasste Möglichkeiten erinnert. Zwischen zufälliger Begegnung und stiller Erinnerung entfaltet sich ein Moment der Nachdenklichkeit. Thomas Mann zeigt, wie ein kurzer Augenblick ein ganzes Leben spiegeln kann.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

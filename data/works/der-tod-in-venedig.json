@@ -1,0 +1,17 @@
+{
+	"id": "der-tod-in-venedig",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Tod in Venedig",
+	"slug": "der-tod-in-venedig",
+	"aliases": [],
+	"year": 1911,
+	"year_display": "1911-1912",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der berühmte Schriftsteller Gustav von Aschenbach reist nach Venedig, um Erholung und neue Inspiration zu finden. Dort begegnet er dem schönen jungen Tadzio, dessen Erscheinung eine tiefe innere Unruhe in ihm auslöst. Zwischen Kunst, Begehren und Verfall erzählt Thomas Mann von der gefährlichen Macht der Schönheit.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

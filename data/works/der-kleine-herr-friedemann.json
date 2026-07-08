@@ -1,0 +1,19 @@
+{
+	"id": "der-kleine-herr-friedemann",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der kleine Herr Friedemann",
+	"slug": "der-kleine-herr-friedemann",
+	"aliases": [
+		"Der kleine Professor"
+	],
+	"year": 1896,
+	"year_display": "1896-1897",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der körperlich beeinträchtigte Johannes Friedemann hat sich ein ruhiges und kontrolliertes Leben aufgebaut. Die Begegnung mit der leidenschaftlichen Gerda von Rinnlingen bringt jedoch verdrängte Gefühle und Sehnsüchte an die Oberfläche. Zwischen Selbstbeherrschung und Verlangen entsteht eine tragische Geschichte über ein verfehltes Glück.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

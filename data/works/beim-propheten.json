@@ -1,0 +1,19 @@
+{
+	"id": "beim-propheten",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Beim Propheten",
+	"slug": "beim-propheten",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"das-wunderkind-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Hans Hansen begegnet einer außergewöhnlichen Persönlichkeit, deren Gedanken und Auftreten ihn tief beeindrucken. Zwischen Bewunderung, Unsicherheit und geistiger Suche erlebt er eine Begegnung, die seine Sicht auf die Welt verändert. Die Erzählung kreist um die Macht charismatischer Menschen und großer Ideen.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

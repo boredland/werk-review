@@ -1,0 +1,19 @@
+{
+	"id": "schwere-stunde",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Schwere Stunde",
+	"slug": "schwere-stunde",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"das-wunderkind-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Dichter Friedrich Schiller verbringt eine schwierige Nacht voller Zweifel, Krankheit und innerer Kämpfe. Während er an seinem Werk ringt, begegnet er den Grenzen seiner Kraft und der Verantwortung des Künstlers. Thomas Mann zeigt den berühmten Dichter nicht als Denkmal, sondern als verletzlichen Menschen.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

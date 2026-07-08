@@ -1,0 +1,23 @@
+{
+	"id": "joseph-in-aegypten",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Joseph in Ägypten",
+	"slug": "joseph-in-aegypten",
+	"aliases": [
+		"Joseph und seine Brüder. 3"
+	],
+	"year": 1936,
+	"year_display": "1936",
+	"parent_slugs": [
+		"joseph-und-seine-brueder"
+	],
+	"fortsetzung_von_ids": [
+		"der-junge-joseph"
+	],
+	"plot": "Nach seiner Ankunft in Ägypten muss sich Joseph in einer fremden Welt behaupten und findet zunächst eine neue Heimat im Haus des Potifar. Seine Schönheit und Klugheit bringen ihm Ansehen, aber auch gefährliche Verwicklungen. Zwischen Verführung, Schuld und Vertrauen beginnt sich sein außergewöhnlicher Lebensweg zu erfüllen.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

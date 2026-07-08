@@ -1,0 +1,17 @@
+{
+	"id": "herr-und-hund",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Herr und Hund",
+	"slug": "herr-und-hund",
+	"aliases": [],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Thomas Mann erzählt von seinem Leben mit seinem Hund Bauschan und den gemeinsamen Spaziergängen durch die Natur. Aus der einfachen Beziehung zwischen Mensch und Tier entsteht ein feines Porträt von Gewohnheit, Zuneigung und Beobachtung. Mit Humor und Wärme zeigt die Erzählung, wie viel Bedeutung in kleinen alltäglichen Momenten liegen kann.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

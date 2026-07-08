@@ -1,0 +1,17 @@
+{
+	"id": "im-spiegel",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Im Spiegel",
+	"slug": "im-spiegel",
+	"aliases": [],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "In dieser autobiografisch gefärbten Betrachtung blickt Thomas Mann auf die eigene Person, seine Entwicklung und seine Rolle als Schriftsteller. Mit feiner Ironie untersucht er das Verhältnis zwischen öffentlichem Bild und innerem Selbst. Der Spiegel zeigt dabei nicht nur ein Gesicht, sondern auch die vielen Rollen eines Künstlers.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

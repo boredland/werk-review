@@ -1,0 +1,17 @@
+{
+	"id": "die-hungernden",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Hungernden",
+	"slug": "die-hungernden",
+	"aliases": [],
+	"year": 1902,
+	"year_display": "1902-1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Die jungen Künstler Johann Hansen und Elisabeth erleben eine Welt, in der Sehnsucht, Verzicht und unerfüllte Wünsche ihr Leben bestimmen. Ihre Suche nach Liebe und Anerkennung führt sie immer wieder an die Grenzen ihrer Möglichkeiten. Thomas Mann schildert Menschen, die nach mehr verlangen, als das Leben ihnen geben kann.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

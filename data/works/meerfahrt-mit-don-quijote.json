@@ -1,0 +1,19 @@
+{
+	"id": "meerfahrt-mit-don-quijote",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Meerfahrt mit Don Quijote",
+	"slug": "meerfahrt-mit-don-quijote",
+	"aliases": [
+		"Meerfahrt mit Don Quijote: ein Tagebuch aus der Zeit der Luxusliner mit einer Übersicht und Photographien von sämtlichen Atlantikreisen des Verfassers"
+	],
+	"year": 1934,
+	"year_display": "1934",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Auf einer Atlantikreise begleitet Thomas Mann den literarischen Helden Don Quijote als geistigen Gefährten und Gesprächspartner. Seine Beobachtungen auf dem Schiff verbinden Reiseerlebnis, persönliche Reflexionen und literarische Betrachtungen. Aus einer Seefahrt wird eine Begegnung mit einem der großen Werke der Weltliteratur.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

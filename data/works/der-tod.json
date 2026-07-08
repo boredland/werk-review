@@ -1,0 +1,19 @@
+{
+	"id": "der-tod",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Tod",
+	"slug": "der-tod",
+	"aliases": [
+		"Tod"
+	],
+	"year": 1897,
+	"year_display": "1897",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der alternde Paolo Hofmann beschäftigt sich zunehmend mit Krankheit, Vergänglichkeit und der eigenen Endlichkeit. Seine Gedanken kreisen um die Frage, welchen Sinn das Leben angesichts des Todes besitzt. Thomas Mann verbindet persönliche Angst mit einer philosophischen Betrachtung über das menschliche Dasein.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

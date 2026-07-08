@@ -1,0 +1,17 @@
+{
+	"id": "das-eisenbahnunglueck",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Eisenbahnunglück",
+	"slug": "das-eisenbahnunglueck",
+	"aliases": [],
+	"year": 1909,
+	"year_display": "1909",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein Reisender erlebt während einer Zugfahrt eine ungewöhnliche Situation, die ihn aus der Sicherheit des Alltags herausreißt. Das scheinbar Zufällige wird zum Anlass, über Schicksal, Wahrnehmung und menschliche Reaktionen nachzudenken. Thomas Mann verwandelt einen kleinen Vorfall in eine feine Studie über Unsicherheit und Erkenntnis.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

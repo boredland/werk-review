@@ -1,0 +1,17 @@
+{
+	"id": "gladius-die",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gladius Die",
+	"slug": "gladius-die",
+	"aliases": [],
+	"year": 1898,
+	"year_display": "1898",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der fanatische Hieronymus zieht durch das prächtige München der Jahrhundertwende und erhebt Anklage gegen die Welt der Kunst und des Genusses. Mit seinem Auftreten bringt er die scheinbare Harmonie der Stadt ins Wanken. Thomas Mann verbindet Satire und Gesellschaftskritik zu einem Porträt von Moral und Selbstgerechtigkeit.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

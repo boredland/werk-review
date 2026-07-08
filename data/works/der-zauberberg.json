@@ -1,0 +1,17 @@
+{
+	"id": "der-zauberberg",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Zauberberg",
+	"slug": "der-zauberberg",
+	"aliases": [],
+	"year": 1924,
+	"year_display": "1924",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Hans Castorp besucht seinen kranken Vetter in einem Sanatorium in den Schweizer Alpen und plant zunächst nur einen kurzen Aufenthalt. Doch die abgeschlossene Welt des Zauberbergs verändert seinen Blick auf Zeit, Krankheit, Liebe und die großen Fragen des Lebens. Manchmal führt ein Aufenthalt an einem fremden Ort tiefer in die eigene Seele als jede Reise.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,17 @@
+{
+	"id": "gesang-vom-kindchen",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gesang vom Kindchen",
+	"slug": "gesang-vom-kindchen",
+	"aliases": [],
+	"year": 1919,
+	"year_display": "1919",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Dichter Amsel erlebt die Geburt seines Kindes als ein Ereignis, das ihn zwischen Glück, Staunen und künstlerischer Selbstbetrachtung bewegt. Mit liebevoller Ironie beschreibt Thomas Mann die Gedankenwelt eines Künstlers, der das Alltägliche in etwas Besonderes verwandeln möchte. Hinter dem humorvollen Ton verbirgt sich eine stille Betrachtung über Familie, Kunst und Leben.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

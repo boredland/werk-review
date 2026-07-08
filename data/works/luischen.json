@@ -1,0 +1,17 @@
+{
+	"id": "luischen",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Luischen",
+	"slug": "luischen",
+	"aliases": [],
+	"year": 1900,
+	"year_display": "1900",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der sensible Herr van der Qualen lebt in einer Ehe, in der er sich zunehmend fremd und unverstanden fühlt. Als seine Frau Luischen eine überraschende Veränderung erfährt, gerät sein geordnetes Leben aus dem Gleichgewicht. Mit feiner Ironie erzählt Thomas Mann von Selbsttäuschung, Eitelkeit und der Sehnsucht nach Anerkennung.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

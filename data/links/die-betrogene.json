@@ -1,0 +1,18 @@
+[
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/die-betrogene/",
+		"label": "Die Betrogene"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/diebetrogeneerza0000thom",
+		"label": "Die Betrogene: Erzahlung.",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

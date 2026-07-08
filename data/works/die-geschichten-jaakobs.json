@@ -1,0 +1,21 @@
+{
+	"id": "die-geschichten-jaakobs",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Geschichten Jaakobs",
+	"slug": "die-geschichten-jaakobs",
+	"aliases": [
+		"Joseph und seine Brüder. 1"
+	],
+	"year": 1926,
+	"year_display": "1926-1933",
+	"parent_slugs": [
+		"joseph-und-seine-brueder"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der alte Jakob blickt auf sein bewegtes Leben zurück, das von Liebe, Rivalität und dem Ringen um den Segen Gottes geprägt ist. Zwischen Familienerbe, Täuschung und Hoffnung entsteht das Bild eines Mannes, der sein Schicksal selbst mitgestaltet. Thomas Mann erzählt die biblische Vorgeschichte mit psychologischem Tiefgang und großer erzählerischer Breite.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

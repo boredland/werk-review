@@ -1,0 +1,19 @@
+{
+	"id": "buddenbrooks",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Buddenbrooks",
+	"slug": "buddenbrooks",
+	"aliases": [
+		"Buddenbrooks: Verfall einer Familie"
+	],
+	"year": 1897,
+	"year_display": "1897-1901",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Die Kaufmannsfamilie Buddenbrook erlebt über mehrere Generationen hinweg Aufstieg, Wohlstand und schließlich den Verlust ihrer gesellschaftlichen Stellung. Zwischen geschäftlicher Pflicht, persönlichen Träumen und dem Wandel der Zeit müssen die Familienmitglieder ihren Platz finden. Thomas Mann erzählt vom Vergehen einer Welt und vom Preis, den Fortschritt und Veränderung fordern.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

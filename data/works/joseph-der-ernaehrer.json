@@ -1,0 +1,23 @@
+{
+	"id": "joseph-der-ernaehrer",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Joseph, der Ernährer",
+	"slug": "joseph-der-ernaehrer",
+	"aliases": [
+		"Joseph und seine Brüder. 4"
+	],
+	"year": 1943,
+	"year_display": "1943",
+	"parent_slugs": [
+		"joseph-und-seine-brueder"
+	],
+	"fortsetzung_von_ids": [
+		"joseph-in-aegypten"
+	],
+	"plot": "Der einst verstoßene Joseph hat in Ägypten eine hohe Stellung erreicht und übernimmt Verantwortung für ein ganzes Land. Als eine Hungersnot seine Familie wieder zu ihm führt, wird er mit der Vergangenheit und alten Verletzungen konfrontiert. Aus dem verlassenen Sohn wird ein Mann, der zwischen Macht, Vergebung und Menschlichkeit entscheiden muss.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,17 @@
+{
+	"id": "enttaeuschung",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Enttäuschung",
+	"slug": "enttaeuschung",
+	"aliases": [],
+	"year": 1896,
+	"year_display": "1896-1898",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein namenloser Erzähler blickt auf eine Begegnung zurück, die seine Erwartungen an Menschen und das Leben erschüttert hat. Was zunächst wie eine große Erfahrung erscheint, erweist sich als etwas völlig anderes. Die Geschichte zeigt, wie eng Sehnsucht und Ernüchterung miteinander verbunden sind.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

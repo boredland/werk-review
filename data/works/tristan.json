@@ -1,0 +1,17 @@
+{
+	"id": "tristan",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Tristan",
+	"slug": "tristan",
+	"aliases": [],
+	"year": 1901,
+	"year_display": "1901-1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Schriftsteller Detlev Spinell lebt zurückgezogen in einem Sanatorium und verehrt eine Welt voller Schönheit und Kunst. Dort begegnet er der kranken Gabriele Klöterjahn, deren musikalisches Talent ihn fasziniert. Zwischen Kunstideal und wirklichem Leben entsteht ein Konflikt, der beide Figuren verändert.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

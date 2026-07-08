@@ -1,0 +1,19 @@
+{
+	"id": "doktor-faustus",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Doktor Faustus",
+	"slug": "doktor-faustus",
+	"aliases": [
+		"Dr. Faustus"
+	],
+	"year": 1947,
+	"year_display": "1947",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Komponist Adrian Leverkühn sucht nach einer neuen musikalischen Ausdrucksform und geht dabei einen Weg, der ihn immer weiter von menschlicher Nähe entfernt. Sein Freund Serenus Zeitblom erzählt von Aufstieg, Genialität und innerem Zerfall dieses außergewöhnlichen Künstlers. Die Geschichte wird zum Gleichnis über Kunst, Verführung und die geistige Krise einer Epoche.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

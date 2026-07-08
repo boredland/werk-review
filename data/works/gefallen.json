@@ -1,0 +1,17 @@
+{
+	"id": "gefallen",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gefallen",
+	"slug": "gefallen",
+	"aliases": [],
+	"year": 1894,
+	"year_display": "1894",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein junger Mann gerät in eine Situation, in der gesellschaftliche Erwartungen und persönliche Gefühle miteinander kollidieren. Die Begegnung mit einer Frau verändert seinen Blick auf sich selbst und seine Umgebung. Thomas Mann erzählt von Verführung, Unsicherheit und den Folgen eines Augenblicks.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

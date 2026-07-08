@@ -1,0 +1,17 @@
+{
+	"id": "joseph-und-seine-brueder",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"romanzyklus"
+	],
+	"title": "Joseph und seine Brüder",
+	"slug": "joseph-und-seine-brueder",
+	"aliases": [],
+	"year": 1926,
+	"year_display": "1926-1942",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Joseph, Sohn Jakobs und Liebling seines Vaters, wächst in einer Welt voller Familienkonflikte, Träume und Verheißungen auf. Nach Verrat und Verlust führt ihn sein Weg aus der Heimat bis nach Ägypten, wo er neue Prüfungen bestehen muss. Thomas Mann verwandelt die biblische Geschichte in ein großes Epos über Menschlichkeit, Schicksal und die Entwicklung einer Persönlichkeit.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

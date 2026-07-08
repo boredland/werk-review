@@ -1,0 +1,17 @@
+{
+	"id": "vision",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Vision",
+	"slug": "vision",
+	"aliases": [],
+	"year": 1893,
+	"year_display": "1893",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Ein junger Mensch erlebt eine außergewöhnliche Vorstellung, die seine Wahrnehmung der Wirklichkeit verändert. Zwischen Traum, Hoffnung und innerer Erkenntnis verschwimmen die Grenzen des Erlebten. Die frühe Erzählung zeigt bereits Thomas Manns Interesse an der Verbindung von Kunst und innerem Erleben.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

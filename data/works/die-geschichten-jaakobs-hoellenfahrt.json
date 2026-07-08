@@ -1,0 +1,19 @@
+{
+	"id": "die-geschichten-jaakobs-hoellenfahrt",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Geschichten Jaakobs. Höllenfahrt",
+	"slug": "die-geschichten-jaakobs-hoellenfahrt",
+	"aliases": [],
+	"year": 1933,
+	"year_display": "1933",
+	"parent_slugs": [
+		"die-geschichten-jaakobs"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Erzähler führt in die Welt des Jakob und seiner Vorfahren ein und begleitet die verschlungenen Wege einer großen Familiengeschichte. Zwischen Mythos und menschlicher Wirklichkeit entsteht ein Panorama von Herkunft, Schuld und Verheißung. Das Vorspiel bereitet den großen Bogen des Joseph-Romans vor und macht aus einer alten Erzählung eine lebendige Menschengeschichte.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

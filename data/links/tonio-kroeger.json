@@ -1,0 +1,17 @@
+[
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/tonio-kroeger/",
+		"label": "Tonio Kröger"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/toniokrgererstau38692gut",
+		"label": "Tonio Kröger [Erstausgabe; Illustrationen von Erich M. Simon]",
+		"formats": [
+			"EPUB"
+		]
+	}
+]

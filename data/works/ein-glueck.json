@@ -1,0 +1,19 @@
+{
+	"id": "ein-glueck",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Ein Glück",
+	"slug": "ein-glueck",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"das-wunderkind-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Die junge Inge erlebt einen Augenblick unerwarteten Glücks, der ihr Leben aus dem Gleichgewicht bringt. Doch hinter der scheinbaren Erfüllung verbirgt sich die Frage, wie dauerhaft ein solcher Moment sein kann. Thomas Mann erzählt von der Schönheit und Zerbrechlichkeit menschlicher Wünsche.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

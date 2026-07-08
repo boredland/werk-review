@@ -1,0 +1,19 @@
+{
+	"id": "die-entstehung-des-doktor-faustus",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Die Entstehung des Doktor Faustus",
+	"slug": "die-entstehung-des-doktor-faustus",
+	"aliases": [
+		"Die Entstehung des Doktor Faustus: Roman eines Romans"
+	],
+	"year": 1949,
+	"year_display": "1949",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "In diesem Bericht schildert Thomas Mann die Entstehung seines Romans Doktor Faustus und gibt Einblicke in seine Arbeitsweise, Gedankenwelt und künstlerischen Entscheidungen. Dabei verbindet er persönliche Erinnerungen mit Reflexionen über Musik, Geschichte und deutsche Kultur. So wird die Entstehungsgeschichte selbst zu einem literarischen Dokument.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

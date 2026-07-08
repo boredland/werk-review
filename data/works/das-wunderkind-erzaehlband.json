@@ -1,0 +1,17 @@
+{
+	"id": "das-wunderkind-erzaehlband",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Das Wunderkind",
+	"slug": "das-wunderkind-erzaehlband",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Dieser Erzählband versammelt Geschichten über Künstler, Außenseiter und Menschen, die zwischen Sehnsucht, Anspruch und Wirklichkeit ihren Platz suchen. Thomas Mann schildert Figuren, deren besondere Begabungen oder ungewöhnliche Erfahrungen sie aus der alltäglichen Welt herausheben und zugleich mit Einsamkeit und Zweifel konfrontieren. Zwischen Ironie und Mitgefühl zeigen die Erzählungen, wie eng Glanz und Verletzlichkeit miteinander verbunden sind.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

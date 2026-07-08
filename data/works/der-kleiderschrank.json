@@ -1,0 +1,17 @@
+{
+	"id": "der-kleiderschrank",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Kleiderschrank",
+	"slug": "der-kleiderschrank",
+	"aliases": [],
+	"year": 1899,
+	"year_display": "1899",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Albrecht van der Qualen stößt auf ein geheimnisvolles Möbelstück, das seine Fantasie und seine Wahrnehmung der Wirklichkeit verändert. Zwischen Alltag und Vorstellungskraft entsteht eine Atmosphäre des Ungewöhnlichen. Thomas Mann spielt mit der Frage, ob das Geheimnisvolle nicht oft im Blick des Menschen selbst verborgen liegt.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

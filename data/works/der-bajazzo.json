@@ -1,0 +1,22 @@
+{
+	"id": "der-bajazzo",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Bajazzo",
+	"slug": "der-bajazzo",
+	"aliases": [],
+	"year": 1898,
+	"year_display": "1898",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Künstler Hans Hansen versucht, seinen Platz zwischen bürgerlichen Erwartungen und eigener Empfindsamkeit zu finden. Seine Beobachtungsgabe und sein feiner Humor stehen einer Welt gegenüber, die für Außenseiter wenig Verständnis zeigt. Die Erzählung zeigt den Konflikt zwischen Anpassung und künstlerischer Individualität.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Der_Bajazzo_(Thomas_Mann)"
+		}
+	]
+}

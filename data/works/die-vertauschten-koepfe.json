@@ -1,0 +1,19 @@
+{
+	"id": "die-vertauschten-koepfe",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die vertauschten Köpfe",
+	"slug": "die-vertauschten-koepfe",
+	"aliases": [
+		"Die vertauschten Köpfe: eine indische Legende"
+	],
+	"year": 1940,
+	"year_display": "1940",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Die Freunde Schridaman und Nanda geraten durch eine außergewöhnliche Verwechslung in einen Konflikt um Liebe, Identität und körperliche Vollkommenheit. Gemeinsam mit der schönen Sita erleben sie eine Geschichte, in der die Grenzen zwischen Geist und Körper verschwimmen. Thomas Mann verbindet indische Mythologie mit einer tiefgründigen Betrachtung menschlicher Wünsche.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

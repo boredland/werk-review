@@ -1,0 +1,17 @@
+{
+	"id": "das-gesetz",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Gesetz",
+	"slug": "das-gesetz",
+	"aliases": [],
+	"year": 1944,
+	"year_display": "1944",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der biblische Moses führt ein Volk aus der Knechtschaft und ringt zugleich mit den eigenen Schwächen und den Erwartungen seiner Aufgabe. Thomas Mann erzählt die bekannte Geschichte mit psychologischem Tiefgang und menschlicher Nähe. Aus dem Verkünder eines Gesetzes wird ein Mann, der an seiner Verantwortung wachsen muss.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

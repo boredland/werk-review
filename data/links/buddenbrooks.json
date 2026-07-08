@@ -1,0 +1,25 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/buddenbrooks-by-thomas-mann/",
+		"label": "Buddenbrooks",
+		"librivox_id": "17168"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/buddenbrooks/",
+		"label": "Buddenbrooks"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/buddenbrooksverf0000thom_z0e0",
+		"label": "Buddenbrooks Verfall einer Familie",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

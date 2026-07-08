@@ -1,0 +1,17 @@
+{
+	"id": "der-erwaehlte",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Erwählte",
+	"slug": "der-erwaehlte",
+	"aliases": [],
+	"year": 1948,
+	"year_display": "1948-1951",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der Ritter Gregor wird als Kind ausgesetzt und wächst fern seiner Herkunft auf, bevor ihn sein Schicksal wieder einholt. Zwischen Schuld, Vergebung und göttlicher Fügung muss er einen außergewöhnlichen Lebensweg bestehen. In der mittelalterlichen Legende verbindet Thomas Mann Ironie und Ernst zu einer Geschichte über die Macht der Gnade.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

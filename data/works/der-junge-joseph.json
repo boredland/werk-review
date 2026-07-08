@@ -1,0 +1,23 @@
+{
+	"id": "der-junge-joseph",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der junge Joseph",
+	"slug": "der-junge-joseph",
+	"aliases": [
+		"Joseph und seine Brüder. 2"
+	],
+	"year": 1934,
+	"year_display": "1934",
+	"parent_slugs": [
+		"joseph-und-seine-brueder"
+	],
+	"fortsetzung_von_ids": [
+		"die-geschichten-jaakobs"
+	],
+	"plot": "Der junge Joseph wächst als begabter und zugleich stolzer Sohn Jakobs in einer großen Familie auf. Seine Träume und seine besondere Stellung unter den Brüdern wecken Bewunderung, aber auch Neid und Feindschaft. Auf dem Weg ins Erwachsenenleben muss Joseph lernen, dass Begabung allein nicht vor Prüfungen schützt.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

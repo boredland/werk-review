@@ -1,0 +1,17 @@
+{
+	"id": "die-betrogene",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Betrogene",
+	"slug": "die-betrogene",
+	"aliases": [],
+	"year": 1953,
+	"year_display": "1953",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Die alternde Rosalie von Tümmler glaubt, in einer späten Liebe zu dem jungen Ken Keaton noch einmal das Glück gefunden zu haben. Doch hinter den Hoffnungen auf einen neuen Lebensabschnitt verbirgt sich eine tragische Entwicklung, die ihr Weltbild erschüttert. Thomas Mann erzählt von Liebe, Selbsttäuschung und der Sehnsucht nach einem letzten Neubeginn.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

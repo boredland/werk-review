@@ -1,0 +1,17 @@
+{
+	"id": "geraecht",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Gerächt",
+	"slug": "geraecht",
+	"aliases": [],
+	"year": 1899,
+	"year_display": "1899",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Eine verletzte Person sinnt auf Vergeltung und versucht, erlittenes Unrecht auszugleichen. Doch der Wunsch nach Rache führt nicht nur zur Bestrafung des anderen, sondern verändert auch das eigene Leben. Die Erzählung fragt danach, ob Gerechtigkeit und Vergeltung wirklich dasselbe sind.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

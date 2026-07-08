@@ -1,0 +1,19 @@
+{
+	"id": "das-wunderkind",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Wunderkind",
+	"slug": "das-wunderkind",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"das-wunderkind-erzaehlband"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Bibi, ein außergewöhnlich begabter Pianist, erlebt schon früh Bewunderung und öffentliche Aufmerksamkeit. Doch hinter dem Glanz des Erfolgs stehen Einsamkeit, Erwartungen und die Last des eigenen Talents. Thomas Mann fragt, welchen Preis ein Mensch zahlen muss, wenn er zum Wunder erklärt wird.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,17 @@
+{
+	"id": "mario-und-der-zauberer",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Mario und der Zauberer",
+	"slug": "mario-und-der-zauberer",
+	"aliases": [],
+	"year": 1930,
+	"year_display": "1930",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Kellner Mario arbeitet in einem italienischen Badeort, in dem der geheimnisvolle Hypnotiseur Cipolla immer mehr Macht über sein Publikum gewinnt. Was als Unterhaltung beginnt, entwickelt sich zu einem beklemmenden Spiel mit Verführung und Willen. Thomas Mann zeigt, wie leicht Menschen ihre Freiheit verlieren können.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

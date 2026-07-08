@@ -1,0 +1,19 @@
+{
+	"id": "thamar",
+	"author_id": "thomas-mann",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Thamar",
+	"slug": "thamar",
+	"aliases": [],
+	"year": 1942,
+	"year_display": "1942",
+	"parent_slugs": [
+		"joseph-der-ernaehrer"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": "Die junge Thamar gerät in eine Geschichte um Familie, Macht, Verlangen und gesellschaftliche Erwartungen. Ihre ungewöhnliche Lebenssituation fordert sie heraus, ihren eigenen Weg zwischen Anpassung und Selbstbehauptung zu finden. Thomas Mann erzählt von einer Frauengestalt, die innerhalb einer alten Ordnung nach Handlungsspielraum sucht.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}
