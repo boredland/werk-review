@@ -10,12 +10,6 @@
 		]
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-dietegen",
-		"label": "Dietegen"
-	},
-	{
 		"source": "LibriVox",
 		"format": "Hörbuch",
 		"url": "https://librivox.org/erzaehlungen-aus-die-leute-von-seldwyla-by-gottfried-keller/",
@@ -28,5 +22,11 @@
 		"url": "https://librivox.org/dietegen-by-gottfried-keller/",
 		"label": "Dietegen",
 		"librivox_id": "7191"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gottfried-keller-dietegen",
+		"label": "Dietegen"
 	}
 ]
