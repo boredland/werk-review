@@ -17,6 +17,13 @@ let { userReview, form }: { userReview: UserReview; form: Record<string, unknown
 	$props();
 
 let selectedRating = $state(userReview?.ratingLabel ?? '');
+
+const bodyPlaceholder = `Empfiehlt anderen Lesern die Werke bitte so persönlich wie möglich.
+•	Wie fandet ihr den Schreibstil?
+•	Wie fandet ihr die Figuren in der Geschichte?
+•	Fandet ihr die Handlung spannend?
+•	Gab es für euch interessante philosophische Gedanken?
+•	Habt ihr durch das Werk etwas gelernt?`;
 </script>
 
 <section class="review-form-section">
@@ -64,6 +71,7 @@ let selectedRating = $state(userReview?.ratingLabel ?? '');
 		<div class="field">
 			<label for="review-body">Rezension (optional)</label>
 			<textarea id="review-body" name="body" rows="4" maxlength="5000"
+				placeholder={bodyPlaceholder}
 				>{userReview?.body ?? ''}</textarea
 			>
 		</div>
