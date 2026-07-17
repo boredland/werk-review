@@ -7,12 +7,6 @@
 		"librivox_id": "22551"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/daniel-defoe/books/denkwuerdigkeiten-eines-englischen-edelmannes-aus-dem-grossen-kriege/",
-		"label": "Denkwürdigkeiten eines englischen Edelmannes aus dem großen Kriege"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/denkwrdigkeiten00defogoog",
@@ -20,5 +14,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/daniel-defoe/books/denkwuerdigkeiten-eines-englischen-edelmannes-aus-dem-grossen-kriege/",
+		"label": "Denkwürdigkeiten eines englischen Edelmannes aus dem großen Kriege"
 	}
 ]
