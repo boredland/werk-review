@@ -7,5 +7,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-freytag/books/die-ahnen-1-abteilung-ingo-und-ingraban",
+		"label": "Die Ahnen"
 	}
 ]
