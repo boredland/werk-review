@@ -1,0 +1,22 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/der-golem-by-gustav-meyrink/",
+		"label": "Golem",
+		"librivox_id": "1892"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-golem-by-gustav-meyrink/",
+		"label": "Golem",
+		"librivox_id": "21509"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-meyrink/books/der-golem/",
+		"label": "Der Golem"
+	}
+]

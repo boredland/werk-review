@@ -1,0 +1,19 @@
+{
+	"id": "der-troedler-wasserturm",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Trödler Wasserturm",
+	"slug": "der-troedler-wasserturm",
+	"aliases": [],
+	"year": 1910,
+	"year_display": "1910",
+	"parent_slugs": [
+		"der-golem"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

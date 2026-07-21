@@ -1,0 +1,17 @@
+{
+	"id": "meine-merkwuerdigste-vision",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Meine merkwürdigste Vision",
+	"slug": "meine-merkwuerdigste-vision",
+	"aliases": [],
+	"year": 1928,
+	"year_display": "1928",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

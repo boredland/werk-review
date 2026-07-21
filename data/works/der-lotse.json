@@ -1,0 +1,17 @@
+{
+	"id": "der-lotse",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Lotse",
+	"slug": "der-lotse",
+	"aliases": [],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

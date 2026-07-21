@@ -1,0 +1,17 @@
+{
+	"id": "traum",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"prosa"
+	],
+	"title": "Traum",
+	"slug": "traum",
+	"aliases": [],
+	"year": 1929,
+	"year_display": "1929",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,17 @@
+{
+	"id": "der-astrolog",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Astrolog",
+	"slug": "der-astrolog",
+	"aliases": [],
+	"year": 1926,
+	"year_display": "1926",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

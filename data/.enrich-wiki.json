@@ -48,8 +48,8 @@
 		"at": "2026-07-09"
 	},
 	"bezauberung": {
-		"hash": "0614c2b3fe37",
-		"at": "2026-07-10"
+		"hash": "9b429b3c21c7",
+		"at": "2026-07-21"
 	},
 	"blanca-von-beaulieu": {
 		"hash": "536f9ec20b0b",
@@ -396,8 +396,8 @@
 		"at": "2026-07-04"
 	},
 	"die-natur-eines-verbrechens": {
-		"hash": "d8a96ae681a5",
-		"at": "2026-07-10"
+		"hash": "b41d576d6df9",
+		"at": "2026-07-21"
 	},
 	"die-reise-in-die-unterwelt": {
 		"hash": "101870a4f7c2",
@@ -836,8 +836,8 @@
 		"at": "2026-07-08"
 	},
 	"the-inheritors-an-extravagant-story": {
-		"hash": "204260878cba",
-		"at": "2026-07-08"
+		"hash": "48328886c264",
+		"at": "2026-07-21"
 	},
 	"trilogie-der-religionskriege": {
 		"hash": "d06eba5ad740",
@@ -3348,8 +3348,8 @@
 		"at": "2026-07-05"
 	},
 	"der-dynamitverschwoerer": {
-		"hash": "4f1ea085d8e8",
-		"at": "2026-07-05"
+		"hash": "acf8a4247975",
+		"at": "2026-07-21"
 	},
 	"die-schatzinsel": {
 		"hash": "1415a08e1574",
@@ -3650,5 +3650,205 @@
 	"wie-jappe-und-do-escobar-sich-pruegelten": {
 		"hash": "8942bec9841f",
 		"at": "2026-07-08"
+	},
+	"das-tor-zum-phoenix": {
+		"hash": "9993aec3648a",
+		"at": "2026-07-21"
+	},
+	"das-nachtgespraech-des-kameralrats-blaps": {
+		"hash": "e5770fcbecc1",
+		"at": "2026-07-21"
+	},
+	"der-engel-vom-westlichen-fenster": {
+		"hash": "e2d86cdd63d2",
+		"at": "2026-07-21"
+	},
+	"das-salz-der-erde": {
+		"hash": "96064415e7fb",
+		"at": "2026-07-21"
+	},
+	"das-gruene-gesicht": {
+		"hash": "370acf23945c",
+		"at": "2026-07-21"
+	},
+	"das-haus-des-alchemisten": {
+		"hash": "a7cc2fc9ee55",
+		"at": "2026-07-21"
+	},
+	"der-astrolog": {
+		"hash": "505c03ff142a",
+		"at": "2026-07-21"
+	},
+	"das-grillenspiel": {
+		"hash": "c6e73625c261",
+		"at": "2026-07-21"
+	},
+	"der-heimliche-kaiser": {
+		"hash": "c4df4329cf93",
+		"at": "2026-07-21"
+	},
+	"der-golem": {
+		"hash": "fcc0ed0d76ed",
+		"at": "2026-07-21"
+	},
+	"der-herr-kommerzienrat-kuno-hinrichsen-und-der-bueßer-lalaládschpat-rai": {
+		"hash": "59ad2cf7de3f",
+		"at": "2026-07-21"
+	},
+	"der-lotse": {
+		"hash": "67c0fb571871",
+		"at": "2026-07-21"
+	},
+	"der-kardinal-napellus": {
+		"hash": "109b8ddc6d87",
+		"at": "2026-07-21"
+	},
+	"der-schwarze-meister": {
+		"hash": "7fd3cf87325a",
+		"at": "2026-07-21"
+	},
+	"der-schuldlose": {
+		"hash": "7c250638cb48",
+		"at": "2026-07-21"
+	},
+	"der-schwarze-habicht": {
+		"hash": "36baa40c77ca",
+		"at": "2026-07-21"
+	},
+	"der-smaragd-von-mazocha": {
+		"hash": "8dfc272be4cb",
+		"at": "2026-07-21"
+	},
+	"der-sulzfleck-im-karpfenwinkel": {
+		"hash": "245e636c4f7c",
+		"at": "2026-07-21"
+	},
+	"der-stein-der-tiefe-ein-guckkasten": {
+		"hash": "586b9e9e6277",
+		"at": "2026-07-21"
+	},
+	"der-troedler-wasserturm": {
+		"hash": "cde02bd46e78",
+		"at": "2026-07-21"
+	},
+	"der-uhrmacher": {
+		"hash": "16028a5ca808",
+		"at": "2026-07-21"
+	},
+	"der-weiße-dominikaner": {
+		"hash": "706c3d55304b",
+		"at": "2026-07-21"
+	},
+	"der-untergang": {
+		"hash": "2212569cda1e",
+		"at": "2026-07-21"
+	},
+	"die-erstuermung-von-serajewo": {
+		"hash": "a7e4a5b3e74d",
+		"at": "2026-07-21"
+	},
+	"die-erzaehlung-vom-rechtsgelehrten-dr-hulbert": {
+		"hash": "8f7a89fac69a",
+		"at": "2026-07-21"
+	},
+	"die-frau-ohne-mund": {
+		"hash": "c44babd6f298",
+		"at": "2026-07-21"
+	},
+	"die-geheimnisvolle-stadt": {
+		"hash": "9baa680ad0e3",
+		"at": "2026-07-21"
+	},
+	"die-heimtueckischen-champions": {
+		"hash": "f560603390d8",
+		"at": "2026-07-21"
+	},
+	"die-keimdruese-des-herrn-kommerzienrates": {
+		"hash": "09cac2905f84",
+		"at": "2026-07-21"
+	},
+	"fakire": {
+		"hash": "316f2d1e6e30",
+		"at": "2026-07-21"
+	},
+	"dr-haselmeyers-weißer-kakadu": {
+		"hash": "89ec9be5a3d6",
+		"at": "2026-07-21"
+	},
+	"die-seltsamen-abenteuer-des-bankiers-hugendubel": {
+		"hash": "7513d812fadd",
+		"at": "2026-07-21"
+	},
+	"gerhart-hauptmann-auf-freiersfueßen-im-bischofsberg": {
+		"hash": "8b9559e30e33",
+		"at": "2026-07-21"
+	},
+	"fakirpfade": {
+		"hash": "f5e551db3e00",
+		"at": "2026-07-21"
+	},
+	"knickebein-eine-nervoese-trilogie": {
+		"hash": "a585fe2b93d4",
+		"at": "2026-07-21"
+	},
+	"im-palast-von-minos": {
+		"hash": "44c4526c93c4",
+		"at": "2026-07-21"
+	},
+	"meine-merkwuerdigste-vision": {
+		"hash": "8e1a39f26451",
+		"at": "2026-07-21"
+	},
+	"medini-die-wassertraegerin": {
+		"hash": "1eff4a17d4ae",
+		"at": "2026-07-21"
+	},
+	"mondschein-ueber-berlin": {
+		"hash": "e883076df39b",
+		"at": "2026-07-21"
+	},
+	"meyrinks-weltgeschichte": {
+		"hash": "4ec21f98e324",
+		"at": "2026-07-21"
+	},
+	"omar-al-raschid-bey": {
+		"hash": "c06cb2164325",
+		"at": "2026-07-21"
+	},
+	"reservat-polizeilich": {
+		"hash": "57877b3ee0ee",
+		"at": "2026-07-21"
+	},
+	"spuk-im-keller": {
+		"hash": "98ac0f4b5d31",
+		"at": "2026-07-21"
+	},
+	"selbstbeschreibung-des-autors-gustav-meyrink": {
+		"hash": "47b2221d765b",
+		"at": "2026-07-21"
+	},
+	"tiefseefische-i": {
+		"hash": "0635dc3ef5f6",
+		"at": "2026-07-21"
+	},
+	"tiefseefische-ii": {
+		"hash": "55f0dcb98b6a",
+		"at": "2026-07-21"
+	},
+	"traum": {
+		"hash": "7a877e5bf7f4",
+		"at": "2026-07-21"
+	},
+	"sonnenspuk": {
+		"hash": "dbeb1b321bb8",
+		"at": "2026-07-21"
+	},
+	"walpurgisnacht": {
+		"hash": "c41b2c0ec043",
+		"at": "2026-07-21"
+	},
+	"zaba": {
+		"hash": "13e2b7f0ff1e",
+		"at": "2026-07-21"
 	}
 }

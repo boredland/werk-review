@@ -1,0 +1,19 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/das-gruene-gesicht-by-gustav-meyrink/",
+		"label": "Grüne Gesicht",
+		"librivox_id": "7962"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_b1UTAAAAQAAJ",
+		"label": "Das grüne Gesicht ein Roman",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

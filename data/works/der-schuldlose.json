@@ -1,0 +1,17 @@
+{
+	"id": "der-schuldlose",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Schuldlose",
+	"slug": "der-schuldlose",
+	"aliases": [],
+	"year": 1908,
+	"year_display": "1908",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

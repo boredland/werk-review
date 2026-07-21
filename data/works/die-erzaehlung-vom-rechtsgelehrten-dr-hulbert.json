@@ -1,0 +1,19 @@
+{
+	"id": "die-erzaehlung-vom-rechtsgelehrten-dr-hulbert",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Erzaehlung vom Rechtsgelehrten Dr. Hulbert und seinem Bataillon",
+	"slug": "die-erzaehlung-vom-rechtsgelehrten-dr-hulbert",
+	"aliases": [],
+	"year": 1916,
+	"year_display": "1916",
+	"parent_slugs": [
+		"der-golem"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

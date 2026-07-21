@@ -1,0 +1,25 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/walpurgisnacht-by-gustav-meyrink/",
+		"label": "Walpurgisnacht",
+		"librivox_id": "3521"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-meyrink/books/gustav-meyrink-walpurgisnacht",
+		"label": "Walpurgisnacht"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/bub_gb_o-IvAQAAIAAJ",
+		"label": "Walpurgisnacht phantastischer Roman",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

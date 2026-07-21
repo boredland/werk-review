@@ -1,0 +1,17 @@
+{
+	"id": "spuk-im-keller",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Spuk im Keller",
+	"slug": "spuk-im-keller",
+	"aliases": [],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}
