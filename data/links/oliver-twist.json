@@ -14,12 +14,6 @@
 		"librivox_id": "4159"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/oliver-twist/",
-		"label": "Oliver Twist"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/olivertwist56586gut",
@@ -27,5 +21,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/oliver-twist/",
+		"label": "Oliver Twist"
 	}
 ]
