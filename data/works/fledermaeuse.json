@@ -1,0 +1,19 @@
+{
+	"id": "fledermaeuse",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Fledermäuse",
+	"slug": "fledermaeuse",
+	"aliases": [
+		"Fledermäuse: sieben Geschichten"
+	],
+	"year": 1916,
+	"year_display": "1916",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

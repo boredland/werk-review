@@ -1,0 +1,21 @@
+{
+	"id": "die-pflanzen-des-doktor-cinderella",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Die Pflanzen des Doktor Cinderella",
+	"slug": "die-pflanzen-des-doktor-cinderella",
+	"aliases": [
+		"Die Pflanzen des Dr. Cinderella / Die Pflanzen des Doktors Cinderella"
+	],
+	"year": 1905,
+	"year_display": "1905",
+	"parent_slugs": [
+		"gustav-meyrinks-wachsfigurenkabinett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

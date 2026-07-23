@@ -1,0 +1,19 @@
+{
+	"id": "tschitrakarna,-das-vornehme-kamel",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Tschitrakarna, das vornehme Kamel",
+	"slug": "tschitrakarna,-das-vornehme-kamel",
+	"aliases": [],
+	"year": 1917,
+	"year_display": "1917",
+	"parent_slugs": [
+		"der-loewe-alois-und-andere-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

@@ -1,0 +1,19 @@
+{
+	"id": "der-opal",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Opal",
+	"slug": "der-opal",
+	"aliases": [],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [
+		"orchideen-sonderbare-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

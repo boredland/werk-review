@@ -1,0 +1,19 @@
+{
+	"id": "der-seltsame-gast",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der seltsame Gast (Co-Autor: Friedrich Alfred Schmid Noerr)",
+	"slug": "der-seltsame-gast",
+	"aliases": [],
+	"year": 1925,
+	"year_display": "1925",
+	"parent_slugs": [
+		"goldmachergeschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

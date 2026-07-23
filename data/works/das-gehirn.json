@@ -1,0 +1,19 @@
+{
+	"id": "das-gehirn",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Gehirn",
+	"slug": "das-gehirn",
+	"aliases": [],
+	"year": 1901,
+	"year_display": "1901",
+	"parent_slugs": [
+		"orchideen-sonderbare-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

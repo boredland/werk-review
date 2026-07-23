@@ -1,0 +1,19 @@
+{
+	"id": "g-m",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "G. M.",
+	"slug": "g-m",
+	"aliases": [],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [
+		"orchideen-sonderbare-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

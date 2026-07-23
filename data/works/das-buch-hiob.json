@@ -1,0 +1,21 @@
+{
+	"id": "das-buch-hiob",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Buch Hiob",
+	"slug": "das-buch-hiob",
+	"aliases": [
+		"Das Buch Hiopp: oder wie das Buch Hiob ausgefallen wäre, wenn es Pastor Frenssen und nicht Luther übersetzt hätte"
+	],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"gustav-meyrinks-wachsfigurenkabinett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

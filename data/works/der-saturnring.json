@@ -1,0 +1,19 @@
+{
+	"id": "der-saturnring",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Saturnring",
+	"slug": "der-saturnring",
+	"aliases": [],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"gustav-meyrinks-wachsfigurenkabinett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

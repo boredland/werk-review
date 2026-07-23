@@ -1,0 +1,19 @@
+{
+	"id": "krank",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "»Krank«",
+	"slug": "krank",
+	"aliases": [],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"orchideen-sonderbare-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

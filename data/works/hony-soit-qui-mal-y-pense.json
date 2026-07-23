@@ -1,0 +1,19 @@
+{
+	"id": "hony-soit-qui-mal-y-pense",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Hony soit qui mal y pense",
+	"slug": "hony-soit-qui-mal-y-pense",
+	"aliases": [],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [
+		"orchideen-sonderbare-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

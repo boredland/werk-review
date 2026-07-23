@@ -4,16 +4,16 @@
 	"genre_ids": [
 		"erzaehlung"
 	],
-	"title": "R e s e r v a t.\" polizeilich",
+	"title": "„Reservat.“ polizeilich",
 	"slug": "reservat-polizeilich",
 	"aliases": [
-		"„Reservat.“ polizeilich"
+		"R e s e r v a t.\" polizeilich"
 	],
 	"year": 1902,
 	"year_display": "1902",
 	"parent_slugs": [],
 	"fortsetzung_von_ids": [],
-	"plot": null,
-	"source_note": null,
+	"plot": "Der Beamte Inspektor Heller erhält einen Fall, der zunächst alltäglich erscheint und sich bald jeder logischen Erklärung entzieht. Je genauer er ermittelt, desto sonderbarer werden die Zusammenhänge. Nicht jede Akte lässt sich mit einem amtlichen Vermerk schließen.",
+	"source_note": "[KI-generierter Inhalt]",
 	"sources": []
 }

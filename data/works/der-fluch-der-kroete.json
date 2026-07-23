@@ -1,0 +1,19 @@
+{
+	"id": "der-fluch-der-kroete",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Fluch der Kröte - Fluch der Kröte",
+	"slug": "der-fluch-der-kroete",
+	"aliases": [],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [
+		"der-heiße-soldat-und-andere-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

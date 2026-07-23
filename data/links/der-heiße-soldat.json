@@ -1,0 +1,17 @@
+[
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-meyrink/books/der-heisse-soldat-und-andere-geschichten",
+		"label": "Der heiße Soldat"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/meyrink_der-heisse-soldat",
+		"label": "Gustav Meyrink: Der heiße Soldat (1901)",
+		"formats": [
+			"Text PDF"
+		]
+	}
+]

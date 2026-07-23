@@ -1,0 +1,19 @@
+{
+	"id": "kardinal-napellus",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Kardinal Napellus",
+	"slug": "kardinal-napellus",
+	"aliases": [],
+	"year": 1915,
+	"year_display": "1915",
+	"parent_slugs": [
+		"fledermaeuse"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

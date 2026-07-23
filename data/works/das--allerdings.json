@@ -1,0 +1,19 @@
+{
+	"id": "das--allerdings",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das--allerdings",
+	"slug": "das--allerdings",
+	"aliases": [],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [
+		"gustav-meyrinks-wachsfigurenkabinett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

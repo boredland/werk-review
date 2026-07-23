@@ -1,0 +1,19 @@
+{
+	"id": "bal-macabre",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Bal macabre",
+	"slug": "bal-macabre",
+	"aliases": [],
+	"year": 1905,
+	"year_display": "1905",
+	"parent_slugs": [
+		"gustav-meyrinks-wachsfigurenkabinett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

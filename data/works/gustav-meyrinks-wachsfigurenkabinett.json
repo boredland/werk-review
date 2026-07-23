@@ -1,0 +1,19 @@
+{
+	"id": "gustav-meyrinks-wachsfigurenkabinett",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Das Wachsfigurenkabinett",
+	"slug": "gustav-meyrinks-wachsfigurenkabinett",
+	"aliases": [
+		"Gustav Meyrinks Wachsfigurenkabinett: sonderbare Geschichten"
+	],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

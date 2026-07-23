@@ -1,0 +1,21 @@
+{
+	"id": "meine-qualen-und-wonnen-im-jenseits",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Meine Qualen und Wonnen im Jenseits",
+	"slug": "meine-qualen-und-wonnen-im-jenseits",
+	"aliases": [
+		"Meine Qualen und Wonnen im Jenseits: Durch spiritistische Klopflaute mitgeteilt"
+	],
+	"year": 1914,
+	"year_display": "1914",
+	"parent_slugs": [
+		"der-loewe-alois-und-andere-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

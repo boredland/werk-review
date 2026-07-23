@@ -7,9 +7,11 @@
 	"title": "Der Untergang",
 	"slug": "der-untergang",
 	"aliases": [],
-	"year": 1908,
-	"year_display": "1908",
-	"parent_slugs": [],
+	"year": 1904,
+	"year_display": "1904",
+	"parent_slugs": [
+		"orchideen-sonderbare-geschichten"
+	],
 	"fortsetzung_von_ids": [],
 	"plot": null,
 	"source_note": null,

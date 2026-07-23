@@ -1,0 +1,19 @@
+{
+	"id": "das-automobil",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Das Automobil",
+	"slug": "das-automobil",
+	"aliases": [],
+	"year": 1907,
+	"year_display": "1907",
+	"parent_slugs": [
+		"des-deutschen-spießers-wunderhorn"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

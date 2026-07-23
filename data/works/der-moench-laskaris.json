@@ -1,0 +1,19 @@
+{
+	"id": "der-moench-laskaris",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Der Mönch Laskaris (Co-Autor: Friedrich Alfred Schmid Noerr)",
+	"slug": "der-moench-laskaris",
+	"aliases": [],
+	"year": 1925,
+	"year_display": "1925",
+	"parent_slugs": [
+		"goldmachergeschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

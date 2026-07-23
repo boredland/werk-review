@@ -1,0 +1,19 @@
+{
+	"id": "izzi-pizzi",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Izzi Pizzi",
+	"slug": "izzi-pizzi",
+	"aliases": [],
+	"year": 1902,
+	"year_display": "1902",
+	"parent_slugs": [
+		"der-heiße-soldat-und-andere-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

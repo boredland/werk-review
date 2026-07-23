@@ -1,0 +1,19 @@
+{
+	"id": "bocksaeure",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Bocksäure",
+	"slug": "bocksaeure",
+	"aliases": [],
+	"year": 1903,
+	"year_display": "1903",
+	"parent_slugs": [
+		"der-heiße-soldat-und-andere-geschichten"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

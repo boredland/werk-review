@@ -1,0 +1,19 @@
+{
+	"id": "schoepsoglobin",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Schöpsoglobin",
+	"slug": "schoepsoglobin",
+	"aliases": [],
+	"year": 1906,
+	"year_display": "1906",
+	"parent_slugs": [
+		"gustav-meyrinks-wachsfigurenkabinett"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

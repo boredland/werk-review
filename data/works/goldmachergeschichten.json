@@ -1,0 +1,17 @@
+{
+	"id": "goldmachergeschichten",
+	"author_id": "gustav-meyrink",
+	"genre_ids": [
+		"erzaehlband"
+	],
+	"title": "Goldmachergeschichten (Co-Autor: Friedrich Alfred Schmid Noerr)",
+	"slug": "goldmachergeschichten",
+	"aliases": [],
+	"year": 1925,
+	"year_display": "1925",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}
