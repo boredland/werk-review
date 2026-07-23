@@ -1,0 +1,19 @@
+{
+	"id": "maerchen-von-eros-und-fabel",
+	"author_id": "novalis",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Märchen von Eros und Fabel",
+	"slug": "maerchen-von-eros-und-fabel",
+	"aliases": [],
+	"year": 1802,
+	"year_display": "1802",
+	"parent_slugs": [
+		"heinrich-von-ofterdingen"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

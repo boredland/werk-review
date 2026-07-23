@@ -1,0 +1,21 @@
+{
+	"id": "hyazinth-und-rosenbluet",
+	"author_id": "novalis",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Hyazinth und Rosenblüt",
+	"slug": "hyazinth-und-rosenbluet",
+	"aliases": [
+		"Hyazinth und Rosenblüthe / Hyacinth und Rosenblüthe"
+	],
+	"year": 1798,
+	"year_display": "1798",
+	"parent_slugs": [
+		"die-lehrlinge-zu-sais"
+	],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}

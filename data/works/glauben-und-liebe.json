@@ -1,0 +1,19 @@
+{
+	"id": "glauben-und-liebe",
+	"author_id": "novalis",
+	"genre_ids": [
+		"erzaehlung"
+	],
+	"title": "Glauben und Liebe",
+	"slug": "glauben-und-liebe",
+	"aliases": [
+		"Der König und die Königin / Glauben und Liebe oder der König und die Königin"
+	],
+	"year": 1798,
+	"year_display": "1798",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": null,
+	"source_note": null,
+	"sources": []
+}
