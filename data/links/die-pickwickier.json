@@ -14,12 +14,6 @@
 		"librivox_id": "4128"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/die-pickwickier-erster-band",
-		"label": "Die Pickwickier"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/diepickwickier0000char",
