@@ -14,5 +14,11 @@
 		"formats": [
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-freytag/books/die-ahnen-6-abteilung-aus-einer-kleinen-stadt",
+		"label": "Aus einer kleinen Stadt"
 	}
 ]
