@@ -8,5 +8,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-freytag/books/gustav-freytag-soll-und-haben",
+		"label": "Soll und Haben"
 	}
 ]
