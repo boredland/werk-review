@@ -14,12 +14,6 @@
 		"librivox_id": "3221"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/johann-wolfgang-von-goethe-wilhelm-meisters-lehrjahre",
-		"label": "Wilhelm Meisters Lehrjahre"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/wilhelmmeistersl0000joha",
@@ -28,5 +22,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/johann-wolfgang-von-goethe-wilhelm-meisters-lehrjahre",
+		"label": "Wilhelm Meisters Lehrjahre"
 	}
 ]
