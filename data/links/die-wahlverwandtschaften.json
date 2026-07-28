@@ -7,12 +7,6 @@
 		"librivox_id": "2431"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/die-wahlverwandtschaften/",
-		"label": "Die Wahlverwandtschaften"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/bub_gb_iQ4UAAAAQAAJ",
@@ -21,5 +15,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/johann-wolfgang-von-goethe/books/die-wahlverwandtschaften/",
+		"label": "Die Wahlverwandtschaften"
 	}
 ]
