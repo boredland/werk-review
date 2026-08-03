@@ -7,15 +7,15 @@
 		"librivox_id": "6966"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/jack-london/books/lockruf-des-goldes/",
-		"label": "Lockruf des Goldes"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Verfilmung",
 		"url": "https://archive.org/details/lockruf-des-goldes-1-das-klondike-fieber",
 		"label": "ZDF Abenteuervierteiler: Lockruf Des Goldes Teil 1-4"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/lockruf-des-goldes/",
+		"label": "Lockruf des Goldes"
 	}
 ]
