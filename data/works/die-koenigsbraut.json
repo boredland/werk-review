@@ -17,5 +17,10 @@
 	"fortsetzung_von_ids": [],
 	"plot": "Der Förstersohn Ännchen und ihre Familie geraten in den Bann einer alten Sage, deren geheimnisvolle Kräfte plötzlich Wirklichkeit zu werden scheinen. Romantische Naturstimmung und märchenhafte Magie verschmelzen zu einer poetischen Geschichte.",
 	"source_note": "[KI-generierter Inhalt]",
-	"sources": []
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Die_K%C3%B6nigsbraut_(E._T._A._Hoffmann)"
+		}
+	]
 }
