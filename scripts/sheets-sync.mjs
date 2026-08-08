@@ -25,6 +25,16 @@ function parsePipeSeparated(val) {
 		.filter(Boolean);
 }
 
+// Reference columns accept comma as an alternative separator because sheet
+// editors type "a, b" more naturally than "a|b". Slugs never contain commas.
+function parseIdList(val) {
+	if (!val || val.trim() === '') return [];
+	return val
+		.split(/[|,]/)
+		.map((s) => s.trim())
+		.filter(Boolean);
+}
+
 function parseNumber(val) {
 	if (val === '' || val === null || val === undefined) return null;
 	const n = Number(val);
@@ -209,14 +219,14 @@ function transformWork(row) {
 	return {
 		id: row.id || slug,
 		author_id: row.author_id,
-		genre_ids: parsePipeSeparated(row.genre_id || row.genre_ids),
+		genre_ids: parseIdList(row.genre_id || row.genre_ids),
 		title: row.title,
 		slug,
 		aliases: parsePipeSeparated(row.aliases),
 		year,
 		year_display: row.year_display || '',
-		parent_slugs: parsePipeSeparated(row.parent_ids || row.parent_slug || row.parent_slugs),
-		fortsetzung_von_ids: parsePipeSeparated(row.fortsetzung_von || row.fortsetzung_von_ids),
+		parent_slugs: parseIdList(row.parent_ids || row.parent_slug || row.parent_slugs),
+		fortsetzung_von_ids: parseIdList(row.fortsetzung_von || row.fortsetzung_von_ids),
 		plot: row.plot || null,
 		source_note: row.source_note || null,
 		sources,
