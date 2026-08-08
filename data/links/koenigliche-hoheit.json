@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/koenigliche-hoheit/",
-		"label": "Königliche Hoheit"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/kniglichehoheit00elstgoog",
@@ -13,5 +7,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/koenigliche-hoheit/",
+		"label": "Königliche Hoheit"
 	}
 ]

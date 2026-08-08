@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/joseph-und-seine-brueder-band-i-die-geschichten-jaakobs",
-		"label": "Die Geschichten Jaakobs"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/bwb_Y0-BTO-468",
@@ -14,5 +8,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/joseph-und-seine-brueder-band-i-die-geschichten-jaakobs",
+		"label": "Die Geschichten Jaakobs"
 	}
 ]
