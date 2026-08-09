@@ -1,0 +1,19 @@
+{
+	"id": "han-von-island",
+	"author_id": "victor-hugo",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Han von Island",
+	"slug": "han-von-island",
+	"aliases": [
+		"Han d'Islande / Han der Isländer / Han"
+	],
+	"year": 1821,
+	"year_display": "1821-1823",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der junge Ordener Guldenlew macht sich auf die Suche nach dem gefürchteten Han von Island, um ein Geheimnis zu finden, das das Leben der Frau retten könnte, die er liebt. Dabei gerät er in ein Netz aus politischen Intrigen, Aufständen und düsteren Machenschaften. Und je näher Ordener dem geheimnisvollen Han kommt, desto weniger klar ist, wer eigentlich das größere Ungeheuer ist.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

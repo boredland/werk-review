@@ -1,0 +1,19 @@
+{
+	"id": "der-lachende-mann",
+	"author_id": "victor-hugo",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der lachende Mann",
+	"slug": "der-lachende-mann",
+	"aliases": [
+		"L' homme qui rit / Der Mann der lacht / Die lachende Maske / Die Glocke im Sturm"
+	],
+	"year": 1869,
+	"year_display": "1869",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der entstellte Gwynplaine trägt ein Lächeln im Gesicht, das ihm einst gewaltsam zugefügt wurde, und wird damit zum gefeierten Schausteller. An der Seite der blinden Dea findet er eine Welt, in der nicht sein Äußeres, sondern sein Wesen zählt. Als Gwynplaine plötzlich erfährt, dass er einer ganz anderen Welt angehört, muss er sich entscheiden, ob Macht und gesellschaftlicher Rang wirklich Glück bedeuten.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

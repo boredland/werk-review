@@ -156,8 +156,8 @@
 		"at": "2026-07-10"
 	},
 	"der-geheime-teilhaber": {
-		"hash": "e16aae816d21",
-		"at": "2026-08-05"
+		"hash": "9a66530de63e",
+		"at": "2026-08-09"
 	},
 	"der-goldene-pfeil": {
 		"hash": "b450397bbcb5",
@@ -4107,10 +4107,6 @@
 		"hash": "cfb041c59fcf",
 		"at": "2026-07-23"
 	},
-	"tschitrakarna,-das-vornehme-kamel": {
-		"hash": "da7b554bac36",
-		"at": "2026-07-23"
-	},
 	"meine-qualen-und-wonnen-im-jenseits": {
 		"hash": "44cf1b799bcb",
 		"at": "2026-07-23"
@@ -4158,5 +4154,53 @@
 	"glauben-und-liebe": {
 		"hash": "b125162ee7de",
 		"at": "2026-07-23"
+	},
+	"ein-doppelquartett": {
+		"hash": "9e7a96307927",
+		"at": "2026-08-09"
+	},
+	"dreiundneunzig": {
+		"hash": "74cc1e79cac1",
+		"at": "2026-08-09"
+	},
+	"die-meer-arbeiter": {
+		"hash": "132e241ad475",
+		"at": "2026-08-09"
+	},
+	"der-gloeckner-von-notre-dame": {
+		"hash": "c16cc167cdd9",
+		"at": "2026-08-09"
+	},
+	"die-elenden": {
+		"hash": "4c10334cb478",
+		"at": "2026-08-09"
+	},
+	"der-rhein": {
+		"hash": "458e2aecfe2a",
+		"at": "2026-08-09"
+	},
+	"der-lachende-mann": {
+		"hash": "2552a97b27af",
+		"at": "2026-08-09"
+	},
+	"die-schwarze-fahne": {
+		"hash": "e7d17d4cfa4f",
+		"at": "2026-08-09"
+	},
+	"han-von-island": {
+		"hash": "161ff0c2696c",
+		"at": "2026-08-09"
+	},
+	"historische-notizen-aus-der-zeit-in-der-ich-lebte": {
+		"hash": "9ba3d5de8f3e",
+		"at": "2026-08-09"
+	},
+	"der-letzte-tag-eines-verurteilten": {
+		"hash": "dc0dca8c8a00",
+		"at": "2026-08-09"
+	},
+	"vom-leben-und-sterben-des-armen-mannes-gueux": {
+		"hash": "129eb74516b7",
+		"at": "2026-08-09"
 	}
 }

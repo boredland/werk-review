@@ -1,0 +1,39 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/the-hunchback-of-notre-dame-by-victor-hugo/",
+		"label": "Hunchback of Notre Dame",
+		"librivox_id": "2661"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/notre-dame-de-paris-by-victor-hugo/",
+		"label": "Notre-Dame de Paris",
+		"librivox_id": "3138"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/notre-dame-by-victor-hugo/",
+		"label": "Notre Dame",
+		"librivox_id": "5842"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/victor-hugo/books/notre-dame-teil-2",
+		"label": "Der Glöckner von Notre Dame"
+	},
+	{
+		"source": "Internet Archive",
+		"format": "Volltext / Download",
+		"url": "https://archive.org/details/derglocknervonno0000vict",
+		"label": "Der Glockner Von Notre-Dame",
+		"formats": [
+			"EPUB",
+			"Text PDF"
+		]
+	}
+]

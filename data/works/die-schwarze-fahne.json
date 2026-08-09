@@ -1,0 +1,19 @@
+{
+	"id": "die-schwarze-fahne",
+	"author_id": "victor-hugo",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die schwarze Fahne",
+	"slug": "die-schwarze-fahne",
+	"aliases": [
+		"Bug-Jargal"
+	],
+	"year": 1820,
+	"year_display": "1820-1826",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der versklavte Pierrot liebt Marie, die Tochter seines Herrn, obwohl zwischen ihnen eine unüberwindbare gesellschaftliche Grenze steht. Als auf Haiti der Aufstand beginnt, zeigt sich, dass hinter dem unscheinbaren Pierrot der geheimnisvolle Anführer Bug-Jargal steckt. Zwischen Liebe, Verrat und Revolution muss sich zeigen, wie weit ein Mensch für seine Freiheit und die eines anderen zu gehen bereit ist.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

@@ -1,0 +1,19 @@
+{
+	"id": "die-elenden",
+	"author_id": "victor-hugo",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Die Elenden",
+	"slug": "die-elenden",
+	"aliases": [
+		"Les misérables / Ein Held der Güte"
+	],
+	"year": 1845,
+	"year_display": "1845-1862",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der ehemalige Sträfling Jean Valjean versucht, sein Leben neu zu beginnen, doch seine Vergangenheit lässt ihn nicht los. Als er der jungen Cosette begegnet, findet er eine Aufgabe, für die er bereit ist, alles zu riskieren. Während sich um ihn Revolution, Armut und soziale Ungerechtigkeit entfalten, wird aus der Geschichte eines einzelnen Mannes eine Suche nach Menschlichkeit und Vergebung.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

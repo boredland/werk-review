@@ -1,0 +1,19 @@
+{
+	"id": "der-rhein",
+	"author_id": "victor-hugo",
+	"genre_ids": [
+		"bericht"
+	],
+	"title": "Der Rhein",
+	"slug": "der-rhein",
+	"aliases": [
+		"Rheinreise / Le Rhin"
+	],
+	"year": 1842,
+	"year_display": "1842",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Victor Hugo selbst reist am Rhein entlang und betrachtet Landschaften, Städte, Burgen und Menschen mit dem neugierigen Blick eines Schriftstellers. Aus seinen Beobachtungen entsteht weit mehr als ein Reisebericht, denn immer wieder verbindet Hugo die Gegenwart mit Geschichte, Politik und Legenden. Der Rhein wird dabei zu einer Grenze und zugleich zu einer Brücke zwischen Ländern, Zeiten und Kulturen.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}

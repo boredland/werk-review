@@ -1,0 +1,16 @@
+[
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/le-dernier-jour-by-victor-hugo/",
+		"label": "dernier jour d'un condamné",
+		"librivox_id": "17544"
+	},
+	{
+		"source": "LibriVox",
+		"format": "Hörbuch",
+		"url": "https://librivox.org/le-dernier-jour-dun-condamne-version-2-by-victor-hugo/",
+		"label": "Dernier Jour d’un Condamné (Version 2)",
+		"librivox_id": "20344"
+	}
+]

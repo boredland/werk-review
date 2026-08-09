@@ -1,0 +1,19 @@
+{
+	"id": "der-gloeckner-von-notre-dame",
+	"author_id": "victor-hugo",
+	"genre_ids": [
+		"roman"
+	],
+	"title": "Der Glöckner von Notre Dame",
+	"slug": "der-gloeckner-von-notre-dame",
+	"aliases": [
+		"Notre-Dame de Paris / Die Kirche Notre-Dame zu Paris / Notre Dame in Paris / Notre Dame von Paris / Notre Dame oder die Liebfrauenkirche zu Paris"
+	],
+	"year": 1831,
+	"year_display": "1831",
+	"parent_slugs": [],
+	"fortsetzung_von_ids": [],
+	"plot": "Der entstellte Quasimodo lebt hoch oben in Notre-Dame und beobachtet die Welt, zu der er selbst kaum gehört. Als er sich in die schöne Esmeralda verliebt, gerät ihr Leben durch Eifersucht, Macht und Besessenheit in Gefahr. Zwischen den Mauern von Paris zeigt sich, dass nicht immer derjenige ein Monster ist, der so aussieht.",
+	"source_note": "[KI-generierter Inhalt]",
+	"sources": []
+}
