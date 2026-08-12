@@ -7,12 +7,6 @@
 		"librivox_id": "17168"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/buddenbrooks/",
-		"label": "Buddenbrooks"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/buddenbrooksverf0000thom_z0e0",
@@ -21,5 +15,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/buddenbrooks/",
+		"label": "Buddenbrooks"
 	}
 ]
