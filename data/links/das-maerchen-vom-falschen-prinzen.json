@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1826-by-wilhelm-hauff/",
 		"label": "Märchen - Almanach auf das Jahr 1826",
 		"librivox_id": "2034"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/wilhelm-hauff/books/das-maerchen-vom-falschen-prinzen/",
+		"label": "Das Märchen vom falschen Prinzen"
 	}
 ]

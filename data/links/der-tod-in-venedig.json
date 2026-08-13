@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/der-tod-in-venedig/",
-		"label": "Der Tod in Venedig"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/dertodinvenedig00manngoog",
@@ -13,5 +7,11 @@
 		"formats": [
 			"EPUB"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/der-tod-in-venedig/",
+		"label": "Der Tod in Venedig"
 	}
 ]

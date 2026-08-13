@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/within-the-tides-by-joseph-conrad/",
 		"label": "Within The Tides",
 		"librivox_id": "18646"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-pflanzer-von-malata/",
+		"label": "Der Pflanzer von Malata"
 	}
 ]

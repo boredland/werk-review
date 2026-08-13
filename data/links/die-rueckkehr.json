@@ -12,5 +12,11 @@
 		"url": "https://librivox.org/tales-of-unrest-ver2-by-joseph-conrad/",
 		"label": "Tales of Unrest (version 2)",
 		"librivox_id": "17672"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/die-rueckkehr/",
+		"label": "Die Rückkehr"
 	}
 ]

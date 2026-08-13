@@ -1,11 +1,5 @@
 [
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/der-zauberberg-band-i",
-		"label": "Der Zauberberg"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/selbstkommentare00mann",
@@ -20,5 +14,11 @@
 		"format": "Verfilmung",
 		"url": "https://archive.org/details/der-zauberberg-1982",
 		"label": "Der Zauberberg (1982) complete"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/thomas-mann/books/der-zauberberg/",
+		"label": "Der Zauberberg"
 	}
 ]

@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-arrow-of-gold-a-story-between-two-notes-by-joseph-conrad/",
 		"label": "Arrow of Gold: A Story Between Two Notes",
 		"librivox_id": "16351"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/der-goldene-pfeil/",
+		"label": "Der goldene Pfeil"
 	}
 ]

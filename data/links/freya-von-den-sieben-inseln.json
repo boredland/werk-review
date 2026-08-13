@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/twixt-land-and-sea-by-joseph-conrad/",
 		"label": "'Twixt Land and Sea",
 		"librivox_id": "18306"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/freya-von-den-sieben-inseln/",
+		"label": "Freya von den Sieben Inseln"
 	}
 ]

@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/der-gruene-heinrich-zweite-fassung/",
 		"label": "Grüne Heinrich (zweite Fassung)",
 		"librivox_id": "3771"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gottfried-keller/books/gretchen-und-die-meerkatze/",
+		"label": "Gretchen und die Meerkatze"
 	}
 ]

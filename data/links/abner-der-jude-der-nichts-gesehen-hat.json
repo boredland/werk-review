@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/marchen-almanach-auf-das-jahr-1827-by-wilhelm-hauff/",
 		"label": "Märchen - Almanach auf das Jahr 1827",
 		"librivox_id": "2931"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/wilhelm-hauff/books/abner-der-jude-der-nichts-gesehen-hat/",
+		"label": "Abner, der Jude, der nichts gesehen hat"
 	}
 ]
