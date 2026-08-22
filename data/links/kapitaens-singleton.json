@@ -26,5 +26,11 @@
 		"url": "https://librivox.org/leben-und-abenteuer-des-robinson-crusoe-by-daniel-defoe/",
 		"label": "Leben und Abenteuer des Robinson Crusoe",
 		"librivox_id": "21920"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/daniel-defoe/books/kapitaens-singleton/",
+		"label": "Kapitäns Singleton"
 	}
 ]

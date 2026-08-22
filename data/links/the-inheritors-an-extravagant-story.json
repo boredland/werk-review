@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-inheritors-by-joseph-conrad/",
 		"label": "Inheritors",
 		"librivox_id": "10683"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/the-inheritors-an-extravagant-story-co-autor-ford-madox-ford/",
+		"label": "The Inheritors: An Extravagant Story (Co-Autor: Ford Madox Ford)"
 	}
 ]

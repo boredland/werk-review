@@ -7,5 +7,11 @@
 		"formats": [
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/gustav-meyrink/books/hilligenlei/",
+		"label": "Hilligenlei"
 	}
 ]
