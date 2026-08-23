@@ -27,6 +27,12 @@ export interface Work {
 	sources: Source[];
 }
 
+/**
+ * A work without its `plot`. Plots are ~46% of the work payload and are only
+ * needed by the detail page and search, so they load from a separate chunk.
+ */
+export type WorkMeta = Omit<Work, 'plot'>;
+
 export type CollectionType = 'standalone' | 'reihe' | 'band' | 'zyklus';
 
 export interface Genre {
@@ -47,11 +53,6 @@ export interface ExternalLink {
 	label: string;
 	librivox_id?: string;
 	formats?: string[];
-}
-
-export interface SimilarWork {
-	work_id: string;
-	score: number;
 }
 
 export interface LibriVoxSection {

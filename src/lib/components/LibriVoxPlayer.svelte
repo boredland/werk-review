@@ -2,18 +2,13 @@
 import { onMount } from 'svelte';
 import type { LibriVoxBook, LibriVoxData, LibriVoxSection } from '$lib/types';
 
-let {
-	librivoxId,
-	workTitles = [],
-	initialData = null,
-} = $props<{
+let { librivoxId, workTitles = [] } = $props<{
 	librivoxId: string;
 	workTitles?: string[];
-	initialData?: LibriVoxData | null;
 }>();
 
-let book: LibriVoxBook | null = $state(initialData?.books?.[0] || null);
-let loading = $state(!book);
+let book: LibriVoxBook | null = $state(null);
+let loading = $state(true);
 let error = $state('');
 
 let currentSection: LibriVoxSection | null = $state(null);
@@ -42,7 +37,6 @@ function playNext() {
 }
 
 onMount(async () => {
-	if (book) return;
 	try {
 		const res = await fetch(`/api/librivox/${librivoxId}`);
 		if (!res.ok) throw new Error('API Fehler');

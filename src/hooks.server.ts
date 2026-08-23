@@ -3,6 +3,43 @@ import { getSession, SESSION_COOKIE } from '$lib/server/auth';
 
 const NO_CACHE_ROUTES = ['/login', '/registrieren', '/konto', '/admin', '/logout'];
 
+// Vulnerability scanners account for the majority of inbound requests. They only
+// ever probe extensions and prefixes this app never serves, so answering them
+// before SvelteKit routes the request avoids rendering the error page.
+const SCANNER_EXTENSIONS = /\.(?:php\d?|aspx?|jsp|cgi|pl|sh|env|ini|bak|sql|old|swp|zip|tar|gz)$/i;
+const SCANNER_PREFIXES = [
+	'/wp-',
+	'/wordpress/',
+	'/vendor/',
+	'/autoload_classmap',
+	'/administrator/',
+	'/phpmyadmin',
+	'/phpunit',
+	'/cgi-bin/',
+	'/.git',
+	'/.env',
+	'/.aws',
+	'/.vscode',
+	'/.well-known/index.php',
+];
+
+// Page HTML embeds the signed-in username in the header, and Cloudflare ignores
+// `Vary` by default, so a response cached for an anonymous visitor would be
+// served to a signed-in one. Anything user-dependent therefore stays on a short
+// TTL; only responses that are identical for every visitor get a long one.
+//
+// stale-while-revalidate is intentionally omitted wherever `s-maxage` is set:
+// `s-maxage` implies proxy-revalidate, which disables it, so pairing the two
+// does nothing.
+const PUBLIC_CACHE = 'public, max-age=0, s-maxage=60';
+const STATIC_CACHE = 'public, max-age=3600, s-maxage=86400';
+
+function isScannerPath(path: string): boolean {
+	if (SCANNER_EXTENSIONS.test(path)) return true;
+	const lower = path.toLowerCase();
+	return SCANNER_PREFIXES.some((p) => lower.startsWith(p));
+}
+
 export const handle: Handle = async ({ event, resolve }) => {
 	if (event.url.hostname === 'www.werk.review') {
 		const target = new URL(event.url.href);
@@ -10,6 +47,16 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return new Response(null, {
 			status: 308,
 			headers: { location: target.href },
+		});
+	}
+
+	if (isScannerPath(event.url.pathname)) {
+		return new Response('Not Found', {
+			status: 404,
+			headers: {
+				'content-type': 'text/plain; charset=utf-8',
+				'cache-control': STATIC_CACHE,
+			},
 		});
 	}
 
@@ -53,12 +100,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 		} else if (event.locals.user) {
 			response.headers.set('cache-control', 'private, no-store');
 		} else if (path === '/ueber-uns') {
-			response.headers.set('cache-control', 'public, max-age=3600, s-maxage=86400');
+			response.headers.set('cache-control', STATIC_CACHE);
 		} else {
-			response.headers.set(
-				'cache-control',
-				'public, max-age=0, s-maxage=60, stale-while-revalidate=300',
-			);
+			response.headers.set('cache-control', PUBLIC_CACHE);
 		}
 	}
 

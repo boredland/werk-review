@@ -1,5 +1,6 @@
 import Fuse from 'fuse.js';
-import { getAuthors, getGenre, getGenres, getWorks } from '$lib/server/data';
+import { getAuthors, getGenre, getGenres, getWork, getWorks } from '$lib/server/data';
+import { getPlot } from '$lib/server/plots';
 import { getWikipediaImageUrls } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
 
@@ -21,10 +22,16 @@ export const load: PageServerLoad = async ({ url, platform }) => {
 	}));
 
 	const allWorks = getWorks();
-	const workMap = new Map(allWorks.map((w) => [w.id, w]));
 	const worksForSearch = allWorks.map((w) => ({
-		...w,
-		parent_titles: w.parent_slugs.map((pSlug) => workMap.get(pSlug)?.title).filter(Boolean),
+		id: w.id,
+		title: w.title,
+		slug: w.slug,
+		aliases: w.aliases,
+		year_display: w.year_display,
+		author_id: w.author_id,
+		genre_ids: w.genre_ids,
+		parent_titles: w.parent_slugs.map((pSlug) => getWork(pSlug)?.title).filter(Boolean),
+		plot: getPlot(w.id),
 	}));
 
 	const workFuse = new Fuse(worksForSearch, {

@@ -1,13 +1,25 @@
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
+const UPSTREAM_UA =
+	'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
+
+// Bounded so a stalled upstream image cannot hold the request open until the
+// edge times the whole page out.
+const FETCH_TIMEOUT_MS = 5000;
+
+function upstreamInit() {
+	return {
+		headers: { 'User-Agent': UPSTREAM_UA },
+		signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+	};
+}
+
 export const GET: RequestHandler = async ({ params, url }) => {
 	const imageUrl = params.url;
 	if (!imageUrl) error(400, 'URL required');
 
-	// Add protocol if missing
 	const targetUrl = imageUrl.startsWith('http') ? imageUrl : `https://${imageUrl}`;
-
 	const width = url.searchParams.get('w');
 
 	try {
@@ -16,22 +28,12 @@ export const GET: RequestHandler = async ({ params, url }) => {
 			finalUrl = `https://wsrv.nl/?url=${encodeURIComponent(targetUrl)}&w=${width}&output=webp&q=80`;
 		}
 
-		const response = await fetch(finalUrl, {
-			headers: {
-				'User-Agent':
-					'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-			},
-		});
+		const response = await fetch(finalUrl, upstreamInit());
 
 		if (!response.ok) {
-			// Fallback to original URL if wsrv fails
+			// The resizing proxy failed; serve the unresized original instead.
 			if (finalUrl !== targetUrl) {
-				const fallback = await fetch(targetUrl, {
-					headers: {
-						'User-Agent':
-							'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-					},
-				});
+				const fallback = await fetch(targetUrl, upstreamInit());
 				return new Response(fallback.body, {
 					headers: {
 						'content-type': fallback.headers.get('content-type') || 'image/jpeg',

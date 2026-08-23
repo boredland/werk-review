@@ -5,9 +5,8 @@ import {
 	getGenre,
 	getWorksByGenre,
 	rollUpStats,
-	withDescendantIds,
 } from '$lib/server/data';
-import { getWorkReviewStats } from '$lib/server/db';
+import { getAllWorkReviewStats } from '$lib/server/db';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, platform }) => {
@@ -18,11 +17,8 @@ export const load: PageServerLoad = async ({ params, platform }) => {
 	const authorMap = new Map(authors.map((a) => [a.id, a]));
 
 	const genreWorks = getWorksByGenre(genre.id).filter((w) => getCollectionType(w) !== 'band');
-	const statsIds = withDescendantIds(genreWorks.map((w) => w.id));
 	const stats = platform?.env.DB
-		? await getWorkReviewStats(platform.env.DB, statsIds, platform.env.SESSION_KV).catch(
-				() => new Map(),
-			)
+		? await getAllWorkReviewStats(platform.env.DB, platform.env.SESSION_KV).catch(() => new Map())
 		: new Map();
 
 	const works = genreWorks.map((w) => {

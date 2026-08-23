@@ -6,15 +6,14 @@ import {
 	getWork,
 	getWorksByAuthor,
 	rollUpStats,
-	withDescendantIds,
 } from '$lib/server/data';
-import { getWorkReviewStats } from '$lib/server/db';
+import { getAllWorkReviewStats } from '$lib/server/db';
 import {
 	getWikipediaImageUrl,
 	resolveWikipediaTitle,
 	wikipediaPageUrl,
 } from '$lib/server/wikipedia';
-import type { Work } from '$lib/types';
+import type { WorkMeta } from '$lib/types';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, platform, url }) => {
@@ -24,8 +23,8 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 	const kv = platform?.env.SESSION_KV;
 	const forceRefresh = url.searchParams.get('refresh') === 'true';
 
-	const isRomanzyklus = (w: Work) => w.genre_ids.includes('romanzyklus');
-	const zyklusParent = (w: Work) => {
+	const isRomanzyklus = (w: WorkMeta) => w.genre_ids.includes('romanzyklus');
+	const zyklusParent = (w: WorkMeta) => {
 		for (const slug of w.parent_slugs ?? []) {
 			const parent = getWork(slug);
 			if (parent && isRomanzyklus(parent)) return { title: parent.title, slug: parent.slug };
@@ -42,12 +41,11 @@ export const load: PageServerLoad = async ({ params, platform, url }) => {
 		if (getCollectionType(w) === 'band') return !!zyklusParent(w);
 		return true;
 	});
-	const statsIds = withDescendantIds(authorWorks.map((w) => w.id));
 	const imageKv = forceRefresh ? undefined : kv;
 	const wikiTitle = await resolveWikipediaTitle(author, imageKv);
 	const [stats, imageUrl] = await Promise.all([
 		platform?.env.DB
-			? getWorkReviewStats(platform.env.DB, statsIds, kv).catch(() => new Map())
+			? getAllWorkReviewStats(platform.env.DB, kv).catch(() => new Map())
 			: new Map(),
 		getWikipediaImageUrl(author.name, imageKv, wikiTitle),
 	]);

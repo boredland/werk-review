@@ -1,11 +1,5 @@
-import {
-	getAuthors,
-	getCollectionType,
-	getWorksByAuthor,
-	rollUpStats,
-	withDescendantIds,
-} from '$lib/server/data';
-import { getWorkReviewStats } from '$lib/server/db';
+import { getAuthors, getCollectionType, getWorksByAuthor, rollUpStats } from '$lib/server/data';
+import { getAllWorkReviewStats } from '$lib/server/db';
 import { getWikipediaImageUrls } from '$lib/server/wikipedia';
 import type { PageServerLoad } from './$types';
 
@@ -19,16 +13,11 @@ export const load: PageServerLoad = async ({ platform }) => {
 			getWorksByAuthor(a.id).filter((w) => getCollectionType(w) !== 'band'),
 		]),
 	);
-	const allStatsIds = withDescendantIds(
-		Array.from(worksByAuthor.values())
-			.flat()
-			.map((w) => w.id),
-	);
 
 	const [imageUrls, workStats] = await Promise.all([
 		getWikipediaImageUrls(allAuthors, kv),
 		platform?.env.DB
-			? getWorkReviewStats(platform.env.DB, allStatsIds, kv).catch(() => new Map())
+			? getAllWorkReviewStats(platform.env.DB, kv).catch(() => new Map())
 			: new Map(),
 	]);
 

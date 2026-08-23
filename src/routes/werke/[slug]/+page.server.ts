@@ -4,6 +4,7 @@ import { bookmarks, reads, reviewReactions, reviews, users } from '$lib/db/schem
 import { getRatingByLabel } from '$lib/ratings';
 import {
 	getAuthor,
+	getChildWorkIds,
 	getCollectionType,
 	getDescendantWorkIds,
 	getFortsetzungNeighbors,
@@ -13,13 +14,12 @@ import {
 	getWork,
 	getWorks,
 	rollUpStats,
-	withDescendantIds,
 } from '$lib/server/data';
-import { getDb, getWorkReviewStats } from '$lib/server/db';
-import type { LibriVoxData } from '$lib/types';
+import { getAllWorkReviewStats, getDb, type WorkReviewStats } from '$lib/server/db';
+import { getPlot } from '$lib/server/plots';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, platform, locals, fetch }) => {
+export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	const work = getWork(params.slug);
 	if (!work) error(404, 'Werk nicht gefunden');
 
@@ -57,28 +57,27 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		} catch {}
 	}
 
-	const similarRaw = getSimilarWorks(work.id)
-		.map((s) => workMap.get(s.work_id))
-		.filter((w): w is NonNullable<typeof w> => !!w)
-		.filter((w) => !userReadWorkIds.has(w.id));
-	const similarStats = platform?.env.DB
-		? await getWorkReviewStats(
-				platform.env.DB,
-				withDescendantIds(similarRaw.map((w) => w.id)),
-				platform.env.SESSION_KV,
-			).catch(() => new Map())
-		: new Map();
-	const similar = similarRaw.map((w) => {
-		const s = rollUpStats(w.id, similarStats);
-		return {
-			slug: w.slug,
-			title: w.title,
-			year_display: w.year_display,
-			reviewCount: s.reviewCount,
-			avgRating: s.avgRating,
-			totalPoints: s.totalPoints,
-		};
-	});
+	// One aggregate fetch feeds the similar list, the child list and the score
+	// roll-up below.
+	const allStats = platform?.env.DB
+		? await getAllWorkReviewStats(platform.env.DB, platform.env.SESSION_KV).catch(
+				() => new Map<string, WorkReviewStats>(),
+			)
+		: new Map<string, WorkReviewStats>();
+
+	const similar = getSimilarWorks(work.id)
+		.filter((w) => !userReadWorkIds.has(w.id))
+		.map((w) => {
+			const s = rollUpStats(w.id, allStats);
+			return {
+				slug: w.slug,
+				title: w.title,
+				year_display: w.year_display,
+				reviewCount: s.reviewCount,
+				avgRating: s.avgRating,
+				totalPoints: s.totalPoints,
+			};
+		});
 
 	let workReviews: {
 		id: string;
@@ -177,67 +176,38 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 
 			score = rows.reduce((sum, r) => sum + r.rating, 0);
 
-			const descendants = getDescendantWorkIds(work.id);
-			if (descendants.length > 0) {
-				const descStats = await getWorkReviewStats(
-					platform.env.DB,
-					descendants,
-					platform.env.SESSION_KV,
-				);
-				for (const s of descStats.values()) {
-					score += s.totalPoints;
-				}
+			for (const id of getDescendantWorkIds(work.id)) {
+				score += allStats.get(id)?.totalPoints ?? 0;
 			}
 		} catch {
 			// D1 tables may not exist yet in local dev
 		}
 	}
 
+	// LibriVox data is fetched by the player component on mount. Prefetching it
+	// here meant one self-subrequest through this same Worker per audiobook,
+	// each fanning out to librivox.org, which was timing out whole pages.
 	const externalLinks = getLinksForWork(work);
-	const librivoxData: Record<string, LibriVoxData> = {};
-
-	await Promise.all(
-		externalLinks
-			.filter((l) => l.librivox_id)
-			.map(async (l) => {
-				try {
-					const id = l.librivox_id;
-					if (id) {
-						const res = await fetch(`/api/librivox/${id}`);
-						if (res.ok) {
-							librivoxData[id] = await res.json();
-						}
-					}
-				} catch (e) {
-					console.error(`Error pre-fetching LibriVox ${l.librivox_id}:`, e);
-				}
-			}),
-	);
 
 	const parentWorks = work.parent_slugs
 		.map((slug) => workMap.get(slug))
 		.filter((w): w is NonNullable<typeof w> => !!w)
 		.map((w) => ({ title: w.title, slug: w.slug, type: getCollectionType(w) }));
 
-	const childWorkRaw = allWorks.filter((w) => w.parent_slugs?.includes(work.slug));
-	const childStats = platform?.env.DB
-		? await getWorkReviewStats(
-				platform.env.DB,
-				withDescendantIds(childWorkRaw.map((w) => w.id)),
-				platform.env.SESSION_KV,
-			).catch(() => new Map())
-		: new Map();
-	const childWorks = childWorkRaw.map((w) => {
-		const s = rollUpStats(w.id, childStats);
-		return {
-			title: w.title,
-			slug: w.slug,
-			year_display: w.year_display,
-			reviewCount: s.reviewCount,
-			avgRating: s.avgRating,
-			totalPoints: s.totalPoints,
-		};
-	});
+	const childWorks = getChildWorkIds(work.id)
+		.map((id) => getWork(id))
+		.filter((w): w is NonNullable<typeof w> => !!w)
+		.map((w) => {
+			const s = rollUpStats(w.id, allStats);
+			return {
+				title: w.title,
+				slug: w.slug,
+				year_display: w.year_display,
+				reviewCount: s.reviewCount,
+				avgRating: s.avgRating,
+				totalPoints: s.totalPoints,
+			};
+		});
 
 	const collectionType = getCollectionType(work);
 	const childrenType = childWorks.length > 0 ? getChildrenType(work.id) : null;
@@ -252,7 +222,7 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		.map((w) => ({ title: w.title, slug: w.slug }));
 
 	return {
-		work,
+		work: { ...work, plot: getPlot(work.id) },
 		author: author ? { name: author.name, slug: author.slug } : null,
 		genres,
 		parentWorks,
@@ -268,7 +238,6 @@ export const load: PageServerLoad = async ({ params, platform, locals, fetch }) 
 		isBookmarked,
 		isRead,
 		externalLinks,
-		librivoxData,
 	};
 };
 

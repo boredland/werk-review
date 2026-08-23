@@ -2,6 +2,10 @@ import { json } from '@sveltejs/kit';
 import type { LibriVoxData } from '$lib/types';
 import type { RequestHandler } from './$types';
 
+// LibriVox is frequently slow; bound the call so a stall cannot escalate into a
+// gateway timeout for the caller.
+const FETCH_TIMEOUT_MS = 5000;
+
 export const GET: RequestHandler = async ({ params, platform }) => {
 	const librivoxId = params.id;
 	if (!librivoxId) {
@@ -25,6 +29,7 @@ export const GET: RequestHandler = async ({ params, platform }) => {
 	try {
 		const res = await fetch(
 			`https://librivox.org/api/feed/audiobooks/?id=${librivoxId}&extended=1&format=json`,
+			{ signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) },
 		);
 		if (!res.ok) {
 			return json({ error: 'Failed to fetch from LibriVox API' }, { status: res.status });

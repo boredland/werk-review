@@ -210,10 +210,9 @@ const jsonLd = $derived.by(() => {
 			<div class="links-grid">
 				{#if librivoxLinks.length > 0}
 					{#each librivoxLinks as lv}
-						<LibriVoxPlayer 
-							librivoxId={lv.librivox_id!} 
-							workTitles={[data.work.title, ...data.work.aliases]} 
-							initialData={data.librivoxData[lv.librivox_id!]}
+						<LibriVoxPlayer
+							librivoxId={lv.librivox_id!}
+							workTitles={[data.work.title, ...data.work.aliases]}
 						/>
 					{/each}
 				{/if}

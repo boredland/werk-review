@@ -9,8 +9,15 @@ interface WikiPerson {
 	died?: number | null;
 }
 
+// Wikipedia occasionally stalls. Without a deadline a slow upstream call keeps
+// the whole page request open until the edge returns a gateway timeout.
+const FETCH_TIMEOUT_MS = 2500;
+
 async function wikiFetch(url: string) {
-	return fetch(url, { headers: { 'User-Agent': USER_AGENT } });
+	return fetch(url, {
+		headers: { 'User-Agent': USER_AGENT },
+		signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+	});
 }
 
 function toTitle(name: string): string {
