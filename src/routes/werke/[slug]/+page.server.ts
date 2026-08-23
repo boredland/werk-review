@@ -15,11 +15,16 @@ import {
 	getWorks,
 	rollUpStats,
 } from '$lib/server/data';
-import { getAllWorkReviewStats, getDb, type WorkReviewStats } from '$lib/server/db';
+import {
+	getAllWorkReviewStats,
+	getDb,
+	invalidateWorkReviewStats,
+	type WorkReviewStats,
+} from '$lib/server/db';
 import { getPlot } from '$lib/server/plots';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, platform, locals }) => {
+export const load: PageServerLoad = async ({ params, platform }) => {
 	const work = getWork(params.slug);
 	if (!work) error(404, 'Werk nicht gefunden');
 
@@ -32,30 +37,9 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 	const allWorks = getWorks();
 	const workMap = new Map(allWorks.map((w) => [w.id, w]));
 
-	let isBookmarked = false;
-	let isRead = false;
-	const userReadWorkIds = new Set<string>();
-
-	if (locals.user && platform?.env.DB) {
-		try {
-			const db = getDb(platform.env.DB);
-
-			const [readsList, bm] = await Promise.all([
-				db.select({ workId: reads.workId }).from(reads).where(eq(reads.userId, locals.user.id)),
-				db
-					.select()
-					.from(bookmarks)
-					.where(and(eq(bookmarks.userId, locals.user.id), eq(bookmarks.workId, work.id)))
-					.get(),
-			]);
-
-			for (const r of readsList) {
-				userReadWorkIds.add(r.workId);
-			}
-			isRead = userReadWorkIds.has(work.id);
-			isBookmarked = !!bm;
-		} catch {}
-	}
+	// Per-user state (bookmarks, reads, own review, reactions) is deliberately
+	// absent: it is fetched client-side from /api/work-state so this HTML is the
+	// same for every visitor and can be cached at the edge.
 
 	// One aggregate fetch feeds the similar list, the child list and the score
 	// roll-up below.
@@ -65,22 +49,21 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 			)
 		: new Map<string, WorkReviewStats>();
 
-	const similar = getSimilarWorks(work.id)
-		.filter((w) => !userReadWorkIds.has(w.id))
-		.map((w) => {
-			const s = rollUpStats(w.id, allStats);
-			return {
-				slug: w.slug,
-				title: w.title,
-				year_display: w.year_display,
-				reviewCount: s.reviewCount,
-				avgRating: s.avgRating,
-				totalPoints: s.totalPoints,
-			};
-		});
+	const similar = getSimilarWorks(work.id).map((w) => {
+		const s = rollUpStats(w.id, allStats);
+		return {
+			slug: w.slug,
+			title: w.title,
+			year_display: w.year_display,
+			reviewCount: s.reviewCount,
+			avgRating: s.avgRating,
+			totalPoints: s.totalPoints,
+		};
+	});
 
 	let workReviews: {
 		id: string;
+		userId: string;
 		rating: number;
 		ratingLabel: string;
 		title: string | null;
@@ -89,9 +72,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		createdAt: string;
 		username: string;
 		reactionCount: number;
-		hasUserReacted: boolean;
 	}[] = [];
-	let userReview: (typeof workReviews)[number] | null = null;
 	let score = 0;
 
 	if (platform?.env.DB) {
@@ -114,65 +95,34 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 				.where(eq(reviews.workId, work.id))
 				.orderBy(desc(reviews.createdAt));
 
-			// Fetch all reactions for these reviews in one go
 			const reviewIds = rows.map((r) => r.id);
 			const reactionsList =
 				reviewIds.length > 0
 					? await db
-							.select()
+							.select({ reviewId: reviewReactions.reviewId })
 							.from(reviewReactions)
 							.where(inArray(reviewReactions.reviewId, reviewIds))
 					: [];
 
-			const reactionsByReview = new Map<string, { count: number; hasUserReacted: boolean }>();
-			for (const rId of reviewIds) {
-				reactionsByReview.set(rId, { count: 0, hasUserReacted: false });
-			}
-
+			// Totals only. Which reviews the visitor reacted to is resolved in the
+			// browser so this payload stays user-independent.
+			const reactionCounts = new Map<string, number>();
 			for (const reaction of reactionsList) {
-				const entry = reactionsByReview.get(reaction.reviewId);
-				if (entry) {
-					entry.count++;
-					if (locals.user && reaction.userId === locals.user.id) {
-						entry.hasUserReacted = true;
-					}
-				}
+				reactionCounts.set(reaction.reviewId, (reactionCounts.get(reaction.reviewId) ?? 0) + 1);
 			}
 
-			workReviews = rows.map((r) => {
-				const reactionData = reactionsByReview.get(r.id);
-				return {
-					id: r.id,
-					rating: r.rating,
-					ratingLabel: r.ratingLabel,
-					title: r.title,
-					body: r.body,
-					version: r.version,
-					createdAt: r.createdAt,
-					username: r.username,
-					reactionCount: reactionData?.count ?? 0,
-					hasUserReacted: reactionData?.hasUserReacted ?? false,
-				};
-			});
-
-			if (locals.user) {
-				const mine = rows.find((r) => r.userId === locals.user?.id);
-				if (mine) {
-					const reactionData = reactionsByReview.get(mine.id);
-					userReview = {
-						id: mine.id,
-						rating: mine.rating,
-						ratingLabel: mine.ratingLabel,
-						title: mine.title,
-						body: mine.body,
-						version: mine.version,
-						createdAt: mine.createdAt,
-						username: mine.username,
-						reactionCount: reactionData?.count ?? 0,
-						hasUserReacted: reactionData?.hasUserReacted ?? false,
-					};
-				}
-			}
+			workReviews = rows.map((r) => ({
+				id: r.id,
+				userId: r.userId,
+				rating: r.rating,
+				ratingLabel: r.ratingLabel,
+				title: r.title,
+				body: r.body,
+				version: r.version,
+				createdAt: r.createdAt,
+				username: r.username,
+				reactionCount: reactionCounts.get(r.id) ?? 0,
+			}));
 
 			score = rows.reduce((sum, r) => sum + r.rating, 0);
 
@@ -233,10 +183,7 @@ export const load: PageServerLoad = async ({ params, platform, locals }) => {
 		fortgesetztDurch,
 		similar,
 		reviews: workReviews,
-		userReview,
 		score,
-		isBookmarked,
-		isRead,
 		externalLinks,
 	};
 };
@@ -306,9 +253,7 @@ export const actions: Actions = {
 			});
 		}
 
-		if (platform?.env.SESSION_KV) {
-			await platform.env.SESSION_KV.delete(`review-stats:${work.id}`);
-		}
+		await invalidateWorkReviewStats(platform?.env.SESSION_KV);
 
 		return { reviewSuccess: true };
 	},
@@ -384,9 +329,7 @@ export const actions: Actions = {
 			.delete(reviews)
 			.where(and(eq(reviews.userId, locals.user.id), eq(reviews.workId, work.id)));
 
-		if (platform?.env.SESSION_KV) {
-			await platform.env.SESSION_KV.delete(`review-stats:${work.id}`);
-		}
+		await invalidateWorkReviewStats(platform?.env.SESSION_KV);
 
 		return { reviewDeleted: true };
 	},

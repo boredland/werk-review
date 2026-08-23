@@ -6,20 +6,91 @@ import LibriVoxPlayer from '$lib/components/LibriVoxPlayer.svelte';
 import RatingBadge from '$lib/components/RatingBadge.svelte';
 import ReviewForm from '$lib/components/reviews/ReviewForm.svelte';
 import ReviewList from '$lib/components/reviews/ReviewList.svelte';
+import { session } from '$lib/session.svelte';
 
 let { data, form } = $props();
 
-const user = $derived(page.data.user);
-let bookmarked = $state(data.isBookmarked);
-let isRead = $state(data.isRead);
+const user = $derived(session.user);
+
+// Per-user state is not in the SSR payload so this page can be cached at the
+// edge; it is loaded in the browser once the slug is known.
+let bookmarked = $state(false);
+let isRead = $state(false);
+let readWorkIds = $state<string[]>([]);
+let reactedReviewIds = $state<string[]>([]);
+let myReviewId = $state<string | null>(null);
+
+type WorkState = {
+	isBookmarked: boolean;
+	isRead: boolean;
+	readWorkIds: string[];
+	reactedReviewIds: string[];
+	myReviewId: string | null;
+};
+
+async function loadWorkState(slug: string) {
+	try {
+		const res = await fetch(`/api/work-state/${encodeURIComponent(slug)}`);
+		if (!res.ok) return;
+		const state: WorkState = await res.json();
+		bookmarked = state.isBookmarked;
+		isRead = state.isRead;
+		readWorkIds = state.readWorkIds;
+		reactedReviewIds = state.reactedReviewIds;
+		myReviewId = state.myReviewId;
+	} catch {
+		// Leave the controls in their signed-out state.
+	}
+}
+
+$effect(() => {
+	const slug = data.work.slug;
+	if (!session.loaded) return;
+	if (!session.user) {
+		bookmarked = false;
+		isRead = false;
+		readWorkIds = [];
+		reactedReviewIds = [];
+		myReviewId = null;
+		return;
+	}
+	loadWorkState(slug);
+});
+
+// Works the visitor already read are hidden from the suggestions, which the
+// server can no longer do without making the page user-specific.
+const similar = $derived(data.similar.filter((w) => !readWorkIds.includes(w.slug)));
+const userReview = $derived(data.reviews.find((r) => r.id === myReviewId) ?? null);
+
+// Optimistic delta held until the form action returns fresh server counts.
+let pendingReactions = $state<Record<string, number>>({});
+
+$effect(() => {
+	data.reviews;
+	pendingReactions = {};
+});
+
+const reviewsWithReactions = $derived(
+	data.reviews.map((r) => ({
+		...r,
+		reactionCount: r.reactionCount + (pendingReactions[r.id] ?? 0),
+		hasUserReacted: reactedReviewIds.includes(r.id),
+	})),
+);
+
+function toggleReaction(reviewId: string) {
+	const reacted = reactedReviewIds.includes(reviewId);
+	reactedReviewIds = reacted
+		? reactedReviewIds.filter((id) => id !== reviewId)
+		: [...reactedReviewIds, reviewId];
+	pendingReactions = {
+		...pendingReactions,
+		[reviewId]: (pendingReactions[reviewId] ?? 0) + (reacted ? -1 : 1),
+	};
+}
 
 const librivoxLinks = $derived(data.externalLinks.filter((l) => l.librivox_id));
 const otherLinks = $derived(data.externalLinks.filter((l) => !l.librivox_id));
-
-$effect(() => {
-	bookmarked = data.isBookmarked;
-	isRead = data.isRead;
-});
 
 const jsonLd = $derived.by(() => {
 	const reviewCount = data.reviews.length;
@@ -246,21 +317,21 @@ const jsonLd = $derived.by(() => {
 		</section>
 	{/if}
 
-	<ReviewList reviews={data.reviews} score={data.score} {user} />
+	<ReviewList reviews={reviewsWithReactions} score={data.score} {user} onToggleReaction={toggleReaction} />
 
 	{#if user}
-		<ReviewForm userReview={data.userReview} {form} />
+		<ReviewForm {userReview} {form} />
 	{:else}
 		<div class="login-hint">
 			<p><a href="/login">Anmelden</a> oder <a href="/registrieren">registrieren</a>, um dieses Werk zu bewerten.</p>
 		</div>
 	{/if}
 
-	{#if data.similar.length > 0}
+	{#if similar.length > 0}
 		<section class="similar">
 			<h2>Ähnliche Werke</h2>
 			<div class="similar-list">
-				{#each data.similar as s}
+				{#each similar as s}
 					<a href="/werke/{s.slug}" class="similar-item similar-item--with-rating">
 						<span class="similar-title">{s.title}</span>
 						<span class="similar-end">

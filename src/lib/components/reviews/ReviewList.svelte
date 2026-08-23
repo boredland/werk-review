@@ -19,7 +19,13 @@ let {
 	reviews,
 	score,
 	user,
-}: { reviews: Review[]; score: number; user: { id: string; username: string } | null } = $props();
+	onToggleReaction,
+}: {
+	reviews: Review[];
+	score: number;
+	user: { username: string } | null;
+	onToggleReaction: (reviewId: string) => void;
+} = $props();
 </script>
 
 {#if reviews.length > 0}
@@ -59,14 +65,7 @@ let {
 							action="?/toggleReaction"
 							use:enhance={() => {
 								if (!user) return;
-								// Optimistic update
-								if (review.hasUserReacted) {
-									review.reactionCount--;
-									review.hasUserReacted = false;
-								} else {
-									review.reactionCount++;
-									review.hasUserReacted = true;
-								}
+								onToggleReaction(review.id);
 								return async ({ update }) => {
 									await update({ reset: false });
 								};

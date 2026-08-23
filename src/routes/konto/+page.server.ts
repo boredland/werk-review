@@ -90,7 +90,9 @@ export const load: PageServerLoad = async ({ locals, platform }) => {
 		} catch {}
 	}
 
-	return { userReviews, userBookmarks, userReads };
+	// This page is `private, no-store`, so the account details are safe to render
+	// server-side. The root layout no longer exposes the session globally.
+	return { user: locals.user, userReviews, userBookmarks, userReads };
 };
 
 export const actions: Actions = {

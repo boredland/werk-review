@@ -1,12 +1,11 @@
 <script lang="ts">
 import { enhance } from '$app/forms';
-import { page } from '$app/state';
 import EmptyState from '$lib/components/EmptyState.svelte';
 import { getRatingConfig } from '$lib/ratings';
 
 let { data, form } = $props();
 
-const user = $derived(page.data.user);
+const user = $derived(data.user);
 
 let editingUsername = $state(false);
 let editingEmail = $state(false);

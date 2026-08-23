@@ -1,10 +1,11 @@
 <script lang="ts">
 import { enhance } from '$app/forms';
 import { page } from '$app/state';
+import { session } from '$lib/session.svelte';
 import ThemeToggle from './ThemeToggle.svelte';
 
-const user = $derived(page.data.user);
-const admin = $derived(page.data.isAdmin);
+const user = $derived(session.user);
+const admin = $derived(session.isAdmin);
 
 const navItems = $derived([
 	{ href: '/autoren', label: 'Autoren' },
@@ -38,15 +39,21 @@ function handleSearch(e: SubmitEvent) {
 			</a>
 
 			<div class="header-right">
-				{#if user}
-					<a href="/konto" class="user-link">{user.username}</a>
-					<form method="POST" action="/logout" use:enhance>
-						<button type="submit" class="auth-btn">Abmelden</button>
-					</form>
-				{:else}
-					<a href="/login" class="auth-btn">Anmelden</a>
-					<a href="/registrieren" class="auth-btn auth-btn--accent">Registrieren</a>
-				{/if}
+				<!-- Rendered only once the session is known, so the auth controls never
+				     flip from signed-out to signed-in on hydration. -->
+				<div class="auth-slot" class:auth-slot--ready={session.loaded}>
+					{#if session.loaded}
+						{#if user}
+							<a href="/konto" class="user-link">{user.username}</a>
+							<form method="POST" action="/logout" use:enhance>
+								<button type="submit" class="auth-btn">Abmelden</button>
+							</form>
+						{:else}
+							<a href="/login" class="auth-btn">Anmelden</a>
+							<a href="/registrieren" class="auth-btn auth-btn--accent">Registrieren</a>
+						{/if}
+					{/if}
+				</div>
 
 				<ThemeToggle />
 
@@ -143,6 +150,21 @@ function handleSearch(e: SubmitEvent) {
 		display: flex;
 		align-items: center;
 		gap: 0.6rem;
+	}
+
+	/* Holds the row height while the session request is in flight, so the auth
+	   controls appearing does not shift the header. */
+	.auth-slot {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		min-height: 1.9rem;
+		opacity: 0;
+		transition: opacity 0.15s ease-in;
+	}
+
+	.auth-slot--ready {
+		opacity: 1;
 	}
 
 	.user-link {

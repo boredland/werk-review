@@ -60,3 +60,8 @@ export async function getAllWorkReviewStats(
 
 	return stats;
 }
+
+/** Drops the cached totals so the next render reflects a new or deleted review. */
+export async function invalidateWorkReviewStats(kv?: KVNamespace): Promise<void> {
+	if (kv) await kv.delete(STATS_CACHE_KEY);
+}

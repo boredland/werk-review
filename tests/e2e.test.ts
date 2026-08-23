@@ -128,4 +128,59 @@ test.describe('werk.review E2E', () => {
 		await expect(page.getByText('Kapitel 1')).toBeVisible();
 		expect(apiCalls).toBeGreaterThan(0);
 	});
+
+	// The header and the work-page controls are rendered from a client-side
+	// session fetch, so page HTML stays identical for every visitor and can be
+	// cached at the edge. This covers the whole signed-in path end to end.
+	test('signed-in state hydrates client-side', async ({ page, isMobile, playwright }) => {
+		if (isMobile) return;
+
+		const username = 'e2e_session_user';
+		const email = `${username}@example.com`;
+		const password = 'sehr-geheimes-passwort-123';
+
+		// Registration is rate limited per IP, so the account is created once via a
+		// throwaway context (keeping its session cookie out of the browser) and the
+		// UI flow below signs in normally. A re-run reuses the same account.
+		const api = await playwright.request.newContext({ baseURL: 'http://localhost:5173' });
+		await api.post('/registrieren', {
+			form: { username, email, password, password_confirm: password },
+			failOnStatusCode: false,
+		});
+		await api.dispose();
+
+		await page.goto('/login');
+		// enhance() only intercepts once hydrated; submitting earlier races it.
+		await page.waitForLoadState('networkidle');
+		await page.fill('input[name="email"]', email);
+		await page.fill('input[name="password"]', password);
+		await page.click('button[type="submit"]');
+		await page.waitForURL((u) => !u.pathname.startsWith('/login'));
+
+		await expect(page.locator('.user-link')).toHaveText(username);
+
+		// A cacheable page: the HTML is anonymous, the controls fill in after.
+		await page.goto('/werke/der-golem');
+		await expect(page.locator('.user-link')).toHaveText(username);
+		await expect(page.locator('.action-buttons')).toBeVisible();
+
+		// Toggle to a known state, then confirm it survived the round trip.
+		const bookmark = page.locator('form[action="?/toggleBookmark"] button');
+		if (await bookmark.evaluate((el) => el.classList.contains('active'))) {
+			await bookmark.click();
+			await expect(bookmark).not.toHaveClass(/active/);
+		}
+		await bookmark.click();
+		await expect(bookmark).toHaveClass(/active/);
+		await page.reload();
+		await expect(bookmark).toHaveClass(/active/);
+
+		await page.goto('/konto');
+		await expect(page.locator('.value-text').first()).toHaveText(username);
+
+		await page.goto('/');
+		await page.getByRole('button', { name: 'Abmelden' }).click();
+		await expect(page.getByRole('link', { name: 'Anmelden' })).toBeVisible();
+		await expect(page.locator('.user-link')).toHaveCount(0);
+	});
 });

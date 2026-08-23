@@ -1,9 +1,10 @@
 <script lang="ts">
 import { page } from '$app/state';
 
+let { data } = $props();
+
 const isNew = $derived(page.url.searchParams.get('neu') === '1');
 const verified = $derived(page.url.searchParams.get('ok') === '1');
-const user = $derived(page.data.user);
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@ const user = $derived(page.data.user);
 			<div class="verify-icon">&#9993;</div>
 			<h1>Bestätige deine E-Mail</h1>
 			<p>
-				Wir haben dir einen Bestätigungslink an <strong>{user?.email ?? 'deine E-Mail-Adresse'}</strong> geschickt.
+				Wir haben dir einen Bestätigungslink an <strong>{data.email ?? 'deine E-Mail-Adresse'}</strong> geschickt.
 				Bitte klicke auf den Link, um dein Konto zu aktivieren.
 			</p>
 			<p class="hint">

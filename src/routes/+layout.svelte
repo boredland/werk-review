@@ -1,11 +1,17 @@
 <script lang="ts">
+import { afterNavigate } from '$app/navigation';
 import { page } from '$app/state';
 import '../app.css';
 import Header from '$lib/components/layout/Header.svelte';
+import { session } from '$lib/session.svelte';
 
 let { children } = $props();
 
 const canonicalUrl = $derived(`https://werk.review${page.url.pathname.replace(/\/$/, '') || '/'}`);
+
+// Runs on first render and after every client-side navigation, so signing in or
+// out is reflected without the session ever being rendered into the HTML.
+afterNavigate(() => session.load());
 </script>
 
 <svelte:head>

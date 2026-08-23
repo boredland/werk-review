@@ -1,7 +1,19 @@
 import type { Handle } from '@sveltejs/kit';
 import { getSession, SESSION_COOKIE } from '$lib/server/auth';
 
-const NO_CACHE_ROUTES = ['/login', '/registrieren', '/konto', '/admin', '/logout'];
+// Routes whose HTML depends on the signed-in user and must never be cached.
+// Everything else renders identically for every visitor: the session lives in
+// the browser and is fetched from /api/me.
+const NO_CACHE_ROUTES = [
+	'/login',
+	'/registrieren',
+	'/konto',
+	'/admin',
+	'/logout',
+	'/verifizieren',
+	'/vorschlaege',
+	'/api',
+];
 
 // Vulnerability scanners account for the majority of inbound requests. They only
 // ever probe extensions and prefixes this app never serves, so answering them
@@ -23,15 +35,19 @@ const SCANNER_PREFIXES = [
 	'/.well-known/index.php',
 ];
 
-// Page HTML embeds the signed-in username in the header, and Cloudflare ignores
-// `Vary` by default, so a response cached for an anonymous visitor would be
-// served to a signed-in one. Anything user-dependent therefore stays on a short
-// TTL; only responses that are identical for every visitor get a long one.
+// Page HTML is identical for every visitor: the session is fetched in the
+// browser from /api/me, so nothing user-specific is rendered. That makes these
+// responses safe to cache at the edge and share across visitors, which matters
+// because Cloudflare ignores `Vary` by default.
+//
+// Content only changes when the hourly Sheets sync redeploys or a review is
+// posted, so an hour at the edge is acceptable; `max-age=0` keeps browsers
+// revalidating so a new deploy is picked up immediately.
 //
 // stale-while-revalidate is intentionally omitted wherever `s-maxage` is set:
 // `s-maxage` implies proxy-revalidate, which disables it, so pairing the two
 // does nothing.
-const PUBLIC_CACHE = 'public, max-age=0, s-maxage=60';
+const PUBLIC_CACHE = 'public, max-age=0, s-maxage=3600';
 const STATIC_CACHE = 'public, max-age=3600, s-maxage=86400';
 
 function isScannerPath(path: string): boolean {
@@ -97,8 +113,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (!response.headers.has('cache-control') && event.request.method === 'GET') {
 		if (NO_CACHE_ROUTES.some((r) => path === r || path.startsWith(`${r}/`))) {
 			response.headers.set('cache-control', 'private, no-cache');
-		} else if (event.locals.user) {
-			response.headers.set('cache-control', 'private, no-store');
 		} else if (path === '/ueber-uns') {
 			response.headers.set('cache-control', STATIC_CACHE);
 		} else {
