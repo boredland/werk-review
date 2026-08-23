@@ -7,12 +7,6 @@
 		"librivox_id": "15355"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/novalis/books/heinrich-von-ofterdingen/",
-		"label": "Heinrich von Ofterdingen"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/heinrichvonofter0000nova_q9i3",
@@ -21,5 +15,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/novalis/books/heinrich-von-ofterdingen/",
+		"label": "Heinrich von Ofterdingen"
 	}
 ]
