@@ -15,5 +15,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/charles-dickens/books/klein-dorrit-erstes-buch",
+		"label": "Klein Dorrit"
 	}
 ]
