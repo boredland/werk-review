@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-strength-of-the-strong-by-jack-london/",
 		"label": "Strength of the Strong",
 		"librivox_id": "14426"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/die-beispiellose-invasion/",
+		"label": "Die beispiellose Invasion"
 	}
 ]

@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/lost-face-and-other-stories-by-jack-london/",
 		"label": "Lost Face (and Other Stories)",
 		"librivox_id": "17560"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/verlorenes-gesicht/",
+		"label": "Verlorenes Gesicht"
 	}
 ]

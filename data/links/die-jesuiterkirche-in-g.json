@@ -15,5 +15,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/e.-t.-a.-hoffmann/books/die-jesuiterkirche-in-g/",
+		"label": "Die Jesuiterkirche in G."
 	}
 ]

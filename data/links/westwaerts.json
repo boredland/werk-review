@@ -19,5 +19,11 @@
 		"url": "https://librivox.org/brown-wolf-and-other-jack-london-stories-by-jack-london/",
 		"label": "Brown Wolf and Other Jack London Stories",
 		"librivox_id": "15148"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/westwaerts/",
+		"label": "Westwärts"
 	}
 ]

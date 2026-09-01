@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-night-born-by-jack-london/",
 		"label": "Night-Born",
 		"librivox_id": "17117"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/gefluegelte-erpressung/",
+		"label": "Geflügelte Erpressung"
 	}
 ]

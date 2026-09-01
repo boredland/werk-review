@@ -5,5 +5,11 @@
 		"url": "",
 		"label": "Viimeinen ottelu (The Game)",
 		"librivox_id": "16829"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/the-game/",
+		"label": "The Game"
 	}
 ]

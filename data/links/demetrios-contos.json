@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/tales-of-the-fish-patrol-by-jack-london/",
 		"label": "Tales of the Fish Patrol",
 		"librivox_id": "9576"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/demetrios-contos/",
+		"label": "Demetrios Contos"
 	}
 ]

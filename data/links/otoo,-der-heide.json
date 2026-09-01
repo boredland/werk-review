@@ -12,5 +12,11 @@
 		"url": "https://librivox.org/south-sea-tales-by-jack-london/",
 		"label": "South Sea Tales",
 		"librivox_id": "15528"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/otoo-der-heide/",
+		"label": "Otoo, der Heide"
 	}
 ]

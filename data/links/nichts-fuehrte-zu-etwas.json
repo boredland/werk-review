@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-human-drift-by-jack-london/",
 		"label": "Human Drift",
 		"librivox_id": "19012"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/nichts-fuehrte-zu-etwas/",
+		"label": "Nichts führte zu etwas"
 	}
 ]

@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/nachtstuecke-by-eta-hoffmann/",
 		"label": "Nachtstücke",
 		"librivox_id": "2188"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/e.-t.-a.-hoffmann/books/das-majorat/",
+		"label": "Das Majorat"
 	}
 ]
