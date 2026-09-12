@@ -21,12 +21,6 @@
 		"librivox_id": "5842"
 	},
 	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/victor-hugo/books/notre-dame-teil-2",
-		"label": "Der Glöckner von Notre Dame"
-	},
-	{
 		"source": "Internet Archive",
 		"format": "Volltext / Download",
 		"url": "https://archive.org/details/derglocknervonno0000vict",
@@ -35,5 +29,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/victor-hugo/books/notre-dame-teil-2",
+		"label": "Der Glöckner von Notre Dame"
 	}
 ]
