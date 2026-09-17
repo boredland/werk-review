@@ -7,11 +7,5 @@
 		"formats": [
 			"Text PDF"
 		]
-	},
-	{
-		"source": "Projekt Gutenberg-DE",
-		"format": "Volltext",
-		"url": "https://projekt-gutenberg.org/authors/alexandre-dumas/books/das-halsband-der-koenigin/",
-		"label": "Das Halsband der Königin"
 	}
 ]
