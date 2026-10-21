@@ -13,5 +13,10 @@
 	"fortsetzung_von_ids": [],
 	"plot": "Der junge Künstler Hans Hansen versucht, seinen Platz zwischen bürgerlichen Erwartungen und eigener Empfindsamkeit zu finden. Seine Beobachtungsgabe und sein feiner Humor stehen einer Welt gegenüber, die für Außenseiter wenig Verständnis zeigt. Die Erzählung zeigt den Konflikt zwischen Anpassung und künstlerischer Individualität.",
 	"source_note": "[KI-generierter Inhalt]",
-	"sources": []
+	"sources": [
+		{
+			"label": "Wikipedia",
+			"url": "https://de.wikipedia.org/wiki/Der_Bajazzo_(Thomas_Mann)"
+		}
+	]
 }
