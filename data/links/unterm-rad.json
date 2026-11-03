@@ -8,5 +8,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/hermann-hesse/books/unterm-rad/",
+		"label": "Unterm Rad"
 	}
 ]

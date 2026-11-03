@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-nature-of-a-crime-by-joseph-conrad/",
 		"label": "Nature of a Crime",
 		"librivox_id": "18848"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/joseph-conrad/books/die-natur-eines-verbrechens-co-autor-ford-madox-ford/",
+		"label": "Die Natur eines Verbrechens (Co-Autor: Ford Madox Ford)"
 	}
 ]
