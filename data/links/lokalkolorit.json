@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/moon-face-and-other-stories-by-jack-london/",
 		"label": "Moon-Face and Other Stories",
 		"librivox_id": "18004"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/lokalkolorit/",
+		"label": "Lokalkolorit"
 	}
 ]

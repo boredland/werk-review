@@ -8,5 +8,11 @@
 			"EPUB",
 			"Text PDF"
 		]
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/e.-t.-a.-hoffmann/books/seltsame-leiden-eines-theater-direktors/",
+		"label": "Seltsame Leiden eines Theater-Direktors"
 	}
 ]

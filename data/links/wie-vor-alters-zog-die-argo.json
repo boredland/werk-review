@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-red-one-by-jack-london/",
 		"label": "Red One",
 		"librivox_id": "18562"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/wie-vor-alters-zog-die-argo/",
+		"label": "Wie vor alters zog die Argo"
 	}
 ]

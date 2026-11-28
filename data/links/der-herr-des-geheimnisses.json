@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/children-of-the-frost-by-jack-london/",
 		"label": "Children of the Frost",
 		"librivox_id": "18260"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/der-herr-des-geheimnisses/",
+		"label": "Der Herr des Geheimnisses"
 	}
 ]

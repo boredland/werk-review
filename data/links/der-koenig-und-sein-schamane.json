@@ -5,5 +5,11 @@
 		"url": "https://librivox.org/the-faith-of-men-by-jack-london/",
 		"label": "Faith of Men",
 		"librivox_id": "1225"
+	},
+	{
+		"source": "Projekt Gutenberg-DE",
+		"format": "Volltext",
+		"url": "https://projekt-gutenberg.org/authors/jack-london/books/der-koenig-und-sein-schamane/",
+		"label": "Der König und sein Schamane"
 	}
 ]
